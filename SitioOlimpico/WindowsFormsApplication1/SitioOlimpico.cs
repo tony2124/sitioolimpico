@@ -21,8 +21,8 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             
             obj = new CallerID();
-            Thread hilo = new Thread( obj.EscuchaTelefono );
-            hilo.Start();
+           /* Thread hilo = new Thread( obj.EscuchaTelefono );
+            hilo.Start();*/
 
             
         }

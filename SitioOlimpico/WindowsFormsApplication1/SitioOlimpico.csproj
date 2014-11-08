@@ -63,6 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CallerID.cs" />
+    <Compile Include="personal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="personal.Designer.cs">
+      <DependentUpon>personal.cs</DependentUpon>
+    </Compile>
     <Compile Include="SitioOlimpico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="personal.resx">
+      <DependentUpon>personal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SitioOlimpico.resx">
       <DependentUpon>SitioOlimpico.cs</DependentUpon>
     </EmbeddedResource>
