@@ -132,6 +132,27 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOTON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOTON1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOTON2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOTON3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOTON4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOTON5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SERVICIO.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
