@@ -54,21 +54,17 @@
             this.contactarASimpusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +74,10 @@
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -276,71 +276,79 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(947, 53);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(410, 234);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS DEL MONITOR";
             // 
-            // button4
+            // label10
             // 
-            this.button4.Location = new System.Drawing.Point(401, 53);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 84);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Estadística";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(174, 187);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(127, 18);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "8:00 am - 2:00 pm";
             // 
-            // button5
+            // label9
             // 
-            this.button5.Location = new System.Drawing.Point(531, 53);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(122, 84);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Respaldar Información";
-            this.button5.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(202, 152);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 18);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "A las 2:43 pm";
             // 
-            // button6
+            // label8
             // 
-            this.button6.Location = new System.Drawing.Point(661, 53);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(122, 84);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Configuración";
-            this.button6.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(202, 123);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(176, 18);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "08 de noviembre del 2014";
             // 
-            // button7
+            // label7
             // 
-            this.button7.Location = new System.Drawing.Point(791, 53);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(122, 84);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Salir";
-            this.button7.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(89, 46);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 18);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "tony2124";
             // 
-            // textBox1
+            // label6
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 166);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(532, 24);
-            this.textBox1.TabIndex = 9;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(89, 84);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(229, 18);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "ALFONSO CALDERÓN CHÁVEZ";
             // 
-            // label1
+            // label5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 170);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 18);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "BUSCAR";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(9, 187);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(157, 18);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Horario de servicio:";
             // 
             // label2
             // 
@@ -375,71 +383,23 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Último inicio de sesión:";
             // 
-            // label5
+            // textBox1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 187);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(157, 18);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Horario de servicio:";
+            this.textBox1.Location = new System.Drawing.Point(115, 166);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(532, 24);
+            this.textBox1.TabIndex = 9;
             // 
-            // label6
+            // label1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(89, 84);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(229, 18);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "ALFONSO CALDERÓN CHÁVEZ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(89, 46);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 18);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "tony2124";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(202, 123);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(176, 18);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "08 de noviembre del 2014";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(202, 152);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 18);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "A las 2:43 pm";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(174, 187);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(127, 18);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "8:00 am - 2:00 pm";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 170);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 18);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "BUSCAR";
             // 
             // statusStrip1
             // 
@@ -502,19 +462,65 @@
             this.Column3.HeaderText = "descripcion";
             this.Column3.Name = "Column3";
             // 
+            // button7
+            // 
+            this.button7.BackgroundImage = global::SitioOlimpico.Properties.Resources.SALIR;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Location = new System.Drawing.Point(783, 53);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(122, 84);
+            this.button7.TabIndex = 8;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::SitioOlimpico.Properties.Resources.CONFIGURACION;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Location = new System.Drawing.Point(653, 53);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(122, 84);
+            this.button6.TabIndex = 7;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::SitioOlimpico.Properties.Resources.RESPALDO;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Location = new System.Drawing.Point(523, 53);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(122, 84);
+            this.button5.TabIndex = 6;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::SitioOlimpico.Properties.Resources.ESTADISTICA;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Location = new System.Drawing.Point(393, 53);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(122, 84);
+            this.button4.TabIndex = 5;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(271, 53);
+            this.button3.BackgroundImage = global::SitioOlimpico.Properties.Resources.BUSCARUNIDAD;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Location = new System.Drawing.Point(263, 53);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 84);
             this.button3.TabIndex = 4;
-            this.button3.Text = "Buscar unidad";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
             this.button2.BackgroundImage = global::SitioOlimpico.Properties.Resources.SERVICIO;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Location = new System.Drawing.Point(13, 53);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
@@ -526,7 +532,8 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Window;
             this.button1.BackgroundImage = global::SitioOlimpico.Properties.Resources.BOTON3;
-            this.button1.Location = new System.Drawing.Point(141, 53);
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(136, 53);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 84);
@@ -555,7 +562,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SitioOlimpico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema para Sitio Olimpico";

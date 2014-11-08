@@ -63,36 +63,6 @@ namespace SitioOlimpico.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BOTON {
-            get {
-                object obj = ResourceManager.GetObject("BOTON", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BOTON1 {
-            get {
-                object obj = ResourceManager.GetObject("BOTON1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BOTON2 {
-            get {
-                object obj = ResourceManager.GetObject("BOTON2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap BOTON3 {
             get {
                 object obj = ResourceManager.GetObject("BOTON3", resourceCulture);
@@ -103,9 +73,9 @@ namespace SitioOlimpico.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BOTON4 {
+        internal static System.Drawing.Bitmap BUSCARUNIDAD {
             get {
-                object obj = ResourceManager.GetObject("BOTON4", resourceCulture);
+                object obj = ResourceManager.GetObject("BUSCARUNIDAD", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +83,49 @@ namespace SitioOlimpico.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BOTON5 {
+        internal static System.Drawing.Bitmap CONFIGURACION {
             get {
-                object obj = ResourceManager.GetObject("BOTON5", resourceCulture);
+                object obj = ResourceManager.GetObject("CONFIGURACION", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ESTADISTICA {
+            get {
+                object obj = ResourceManager.GetObject("ESTADISTICA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GUARDAR {
+            get {
+                object obj = ResourceManager.GetObject("GUARDAR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RESPALDO {
+            get {
+                object obj = ResourceManager.GetObject("RESPALDO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SALIR {
+            get {
+                object obj = ResourceManager.GetObject("SALIR", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

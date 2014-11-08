@@ -118,25 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BOTON1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BOTON1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BOTON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BOTON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BOTON5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BOTON5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BUSCARUNIDAD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUSCARUNIDAD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOTON3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BOTON3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BOTON4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BOTON4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BOTON2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BOTON2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="SERVICIO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SERVICIO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RESPALDO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RESPALDO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ESTADISTICA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESTADISTICA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SALIR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SALIR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CONFIGURACION" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CONFIGURACION.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GUARDAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GUARDAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
