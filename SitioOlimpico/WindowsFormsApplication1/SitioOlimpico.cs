@@ -12,15 +12,24 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class SitioOlimpico : Form
     {
-        public Form1()
+        CallerID obj;
+
+        public SitioOlimpico()
         {
             InitializeComponent();
             
-            CallerID obj = new CallerID();
+            obj = new CallerID();
             Thread hilo = new Thread( obj.EscuchaTelefono );
             hilo.Start();
+
+            
+        }
+
+        private void SitioOlimpico_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            obj.terminar = true;
         }
     }
 }

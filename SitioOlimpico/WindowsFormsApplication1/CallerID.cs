@@ -16,6 +16,7 @@ namespace SitioOlimpico
         static SerialPort ComPort;
         static ASCIIEncoding ASCIIEncoder = new ASCIIEncoding();
         static string data;
+        public bool terminar = false;
 
         public static void OnSerialDataReceived(object sender, SerialDataReceivedEventArgs args)
         {
@@ -82,7 +83,7 @@ namespace SitioOlimpico
                 //ESCRIBIMOS EN LA CONSOLA EL TEXTO CAPTURADO
                 //ComPort.Write(text + '\r');
             }
-            while (true);//text != "q");
+            while (!terminar);//text != "q");
         }
 
         private static void InitializeComPort(string port, int baud)

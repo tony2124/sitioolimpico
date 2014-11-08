@@ -1,0 +1,12 @@
+C:\Users\Alfonso\Desktop\taxis\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Sitio Olimpico.exe.config
+C:\Users\Alfonso\Desktop\taxis\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Sistema para el Control del Sitio Olimpico.exe.config
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\bin\Debug\Sistema para el Control del Sitio Olimpico.exe.config
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\bin\Debug\Sistema para el Control del Sitio Olimpico.exe
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\bin\Debug\Sistema para el Control del Sitio Olimpico.pdb
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\SitioOlimpico.csprojResolveAssemblyReference.cache
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.SitioOlimpico.resources
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.llamadaentrante.resources
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\SitioOlimpico.Properties.Resources.resources
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\SitioOlimpico.csproj.GenerateResource.Cache
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\Sistema para el Control del Sitio Olimpico.exe
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\Sistema para el Control del Sitio Olimpico.pdb
