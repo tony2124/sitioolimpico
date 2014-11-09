@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class personal : Form
+    public partial class configuracion : Form
     {
-        public personal()
+        public configuracion()
         {
             InitializeComponent();
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            Dispose();
         }
     }
 }

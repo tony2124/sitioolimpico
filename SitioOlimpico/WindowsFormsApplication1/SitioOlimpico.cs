@@ -1,4 +1,4 @@
-﻿using SitioOlimpico;
+﻿using WindowsFormsApplication1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +30,47 @@ namespace WindowsFormsApplication1
         private void SitioOlimpico_FormClosing(object sender, FormClosingEventArgs e)
         {
             obj.terminar = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            new configuracion().ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(this, "¿Está seguro que desea salir del sistema? Una vez que salga del sistema no será posible identificar las llamadas.", "Confirme operación",  MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            Close();
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new acercade().ShowDialog();
         }
     }
 }

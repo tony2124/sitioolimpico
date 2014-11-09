@@ -7,7 +7,7 @@
     <ProjectGuid>{2F8D603F-0D86-4305-90E3-4A19A56259C6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SitioOlimpico</RootNamespace>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
     <AssemblyName>Sistema para el Control del Sitio Olimpico</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -62,7 +62,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="acercade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acercade.designer.cs">
+      <DependentUpon>acercade.cs</DependentUpon>
+    </Compile>
     <Compile Include="CallerID.cs" />
+    <Compile Include="configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="configuracion.Designer.cs">
+      <DependentUpon>configuracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="personal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="acercade.resx">
+      <DependentUpon>acercade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="configuracion.resx">
+      <DependentUpon>configuracion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="personal.resx">
       <DependentUpon>personal.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +188,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GUARDAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GUARDAR2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CANCELAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MODIFICAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LUPA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_simpus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twitter_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtube_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ENCABEZADO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ENCABEZADO1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
