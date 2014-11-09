@@ -28,8 +28,8 @@ namespace WindowsFormsApplication1
             else
                 editar_btn_personal.Visible = true;
 
-            this.foto_personal.Image = Properties.Resources.sin_foto;
-            foto_personal.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.foto_cliente.Image = Properties.Resources.sin_foto;
+            foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
             estado_civil_personal.SelectedIndex = 0;
             autorizacion_personal.SelectedIndex = 0;
         }
@@ -52,9 +52,9 @@ namespace WindowsFormsApplication1
                 /// Si esto se cumple, capturamos la propiedad File Name y la guardamos en el control
                 String Direccion = BuscarImagen.FileName;
 
-                this.foto_personal.ImageLocation = Direccion;
+                this.foto_cliente.ImageLocation = Direccion;
                 //Pueden usar tambien esta forma para cargar la Imagen solo activenla y comenten la linea donde se cargaba anteriormente 
-                foto_personal.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
                 foto = true;
             }         
         }
@@ -105,8 +105,8 @@ namespace WindowsFormsApplication1
             if (File.Exists(archivoDestino))
                 File.Delete(archivoDestino);
             File.Copy(archivoorigen, archivoDestino, true);
-            this.foto_personal.ImageLocation = archivoDestino;
-            foto_personal.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.foto_cliente.ImageLocation = archivoDestino;
+            foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         public void guardarPersonal()
@@ -168,9 +168,9 @@ namespace WindowsFormsApplication1
             horario_personal.Text = "";
             foto = false;
 
-            this.foto_personal.ImageLocation = null;
-            this.foto_personal.Image = Properties.Resources.sin_foto;
-            foto_personal.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.foto_cliente.ImageLocation = null;
+            this.foto_cliente.Image = Properties.Resources.sin_foto;
+            foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void cancelar_btn_personal_Click(object sender, EventArgs e)

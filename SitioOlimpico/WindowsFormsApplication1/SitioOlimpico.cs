@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
 
         private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            personal p = new personal();
+            personal p = new personal(0);
             p.ShowDialog();
         }
         private void button2_Click(object sender, EventArgs e)
@@ -78,6 +78,12 @@ namespace WindowsFormsApplication1
         {
             new acercade().ShowDialog();
 
+        }
+
+        private void registroDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cliente c = new cliente(0);
+            c.ShowDialog();
         }
     }
 }

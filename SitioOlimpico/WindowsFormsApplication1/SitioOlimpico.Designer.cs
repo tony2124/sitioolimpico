@@ -190,6 +190,7 @@
             this.registroDeClientesToolStripMenuItem.Name = "registroDeClientesToolStripMenuItem";
             this.registroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
             this.registroDeClientesToolStripMenuItem.Text = "Registrar cliente";
+            this.registroDeClientesToolStripMenuItem.Click += new System.EventHandler(this.registroDeClientesToolStripMenuItem_Click);
             // 
             // buscarClienteToolStripMenuItem
             // 
@@ -386,7 +387,6 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Último inicio de sesión:";
             // 
-
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -394,13 +394,11 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(532, 41);
-
             this.textBox1.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 166);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -577,8 +575,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-
-            this.ClientSize = new System.Drawing.Size(1370, 594);
+            this.ClientSize = new System.Drawing.Size(1284, 594);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.statusStrip1);

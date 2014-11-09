@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.fecha_ingreso_personal = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.estado_civil_personal = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.fecha_nac_personal = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.apellido_personal = new System.Windows.Forms.TextBox();
@@ -41,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.foto_cliente = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.horario_personal = new System.Windows.Forms.TextBox();
@@ -75,21 +74,18 @@
             this.num_cel_personal = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.foto_btn_personal = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.cancelar_btn_personal = new System.Windows.Forms.Button();
             this.editar_btn_personal = new System.Windows.Forms.Button();
             this.guardar_btn_personal = new System.Windows.Forms.Button();
-            this.foto_personal = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_cliente)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_personal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,62 +96,38 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.label25);
-            this.panel1.Controls.Add(this.fecha_ingreso_personal);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.estado_civil_personal);
             this.panel1.Controls.Add(this.fecha_nac_personal);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.apellido_personal);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.nombre_personal);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(115, 77);
+            this.panel1.Location = new System.Drawing.Point(115, 96);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(425, 145);
+            this.panel1.Size = new System.Drawing.Size(425, 99);
             this.panel1.TabIndex = 1;
             // 
-            // fecha_ingreso_personal
+            // label26
             // 
-            this.fecha_ingreso_personal.CalendarForeColor = System.Drawing.Color.Ivory;
-            this.fecha_ingreso_personal.CalendarMonthBackground = System.Drawing.SystemColors.Info;
-            this.fecha_ingreso_personal.Location = new System.Drawing.Point(153, 89);
-            this.fecha_ingreso_personal.Name = "fecha_ingreso_personal";
-            this.fecha_ingreso_personal.Size = new System.Drawing.Size(220, 20);
-            this.fecha_ingreso_personal.TabIndex = 4;
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Red;
+            this.label26.Location = new System.Drawing.Point(380, 40);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(15, 20);
+            this.label26.TabIndex = 8;
+            this.label26.Text = "*";
             // 
-            // label6
+            // label25
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(37, 89);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Fecha de ingreso:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(38, 117);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 13);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Estado civil: ";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // estado_civil_personal
-            // 
-            this.estado_civil_personal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.estado_civil_personal.FormattingEnabled = true;
-            this.estado_civil_personal.Items.AddRange(new object[] {
-            "Soltero (a)",
-            "Casado (a)",
-            "Viudo (a)",
-            "Divorciado (a)"});
-            this.estado_civil_personal.Location = new System.Drawing.Point(153, 115);
-            this.estado_civil_personal.Name = "estado_civil_personal";
-            this.estado_civil_personal.Size = new System.Drawing.Size(107, 21);
-            this.estado_civil_personal.TabIndex = 5;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(380, 14);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(15, 20);
+            this.label25.TabIndex = 7;
+            this.label25.Text = "*";
             // 
             // fecha_nac_personal
             // 
@@ -212,7 +184,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(134, 70);
+            this.label1.Location = new System.Drawing.Point(134, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 13);
             this.label1.TabIndex = 0;
@@ -222,17 +194,28 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.foto_personal);
-            this.panel2.Location = new System.Drawing.Point(13, 78);
+            this.panel2.Controls.Add(this.foto_cliente);
+            this.panel2.Location = new System.Drawing.Point(13, 74);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(96, 123);
             this.panel2.TabIndex = 2;
+            // 
+            // foto_cliente
+            // 
+            this.foto_cliente.BackColor = System.Drawing.Color.White;
+            this.foto_cliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.foto_cliente.Location = new System.Drawing.Point(4, 8);
+            this.foto_cliente.Name = "foto_cliente";
+            this.foto_cliente.Size = new System.Drawing.Size(87, 108);
+            this.foto_cliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.foto_cliente.TabIndex = 0;
+            this.foto_cliente.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 69);
+            this.label2.Location = new System.Drawing.Point(25, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 3;
@@ -559,35 +542,13 @@
             // foto_btn_personal
             // 
             this.foto_btn_personal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foto_btn_personal.Location = new System.Drawing.Point(14, 199);
+            this.foto_btn_personal.Location = new System.Drawing.Point(12, 198);
             this.foto_btn_personal.Name = "foto_btn_personal";
             this.foto_btn_personal.Size = new System.Drawing.Size(94, 25);
             this.foto_btn_personal.TabIndex = 9;
             this.foto_btn_personal.Text = "Cambiar foto";
             this.foto_btn_personal.UseVisualStyleBackColor = true;
             this.foto_btn_personal.Click += new System.EventHandler(this.foto_btn_personal_Click);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(380, 14);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(15, 20);
-            this.label25.TabIndex = 7;
-            this.label25.Text = "*";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(380, 40);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(15, 20);
-            this.label26.TabIndex = 8;
-            this.label26.Text = "*";
             // 
             // label27
             // 
@@ -641,17 +602,6 @@
             this.guardar_btn_personal.UseVisualStyleBackColor = true;
             this.guardar_btn_personal.Click += new System.EventHandler(this.guardar_btn_personal_Click);
             // 
-            // foto_personal
-            // 
-            this.foto_personal.BackColor = System.Drawing.Color.White;
-            this.foto_personal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.foto_personal.Location = new System.Drawing.Point(4, 6);
-            this.foto_personal.Name = "foto_personal";
-            this.foto_personal.Size = new System.Drawing.Size(87, 108);
-            this.foto_personal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.foto_personal.TabIndex = 0;
-            this.foto_personal.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -690,13 +640,13 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_cliente)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_personal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -705,11 +655,8 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox foto_personal;
+        private System.Windows.Forms.PictureBox foto_cliente;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker fecha_ingreso_personal;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox estado_civil_personal;
         private System.Windows.Forms.DateTimePicker fecha_nac_personal;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox apellido_personal;
@@ -728,7 +675,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox num_tel_personal;
         private System.Windows.Forms.TextBox num_cel_personal;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox autorizacion_personal;
         private System.Windows.Forms.Label label22;

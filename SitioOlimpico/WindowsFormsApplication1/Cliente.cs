@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class personal : Form
+    public partial class cliente : Form
     {
         public OpenFileDialog BuscarImagen;
         public Boolean foto = false;
         public String nombre_archivo = "sin_foto", rutadestino = @"C:\\sitioOlimpicoPics", formato;
         ConexionBD Bdatos = new ConexionBD();
 
-        public personal(int forma)
+        public cliente(int forma)
         {
             InitializeComponent();
 
@@ -28,10 +28,8 @@ namespace WindowsFormsApplication1
             else
                 editar_btn_personal.Visible = true;
 
-            this.foto_personal.Image = Properties.Resources.sin_foto;
-            foto_personal.SizeMode = PictureBoxSizeMode.StretchImage;
-            estado_civil_personal.SelectedIndex = 0;
-            autorizacion_personal.SelectedIndex = 0;
+            this.foto_cliente.Image = Properties.Resources.sin_foto;
+            foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -52,9 +50,9 @@ namespace WindowsFormsApplication1
                 /// Si esto se cumple, capturamos la propiedad File Name y la guardamos en el control
                 String Direccion = BuscarImagen.FileName;
 
-                this.foto_personal.ImageLocation = Direccion;
+                this.foto_cliente.ImageLocation = Direccion;
                 //Pueden usar tambien esta forma para cargar la Imagen solo activenla y comenten la linea donde se cargaba anteriormente 
-                foto_personal.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
                 foto = true;
             }         
         }
@@ -65,8 +63,8 @@ namespace WindowsFormsApplication1
            // MessageBox.Show(System.Environment.GetFolderPath(System.Environment.SpecialFolder.ProgramFiles));
             
             //VERIFICA SI ESTAN LLENOS LOS CAMPOS DE NOMBRE Y APELLIDO.
-            if (nombre_personal.Text.CompareTo("") == 0 ||
-                apellido_personal.Text.CompareTo("") == 0)
+            if (nombre_cliente.Text.CompareTo("") == 0 ||
+                apellido_cliente.Text.CompareTo("") == 0)
             {
                 MessageBox.Show("Los campos de nombre y apellido son obligatorios",
                     "LLene los campos obligatorios",
@@ -94,7 +92,7 @@ namespace WindowsFormsApplication1
             nombre_archivo = DateTime.Now.Day + "-"
                 + DateTime.Now.Month + "-" + DateTime.Now.Year + "-"
                 + DateTime.Now.Hour + "-" + DateTime.Now.Minute + "-"
-                + DateTime.Now.Second + "-" + nombre_personal.Text.Replace(" ","");
+                + DateTime.Now.Second + "-" + nombre_cliente.Text.Replace(" ","");
             String archivoDestino = System.IO.Path.Combine(rutadestino, nombre_archivo + "." + formato);
 
             if (!Directory.Exists(rutadestino))
@@ -105,8 +103,8 @@ namespace WindowsFormsApplication1
             if (File.Exists(archivoDestino))
                 File.Delete(archivoDestino);
             File.Copy(archivoorigen, archivoDestino, true);
-            this.foto_personal.ImageLocation = archivoDestino;
-            foto_personal.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.foto_cliente.ImageLocation = archivoDestino;
+            foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         public void guardarPersonal()
@@ -114,18 +112,17 @@ namespace WindowsFormsApplication1
             Bdatos.conexion();
 
             //INSERTA DATOS
-            if (Bdatos.peticion("insert into personal (nombre,apellido,foto,"+
+         /*   if (Bdatos.peticion("insert into personal (nombre,apellido,foto,"+
                 "fecha_ingreso,fecha_nacimiento,telefono,numero_cel,estado_civil,"+
                 "colonia,calle,numero_int,numero_ext,codigo_postal,ciudad,estado,"+
                 "referencias,nivel_autorizacion,horario,eliminado)"+
-                "values('" + nombre_personal.Text + 
-                "','" + apellido_personal.Text + 
+                "values('" + nombre_cliente.Text + 
+                "','" + apellido_cliente.Text + 
                 "','" + nombre_archivo+"."+formato + 
                 "','" + fecha_ingreso_personal.Value.ToString("yyyy-MM-dd") + 
-                "','" + fecha_nac_personal.Value.ToString("yyyy-MM-dd")+
+                "','" + fecha_nac_cliente.Value.ToString("yyyy-MM-dd")+
                 "','" + num_tel_personal.Text+
                 "','" + num_cel_personal.Text+
-                "','" + estado_civil_personal.Text+
                 "','" + colonia_personal.Text+
                 "','" + calle_personal.Text+
                 "','" + num_int_personal.Text+
@@ -141,21 +138,19 @@ namespace WindowsFormsApplication1
                 //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
                 borrarCampos();
                 MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            }*/
 
             Bdatos.Desconectar();
         }
 
         public void borrarCampos()
         {
-            nombre_personal.Text = "";
-            apellido_personal.Text = "";
+          /*  nombre_cliente.Text = "";
+            apellido_cliente.Text = "";
             nombre_archivo = "sin_foto";
-            fecha_ingreso_personal.Value = DateTime.Now;
-            fecha_nac_personal.Value = DateTime.Now;
+            fecha_nac_cliente.Value = DateTime.Now;
             num_tel_personal.Text = "";
             num_cel_personal.Text = "";
-            estado_civil_personal.SelectedIndex = 0;
             colonia_personal.Text = "";
             calle_personal.Text = "";
             num_int_personal.Text = "";
@@ -170,12 +165,22 @@ namespace WindowsFormsApplication1
 
             this.foto_personal.ImageLocation = null;
             this.foto_personal.Image = Properties.Resources.sin_foto;
-            foto_personal.SizeMode = PictureBoxSizeMode.StretchImage;
+            foto_personal.SizeMode = PictureBoxSizeMode.StretchImage;*/
         }
 
         private void cancelar_btn_personal_Click(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        private void foto_personal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
