@@ -6,7 +6,6 @@ C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\bin\Debug\
 C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\SitioOlimpico.csprojResolveAssemblyReference.cache
 C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.SitioOlimpico.resources
 C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.llamadaentrante.resources
-C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\SitioOlimpico.Properties.Resources.resources
 C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\SitioOlimpico.csproj.GenerateResource.Cache
 C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\Sistema para el Control del Sitio Olimpico.exe
 C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\Sistema para el Control del Sitio Olimpico.pdb
@@ -20,4 +19,11 @@ C:\Users\Simpus\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\W
 C:\Users\Simpus\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.llamadaentrante.resources
 C:\Users\Simpus\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\SitioOlimpico.Properties.Resources.resources
 C:\Users\Simpus\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\SitioOlimpico.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 C:\Users\Simpus\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\SitioOlimpico.personal.resources
+=======
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.acercade.resources
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.personal.resources
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Alfonso\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.configuracion.resources
+>>>>>>> 3738bcfc90ee0abf3fadf1f48b8a8457bc73e1b7

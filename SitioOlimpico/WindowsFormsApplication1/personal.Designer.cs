@@ -1,4 +1,4 @@
-﻿namespace SitioOlimpico
+﻿namespace WindowsFormsApplication1
 {
     partial class personal
     {

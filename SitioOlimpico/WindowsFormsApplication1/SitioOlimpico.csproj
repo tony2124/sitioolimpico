@@ -7,10 +7,11 @@
     <ProjectGuid>{2F8D603F-0D86-4305-90E3-4A19A56259C6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SitioOlimpico</RootNamespace>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
     <AssemblyName>Sistema para el Control del Sitio Olimpico</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publicar\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -66,8 +66,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="acercade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acercade.designer.cs">
+      <DependentUpon>acercade.cs</DependentUpon>
+    </Compile>
     <Compile Include="CallerID.cs" />
+<<<<<<< HEAD
     <Compile Include="ConexionBD.cs" />
+=======
+    <Compile Include="configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="configuracion.Designer.cs">
+      <DependentUpon>configuracion.cs</DependentUpon>
+    </Compile>
+>>>>>>> 3738bcfc90ee0abf3fadf1f48b8a8457bc73e1b7
     <Compile Include="personal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +103,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="acercade.resx">
+      <DependentUpon>acercade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="configuracion.resx">
+      <DependentUpon>configuracion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="personal.resx">
       <DependentUpon>personal.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +178,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SERVICIO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUSCARUNIDAD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ESTADISTICA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RESPALDO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CONFIGURACION.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SALIR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GUARDAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GUARDAR2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CANCELAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MODIFICAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LUPA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_simpus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twitter_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtube_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ENCABEZADO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ENCABEZADO1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
