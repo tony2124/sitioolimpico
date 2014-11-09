@@ -63,13 +63,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-=======
->>>>>>> 3738bcfc90ee0abf3fadf1f48b8a8457bc73e1b7
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -393,54 +386,7 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Último inicio de sesión:";
             // 
-<<<<<<< HEAD
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(401, 53);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 84);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Estadística";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(531, 53);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(122, 84);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Respaldar Información";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(661, 53);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(122, 84);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Configuración";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(791, 53);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(122, 84);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Salir";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(115, 166);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(532, 24);
-=======
+
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -448,24 +394,18 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(532, 41);
->>>>>>> 3738bcfc90ee0abf3fadf1f48b8a8457bc73e1b7
+
             this.textBox1.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-<<<<<<< HEAD
-            this.label1.Location = new System.Drawing.Point(30, 170);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 18);
-=======
+
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 166);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 25);
->>>>>>> 3738bcfc90ee0abf3fadf1f48b8a8457bc73e1b7
             this.label1.TabIndex = 10;
             this.label1.Text = "BUSCAR";
             // 
@@ -637,12 +577,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1284, 594);
-=======
+
             this.ClientSize = new System.Drawing.Size(1370, 594);
             this.Controls.Add(this.button8);
->>>>>>> 3738bcfc90ee0abf3fadf1f48b8a8457bc73e1b7
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label1);

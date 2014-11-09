@@ -73,16 +73,13 @@
       <DependentUpon>acercade.cs</DependentUpon>
     </Compile>
     <Compile Include="CallerID.cs" />
-<<<<<<< HEAD
     <Compile Include="ConexionBD.cs" />
-=======
     <Compile Include="configuracion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="configuracion.Designer.cs">
       <DependentUpon>configuracion.cs</DependentUpon>
     </Compile>
->>>>>>> 3738bcfc90ee0abf3fadf1f48b8a8457bc73e1b7
     <Compile Include="personal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,9 +102,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="acercade.resx">
       <DependentUpon>acercade.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="configuracion.resx">
       <DependentUpon>configuracion.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="personal.resx">
       <DependentUpon>personal.cs</DependentUpon>

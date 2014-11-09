@@ -32,12 +32,12 @@ namespace WindowsFormsApplication1
             obj.terminar = true;
         }
 
-<<<<<<< HEAD
+
         private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             personal p = new personal();
             p.ShowDialog();
-=======
+        }
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -77,7 +77,7 @@ namespace WindowsFormsApplication1
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new acercade().ShowDialog();
->>>>>>> 3738bcfc90ee0abf3fadf1f48b8a8457bc73e1b7
+
         }
     }
 }
