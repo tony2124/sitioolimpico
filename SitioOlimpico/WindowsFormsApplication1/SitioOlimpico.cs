@@ -31,5 +31,11 @@ namespace WindowsFormsApplication1
         {
             obj.terminar = true;
         }
+
+        private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            personal p = new personal();
+            p.ShowDialog();
+        }
     }
 }

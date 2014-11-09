@@ -20,3 +20,4 @@ C:\Users\Simpus\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\W
 C:\Users\Simpus\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.llamadaentrante.resources
 C:\Users\Simpus\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\SitioOlimpico.Properties.Resources.resources
 C:\Users\Simpus\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\SitioOlimpico.csproj.GenerateResource.Cache
+C:\Users\Simpus\Desktop\taxis\SitioOlimpico\WindowsFormsApplication1\obj\Debug\SitioOlimpico.personal.resources
