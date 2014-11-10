@@ -16,17 +16,21 @@ namespace WindowsFormsApplication1
     {
         public OpenFileDialog BuscarImagen;
         public Boolean foto = false;
-        public String nombre_archivo = "sin_foto", rutadestino = @"C:\\sitioOlimpicoPics", formato;
+        public String nombre_archivo = "sin_foto", rutadestino = @"C:\\sitioOlimpicoPics\\clientes", formato;
+        public string num_tel = "";
         ConexionBD Bdatos = new ConexionBD();
 
-        public cliente(int forma)
+        public cliente(string forma)
         {
             InitializeComponent();
 
-            if (forma == 0)
+            if (forma.Length > 0)
                 editar_btn_personal.Visible = false;
             else
                 editar_btn_personal.Visible = true;
+
+            num_tel = forma;
+            num_tel_1_cliente.Text = forma;
 
             this.foto_cliente.Image = Properties.Resources.sin_foto;
             foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -78,7 +82,21 @@ namespace WindowsFormsApplication1
                     guardarfoto();
                 }
 
-                guardarPersonal();
+                 DialogResult result;
+                 if (unidad_servicio.Text.CompareTo("") == 0)//VERIFICAMOS SI EL CAMPO DE UNIDAD NO TIENE DATOS
+                 {
+                     result = MessageBox.Show("No has llenado el campo de unidad para hacer el servicio. ¿Deseas guardar el cliente sin guardar el servicio?",
+                            "¿Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                     if (result == DialogResult.Yes)
+                     {//GUARDA EL CLIENTE SIN REALIZAR NINGUN SERVICIO
+                         guardarPersonal();
+                     }
+                 }
+                 else//SI EL CAMPO DE UNIDAD TIENE DATOS: Guardamos el servicio junto con los datos del cliente
+                 {
+
+                 }
 
             }
             
@@ -109,63 +127,80 @@ namespace WindowsFormsApplication1
 
         public void guardarPersonal()
         {
-            Bdatos.conexion();
 
-            //INSERTA DATOS
-         /*   if (Bdatos.peticion("insert into personal (nombre,apellido,foto,"+
-                "fecha_ingreso,fecha_nacimiento,telefono,numero_cel,estado_civil,"+
-                "colonia,calle,numero_int,numero_ext,codigo_postal,ciudad,estado,"+
-                "referencias,nivel_autorizacion,horario,eliminado)"+
-                "values('" + nombre_cliente.Text + 
-                "','" + apellido_cliente.Text + 
-                "','" + nombre_archivo+"."+formato + 
-                "','" + fecha_ingreso_personal.Value.ToString("yyyy-MM-dd") + 
-                "','" + fecha_nac_cliente.Value.ToString("yyyy-MM-dd")+
-                "','" + num_tel_personal.Text+
-                "','" + num_cel_personal.Text+
-                "','" + colonia_personal.Text+
-                "','" + calle_personal.Text+
-                "','" + num_int_personal.Text+
-                "','" + num_ext_personal.Text+
-                "','" + cp_personal.Text+
-                "','" + ciudad_personal.Text+
-                "','" + estado_personal.Text+
-                "','" + ref_personal.Text+
-                "','" + autorizacion_personal.SelectedIndex+
-                "','" + horario_personal.Text+
-                "',0)") > 0)
-            {
-                //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
-                borrarCampos();
-                MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }*/
+                    Bdatos.conexion();
 
-            Bdatos.Desconectar();
+                    //GENERO EL ID
+                    String id = generarId();
+                    //INSERTA DATOS
+                    if (Bdatos.peticion("insert into clientes (id_cliente,nombre,apellido,fecha_nacimiento, foto," +
+                        "numero_tel_1,numero_tel_2,numero_tel_3,numero_cel,correo_electronico," +
+                        "colonia,calle,numero_int,numero_ext,codigo_postal,ciudad,estado," +
+                        "referencias,eliminado)" +
+                        "values('" + id + "','" + nombre_cliente.Text +
+                        "','" + apellido_cliente.Text +
+                        "','" + fecha_nac_cliente.Value.ToString("yyyy-MM-dd") +
+                        "','" + nombre_archivo + "." + formato +
+                        "','" + num_tel_1_cliente.Text +
+                        "','" + num_tel_2_cliente.Text +
+                        "','" + num_tel_3_cliente.Text +
+                        "','" + num_cel_cliente.Text +
+                        "','" + email_cliente.Text +
+                        "','" + colonia_cliente.Text +
+                        "','" + calle_cliente.Text +
+                        "','" + num_int_cliente.Text +
+                        "','" + num_ext_cliente.Text +
+                        "','" + cp_cliente.Text +
+                        "','" + ciudad_cliente.Text +
+                        "','" + estado_cliente.Text +
+                        "','" + ref_cliente.Text +
+                        "',0)") > 0)
+                    {
+                        //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
+                        borrarCampos();
+                        MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    Bdatos.Desconectar();
+                
+            
+        }
+
+        public String generarId()
+        {
+            return DateTime.Now.Year
+                + "" + DateTime.Now.Month 
+                + "" + DateTime.Now.Day
+                + "" + DateTime.Now.Hour
+                + "" + DateTime.Now.Minute
+                + "" + DateTime.Now.Second
+                + "" + DateTime.Now.Millisecond + "";
         }
 
         public void borrarCampos()
         {
-          /*  nombre_cliente.Text = "";
+            nombre_cliente.Text = "";
             apellido_cliente.Text = "";
             nombre_archivo = "sin_foto";
             fecha_nac_cliente.Value = DateTime.Now;
-            num_tel_personal.Text = "";
-            num_cel_personal.Text = "";
-            colonia_personal.Text = "";
-            calle_personal.Text = "";
-            num_int_personal.Text = "";
-            num_ext_personal.Text = "";
-            cp_personal.Text = "";
-            ciudad_personal.Text = "";
-            estado_personal.Text = "";
-            ref_personal.Text = "";
-            autorizacion_personal.SelectedIndex = 0;
-            horario_personal.Text = "";
+            num_tel_1_cliente.Text = "";
+            num_tel_2_cliente.Text = "";
+            num_tel_3_cliente.Text = "";
+            num_cel_cliente.Text = "";
+            email_cliente.Text = "";
+            colonia_cliente.Text = "";
+            calle_cliente.Text = "";
+            num_int_cliente.Text = "";
+            num_ext_cliente.Text = "";
+            cp_cliente.Text = "";
+            ciudad_cliente.Text = "";
+            estado_cliente.Text = "";
+            ref_cliente.Text = "";
             foto = false;
 
-            this.foto_personal.ImageLocation = null;
-            this.foto_personal.Image = Properties.Resources.sin_foto;
-            foto_personal.SizeMode = PictureBoxSizeMode.StretchImage;*/
+            this.foto_cliente.ImageLocation = null;
+            this.foto_cliente.Image = Properties.Resources.sin_foto;
+            foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void cancelar_btn_personal_Click(object sender, EventArgs e)

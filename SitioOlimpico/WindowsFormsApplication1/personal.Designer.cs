@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.fecha_ingreso_personal = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -41,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.foto_personal = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.horario_personal = new System.Windows.Forms.TextBox();
@@ -75,22 +78,19 @@
             this.num_cel_personal = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.foto_btn_personal = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.cancelar_btn_personal = new System.Windows.Forms.Button();
             this.editar_btn_personal = new System.Windows.Forms.Button();
             this.guardar_btn_personal = new System.Windows.Forms.Button();
-            this.foto_personal = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.encabezado_personal = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_personal)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_personal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.encabezado_personal)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -114,6 +114,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(425, 145);
             this.panel1.TabIndex = 1;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Red;
+            this.label26.Location = new System.Drawing.Point(380, 40);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(15, 20);
+            this.label26.TabIndex = 8;
+            this.label26.Text = "*";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(380, 14);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(15, 20);
+            this.label25.TabIndex = 7;
+            this.label25.Text = "*";
             // 
             // fecha_ingreso_personal
             // 
@@ -177,6 +199,7 @@
             // apellido_personal
             // 
             this.apellido_personal.BackColor = System.Drawing.Color.Ivory;
+            this.apellido_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.apellido_personal.Location = new System.Drawing.Point(107, 36);
             this.apellido_personal.Name = "apellido_personal";
             this.apellido_personal.Size = new System.Drawing.Size(266, 20);
@@ -194,6 +217,7 @@
             // nombre_personal
             // 
             this.nombre_personal.BackColor = System.Drawing.Color.Ivory;
+            this.nombre_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nombre_personal.Location = new System.Drawing.Point(107, 10);
             this.nombre_personal.Name = "nombre_personal";
             this.nombre_personal.Size = new System.Drawing.Size(266, 20);
@@ -228,6 +252,17 @@
             this.panel2.Size = new System.Drawing.Size(96, 123);
             this.panel2.TabIndex = 2;
             // 
+            // foto_personal
+            // 
+            this.foto_personal.BackColor = System.Drawing.Color.White;
+            this.foto_personal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.foto_personal.Location = new System.Drawing.Point(4, 6);
+            this.foto_personal.Name = "foto_personal";
+            this.foto_personal.Size = new System.Drawing.Size(87, 108);
+            this.foto_personal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.foto_personal.TabIndex = 0;
+            this.foto_personal.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -257,6 +292,7 @@
             // 
             // horario_personal
             // 
+            this.horario_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.horario_personal.Location = new System.Drawing.Point(296, 202);
             this.horario_personal.Multiline = true;
             this.horario_personal.Name = "horario_personal";
@@ -335,6 +371,7 @@
             // 
             // ref_personal
             // 
+            this.ref_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ref_personal.Location = new System.Drawing.Point(74, 167);
             this.ref_personal.Multiline = true;
             this.ref_personal.Name = "ref_personal";
@@ -353,6 +390,7 @@
             // estado_personal
             // 
             this.estado_personal.BackColor = System.Drawing.Color.Ivory;
+            this.estado_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.estado_personal.Location = new System.Drawing.Point(71, 135);
             this.estado_personal.Name = "estado_personal";
             this.estado_personal.Size = new System.Drawing.Size(205, 20);
@@ -370,6 +408,7 @@
             // ciudad_personal
             // 
             this.ciudad_personal.BackColor = System.Drawing.Color.Ivory;
+            this.ciudad_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ciudad_personal.Location = new System.Drawing.Point(71, 109);
             this.ciudad_personal.Name = "ciudad_personal";
             this.ciudad_personal.Size = new System.Drawing.Size(205, 20);
@@ -387,6 +426,7 @@
             // cp_personal
             // 
             this.cp_personal.BackColor = System.Drawing.Color.Ivory;
+            this.cp_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cp_personal.Location = new System.Drawing.Point(193, 70);
             this.cp_personal.Name = "cp_personal";
             this.cp_personal.Size = new System.Drawing.Size(83, 20);
@@ -404,6 +444,7 @@
             // num_ext_personal
             // 
             this.num_ext_personal.BackColor = System.Drawing.Color.Ivory;
+            this.num_ext_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.num_ext_personal.Location = new System.Drawing.Point(70, 83);
             this.num_ext_personal.Name = "num_ext_personal";
             this.num_ext_personal.Size = new System.Drawing.Size(62, 20);
@@ -421,6 +462,7 @@
             // num_int_personal
             // 
             this.num_int_personal.BackColor = System.Drawing.Color.Ivory;
+            this.num_int_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.num_int_personal.Location = new System.Drawing.Point(71, 57);
             this.num_int_personal.Name = "num_int_personal";
             this.num_int_personal.Size = new System.Drawing.Size(64, 20);
@@ -438,6 +480,7 @@
             // calle_personal
             // 
             this.calle_personal.BackColor = System.Drawing.Color.Ivory;
+            this.calle_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.calle_personal.Location = new System.Drawing.Point(50, 32);
             this.calle_personal.Name = "calle_personal";
             this.calle_personal.Size = new System.Drawing.Size(226, 20);
@@ -455,6 +498,7 @@
             // colonia_personal
             // 
             this.colonia_personal.BackColor = System.Drawing.Color.Ivory;
+            this.colonia_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.colonia_personal.Location = new System.Drawing.Point(50, 6);
             this.colonia_personal.Name = "colonia_personal";
             this.colonia_personal.Size = new System.Drawing.Size(226, 20);
@@ -533,6 +577,7 @@
             // num_tel_personal
             // 
             this.num_tel_personal.BackColor = System.Drawing.Color.Ivory;
+            this.num_tel_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.num_tel_personal.Location = new System.Drawing.Point(73, 14);
             this.num_tel_personal.Name = "num_tel_personal";
             this.num_tel_personal.Size = new System.Drawing.Size(137, 20);
@@ -541,6 +586,7 @@
             // num_cel_personal
             // 
             this.num_cel_personal.BackColor = System.Drawing.Color.Ivory;
+            this.num_cel_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.num_cel_personal.Location = new System.Drawing.Point(73, 48);
             this.num_cel_personal.Name = "num_cel_personal";
             this.num_cel_personal.Size = new System.Drawing.Size(137, 20);
@@ -566,28 +612,6 @@
             this.foto_btn_personal.Text = "Cambiar foto";
             this.foto_btn_personal.UseVisualStyleBackColor = true;
             this.foto_btn_personal.Click += new System.EventHandler(this.foto_btn_personal_Click);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(380, 14);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(15, 20);
-            this.label25.TabIndex = 7;
-            this.label25.Text = "*";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(380, 40);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(15, 20);
-            this.label26.TabIndex = 8;
-            this.label26.Text = "*";
             // 
             // label27
             // 
@@ -641,25 +665,16 @@
             this.guardar_btn_personal.UseVisualStyleBackColor = true;
             this.guardar_btn_personal.Click += new System.EventHandler(this.guardar_btn_personal_Click);
             // 
-            // foto_personal
+            // encabezado_personal
             // 
-            this.foto_personal.BackColor = System.Drawing.Color.White;
-            this.foto_personal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.foto_personal.Location = new System.Drawing.Point(4, 6);
-            this.foto_personal.Name = "foto_personal";
-            this.foto_personal.Size = new System.Drawing.Size(87, 108);
-            this.foto_personal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.foto_personal.TabIndex = 0;
-            this.foto_personal.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(554, 60);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.encabezado_personal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.encabezado_personal.ErrorImage = null;
+            this.encabezado_personal.Image = global::WindowsFormsApplication1.Properties.Resources.PERSONAL_ENCABEZADO;
+            this.encabezado_personal.Location = new System.Drawing.Point(-1, 0);
+            this.encabezado_personal.Name = "encabezado_personal";
+            this.encabezado_personal.Size = new System.Drawing.Size(554, 60);
+            this.encabezado_personal.TabIndex = 12;
+            this.encabezado_personal.TabStop = false;
             // 
             // personal
             // 
@@ -668,7 +683,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(552, 620);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.encabezado_personal);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.foto_btn_personal);
@@ -690,14 +705,14 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_personal)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_personal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.encabezado_personal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -760,6 +775,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox encabezado_personal;
     }
 }

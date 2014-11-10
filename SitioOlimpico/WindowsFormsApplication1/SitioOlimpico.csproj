@@ -237,6 +237,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sin_foto.jpg" />
+    <None Include="Resources\PERSONAL_ENCABEZADO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar_servicio.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

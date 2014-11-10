@@ -58,7 +58,7 @@ namespace WindowsFormsApplication1
 
         public static void metodo()
         {
-            llamadaentrante obj = new llamadaentrante(data);
+            cliente obj = new cliente(data);
             obj.ShowDialog();
         }
 
@@ -67,8 +67,6 @@ namespace WindowsFormsApplication1
             int baud = 115200;
 
             InitializeComPort(port, baud);
-
-            string text;
 
             //ACTIVAR IDENTIFICADOR DE LLAMADAS
             String ComandoATID;

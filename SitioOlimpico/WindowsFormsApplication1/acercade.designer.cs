@@ -102,7 +102,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 146);
+            this.label4.Location = new System.Drawing.Point(9, 173);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(478, 59);
             this.label4.TabIndex = 8;
@@ -112,7 +112,7 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(9, 215);
+            this.linkLabel2.Location = new System.Drawing.Point(9, 235);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(100, 13);
             this.linkLabel2.TabIndex = 9;
@@ -162,7 +162,7 @@
             this.pictureBox1.InitialImage = global::WindowsFormsApplication1.Properties.Resources.logo_simpus;
             this.pictureBox1.Location = new System.Drawing.Point(12, 22);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(147, 148);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 

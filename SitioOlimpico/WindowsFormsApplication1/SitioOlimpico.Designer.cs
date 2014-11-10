@@ -74,6 +74,7 @@
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -97,7 +98,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1370, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -127,6 +128,7 @@
             this.respaldoDeBDToolStripMenuItem.Name = "respaldoDeBDToolStripMenuItem";
             this.respaldoDeBDToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
             this.respaldoDeBDToolStripMenuItem.Text = "Respaldo de BD";
+            this.respaldoDeBDToolStripMenuItem.Click += new System.EventHandler(this.respaldoDeBDToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -208,6 +210,7 @@
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // serviciosToolStripMenuItem
             // 
@@ -413,7 +416,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 572);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1284, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1370, 22);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -575,7 +578,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(1284, 594);
+            this.ClientSize = new System.Drawing.Size(1370, 594);
+
             this.Controls.Add(this.button8);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.statusStrip1);
@@ -664,6 +668,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

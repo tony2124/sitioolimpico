@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
     {
         public OpenFileDialog BuscarImagen;
         public Boolean foto = false;
-        public String nombre_archivo = "sin_foto", rutadestino = @"C:\\sitioOlimpicoPics", formato;
+        public String nombre_archivo = "sin_foto", rutadestino = @"C:\\sitioOlimpicoPics\\personal", formato;
         ConexionBD Bdatos = new ConexionBD();
 
         public personal(int forma)
@@ -32,6 +32,8 @@ namespace WindowsFormsApplication1
             foto_personal.SizeMode = PictureBoxSizeMode.StretchImage;
             estado_civil_personal.SelectedIndex = 0;
             autorizacion_personal.SelectedIndex = 0;
+            encabezado_personal.Image = Properties.Resources.PERSONAL_ENCABEZADO;
+            encabezado_personal.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void label10_Click(object sender, EventArgs e)

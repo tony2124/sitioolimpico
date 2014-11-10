@@ -12,60 +12,35 @@ namespace SitioOlimpico
     class ConexionBD
     {
         public static string usuario, contrasena, basedatos, host, puerto;
-        public static bool carga_datos_desde_archivo = false, form = true, exit = false;
+        public static bool exit = false;
         public static string conex;
         public static MySqlConnection conexionBD;
 
-        public void verificarDirectorio(string dir)
-        {
-            if (!Directory.Exists(dir))
-                Directory.CreateDirectory(dir);
-                
-        }
-
-        public ConexionBD(string h, string u, string pass, string port, string bd)
-        {
-            host = h;
-            usuario = u;
-            contrasena = pass;
-            puerto = port;
-            basedatos = bd;
-            
-        }
-
         public ConexionBD()
         {
-            if (!carga_datos_desde_archivo && form)
-            {
-                host = "localhost";
-                usuario = "root";
-                contrasena = "UwBJAE0AUABVAFMAMgAxADIANAA=";
-                puerto = "3306";
-                basedatos = "sitioolimpico";
-            }
-            verificarDirectorio("C:/sitioOlimpicoPics");
+            host = "192.168.0.103";
+            usuario = "root";
+            contrasena = "simpus2124";
+            puerto = "3306";
+            basedatos = "sitioolimpico";
         }
 
         public void conexion()
         {
             try
             {
-                conex = "server="+host+"; port="+puerto+"; user id=" + usuario + "; password=simpus2124; database="+basedatos+";";
+                conex = "server=" + host + "; port=" + puerto + "; user id=" + usuario + "; password= " + contrasena + "; database=" + basedatos + ";";
                 conexionBD = new MySqlConnection(conex);
                 conexionBD.Open();
-                //form = true;
             }
             catch (MySqlException ex)
             {
-                if(form)
-                    MessageBox.Show("Error al conectar a la base de datos de MySQL: \nDETALLES DEL ERROR: " + ex.Message, "Error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               // carga_desde_archivo();
+                MessageBox.Show("Error al conectar a la base de datos de MySQL: \nDETALLES DEL ERROR: " + ex.Message, "Error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         public static string DesEncriptar(string _cadenaAdesencriptar)
         {
-            
             string result = string.Empty;
             try
             {
@@ -75,43 +50,6 @@ namespace SitioOlimpico
             catch (Exception e) { }
             return result;
         }
-
-      /*  public void carga_desde_archivo()
-        {
-            if (!carga_datos_desde_archivo)
-            {
-                carga_datos_desde_archivo = true;
-
-                if (File.Exists(@"C:\DOCSParroquia\informacion.txt"))
-                {
-                    /** OBTENER LA INFORMACIÓN DEL ARCHIVO **/
-                   /* string line, archivo = "";
-                    StreamReader file = new StreamReader(@"C:\DOCSParroquia\informacion.txt");
-                    while ((line = file.ReadLine()) != null)
-                    {
-                        archivo += line;
-                    }
-
-                    string[] caracteres = archivo.Split(' ');
-                    host = caracteres[0];
-                    usuario = caracteres[1];
-                    contrasena = caracteres[2];
-                    puerto = caracteres[3];
-                    basedatos = caracteres[4];
-                    file.Close();
-                }
-                conexion();
-            }
-            else
-            {
-                carga_datos_desde_archivo = false;
-                if (!exit)
-                {
-                   // new DatosConexionDB().ShowDialog();
-                    conexion();
-                }
-            }
-        }*/
 
         public MySqlDataReader obtenerBasesDatosMySQL(String consulta)
         {

@@ -39,15 +39,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.foto_cliente = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.foto_btn_personal = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.cancelar_btn_personal = new System.Windows.Forms.Button();
-            this.editar_btn_personal = new System.Windows.Forms.Button();
-            this.guardar_btn_personal = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -80,25 +75,32 @@
             this.num_tel_1_cliente = new System.Windows.Forms.TextBox();
             this.num_tel_2_cliente = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.descripcion_servicio = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.unidad_servicio = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.agregar_btn_servicio = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.editar_btn_personal = new System.Windows.Forms.Button();
+            this.cancelar_btn_personal = new System.Windows.Forms.Button();
+            this.guardar_btn_personal = new System.Windows.Forms.Button();
+            this.foto_cliente = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_cliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_cliente)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -161,6 +163,7 @@
             // apellido_cliente
             // 
             this.apellido_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.apellido_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.apellido_cliente.Location = new System.Drawing.Point(84, 36);
             this.apellido_cliente.Name = "apellido_cliente";
             this.apellido_cliente.Size = new System.Drawing.Size(266, 20);
@@ -178,6 +181,7 @@
             // nombre_cliente
             // 
             this.nombre_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.nombre_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nombre_cliente.Location = new System.Drawing.Point(84, 10);
             this.nombre_cliente.Name = "nombre_cliente";
             this.nombre_cliente.Size = new System.Drawing.Size(266, 20);
@@ -207,28 +211,16 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.foto_cliente);
-            this.panel2.Location = new System.Drawing.Point(13, 78);
+            this.panel2.Location = new System.Drawing.Point(12, 70);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(96, 123);
             this.panel2.TabIndex = 2;
-            // 
-            // foto_cliente
-            // 
-            this.foto_cliente.BackColor = System.Drawing.Color.White;
-            this.foto_cliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.foto_cliente.Location = new System.Drawing.Point(4, 6);
-            this.foto_cliente.Name = "foto_cliente";
-            this.foto_cliente.Size = new System.Drawing.Size(87, 108);
-            this.foto_cliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.foto_cliente.TabIndex = 0;
-            this.foto_cliente.TabStop = false;
-            this.foto_cliente.Click += new System.EventHandler(this.foto_personal_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 69);
+            this.label2.Location = new System.Drawing.Point(21, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 3;
@@ -237,10 +229,10 @@
             // foto_btn_personal
             // 
             this.foto_btn_personal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foto_btn_personal.Location = new System.Drawing.Point(14, 199);
+            this.foto_btn_personal.Location = new System.Drawing.Point(13, 194);
             this.foto_btn_personal.Name = "foto_btn_personal";
             this.foto_btn_personal.Size = new System.Drawing.Size(94, 25);
-            this.foto_btn_personal.TabIndex = 9;
+            this.foto_btn_personal.TabIndex = 900;
             this.foto_btn_personal.Text = "Cambiar foto";
             this.foto_btn_personal.UseVisualStyleBackColor = true;
             this.foto_btn_personal.Click += new System.EventHandler(this.foto_btn_personal_Click);
@@ -265,47 +257,6 @@
             this.label28.TabIndex = 11;
             this.label28.Text = "Campo obligatorio";
             // 
-            // cancelar_btn_personal
-            // 
-            this.cancelar_btn_personal.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.CANCELAR;
-            this.cancelar_btn_personal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.cancelar_btn_personal.Location = new System.Drawing.Point(421, 485);
-            this.cancelar_btn_personal.Name = "cancelar_btn_personal";
-            this.cancelar_btn_personal.Size = new System.Drawing.Size(121, 92);
-            this.cancelar_btn_personal.TabIndex = 21;
-            this.cancelar_btn_personal.UseVisualStyleBackColor = true;
-            this.cancelar_btn_personal.Click += new System.EventHandler(this.cancelar_btn_personal_Click);
-            // 
-            // editar_btn_personal
-            // 
-            this.editar_btn_personal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.editar_btn_personal.Image = global::WindowsFormsApplication1.Properties.Resources.MODIFICAR;
-            this.editar_btn_personal.Location = new System.Drawing.Point(169, 485);
-            this.editar_btn_personal.Name = "editar_btn_personal";
-            this.editar_btn_personal.Size = new System.Drawing.Size(118, 92);
-            this.editar_btn_personal.TabIndex = 19;
-            this.editar_btn_personal.UseVisualStyleBackColor = true;
-            // 
-            // guardar_btn_personal
-            // 
-            this.guardar_btn_personal.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.GUARDAR2;
-            this.guardar_btn_personal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.guardar_btn_personal.Location = new System.Drawing.Point(293, 485);
-            this.guardar_btn_personal.Name = "guardar_btn_personal";
-            this.guardar_btn_personal.Size = new System.Drawing.Size(122, 92);
-            this.guardar_btn_personal.TabIndex = 20;
-            this.guardar_btn_personal.UseVisualStyleBackColor = true;
-            this.guardar_btn_personal.Click += new System.EventHandler(this.guardar_btn_personal_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(888, 60);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
@@ -314,7 +265,7 @@
             this.panel6.Controls.Add(this.panel5);
             this.panel6.Location = new System.Drawing.Point(565, 78);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(306, 270);
+            this.panel6.Size = new System.Drawing.Size(306, 435);
             this.panel6.TabIndex = 9;
             // 
             // label14
@@ -354,6 +305,7 @@
             // 
             // ref_cliente
             // 
+            this.ref_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ref_cliente.Location = new System.Drawing.Point(74, 167);
             this.ref_cliente.Multiline = true;
             this.ref_cliente.Name = "ref_cliente";
@@ -372,6 +324,7 @@
             // estado_cliente
             // 
             this.estado_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.estado_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.estado_cliente.Location = new System.Drawing.Point(71, 135);
             this.estado_cliente.Name = "estado_cliente";
             this.estado_cliente.Size = new System.Drawing.Size(205, 20);
@@ -389,6 +342,7 @@
             // ciudad_cliente
             // 
             this.ciudad_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.ciudad_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ciudad_cliente.Location = new System.Drawing.Point(71, 109);
             this.ciudad_cliente.Name = "ciudad_cliente";
             this.ciudad_cliente.Size = new System.Drawing.Size(205, 20);
@@ -406,6 +360,7 @@
             // cp_cliente
             // 
             this.cp_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.cp_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cp_cliente.Location = new System.Drawing.Point(193, 70);
             this.cp_cliente.Name = "cp_cliente";
             this.cp_cliente.Size = new System.Drawing.Size(83, 20);
@@ -423,6 +378,7 @@
             // num_ext_cliente
             // 
             this.num_ext_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.num_ext_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.num_ext_cliente.Location = new System.Drawing.Point(70, 83);
             this.num_ext_cliente.Name = "num_ext_cliente";
             this.num_ext_cliente.Size = new System.Drawing.Size(65, 20);
@@ -440,6 +396,7 @@
             // num_int_cliente
             // 
             this.num_int_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.num_int_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.num_int_cliente.Location = new System.Drawing.Point(71, 57);
             this.num_int_cliente.Name = "num_int_cliente";
             this.num_int_cliente.Size = new System.Drawing.Size(64, 20);
@@ -457,6 +414,7 @@
             // calle_cliente
             // 
             this.calle_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.calle_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.calle_cliente.Location = new System.Drawing.Point(50, 32);
             this.calle_cliente.Name = "calle_cliente";
             this.calle_cliente.Size = new System.Drawing.Size(226, 20);
@@ -474,6 +432,7 @@
             // colonia_cliente
             // 
             this.colonia_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.colonia_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.colonia_cliente.Location = new System.Drawing.Point(50, 6);
             this.colonia_cliente.Name = "colonia_cliente";
             this.colonia_cliente.Size = new System.Drawing.Size(226, 20);
@@ -513,17 +472,18 @@
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.num_tel_1_cliente);
             this.panel4.Controls.Add(this.num_tel_2_cliente);
-            this.panel4.Location = new System.Drawing.Point(565, 355);
+            this.panel4.Location = new System.Drawing.Point(576, 355);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(306, 143);
+            this.panel4.Size = new System.Drawing.Size(284, 143);
             this.panel4.TabIndex = 14;
             // 
             // email_cliente
             // 
             this.email_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.email_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.email_cliente.Location = new System.Drawing.Point(88, 113);
             this.email_cliente.Name = "email_cliente";
-            this.email_cliente.Size = new System.Drawing.Size(197, 20);
+            this.email_cliente.Size = new System.Drawing.Size(186, 20);
             this.email_cliente.TabIndex = 18;
             // 
             // label10
@@ -538,9 +498,10 @@
             // num_cel_cliente
             // 
             this.num_cel_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.num_cel_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.num_cel_cliente.Location = new System.Drawing.Point(88, 88);
             this.num_cel_cliente.Name = "num_cel_cliente";
-            this.num_cel_cliente.Size = new System.Drawing.Size(197, 20);
+            this.num_cel_cliente.Size = new System.Drawing.Size(186, 20);
             this.num_cel_cliente.TabIndex = 17;
             // 
             // label8
@@ -555,9 +516,10 @@
             // num_tel_3_cliente
             // 
             this.num_tel_3_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.num_tel_3_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.num_tel_3_cliente.Location = new System.Drawing.Point(89, 63);
             this.num_tel_3_cliente.Name = "num_tel_3_cliente";
-            this.num_tel_3_cliente.Size = new System.Drawing.Size(196, 20);
+            this.num_tel_3_cliente.Size = new System.Drawing.Size(185, 20);
             this.num_tel_3_cliente.TabIndex = 16;
             // 
             // label6
@@ -590,32 +552,73 @@
             // num_tel_1_cliente
             // 
             this.num_tel_1_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.num_tel_1_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.num_tel_1_cliente.Location = new System.Drawing.Point(88, 11);
             this.num_tel_1_cliente.Name = "num_tel_1_cliente";
-            this.num_tel_1_cliente.Size = new System.Drawing.Size(197, 20);
+            this.num_tel_1_cliente.Size = new System.Drawing.Size(186, 20);
             this.num_tel_1_cliente.TabIndex = 14;
             // 
             // num_tel_2_cliente
             // 
             this.num_tel_2_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.num_tel_2_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.num_tel_2_cliente.Location = new System.Drawing.Point(89, 37);
             this.num_tel_2_cliente.Name = "num_tel_2_cliente";
-            this.num_tel_2_cliente.Size = new System.Drawing.Size(196, 20);
+            this.num_tel_2_cliente.Size = new System.Drawing.Size(185, 20);
             this.num_tel_2_cliente.TabIndex = 15;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.textBox2);
+            this.panel7.Controls.Add(this.label23);
+            this.panel7.Controls.Add(this.agregar_btn_servicio);
+            this.panel7.Controls.Add(this.descripcion_servicio);
             this.panel7.Controls.Add(this.label22);
-            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.unidad_servicio);
             this.panel7.Controls.Add(this.label13);
             this.panel7.Controls.Add(this.dataGridView1);
             this.panel7.Location = new System.Drawing.Point(16, 233);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(533, 244);
             this.panel7.TabIndex = 13;
+            // 
+            // descripcion_servicio
+            // 
+            this.descripcion_servicio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.descripcion_servicio.Location = new System.Drawing.Point(86, 46);
+            this.descripcion_servicio.Multiline = true;
+            this.descripcion_servicio.Name = "descripcion_servicio";
+            this.descripcion_servicio.Size = new System.Drawing.Size(329, 62);
+            this.descripcion_servicio.TabIndex = 5;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(4, 65);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(78, 13);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "Descripción:";
+            // 
+            // unidad_servicio
+            // 
+            this.unidad_servicio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.unidad_servicio.Location = new System.Drawing.Point(86, 18);
+            this.unidad_servicio.Name = "unidad_servicio";
+            this.unidad_servicio.Size = new System.Drawing.Size(329, 20);
+            this.unidad_servicio.TabIndex = 4;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(14, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Unidad:";
             // 
             // dataGridView1
             // 
@@ -627,28 +630,33 @@
             this.Column4});
             this.dataGridView1.Location = new System.Drawing.Point(14, 114);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(498, 109);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Descripción";
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Unidad";
-            this.Column3.Name = "Column3";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Hora";
-            this.Column2.Name = "Column2";
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Fecha";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Hora";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Unidad";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Descripción";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // label7
             // 
@@ -661,40 +669,78 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Servicios";
             // 
-            // label13
+            // label23
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(14, 20);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 13);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Unidad:";
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(419, 87);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(101, 13);
+            this.label23.TabIndex = 7;
+            this.label23.Text = "Agregar Servicio";
             // 
-            // textBox1
+            // agregar_btn_servicio
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(426, 20);
-            this.textBox1.TabIndex = 4;
+            this.agregar_btn_servicio.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.agregar_servicio;
+            this.agregar_btn_servicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.agregar_btn_servicio.Location = new System.Drawing.Point(435, 25);
+            this.agregar_btn_servicio.Name = "agregar_btn_servicio";
+            this.agregar_btn_servicio.Size = new System.Drawing.Size(70, 60);
+            this.agregar_btn_servicio.TabIndex = 6;
+            this.agregar_btn_servicio.UseVisualStyleBackColor = true;
             // 
-            // label22
+            // pictureBox1
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(4, 65);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(78, 13);
-            this.label22.TabIndex = 3;
-            this.label22.Text = "Descripción:";
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(888, 60);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
-            // textBox2
+            // editar_btn_personal
             // 
-            this.textBox2.Location = new System.Drawing.Point(86, 46);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(426, 62);
-            this.textBox2.TabIndex = 5;
+            this.editar_btn_personal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.editar_btn_personal.Image = global::WindowsFormsApplication1.Properties.Resources.MODIFICAR;
+            this.editar_btn_personal.Location = new System.Drawing.Point(169, 485);
+            this.editar_btn_personal.Name = "editar_btn_personal";
+            this.editar_btn_personal.Size = new System.Drawing.Size(118, 92);
+            this.editar_btn_personal.TabIndex = 19;
+            this.editar_btn_personal.UseVisualStyleBackColor = true;
+            // 
+            // cancelar_btn_personal
+            // 
+            this.cancelar_btn_personal.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.CANCELAR;
+            this.cancelar_btn_personal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cancelar_btn_personal.Location = new System.Drawing.Point(421, 485);
+            this.cancelar_btn_personal.Name = "cancelar_btn_personal";
+            this.cancelar_btn_personal.Size = new System.Drawing.Size(121, 92);
+            this.cancelar_btn_personal.TabIndex = 21;
+            this.cancelar_btn_personal.UseVisualStyleBackColor = true;
+            this.cancelar_btn_personal.Click += new System.EventHandler(this.cancelar_btn_personal_Click);
+            // 
+            // guardar_btn_personal
+            // 
+            this.guardar_btn_personal.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.GUARDAR2;
+            this.guardar_btn_personal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.guardar_btn_personal.Location = new System.Drawing.Point(293, 485);
+            this.guardar_btn_personal.Name = "guardar_btn_personal";
+            this.guardar_btn_personal.Size = new System.Drawing.Size(122, 92);
+            this.guardar_btn_personal.TabIndex = 20;
+            this.guardar_btn_personal.UseVisualStyleBackColor = true;
+            this.guardar_btn_personal.Click += new System.EventHandler(this.guardar_btn_personal_Click);
+            // 
+            // foto_cliente
+            // 
+            this.foto_cliente.BackColor = System.Drawing.Color.White;
+            this.foto_cliente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.foto_cliente.Location = new System.Drawing.Point(4, 6);
+            this.foto_cliente.Name = "foto_cliente";
+            this.foto_cliente.Size = new System.Drawing.Size(87, 108);
+            this.foto_cliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.foto_cliente.TabIndex = 0;
+            this.foto_cliente.TabStop = false;
+            this.foto_cliente.Click += new System.EventHandler(this.foto_personal_Click);
             // 
             // cliente
             // 
@@ -723,13 +769,11 @@
             this.Name = "cliente";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Personal";
+            this.Text = "Clientes";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foto_cliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -739,6 +783,8 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.foto_cliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -798,9 +844,9 @@
         private System.Windows.Forms.TextBox num_tel_1_cliente;
         private System.Windows.Forms.TextBox num_tel_2_cliente;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox descripcion_servicio;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox unidad_servicio;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -808,5 +854,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button agregar_btn_servicio;
+        private System.Windows.Forms.Label label23;
     }
 }
