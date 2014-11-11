@@ -60,6 +60,8 @@ namespace WindowsFormsApplication1
                         ref_cliente.Text = Datos.GetString(4);
                     }
                 Bdatos.Desconectar();
+
+                deshabilitarCampos();
             }
             
 
@@ -89,6 +91,21 @@ namespace WindowsFormsApplication1
                 this.unidad_servicio.AutoCompleteCustomSource.AddRange(A);
 
             }
+        }
+
+        public void habilitarCampos()
+        {
+
+        }
+
+        public void deshabilitarCampos()
+        {
+            num_tel_1_cliente.ReadOnly = true;
+            nombre_cliente.ReadOnly = true;
+            foto_btn_cliente.Enabled = false;
+            colonia_cliente.ReadOnly = true;
+            calle_cliente.ReadOnly = true;
+            ref_cliente.ReadOnly = true;
         }
 
         private void label10_Click(object sender, EventArgs e)
