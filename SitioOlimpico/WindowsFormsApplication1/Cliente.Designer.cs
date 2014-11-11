@@ -403,6 +403,7 @@
             this.editar_btn_cliente.Size = new System.Drawing.Size(118, 92);
             this.editar_btn_cliente.TabIndex = 19;
             this.editar_btn_cliente.UseVisualStyleBackColor = true;
+            this.editar_btn_cliente.Click += new System.EventHandler(this.editar_btn_cliente_Click);
             // 
             // cancelar_btn_cliente
             // 

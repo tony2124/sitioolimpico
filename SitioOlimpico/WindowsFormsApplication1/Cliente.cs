@@ -43,25 +43,37 @@ namespace WindowsFormsApplication1
 
                 Bdatos.conexion();
 
-                Datos = Bdatos.obtenerBasesDatosMySQL("select nombre,foto,colonia,calle,referencias from clientes where numero_tel_1 = '"+numero+"'");
-                if(Datos.HasRows)
+                Datos = Bdatos.obtenerBasesDatosMySQL("select count(nombre) from clientes where numero_tel_1 = '" + numero + "'");
+                int x = 0;
+                if (Datos.HasRows)
                     while (Datos.Read())
-                    {
-                        nombre_cliente.Text = Datos.GetString(0);
+                        x = Datos.GetInt32(0);
+                Datos.Close();
 
-                        if (Datos.GetString(1).CompareTo("sin_foto.") == 0)
-                            this.foto_cliente.Image = Properties.Resources.sin_foto;
-                        else
-                            foto_cliente.ImageLocation = rutadestino + Datos.GetString(1);
-                        foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
+                if (x != 0)
+                {
+                    Datos = Bdatos.obtenerBasesDatosMySQL("select nombre,foto,colonia,calle,referencias from clientes where numero_tel_1 = '" + numero + "'");
+                    if (Datos.HasRows)
+                        while (Datos.Read())
+                        {
+                            nombre_cliente.Text = Datos.GetString(0);
 
-                        colonia_cliente.Text = Datos.GetString(2);
-                        calle_cliente.Text = Datos.GetString(3);
-                        ref_cliente.Text = Datos.GetString(4);
-                    }
-                Bdatos.Desconectar();
+                            if (Datos.GetString(1).CompareTo("sin_foto.") == 0)
+                                this.foto_cliente.Image = Properties.Resources.sin_foto;
+                            else
+                                foto_cliente.ImageLocation = rutadestino + Datos.GetString(1);
+                            foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
 
-                deshabilitarCampos();
+                            colonia_cliente.Text = Datos.GetString(2);
+                            calle_cliente.Text = Datos.GetString(3);
+                            ref_cliente.Text = Datos.GetString(4);
+                        }
+                    Datos.Close();
+                    Bdatos.Desconectar();
+
+                    deshabilitarCampos();
+                    guardar_btn_cliente.Image = null;
+                }
             }
             
 
@@ -100,12 +112,12 @@ namespace WindowsFormsApplication1
 
         public void deshabilitarCampos()
         {
-            num_tel_1_cliente.ReadOnly = true;
-            nombre_cliente.ReadOnly = true;
+            num_tel_1_cliente.Enabled = false;
+            nombre_cliente.Enabled = false;
             foto_btn_cliente.Enabled = false;
-            colonia_cliente.ReadOnly = true;
-            calle_cliente.ReadOnly = true;
-            ref_cliente.ReadOnly = true;
+            colonia_cliente.Enabled = false;
+            calle_cliente.Enabled = false;
+            ref_cliente.Enabled = false;
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -354,6 +366,11 @@ namespace WindowsFormsApplication1
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void editar_btn_cliente_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
