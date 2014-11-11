@@ -58,6 +58,7 @@ namespace WindowsFormsApplication1
 
         public static void metodo()
         {
+            data = data.Substring(data.LastIndexOf("= ") + 1);
             cliente obj = new cliente(data);
             obj.ShowDialog();
         }
