@@ -20,22 +20,48 @@ namespace WindowsFormsApplication1
         public String nombre_archivo = "sin_foto", 
             rutadestino = @"C:\\sitioOlimpicoPics\\clientes", 
             formato, id_cliente;
+        int FORMA;
         MySqlDataReader Datos;
         ConexionBD Bdatos = new ConexionBD();
 
         public cliente(string numero, int forma)
         {
             InitializeComponent();
+           
+           // this.foto_cliente.Image = Properties.Resources.sin_foto;
+           // foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
 
+            FORMA = forma;
             if (forma == 0)
                 editar_btn_cliente.Visible = false;
             else
                 editar_btn_cliente.Visible = true;
 
-            num_tel_1_cliente.Text = numero;
+            if (FORMA != 0)
+            {
+                num_tel_1_cliente.Text = numero;
 
-            this.foto_cliente.Image = Properties.Resources.sin_foto;
-            foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
+                Bdatos.conexion();
+
+                Datos = Bdatos.obtenerBasesDatosMySQL("select nombre,foto,colonia,calle,referencias from clientes where numero_tel_1 = '"+numero+"'");
+                if(Datos.HasRows)
+                    while (Datos.Read())
+                    {
+                        nombre_cliente.Text = Datos.GetString(0);
+
+                        if (Datos.GetString(1).CompareTo("sin_foto.") == 0)
+                            this.foto_cliente.Image = Properties.Resources.sin_foto;
+                        else
+                            foto_cliente.ImageLocation = rutadestino + Datos.GetString(1);
+                        foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                        colonia_cliente.Text = Datos.GetString(2);
+                        calle_cliente.Text = Datos.GetString(3);
+                        ref_cliente.Text = Datos.GetString(4);
+                    }
+                Bdatos.Desconectar();
+            }
+            
 
             //CONSULTA A LA BASE DE DATOS PARA EXTRAER INFORMACIÓN DE LAS UNIDADES
             int contador = 0;
