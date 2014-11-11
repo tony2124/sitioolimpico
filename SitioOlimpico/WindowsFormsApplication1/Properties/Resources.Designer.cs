@@ -263,6 +263,16 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sin_foto_taxi {
+            get {
+                object obj = ResourceManager.GetObject("sin_foto_taxi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap twitter_icon {
             get {
                 object obj = ResourceManager.GetObject("twitter_icon", resourceCulture);

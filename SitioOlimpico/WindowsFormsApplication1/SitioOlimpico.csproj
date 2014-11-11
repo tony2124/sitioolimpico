@@ -86,6 +86,12 @@
     <Compile Include="Cliente.Designer.cs">
       <DependentUpon>Cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="unidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="unidades.Designer.cs">
+      <DependentUpon>unidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="personal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unidades.resx">
+      <DependentUpon>unidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="personal.resx">
       <DependentUpon>personal.cs</DependentUpon>
@@ -242,6 +251,9 @@
   <ItemGroup>
     <None Include="Resources\agregar_servicio.jpg" />
     <None Include="Resources\CLIENTE_ENCABEZADO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sin_foto_taxi.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

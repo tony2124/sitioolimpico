@@ -58,7 +58,7 @@ namespace WindowsFormsApplication1
 
         public static void metodo()
         {
-            cliente obj = new cliente(data);
+            cliente obj = new cliente(data,0);
             obj.ShowDialog();
         }
 
