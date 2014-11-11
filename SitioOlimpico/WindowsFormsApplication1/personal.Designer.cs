@@ -46,8 +46,13 @@
             this.foto_personal = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.horario_personal = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.unidad_personal = new System.Windows.Forms.TextBox();
+            this.label_personal = new System.Windows.Forms.Label();
+            this.horario_salida_personal = new System.Windows.Forms.DateTimePicker();
+            this.label29 = new System.Windows.Forms.Label();
+            this.horario_entrada_personal = new System.Windows.Forms.DateTimePicker();
+            this.label30 = new System.Windows.Forms.Label();
             this.autorizacion_personal = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -88,6 +93,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_personal)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.encabezado_personal)).BeginInit();
@@ -277,8 +283,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.horario_personal);
-            this.panel3.Controls.Add(this.label23);
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.autorizacion_personal);
             this.panel3.Controls.Add(this.label22);
             this.panel3.Controls.Add(this.label14);
@@ -290,25 +295,79 @@
             this.panel3.Size = new System.Drawing.Size(527, 277);
             this.panel3.TabIndex = 4;
             // 
-            // horario_personal
+            // panel6
             // 
-            this.horario_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.horario_personal.Location = new System.Drawing.Point(296, 202);
-            this.horario_personal.Multiline = true;
-            this.horario_personal.Name = "horario_personal";
-            this.horario_personal.Size = new System.Drawing.Size(220, 60);
-            this.horario_personal.TabIndex = 17;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.unidad_personal);
+            this.panel6.Controls.Add(this.label_personal);
+            this.panel6.Controls.Add(this.horario_salida_personal);
+            this.panel6.Controls.Add(this.label29);
+            this.panel6.Controls.Add(this.horario_entrada_personal);
+            this.panel6.Controls.Add(this.label30);
+            this.panel6.Location = new System.Drawing.Point(299, 136);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(217, 126);
+            this.panel6.TabIndex = 22;
             // 
-            // label23
+            // unidad_personal
             // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Khaki;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(296, 186);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(48, 13);
-            this.label23.TabIndex = 16;
-            this.label23.Text = "Horario";
+            this.unidad_personal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.unidad_personal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.unidad_personal.BackColor = System.Drawing.Color.Ivory;
+            this.unidad_personal.Location = new System.Drawing.Point(21, 40);
+            this.unidad_personal.Name = "unidad_personal";
+            this.unidad_personal.Size = new System.Drawing.Size(179, 20);
+            this.unidad_personal.TabIndex = 22;
+            this.unidad_personal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.unidad_personal_KeyPress);
+            // 
+            // label_personal
+            // 
+            this.label_personal.AutoSize = true;
+            this.label_personal.BackColor = System.Drawing.Color.Khaki;
+            this.label_personal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_personal.Location = new System.Drawing.Point(8, 18);
+            this.label_personal.Name = "label_personal";
+            this.label_personal.Size = new System.Drawing.Size(48, 13);
+            this.label_personal.TabIndex = 16;
+            this.label_personal.Text = "Horario";
+            // 
+            // horario_salida_personal
+            // 
+            this.horario_salida_personal.CustomFormat = "";
+            this.horario_salida_personal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.horario_salida_personal.Location = new System.Drawing.Point(71, 73);
+            this.horario_salida_personal.Name = "horario_salida_personal";
+            this.horario_salida_personal.ShowUpDown = true;
+            this.horario_salida_personal.Size = new System.Drawing.Size(108, 20);
+            this.horario_salida_personal.TabIndex = 21;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(18, 47);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(47, 13);
+            this.label29.TabIndex = 18;
+            this.label29.Text = "Entrada:";
+            // 
+            // horario_entrada_personal
+            // 
+            this.horario_entrada_personal.CustomFormat = "";
+            this.horario_entrada_personal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.horario_entrada_personal.Location = new System.Drawing.Point(71, 47);
+            this.horario_entrada_personal.Name = "horario_entrada_personal";
+            this.horario_entrada_personal.ShowUpDown = true;
+            this.horario_entrada_personal.Size = new System.Drawing.Size(108, 20);
+            this.horario_entrada_personal.TabIndex = 19;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(18, 73);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(39, 13);
+            this.label30.TabIndex = 20;
+            this.label30.Text = "Salida:";
             // 
             // autorizacion_personal
             // 
@@ -318,17 +377,18 @@
             this.autorizacion_personal.Items.AddRange(new object[] {
             "Taxista",
             "Monitor (a)"});
-            this.autorizacion_personal.Location = new System.Drawing.Point(351, 139);
+            this.autorizacion_personal.Location = new System.Drawing.Point(416, 109);
             this.autorizacion_personal.Name = "autorizacion_personal";
-            this.autorizacion_personal.Size = new System.Drawing.Size(123, 21);
+            this.autorizacion_personal.Size = new System.Drawing.Size(100, 21);
             this.autorizacion_personal.TabIndex = 16;
+            this.autorizacion_personal.SelectedIndexChanged += new System.EventHandler(this.autorizacion_personal_SelectedIndexChanged);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Khaki;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(358, 123);
+            this.label22.Location = new System.Drawing.Point(293, 112);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(102, 13);
             this.label22.TabIndex = 9;
@@ -582,6 +642,7 @@
             this.num_tel_personal.Name = "num_tel_personal";
             this.num_tel_personal.Size = new System.Drawing.Size(137, 20);
             this.num_tel_personal.TabIndex = 14;
+            this.num_tel_personal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_tel_personal_KeyPress);
             // 
             // num_cel_personal
             // 
@@ -591,6 +652,7 @@
             this.num_cel_personal.Name = "num_cel_personal";
             this.num_cel_personal.Size = new System.Drawing.Size(137, 20);
             this.num_cel_personal.TabIndex = 15;
+            this.num_cel_personal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_cel_personal_KeyPress);
             // 
             // label7
             // 
@@ -708,6 +770,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.foto_personal)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -767,8 +831,7 @@
         private System.Windows.Forms.Button editar_btn_personal;
         private System.Windows.Forms.Button cancelar_btn_personal;
         private System.Windows.Forms.Button foto_btn_personal;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox horario_personal;
+        private System.Windows.Forms.Label label_personal;
         private System.Windows.Forms.TextBox ref_personal;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label26;
@@ -776,5 +839,11 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.PictureBox encabezado_personal;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.DateTimePicker horario_entrada_personal;
+        private System.Windows.Forms.DateTimePicker horario_salida_personal;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox unidad_personal;
     }
 }

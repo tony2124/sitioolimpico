@@ -85,6 +85,12 @@
     <Compile Include="acercade.designer.cs">
       <DependentUpon>acercade.cs</DependentUpon>
     </Compile>
+    <Compile Include="buscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="buscarCliente.Designer.cs">
+      <DependentUpon>buscarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="CallerID.cs" />
     <Compile Include="ConexionBD.cs" />
     <Compile Include="configuracion.cs">
@@ -98,6 +104,12 @@
     </Compile>
     <Compile Include="Cliente.Designer.cs">
       <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="unidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="unidades.Designer.cs">
+      <DependentUpon>unidades.cs</DependentUpon>
     </Compile>
     <Compile Include="personal.cs">
       <SubType>Form</SubType>
@@ -128,12 +140,18 @@
       <DependentUpon>acercade.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="buscarCliente.resx">
+      <DependentUpon>buscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="configuracion.resx">
       <DependentUpon>configuracion.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unidades.resx">
+      <DependentUpon>unidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="personal.resx">
       <DependentUpon>personal.cs</DependentUpon>
@@ -256,6 +274,9 @@
   <ItemGroup>
     <None Include="Resources\agregar_servicio.jpg" />
     <None Include="Resources\CLIENTE_ENCABEZADO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sin_foto_taxi.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -122,7 +122,8 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            cliente c = new cliente("",0);
+            c.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -159,7 +160,7 @@ namespace WindowsFormsApplication1
 
         private void registroDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cliente c = new cliente("");
+            cliente c = new cliente("",0);
             c.ShowDialog();
         }
 
@@ -171,6 +172,17 @@ namespace WindowsFormsApplication1
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cerrar();
+        }
+
+        private void registrarUnidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            unidades u = new unidades(0);
+            u.ShowDialog();
+        }
+
+        private void buscarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new buscarCliente().Show();
         }
     }
 }

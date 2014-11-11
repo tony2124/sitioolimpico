@@ -64,8 +64,9 @@ namespace WindowsFormsApplication1
         public static void metodo()
         {
             data = data.Substring(data.LastIndexOf("= ") + 1);
-            cliente obj = new cliente(data);
+            cliente obj = new cliente(data,1);
             obj.ShowDialog();
+
         }
 
         public void EscuchaTelefono() {

@@ -98,7 +98,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1370, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -169,13 +169,15 @@
             // registrarUnidadToolStripMenuItem
             // 
             this.registrarUnidadToolStripMenuItem.Name = "registrarUnidadToolStripMenuItem";
-            this.registrarUnidadToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.registrarUnidadToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
             this.registrarUnidadToolStripMenuItem.Text = "Registrar unidad";
+            this.registrarUnidadToolStripMenuItem.Click += new System.EventHandler(this.registrarUnidadToolStripMenuItem_Click);
             // 
             // buscarUnidadToolStripMenuItem
             // 
             this.buscarUnidadToolStripMenuItem.Name = "buscarUnidadToolStripMenuItem";
-            this.buscarUnidadToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.buscarUnidadToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
+            this.buscarUnidadToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
             this.buscarUnidadToolStripMenuItem.Text = "Buscar unidad";
             // 
             // toolStripMenuItem1
@@ -190,15 +192,18 @@
             // registroDeClientesToolStripMenuItem
             // 
             this.registroDeClientesToolStripMenuItem.Name = "registroDeClientesToolStripMenuItem";
-            this.registroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
+            this.registroDeClientesToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.registroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(209, 24);
             this.registroDeClientesToolStripMenuItem.Text = "Registrar cliente";
             this.registroDeClientesToolStripMenuItem.Click += new System.EventHandler(this.registroDeClientesToolStripMenuItem_Click);
             // 
             // buscarClienteToolStripMenuItem
             // 
             this.buscarClienteToolStripMenuItem.Name = "buscarClienteToolStripMenuItem";
-            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(185, 24);
+            this.buscarClienteToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
+            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(209, 24);
             this.buscarClienteToolStripMenuItem.Text = "Buscar cliente";
+            this.buscarClienteToolStripMenuItem.Click += new System.EventHandler(this.buscarClienteToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -416,7 +421,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 572);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1370, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1284, 22);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -578,8 +583,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(1370, 594);
-
+            this.ClientSize = new System.Drawing.Size(1284, 594);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.statusStrip1);

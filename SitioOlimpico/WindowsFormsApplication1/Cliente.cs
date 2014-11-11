@@ -1,4 +1,5 @@
-﻿using SitioOlimpico;
+﻿using MySql.Data.MySqlClient;
+using SitioOlimpico;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,24 +17,96 @@ namespace WindowsFormsApplication1
     {
         public OpenFileDialog BuscarImagen;
         public Boolean foto = false;
-        public String nombre_archivo = "sin_foto", rutadestino = @"C:\\sitioOlimpicoPics\\clientes", formato;
-        public string num_tel = "";
+        public String nombre_archivo = "sin_foto", 
+            rutadestino = @"C:\\sitioOlimpicoPics\\clientes", 
+            formato, id_cliente;
+        int FORMA;
+        MySqlDataReader Datos;
         ConexionBD Bdatos = new ConexionBD();
 
-        public cliente(string forma)
+        public cliente(string numero, int forma)
         {
             InitializeComponent();
+           
+           // this.foto_cliente.Image = Properties.Resources.sin_foto;
+           // foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            if (forma.Length > 0)
-                editar_btn_personal.Visible = false;
+            FORMA = forma;
+            if (forma == 0)
+                editar_btn_cliente.Visible = false;
             else
-                editar_btn_personal.Visible = true;
+                editar_btn_cliente.Visible = true;
 
-            num_tel = forma;
-            num_tel_1_cliente.Text = forma;
+            if (FORMA != 0)
+            {
+                num_tel_1_cliente.Text = numero;
 
-            this.foto_cliente.Image = Properties.Resources.sin_foto;
-            foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
+                Bdatos.conexion();
+
+                Datos = Bdatos.obtenerBasesDatosMySQL("select nombre,foto,colonia,calle,referencias from clientes where numero_tel_1 = '"+numero.Trim()+"'");
+                if(Datos.HasRows)
+                    while (Datos.Read())
+                    {
+                        nombre_cliente.Text = Datos.GetString(0);
+
+                        if (Datos.GetString(1).CompareTo("sin_foto.") == 0)
+                            this.foto_cliente.Image = Properties.Resources.sin_foto;
+                        else
+                            foto_cliente.ImageLocation = rutadestino + Datos.GetString(1);
+                        foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                        colonia_cliente.Text = Datos.GetString(2);
+                        calle_cliente.Text = Datos.GetString(3);
+                        ref_cliente.Text = Datos.GetString(4);
+                    }
+                Datos.Close();
+                Bdatos.Desconectar();
+
+               // deshabilitarCampos();
+            }
+            
+
+            //CONSULTA A LA BASE DE DATOS PARA EXTRAER INFORMACIÓN DE LAS UNIDADES
+            int contador = 0;
+            String[] A;
+
+            Bdatos.conexion();
+            Datos = Bdatos.obtenerBasesDatosMySQL("select count(numero_unidad) from unidades");
+            if (Datos.HasRows)
+                while (Datos.Read())
+                    contador = Datos.GetInt32(0);
+            Datos.Close();
+
+            if (contador > 0)
+            {
+                Datos = Bdatos.obtenerBasesDatosMySQL("select numero_unidad from unidades");
+                int i = 0;
+                A = new String[contador];
+                while (Datos.Read()){
+                    A[i] = Datos.GetInt32(0)+"";
+                    i++;
+                }
+
+                Datos.Close();
+
+                this.unidad_servicio.AutoCompleteCustomSource.AddRange(A);
+
+            }
+        }
+
+        public void habilitarCampos()
+        {
+
+        }
+
+        public void deshabilitarCampos()
+        {
+            num_tel_1_cliente.ReadOnly = true;
+            nombre_cliente.ReadOnly = true;
+            foto_btn_cliente.Enabled = false;
+            colonia_cliente.ReadOnly = true;
+            calle_cliente.ReadOnly = true;
+            ref_cliente.ReadOnly = true;
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -66,21 +139,18 @@ namespace WindowsFormsApplication1
             
            // MessageBox.Show(System.Environment.GetFolderPath(System.Environment.SpecialFolder.ProgramFiles));
             
-            //VERIFICA SI ESTAN LLENOS LOS CAMPOS DE NOMBRE Y APELLIDO.
+            //VERIFICA SI ESTAN LLENOS LOS CAMPOS DE NOMBRE Y TELEFONO.
             if (nombre_cliente.Text.CompareTo("") == 0 ||
-                apellido_cliente.Text.CompareTo("") == 0)
+                num_tel_1_cliente.Text.CompareTo("") == 0)
             {
-                MessageBox.Show("Los campos de nombre y apellido son obligatorios",
+                MessageBox.Show("El campo nombre y telefono son obligatorios",
                     "LLene los campos obligatorios",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
             }
             else
             {
-                if (foto)
-                {
-                    guardarfoto();
-                }
+                
 
                  DialogResult result;
                  if (unidad_servicio.Text.CompareTo("") == 0)//VERIFICAMOS SI EL CAMPO DE UNIDAD NO TIENE DATOS
@@ -90,11 +160,55 @@ namespace WindowsFormsApplication1
 
                      if (result == DialogResult.Yes)
                      {//GUARDA EL CLIENTE SIN REALIZAR NINGUN SERVICIO
-                         guardarPersonal();
+
+                         if (guardarClientes() > 0)
+                         {
+                            
+                             if (foto)//SI SE SELECCIONO FOTO DE GUARDA LA FOTO
+                             {
+                                 guardarfoto();
+                             }
+
+                             //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
+                             borrarCampos();
+                             MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                         }
                      }
                  }
                  else//SI EL CAMPO DE UNIDAD TIENE DATOS: Guardamos el servicio junto con los datos del cliente
                  {
+                     Bdatos.conexion();
+                     
+                     Datos = Bdatos.obtenerBasesDatosMySQL("SELECT count(numero_unidad) from unidades where numero_unidad=" + unidad_servicio.Text);
+                     int existe = 0;
+                     if (Datos.HasRows)
+                         while (Datos.Read())
+                             existe = Datos.GetInt32(0);
+                     Datos.Close();
+                     Bdatos.Desconectar();
+                     if (existe != 1)//Si no existe la unidad
+                     {
+                         MessageBox.Show("No se puede guardar un servicio a una unidad que no este registrada, por favor registre primero la unidad en el programa.", "Error: Unidad no registrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     }
+                     else//Si si existe la unidad
+                     {
+                         
+                         if (guardarClientes() > 0)
+                         {
+
+                             if (foto)//SI SE SELECCIONO FOTO DE GUARDA LA FOTO
+                             {
+                                 guardarfoto();
+                             }
+
+                             guardarServicio();
+
+                             //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
+                             borrarCampos();
+                             MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                         }
+                      //   MessageBox.Show("Datos ingresados correctamente y Servicio guardado", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     }
 
                  }
 
@@ -125,44 +239,58 @@ namespace WindowsFormsApplication1
             foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
-        public void guardarPersonal()
+        public void guardarServicio()
         {
 
+            int id_taxista_unidad = 0;
+            Bdatos.conexion();
+            Datos = Bdatos.obtenerBasesDatosMySQL("SELECT id_taxista_unidad from taxista_unidad where numero_unidad=" + unidad_servicio.Text);
+            if (Datos.HasRows)
+                while (Datos.Read())
+                    id_taxista_unidad = Datos.GetInt32(0);
+            Datos.Close();
+            Bdatos.Desconectar();
+          
+            //INSERTA DATOS A SERVICIOS
+            Bdatos.conexion();
+            Bdatos.peticion("insert into servicios (id_cliente, id_taxista_unidad, fecha, hora, descripcion)" +
+                           " values('" + id_cliente +
+                           "','" + id_taxista_unidad +
+                           "','" + DateTime.Now.ToString("yyyy-MM-dd") +
+                           "','" + DateTime.Now.ToString("HH:mm:ss") +
+                           "','" + descripcion_servicio.Text + "')");
+            Bdatos.Desconectar();
+        }
+
+        public int guardarClientes()
+        {
+                    int consulta;
                     Bdatos.conexion();
 
                     //GENERO EL ID
-                    String id = generarId();
+                    id_cliente = generarId();
+
                     //INSERTA DATOS
-                    if (Bdatos.peticion("insert into clientes (id_cliente,nombre,apellido,fecha_nacimiento, foto," +
-                        "numero_tel_1,numero_tel_2,numero_tel_3,numero_cel,correo_electronico," +
-                        "colonia,calle,numero_int,numero_ext,codigo_postal,ciudad,estado," +
-                        "referencias,eliminado)" +
-                        "values('" + id + "','" + nombre_cliente.Text +
-                        "','" + apellido_cliente.Text +
-                        "','" + fecha_nac_cliente.Value.ToString("yyyy-MM-dd") +
+                    consulta = Bdatos.peticion("insert into clientes (id_cliente,nombre, foto," +
+                        "numero_tel_1, colonia,calle, referencias, eliminado)" +
+                        "values('" + id_cliente + "','" + nombre_cliente.Text +
                         "','" + nombre_archivo + "." + formato +
                         "','" + num_tel_1_cliente.Text +
-                        "','" + num_tel_2_cliente.Text +
-                        "','" + num_tel_3_cliente.Text +
-                        "','" + num_cel_cliente.Text +
-                        "','" + email_cliente.Text +
                         "','" + colonia_cliente.Text +
                         "','" + calle_cliente.Text +
-                        "','" + num_int_cliente.Text +
-                        "','" + num_ext_cliente.Text +
-                        "','" + cp_cliente.Text +
-                        "','" + ciudad_cliente.Text +
-                        "','" + estado_cliente.Text +
                         "','" + ref_cliente.Text +
-                        "',0)") > 0)
-                    {
-                        //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
-                        borrarCampos();
-                        MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                        "',0)");
 
-                    Bdatos.Desconectar();
-                
+                    if (consulta > 0)
+                    {
+                        Bdatos.Desconectar();
+                        return consulta;
+                    }
+                    else
+                    {
+                        Bdatos.Desconectar();
+                        return consulta;
+                    }
             
         }
 
@@ -180,22 +308,13 @@ namespace WindowsFormsApplication1
         public void borrarCampos()
         {
             nombre_cliente.Text = "";
-            apellido_cliente.Text = "";
             nombre_archivo = "sin_foto";
-            fecha_nac_cliente.Value = DateTime.Now;
             num_tel_1_cliente.Text = "";
-            num_tel_2_cliente.Text = "";
-            num_tel_3_cliente.Text = "";
-            num_cel_cliente.Text = "";
-            email_cliente.Text = "";
             colonia_cliente.Text = "";
             calle_cliente.Text = "";
-            num_int_cliente.Text = "";
-            num_ext_cliente.Text = "";
-            cp_cliente.Text = "";
-            ciudad_cliente.Text = "";
-            estado_cliente.Text = "";
             ref_cliente.Text = "";
+            unidad_servicio.Text = "";
+            descripcion_servicio.Text = "";
             foto = false;
 
             this.foto_cliente.ImageLocation = null;
@@ -216,6 +335,26 @@ namespace WindowsFormsApplication1
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void unidad_servicio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void num_tel_1_cliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }
