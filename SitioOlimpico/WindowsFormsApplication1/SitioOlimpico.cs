@@ -33,13 +33,13 @@ namespace WindowsFormsApplication1
             if (Datos.HasRows)
                 while (Datos.Read())
                 {
-                    obj.port = Datos.GetString(0);
-                    obj.baud = Datos.GetInt32(1);
-                    obj.paridad = Datos.GetInt32(2);
+                    CallerID.port = Datos.GetString(0);
+                    CallerID.baud = Datos.GetInt32(1);
+                    CallerID.paridad = Datos.GetInt32(2);
                     obj.ComandoATID = Datos.GetString(3);
                 }
             Datos.Close();
-            MessageBox.Show(obj.port);
+            MessageBox.Show(CallerID.port);
             Thread hilo = new Thread( obj.EscuchaTelefono );
             try
             {
@@ -49,8 +49,6 @@ namespace WindowsFormsApplication1
                 MessageBox.Show(e.ToString());
             }
 
-
-            
         }
 
         public void metodoRespaldo()

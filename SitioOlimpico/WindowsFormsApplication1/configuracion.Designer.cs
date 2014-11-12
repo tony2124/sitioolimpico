@@ -36,25 +36,28 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.puerto = new System.Windows.Forms.ComboBox();
             this.bits = new System.Windows.Forms.ComboBox();
             this.paridad = new System.Windows.Forms.ComboBox();
             this.norma = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dir_foto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.modem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.plataforma = new System.Windows.Forms.Label();
             this.service = new System.Windows.Forms.Label();
             this.ip = new System.Windows.Forms.Label();
+            this.puerto = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.ip_base_datos = new System.Windows.Forms.TextBox();
+            this.modem = new System.Windows.Forms.Label();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,53 +128,11 @@
             // 
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(30, 325);
+            this.label8.Location = new System.Drawing.Point(30, 357);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(278, 55);
             this.label8.TabIndex = 12;
             this.label8.Text = "Nota: No todos los modems cuentan con identificador de llamadas integrado.";
-            // 
-            // puerto
-            // 
-            this.puerto.DisplayMember = "0";
-            this.puerto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.puerto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.puerto.FormattingEnabled = true;
-            this.puerto.Items.AddRange(new object[] {
-            "COM1",
-            "COM2",
-            "COM3",
-            "COM4",
-            "COM5",
-            "COM6",
-            "COM7",
-            "COM8",
-            "COM9",
-            "COM10",
-            "COM11",
-            "COM12",
-            "COM13",
-            "COM14",
-            "COM15",
-            "COM16",
-            "COM17",
-            "COM18",
-            "COM19",
-            "COM20",
-            "COM21",
-            "COM22",
-            "COM23",
-            "COM24",
-            "COM25",
-            "COM26",
-            "COM27",
-            "COM28",
-            "COM29",
-            "COM30"});
-            this.puerto.Location = new System.Drawing.Point(142, 131);
-            this.puerto.Name = "puerto";
-            this.puerto.Size = new System.Drawing.Size(165, 23);
-            this.puerto.TabIndex = 14;
             // 
             // bits
             // 
@@ -200,8 +161,10 @@
             this.paridad.FormattingEnabled = true;
             this.paridad.Items.AddRange(new object[] {
             "Par",
+            "Marcado",
+            "Ninguno",
             "Impar",
-            "Ninguna"});
+            "Espacio"});
             this.paridad.Location = new System.Drawing.Point(142, 190);
             this.paridad.Name = "paridad";
             this.paridad.Size = new System.Drawing.Size(165, 23);
@@ -229,7 +192,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(356, 131);
+            this.label14.Location = new System.Drawing.Point(355, 131);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(140, 15);
             this.label14.TabIndex = 20;
@@ -253,23 +216,24 @@
             this.button3.TabIndex = 33;
             this.button3.Text = "detectar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox1
+            // dir_foto
             // 
-            this.textBox1.Location = new System.Drawing.Point(502, 128);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(153, 21);
-            this.textBox1.TabIndex = 34;
+            this.dir_foto.Location = new System.Drawing.Point(502, 128);
+            this.dir_foto.Name = "dir_foto";
+            this.dir_foto.ReadOnly = true;
+            this.dir_foto.Size = new System.Drawing.Size(153, 21);
+            this.dir_foto.TabIndex = 34;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(358, 158);
+            this.label6.Location = new System.Drawing.Point(356, 192);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 15);
+            this.label6.Size = new System.Drawing.Size(50, 15);
             this.label6.TabIndex = 37;
-            this.label6.Text = "IP :";
+            this.label6.Text = "IP local:";
             // 
             // button4
             // 
@@ -279,6 +243,7 @@
             this.button4.TabIndex = 39;
             this.button4.Text = "...";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox1
             // 
@@ -300,6 +265,7 @@
             this.button2.Size = new System.Drawing.Size(125, 90);
             this.button2.TabIndex = 3;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -313,18 +279,10 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // modem
-            // 
-            this.modem.Location = new System.Drawing.Point(142, 281);
-            this.modem.Name = "modem";
-            this.modem.ReadOnly = true;
-            this.modem.Size = new System.Drawing.Size(138, 21);
-            this.modem.TabIndex = 43;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(358, 190);
+            this.label9.Location = new System.Drawing.Point(356, 224);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 15);
             this.label9.TabIndex = 44;
@@ -333,7 +291,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(358, 245);
+            this.label10.Location = new System.Drawing.Point(356, 279);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 15);
             this.label10.TabIndex = 46;
@@ -341,27 +299,58 @@
             // 
             // plataforma
             // 
-            this.plataforma.Location = new System.Drawing.Point(443, 190);
+            this.plataforma.Location = new System.Drawing.Point(441, 224);
             this.plataforma.Name = "plataforma";
-            this.plataforma.Size = new System.Drawing.Size(213, 47);
+            this.plataforma.Size = new System.Drawing.Size(214, 47);
             this.plataforma.TabIndex = 48;
-            this.plataforma.Text = "label11";
+            this.plataforma.Text = "(No disponible)";
             // 
             // service
             // 
-            this.service.Location = new System.Drawing.Point(443, 245);
+            this.service.Location = new System.Drawing.Point(441, 279);
             this.service.Name = "service";
             this.service.Size = new System.Drawing.Size(213, 25);
             this.service.TabIndex = 49;
-            this.service.Text = "label11";
+            this.service.Text = "(No disponible)";
             // 
             // ip
             // 
-            this.ip.Location = new System.Drawing.Point(409, 158);
+            this.ip.Location = new System.Drawing.Point(499, 193);
             this.ip.Name = "ip";
-            this.ip.Size = new System.Drawing.Size(246, 20);
+            this.ip.Size = new System.Drawing.Size(156, 20);
             this.ip.TabIndex = 50;
-            this.ip.Text = "label11";
+            this.ip.Text = "(IP disponible)";
+            // 
+            // puerto
+            // 
+            this.puerto.Location = new System.Drawing.Point(142, 128);
+            this.puerto.Name = "puerto";
+            this.puerto.Size = new System.Drawing.Size(166, 21);
+            this.puerto.TabIndex = 51;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(355, 160);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(131, 15);
+            this.label12.TabIndex = 52;
+            this.label12.Text = "IP  de la base de datos";
+            // 
+            // ip_base_datos
+            // 
+            this.ip_base_datos.Location = new System.Drawing.Point(502, 160);
+            this.ip_base_datos.Name = "ip_base_datos";
+            this.ip_base_datos.Size = new System.Drawing.Size(153, 21);
+            this.ip_base_datos.TabIndex = 53;
+            // 
+            // modem
+            // 
+            this.modem.Location = new System.Drawing.Point(143, 286);
+            this.modem.Name = "modem";
+            this.modem.Size = new System.Drawing.Size(137, 60);
+            this.modem.TabIndex = 54;
+            this.modem.Text = "(No se ha detectado un MODEM)";
             // 
             // configuracion
             // 
@@ -369,15 +358,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(696, 443);
+            this.Controls.Add(this.modem);
+            this.Controls.Add(this.ip_base_datos);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.puerto);
             this.Controls.Add(this.ip);
             this.Controls.Add(this.service);
             this.Controls.Add(this.plataforma);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.modem);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dir_foto);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label14);
@@ -385,7 +377,6 @@
             this.Controls.Add(this.norma);
             this.Controls.Add(this.paridad);
             this.Controls.Add(this.bits);
-            this.Controls.Add(this.puerto);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -419,7 +410,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox puerto;
         private System.Windows.Forms.ComboBox bits;
         private System.Windows.Forms.ComboBox paridad;
         private System.Windows.Forms.ComboBox norma;
@@ -427,14 +417,18 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox dir_foto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox modem;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label plataforma;
         private System.Windows.Forms.Label service;
         private System.Windows.Forms.Label ip;
+        private System.Windows.Forms.TextBox puerto;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox ip_base_datos;
+        private System.Windows.Forms.Label modem;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
