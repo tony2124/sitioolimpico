@@ -80,9 +80,9 @@
             this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.nombre_cliente);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(169, 87);
+            this.panel1.Location = new System.Drawing.Point(138, 87);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(457, 46);
+            this.panel1.Size = new System.Drawing.Size(522, 64);
             this.panel1.TabIndex = 1;
             // 
             // label25
@@ -90,7 +90,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(426, 10);
+            this.label25.Location = new System.Drawing.Point(505, 22);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(15, 20);
             this.label25.TabIndex = 7;
@@ -100,15 +100,16 @@
             // 
             this.nombre_cliente.BackColor = System.Drawing.Color.Ivory;
             this.nombre_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.nombre_cliente.Location = new System.Drawing.Point(84, 10);
+            this.nombre_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre_cliente.Location = new System.Drawing.Point(78, 20);
             this.nombre_cliente.Name = "nombre_cliente";
-            this.nombre_cliente.Size = new System.Drawing.Size(336, 20);
+            this.nombre_cliente.Size = new System.Drawing.Size(426, 24);
             this.nombre_cliente.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 11);
+            this.label3.Location = new System.Drawing.Point(14, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 0;
@@ -197,7 +198,7 @@
             this.panel6.Controls.Add(this.panel5);
             this.panel6.Location = new System.Drawing.Point(24, 234);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(306, 157);
+            this.panel6.Size = new System.Drawing.Size(306, 187);
             this.panel6.TabIndex = 3;
             // 
             // label14
@@ -205,7 +206,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Khaki;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(23, 0);
+            this.label14.Location = new System.Drawing.Point(20, 9);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(126, 13);
             this.label14.TabIndex = 16;
@@ -220,15 +221,15 @@
             this.panel5.Controls.Add(this.label16);
             this.panel5.Controls.Add(this.colonia_cliente);
             this.panel5.Controls.Add(this.label15);
-            this.panel5.Location = new System.Drawing.Point(10, 8);
+            this.panel5.Location = new System.Drawing.Point(10, 15);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(284, 137);
+            this.panel5.Size = new System.Drawing.Size(284, 159);
             this.panel5.TabIndex = 15;
             // 
             // ref_cliente
             // 
             this.ref_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.ref_cliente.Location = new System.Drawing.Point(76, 58);
+            this.ref_cliente.Location = new System.Drawing.Point(76, 81);
             this.ref_cliente.Multiline = true;
             this.ref_cliente.Name = "ref_cliente";
             this.ref_cliente.Size = new System.Drawing.Size(200, 67);
@@ -247,7 +248,7 @@
             // 
             this.calle_cliente.BackColor = System.Drawing.Color.Ivory;
             this.calle_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.calle_cliente.Location = new System.Drawing.Point(50, 32);
+            this.calle_cliente.Location = new System.Drawing.Point(50, 56);
             this.calle_cliente.Name = "calle_cliente";
             this.calle_cliente.Size = new System.Drawing.Size(226, 20);
             this.calle_cliente.TabIndex = 4;
@@ -255,7 +256,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(4, 35);
+            this.label16.Location = new System.Drawing.Point(4, 60);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(33, 13);
             this.label16.TabIndex = 2;
@@ -265,7 +266,7 @@
             // 
             this.colonia_cliente.BackColor = System.Drawing.Color.Ivory;
             this.colonia_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.colonia_cliente.Location = new System.Drawing.Point(50, 6);
+            this.colonia_cliente.Location = new System.Drawing.Point(50, 32);
             this.colonia_cliente.Name = "colonia_cliente";
             this.colonia_cliente.Size = new System.Drawing.Size(226, 20);
             this.colonia_cliente.TabIndex = 3;
@@ -273,7 +274,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(4, 9);
+            this.label15.Location = new System.Drawing.Point(4, 35);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(45, 13);
             this.label15.TabIndex = 0;
@@ -295,7 +296,7 @@
             this.num_tel_1_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.num_tel_1_cliente.Location = new System.Drawing.Point(85, 10);
             this.num_tel_1_cliente.Name = "num_tel_1_cliente";
-            this.num_tel_1_cliente.Size = new System.Drawing.Size(335, 38);
+            this.num_tel_1_cliente.Size = new System.Drawing.Size(419, 38);
             this.num_tel_1_cliente.TabIndex = 2;
             this.num_tel_1_cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_tel_1_cliente_KeyPress);
             // 
@@ -307,7 +308,7 @@
             this.panel7.Controls.Add(this.descripcion_servicio);
             this.panel7.Controls.Add(this.label22);
             this.panel7.Controls.Add(this.label13);
-            this.panel7.Location = new System.Drawing.Point(349, 250);
+            this.panel7.Location = new System.Drawing.Point(348, 273);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(311, 126);
             this.panel7.TabIndex = 4;
@@ -356,7 +357,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Khaki;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(356, 241);
+            this.label7.Location = new System.Drawing.Point(355, 267);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 15;
@@ -364,14 +365,14 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FloralWhite;
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.num_tel_1_cliente);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Location = new System.Drawing.Point(169, 139);
+            this.panel3.Location = new System.Drawing.Point(138, 157);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(457, 63);
+            this.panel3.Size = new System.Drawing.Size(522, 63);
             this.panel3.TabIndex = 2;
             // 
             // label4
@@ -379,7 +380,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(426, 19);
+            this.label4.Location = new System.Drawing.Point(506, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(15, 20);
             this.label4.TabIndex = 8;
@@ -388,6 +389,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.CLIENTE_ENCABEZADO;
             this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(679, 60);
@@ -398,17 +400,18 @@
             // 
             this.editar_btn_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.editar_btn_cliente.Image = global::WindowsFormsApplication1.Properties.Resources.MODIFICAR;
-            this.editar_btn_cliente.Location = new System.Drawing.Point(168, 412);
+            this.editar_btn_cliente.Location = new System.Drawing.Point(168, 427);
             this.editar_btn_cliente.Name = "editar_btn_cliente";
             this.editar_btn_cliente.Size = new System.Drawing.Size(118, 92);
             this.editar_btn_cliente.TabIndex = 19;
             this.editar_btn_cliente.UseVisualStyleBackColor = true;
+            this.editar_btn_cliente.Click += new System.EventHandler(this.editar_btn_cliente_Click);
             // 
             // cancelar_btn_cliente
             // 
             this.cancelar_btn_cliente.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.CANCELAR;
             this.cancelar_btn_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.cancelar_btn_cliente.Location = new System.Drawing.Point(421, 412);
+            this.cancelar_btn_cliente.Location = new System.Drawing.Point(420, 427);
             this.cancelar_btn_cliente.Name = "cancelar_btn_cliente";
             this.cancelar_btn_cliente.Size = new System.Drawing.Size(121, 92);
             this.cancelar_btn_cliente.TabIndex = 21;
@@ -419,7 +422,7 @@
             // 
             this.guardar_btn_cliente.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.GUARDAR2;
             this.guardar_btn_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.guardar_btn_cliente.Location = new System.Drawing.Point(293, 412);
+            this.guardar_btn_cliente.Location = new System.Drawing.Point(292, 427);
             this.guardar_btn_cliente.Name = "guardar_btn_cliente";
             this.guardar_btn_cliente.Size = new System.Drawing.Size(122, 92);
             this.guardar_btn_cliente.TabIndex = 20;
@@ -432,7 +435,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(672, 516);
+            this.ClientSize = new System.Drawing.Size(672, 531);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel7);

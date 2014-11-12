@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1
         public static String port = "COM24";
         public static int baud = 115200;
         public static int paridad = 3;
-        public String ComandoATID = "AT+VCID=1";
+        public static String ComandoATID = "AT+VCID=1";
 
         public static void OnSerialDataReceived(object sender, SerialDataReceivedEventArgs args)
         {
@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
         public static void metodo()
         {
             data = data.Substring(data.LastIndexOf("= ") + 1);
-            cliente obj = new cliente(data,1);
+            cliente obj = new cliente(data.Trim(),1);
             obj.ShowDialog();
 
         }
@@ -54,13 +54,7 @@ namespace WindowsFormsApplication1
 
             InitializeComPort(port, baud, paridad);
 
-            //ACTIVAR IDENTIFICADOR DE LLAMADAS
-            try
-            {
-                ComPort.Write(ComandoATID + '\r');
-            }
-            catch (Exception e) { }
-
+            
             while (!terminar);
         }
 
@@ -81,6 +75,13 @@ namespace WindowsFormsApplication1
                 ComPort.Handshake = Handshake.None;
                 ComPort.DataReceived += OnSerialDataReceived;
                 ComPort.Open();
+                //ACTIVAR IDENTIFICADOR DE LLAMADAS
+                try
+                {
+                    ComPort.Write(ComandoATID + '\r');
+                }
+                catch (Exception e) { MessageBox.Show(null, "No se puede inicializar el Identificador de llamadas" + e, "sd", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
             }
             catch (System.IO.IOException e)
             {

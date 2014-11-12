@@ -36,14 +36,14 @@ namespace WindowsFormsApplication1
                     CallerID.port = Datos.GetString(0);
                     CallerID.baud = Datos.GetInt32(1);
                     CallerID.paridad = Datos.GetInt32(2);
-                    obj.ComandoATID = Datos.GetString(3);
+                    CallerID.ComandoATID = Datos.GetString(3);
                 }
             Datos.Close();
-            MessageBox.Show(CallerID.port);
+          //  MessageBox.Show(CallerID.port);
             Thread hilo = new Thread( obj.EscuchaTelefono );
             try
             {
-                hilo.Start();
+               hilo.Start();
             }
             catch (Exception e) {
                 MessageBox.Show(e.ToString());

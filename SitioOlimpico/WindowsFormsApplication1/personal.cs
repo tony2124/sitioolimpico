@@ -46,7 +46,7 @@ namespace WindowsFormsApplication1
             String[] A;
 
             Bdatos.conexion();
-            Datos = Bdatos.obtenerBasesDatosMySQL("select count(numero_unidad) from unidades");
+            Datos = Bdatos.obtenerBasesDatosMySQL("select count(numero_unidad) from taxista_unidad");
             if (Datos.HasRows)
                 while (Datos.Read())
                     contador = Datos.GetInt32(0);
@@ -54,7 +54,7 @@ namespace WindowsFormsApplication1
 
             if (contador > 0)
             {
-                Datos = Bdatos.obtenerBasesDatosMySQL("select numero_unidad from unidades");
+                Datos = Bdatos.obtenerBasesDatosMySQL("select numero_unidad from taxista_unidad");
                 int i = 0;
                 A = new String[contador];
                 while (Datos.Read())
@@ -108,17 +108,32 @@ namespace WindowsFormsApplication1
             }
             else
             {
-               
-                if (guardarPersonal() > 0)
-                {
-                    if (foto)//Si busco foto se guarda la foto
-                    {
-                        guardarfoto();
-                    }
+                Bdatos.conexion();
 
-                    //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
-                    borrarCampos();
-                    MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Datos = Bdatos.obtenerBasesDatosMySQL("SELECT count(numero_unidad) from taxista_unidad where numero_unidad=" + unidad_personal.Text);
+                int existe = 0;
+                if (Datos.HasRows)
+                    while (Datos.Read())
+                        existe = Datos.GetInt32(0);
+                Datos.Close();
+                Bdatos.Desconectar();
+                if (existe == 0)//Si no existe la unidad
+                {
+                    MessageBox.Show("No se puede guardar un taxista con una unidad que no este registrada, por favor registre primero la unidad en el programa.", "Error: Unidad no registrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (guardarPersonal() > 0)
+                    {
+                        if (foto)//Si busco foto se guarda la foto
+                        {
+                            guardarfoto();
+                        }
+
+                        //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
+                        borrarCampos();
+                        MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             
