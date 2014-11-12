@@ -98,7 +98,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1334, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -266,6 +266,7 @@
             this.contactarASimpusToolStripMenuItem.Name = "contactarASimpusToolStripMenuItem";
             this.contactarASimpusToolStripMenuItem.Size = new System.Drawing.Size(271, 24);
             this.contactarASimpusToolStripMenuItem.Text = "Contactar a Simpus";
+            this.contactarASimpusToolStripMenuItem.Click += new System.EventHandler(this.contactarASimpusToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -287,11 +288,11 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(947, 53);
+            this.groupBox1.Location = new System.Drawing.Point(925, 44);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(410, 234);
+            this.groupBox1.Size = new System.Drawing.Size(396, 269);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS DEL MONITOR";
@@ -418,10 +419,10 @@
             // statusStrip1
             // 
             this.statusStrip1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 572);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 636);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1284, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1334, 22);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -436,9 +437,9 @@
             this.fecha,
             this.Column2,
             this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(18, 217);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 219);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(880, 326);
+            this.dataGridView1.Size = new System.Drawing.Size(892, 326);
             this.dataGridView1.TabIndex = 12;
             // 
             // Column1
@@ -583,7 +584,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(1284, 594);
+            this.ClientSize = new System.Drawing.Size(1334, 658);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.statusStrip1);

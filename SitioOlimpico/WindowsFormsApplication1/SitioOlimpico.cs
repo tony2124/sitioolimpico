@@ -182,5 +182,10 @@ namespace WindowsFormsApplication1
         {
             new buscarCliente().Show();
         }
+
+        private void contactarASimpusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("www.simpus.com.mx/es/software/contacto");
+        }
     }
 }
