@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using SitioOlimpico;
 using System.Diagnostics;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication1
 {
@@ -23,9 +24,31 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             
+
+            /*************** CONSULTA INFORMACIÓN DEL MODEM ************/
             obj = new CallerID();
-           /* Thread hilo = new Thread( obj.EscuchaTelefono );
-            hilo.Start();*/
+            ConexionBD bd = new ConexionBD();
+            bd.conexion();
+            MySqlDataReader Datos = bd.obtenerBasesDatosMySQL("select puerto, baud, paridad, norma from configuracion");
+            if (Datos.HasRows)
+                while (Datos.Read())
+                {
+                    obj.port = Datos.GetString(0);
+                    obj.baud = Datos.GetInt32(1);
+                    obj.paridad = Datos.GetInt32(2);
+                    obj.ComandoATID = Datos.GetString(3);
+                }
+            Datos.Close();
+            MessageBox.Show(obj.port);
+            Thread hilo = new Thread( obj.EscuchaTelefono );
+            try
+            {
+             //   hilo.Start();
+            }
+            catch (Exception e) {
+                MessageBox.Show(e.ToString());
+            }
+
 
             
         }
@@ -155,6 +178,11 @@ namespace WindowsFormsApplication1
         {
             unidades u = new unidades(0);
             u.ShowDialog();
+        }
+
+        private void buscarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new buscarCliente().Show();
         }
     }
 }

@@ -19,10 +19,16 @@ namespace WindowsFormsApplication1
         public Boolean foto = false;
         public String nombre_archivo = "sin_foto", 
             rutadestino = @"C:\\sitioOlimpicoPics\\clientes", 
-            formato, id_cliente;
+            formato, id_cliente, foto_name;
         int FORMA;
+
+        /*VARIABLES DE LA BASE DE DATOS*/
         MySqlDataReader Datos;
         ConexionBD Bdatos = new ConexionBD();
+
+        /*VARIABLES PARA LA EDICION DE LOS CLIENTES*/
+        Boolean servicios = false, editado = false;
+
 
         public cliente(string numero, int forma)
         {
@@ -32,48 +38,61 @@ namespace WindowsFormsApplication1
            // foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
 
             FORMA = forma;
-            if (forma == 0)
-                editar_btn_cliente.Visible = false;
-            else
-                editar_btn_cliente.Visible = true;
 
             if (FORMA != 0)
             {
+                editar_btn_cliente.Visible = true;
+
                 num_tel_1_cliente.Text = numero;
 
                 Bdatos.conexion();
-
                 Datos = Bdatos.obtenerBasesDatosMySQL("select count(nombre) from clientes where numero_tel_1 = '" + numero + "'");
                 int x = 0;
                 if (Datos.HasRows)
                     while (Datos.Read())
                         x = Datos.GetInt32(0);
                 Datos.Close();
-
                 if (x != 0)
                 {
-                    Datos = Bdatos.obtenerBasesDatosMySQL("select nombre,foto,colonia,calle,referencias from clientes where numero_tel_1 = '" + numero + "'");
+
+                    Datos = Bdatos.obtenerBasesDatosMySQL("select id_cliente, nombre,foto,colonia,calle,referencias from clientes where numero_tel_1 = '" + numero.Trim() + "'");
                     if (Datos.HasRows)
                         while (Datos.Read())
                         {
-                            nombre_cliente.Text = Datos.GetString(0);
+                            id_cliente = Datos.GetString(0);
+                            nombre_cliente.Text = Datos.GetString(1);
 
                             if (Datos.GetString(1).CompareTo("sin_foto.") == 0)
                                 this.foto_cliente.Image = Properties.Resources.sin_foto;
                             else
-                                foto_cliente.ImageLocation = rutadestino + Datos.GetString(1);
+                                foto_cliente.ImageLocation = rutadestino + "\\" + Datos.GetString(2); 
                             foto_cliente.SizeMode = PictureBoxSizeMode.StretchImage;
+                            foto_name = Datos.GetString(2);
 
-                            colonia_cliente.Text = Datos.GetString(2);
-                            calle_cliente.Text = Datos.GetString(3);
-                            ref_cliente.Text = Datos.GetString(4);
+                            colonia_cliente.Text = Datos.GetString(3);
+                            calle_cliente.Text = Datos.GetString(4);
+                            ref_cliente.Text = Datos.GetString(5);
                         }
                     Datos.Close();
                     Bdatos.Desconectar();
 
                     deshabilitarCampos();
-                    guardar_btn_cliente.Image = null;
+                    guardar_btn_cliente.Image = Properties.Resources.GUARDAR;
+                    guardar_btn_cliente.Text = "GUARDAR SERVICIO";
+                    //guardar_btn_cliente.Enabled = false;
+                    servicios = true;
                 }
+                else
+                {
+                    MessageBox.Show("NO existe el cliente");
+                    num_tel_1_cliente.Enabled = false;
+                }
+
+
+            }
+            else
+            {
+                editar_btn_cliente.Visible = false;
             }
             
 
@@ -82,7 +101,7 @@ namespace WindowsFormsApplication1
             String[] A;
 
             Bdatos.conexion();
-            Datos = Bdatos.obtenerBasesDatosMySQL("select count(numero_unidad) from unidades");
+            Datos = Bdatos.obtenerBasesDatosMySQL("select count(numero_unidad) from taxista_unidad");
             if (Datos.HasRows)
                 while (Datos.Read())
                     contador = Datos.GetInt32(0);
@@ -90,7 +109,7 @@ namespace WindowsFormsApplication1
 
             if (contador > 0)
             {
-                Datos = Bdatos.obtenerBasesDatosMySQL("select numero_unidad from unidades");
+                Datos = Bdatos.obtenerBasesDatosMySQL("select numero_unidad from taxista_unidad");
                 int i = 0;
                 A = new String[contador];
                 while (Datos.Read()){
@@ -107,7 +126,12 @@ namespace WindowsFormsApplication1
 
         public void habilitarCampos()
         {
-
+            //num_tel_1_cliente.Enabled = true;
+            nombre_cliente.Enabled = true;
+            foto_btn_cliente.Enabled = true;
+            colonia_cliente.Enabled = true;
+            calle_cliente.Enabled = true;
+            ref_cliente.Enabled = true;
         }
 
         public void deshabilitarCampos()
@@ -149,82 +173,184 @@ namespace WindowsFormsApplication1
         {
             
            // MessageBox.Show(System.Environment.GetFolderPath(System.Environment.SpecialFolder.ProgramFiles));
-            
-            //VERIFICA SI ESTAN LLENOS LOS CAMPOS DE NOMBRE Y TELEFONO.
-            if (nombre_cliente.Text.CompareTo("") == 0 ||
-                num_tel_1_cliente.Text.CompareTo("") == 0)
+
+            if (servicios == true)//SOLO GUARDAR SERVICIO A UN CLIENTE QUE LLAMA
             {
-                MessageBox.Show("El campo nombre y telefono son obligatorios",
-                    "LLene los campos obligatorios",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                if (unidad_servicio.Text.CompareTo("") == 0)//VERIFICAMOS SI EL CAMPO DE UNIDAD NO TIENE DATOS
+                {
+                    MessageBox.Show("No se puede enviar un servicio si no especifica la unidad primer.", "Error: Unidad no digitada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                }
+                else
+                {
+                    
+                    Bdatos.conexion();
+
+                    Datos = Bdatos.obtenerBasesDatosMySQL("SELECT count(numero_unidad) from taxista_unidad where numero_unidad=" + unidad_servicio.Text);
+                    int existe = 0;
+                    if (Datos.HasRows)
+                        while (Datos.Read())
+                            existe = Datos.GetInt32(0);
+                    Datos.Close();
+                    Bdatos.Desconectar();
+                    if (existe == 0)//Si no existe la unidad
+                    {
+                        MessageBox.Show("No se puede guardar un servicio a una unidad que no este registrada, por favor registre primero la unidad en el programa.", "Error: Unidad no registrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        guardarServicio();
+                        servicios = false;
+                        MessageBox.Show("Servicio guardado exitosamente", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Dispose();
+                    }
+                }
             }
-            else
+            else if (editado)//EDITAR
             {
-                
+               
+                //VERIFICA SI ESTAN LLENOS LOS CAMPOS DE NOMBRE Y TELEFONO.
+                if (nombre_cliente.Text.CompareTo("") == 0 ||
+                    num_tel_1_cliente.Text.CompareTo("") == 0)
+                {
+                    MessageBox.Show("El campo nombre y telefono son obligatorios",
+                        "LLene los campos obligatorios",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                }
+                else
+                {
 
-                 DialogResult result;
-                 if (unidad_servicio.Text.CompareTo("") == 0)//VERIFICAMOS SI EL CAMPO DE UNIDAD NO TIENE DATOS
-                 {
-                     result = MessageBox.Show("No has llenado el campo de unidad para hacer el servicio. ¿Deseas guardar el cliente sin guardar el servicio?",
-                            "¿Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (foto)//SI SE SELECCIONO FOTO DE GUARDA LA FOTO
+                    {
+                        Bdatos.conexion();
+                        Datos = Bdatos.obtenerBasesDatosMySQL("select foto from clientes where id_cliente = '" + id_cliente + "'");
+                        if (Datos.HasRows)
+                            while (Datos.Read())
+                                foto_name = Datos.GetString(0);
+                        Datos.Close();
+                        Bdatos.Desconectar();
 
-                     if (result == DialogResult.Yes)
-                     {//GUARDA EL CLIENTE SIN REALIZAR NINGUN SERVICIO
+                        String archivoDestino = System.IO.Path.Combine(rutadestino, foto_name);
+                        MessageBox.Show(archivoDestino);
+                        File.Delete(archivoDestino);
+                        guardarfoto();
+                        Bdatos.conexion();
 
-                         if (guardarClientes() > 0)
-                         {
-                            
-                             if (foto)//SI SE SELECCIONO FOTO DE GUARDA LA FOTO
-                             {
-                                 guardarfoto();
-                             }
+                        Bdatos.peticion("update clientes set " +
+                            "foto = '"+nombre_archivo+"."+formato+"' WHERE id_cliente = '" + id_cliente + "'");
 
-                             //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
-                             borrarCampos();
-                             MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                         }
-                     }
-                 }
-                 else//SI EL CAMPO DE UNIDAD TIENE DATOS: Guardamos el servicio junto con los datos del cliente
-                 {
-                     Bdatos.conexion();
-                     
-                     Datos = Bdatos.obtenerBasesDatosMySQL("SELECT count(numero_unidad) from unidades where numero_unidad=" + unidad_servicio.Text);
-                     int existe = 0;
-                     if (Datos.HasRows)
-                         while (Datos.Read())
-                             existe = Datos.GetInt32(0);
-                     Datos.Close();
-                     Bdatos.Desconectar();
-                     if (existe != 1)//Si no existe la unidad
-                     {
-                         MessageBox.Show("No se puede guardar un servicio a una unidad que no este registrada, por favor registre primero la unidad en el programa.", "Error: Unidad no registrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     }
-                     else//Si si existe la unidad
-                     {
-                         
-                         if (guardarClientes() > 0)
-                         {
+                        Bdatos.Desconectar();
+                    }
 
-                             if (foto)//SI SE SELECCIONO FOTO DE GUARDA LA FOTO
-                             {
-                                 guardarfoto();
-                             }
+                    if (editarClientes() > 0)
+                    {
+                        editado = false;
+                        servicios = true;
+                        foto = false;
+                        unidad_servicio.Enabled = true;
+                        descripcion_servicio.Enabled = true;
+                        deshabilitarCampos();
+                        editar_btn_cliente.Enabled = true;
+                        guardar_btn_cliente.Text = "Guardar lo editado";
+                        MessageBox.Show("Datos editados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
 
-                             guardarServicio();
 
-                             //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
-                             borrarCampos();
-                             MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                         }
-                      //   MessageBox.Show("Datos ingresados correctamente y Servicio guardado", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                     }
+                }
 
-                 }
+            }else
+            {
+                //VERIFICA SI ESTAN LLENOS LOS CAMPOS DE NOMBRE Y TELEFONO.
+                if (nombre_cliente.Text.CompareTo("") == 0 ||
+                    num_tel_1_cliente.Text.CompareTo("") == 0)
+                {
+                    MessageBox.Show("El campo nombre y telefono son obligatorios",
+                        "LLene los campos obligatorios",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                }
+                else
+                {
 
+
+                    DialogResult result;
+                    if (unidad_servicio.Text.CompareTo("") == 0)//VERIFICAMOS SI EL CAMPO DE UNIDAD NO TIENE DATOS
+                    {
+                        result = MessageBox.Show("No has llenado el campo de unidad para hacer el servicio. ¿Deseas guardar el cliente sin guardar el servicio?",
+                               "¿Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                        if (result == DialogResult.Yes)
+                        {//GUARDA EL CLIENTE SIN REALIZAR NINGUN SERVICIO
+
+                            if (foto)//SI SE SELECCIONO FOTO DE GUARDA LA FOTO
+                            {
+                                guardarfoto();
+                            }
+
+                            if (guardarClientes() > 0)
+                            {
+                                //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
+                                borrarCampos();
+                                foto = false;
+                                MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+                    else//SI EL CAMPO DE UNIDAD TIENE DATOS: Guardamos el servicio junto con los datos del cliente
+                    {
+                        Bdatos.conexion();
+
+                        Datos = Bdatos.obtenerBasesDatosMySQL("SELECT count(numero_unidad) from unidades where numero_unidad=" + unidad_servicio.Text);
+                        int existe = 0;
+                        if (Datos.HasRows)
+                            while (Datos.Read())
+                                existe = Datos.GetInt32(0);
+                        Datos.Close();
+                        Bdatos.Desconectar();
+                        if (existe != 1)//Si no existe la unidad
+                        {
+                            MessageBox.Show("No se puede guardar un servicio a una unidad que no este registrada, por favor registre primero la unidad en el programa.", "Error: Unidad no registrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else//Si si existe la unidad
+                        {
+                            if (foto)//SI SE SELECCIONO FOTO DE GUARDA LA FOTO
+                            {
+                                guardarfoto();
+                            }
+
+                            if (guardarClientes() > 0)
+                            {
+                                foto = false;
+                                guardarServicio();
+
+                                //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
+                                borrarCampos();
+                                MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            //   MessageBox.Show("Datos ingresados correctamente y Servicio guardado", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                    }
+
+                }
             }
             
+        }
+
+        public int editarClientes()
+        {
+            Bdatos.conexion();
+
+            int resultado = Bdatos.peticion("update clientes set " +
+                "nombre = '"+nombre_cliente.Text+
+                "', colonia = '"+colonia_cliente.Text+
+                "', calle = '"+calle_cliente.Text+
+                "', referencias = '"+ref_cliente.Text+"' WHERE id_cliente = '"+id_cliente+"'");
+
+            Bdatos.Desconectar();
+
+            return resultado;
         }
 
         public void guardarfoto() 
@@ -370,7 +496,14 @@ namespace WindowsFormsApplication1
 
         private void editar_btn_cliente_Click(object sender, EventArgs e)
         {
-
+            habilitarCampos();
+            unidad_servicio.Enabled = false;
+            descripcion_servicio.Enabled = false;
+            guardar_btn_cliente.Text = "Guardar lo editado";
+            editado = true;
+            servicios = false;
+            editar_btn_cliente.Enabled = false;
+            guardar_btn_cliente.Enabled = true;
         }
     }
 }

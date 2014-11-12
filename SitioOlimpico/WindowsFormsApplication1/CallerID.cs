@@ -18,6 +18,11 @@ namespace WindowsFormsApplication1
         static string data;
         public bool terminar = false;
 
+        public String port = "COM24";
+        public int baud = 115200;
+        public int paridad = 3;
+        public String ComandoATID = "AT+VCID=1";
+
         public static void OnSerialDataReceived(object sender, SerialDataReceivedEventArgs args)
         {
 
@@ -58,19 +63,19 @@ namespace WindowsFormsApplication1
 
         public static void metodo()
         {
+            data = data.Substring(data.LastIndexOf("= ") + 1);
             cliente obj = new cliente(data,1);
             obj.ShowDialog();
+
         }
 
         public void EscuchaTelefono() {
-            string port = "COM24";
-            int baud = 115200;
+            
+           
 
-            InitializeComPort(port, baud);
+            InitializeComPort(port, baud, paridad);
 
             //ACTIVAR IDENTIFICADOR DE LLAMADAS
-            String ComandoATID;
-            ComandoATID = "AT+VCID=1";
             ComPort.Write(ComandoATID + '\r');
 
             do
@@ -84,10 +89,15 @@ namespace WindowsFormsApplication1
             while (!terminar);//text != "q");
         }
 
-        private static void InitializeComPort(string port, int baud)
+        private static void InitializeComPort(string port, int baud, int paridad)
         {
             ComPort = new SerialPort(port, baud);
-            ComPort.Parity = Parity.None;
+            if (paridad == 0) ComPort.Parity = Parity.Even;
+            else if (paridad == 1) ComPort.Parity = Parity.Mark;
+            else if (paridad == 2) ComPort.Parity = Parity.None;
+            else if (paridad == 3) ComPort.Parity = Parity.Odd;
+            else if (paridad == 4) ComPort.Parity = Parity.Space;
+
             ComPort.StopBits = StopBits.One;
             ComPort.DataBits = 8;
             ComPort.Handshake = Handshake.None;
