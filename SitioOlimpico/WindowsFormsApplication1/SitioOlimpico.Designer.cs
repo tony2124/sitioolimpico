@@ -122,6 +122,7 @@
             this.informaciónDelSitioToolStripMenuItem.Name = "informaciónDelSitioToolStripMenuItem";
             this.informaciónDelSitioToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
             this.informaciónDelSitioToolStripMenuItem.Text = "Información del Sitio";
+            this.informaciónDelSitioToolStripMenuItem.Click += new System.EventHandler(this.informaciónDelSitioToolStripMenuItem_Click);
             // 
             // respaldoDeBDToolStripMenuItem
             // 
@@ -156,6 +157,7 @@
             this.buscarPersonalToolStripMenuItem.Name = "buscarPersonalToolStripMenuItem";
             this.buscarPersonalToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.buscarPersonalToolStripMenuItem.Text = "Buscar personal";
+            this.buscarPersonalToolStripMenuItem.Click += new System.EventHandler(this.buscarPersonalToolStripMenuItem_Click);
             // 
             // unidadesToolStripMenuItem
             // 
@@ -179,6 +181,7 @@
             this.buscarUnidadToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
             this.buscarUnidadToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
             this.buscarUnidadToolStripMenuItem.Text = "Buscar unidad";
+            this.buscarUnidadToolStripMenuItem.Click += new System.EventHandler(this.buscarUnidadToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 

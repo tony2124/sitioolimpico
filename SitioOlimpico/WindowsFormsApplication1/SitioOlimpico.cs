@@ -19,7 +19,6 @@ namespace WindowsFormsApplication1
     public partial class SitioOlimpico : Form
     {
         CallerID obj;
-
         public SitioOlimpico()
         {
             InitializeComponent();
@@ -43,7 +42,8 @@ namespace WindowsFormsApplication1
             Thread hilo = new Thread( obj.EscuchaTelefono );
             try
             {
-               hilo.Start();
+                hilo.Start();
+
             }
             catch (Exception e) {
                 MessageBox.Show(e.ToString());
@@ -110,7 +110,7 @@ namespace WindowsFormsApplication1
 
         private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            personal p = new personal(0);
+            personal p = new personal(0,"",false);
             p.ShowDialog();
         }
         private void button2_Click(object sender, EventArgs e)
@@ -127,6 +127,9 @@ namespace WindowsFormsApplication1
         private void button3_Click(object sender, EventArgs e)
         {
 
+                buscarUnidad bU = new buscarUnidad();
+                bU.Show();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -174,7 +177,7 @@ namespace WindowsFormsApplication1
 
         private void registrarUnidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            unidades u = new unidades(0);
+            unidades u = new unidades(0,"");
             u.ShowDialog();
         }
 
@@ -183,9 +186,29 @@ namespace WindowsFormsApplication1
             new buscarCliente().Show();
         }
 
+        private void buscarUnidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            buscarUnidad bU = new buscarUnidad();
+            bU.Show();
+        }
+            
+
         private void contactarASimpusToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("www.simpus.com.mx/es/software/contacto");
+
+        }
+
+        private void informaciónDelSitioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Informacion().ShowDialog();
+        }
+
+        private void buscarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new buscarPersonal().ShowDialog();
         }
     }
 }

@@ -47,6 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.desvincular_unidad_personal = new System.Windows.Forms.Button();
             this.unidad_personal = new System.Windows.Forms.TextBox();
             this.label_personal = new System.Windows.Forms.Label();
             this.horario_salida_personal = new System.Windows.Forms.DateTimePicker();
@@ -298,6 +299,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.desvincular_unidad_personal);
             this.panel6.Controls.Add(this.unidad_personal);
             this.panel6.Controls.Add(this.label_personal);
             this.panel6.Controls.Add(this.horario_salida_personal);
@@ -308,6 +310,17 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(217, 126);
             this.panel6.TabIndex = 22;
+            // 
+            // desvincular_unidad_personal
+            // 
+            this.desvincular_unidad_personal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.desvincular_unidad_personal.Location = new System.Drawing.Point(22, 66);
+            this.desvincular_unidad_personal.Name = "desvincular_unidad_personal";
+            this.desvincular_unidad_personal.Size = new System.Drawing.Size(177, 23);
+            this.desvincular_unidad_personal.TabIndex = 23;
+            this.desvincular_unidad_personal.Text = "Desvincular unidad";
+            this.desvincular_unidad_personal.UseVisualStyleBackColor = true;
+            this.desvincular_unidad_personal.Click += new System.EventHandler(this.desvincular_unidad_personal_Click);
             // 
             // unidad_personal
             // 
@@ -715,6 +728,7 @@
             this.editar_btn_personal.Size = new System.Drawing.Size(118, 92);
             this.editar_btn_personal.TabIndex = 7;
             this.editar_btn_personal.UseVisualStyleBackColor = true;
+            this.editar_btn_personal.Click += new System.EventHandler(this.editar_btn_personal_Click);
             // 
             // guardar_btn_personal
             // 
@@ -763,6 +777,8 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.personal_FormClosing);
+            this.Load += new System.EventHandler(this.personal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -845,5 +861,6 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox unidad_personal;
+        private System.Windows.Forms.Button desvincular_unidad_personal;
     }
 }
