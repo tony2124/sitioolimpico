@@ -72,7 +72,7 @@ namespace WindowsFormsApplication1
                     proc.StartInfo.UseShellExecute = false;
                     proc.StartInfo.RedirectStandardOutput = true;
                     proc.StartInfo.FileName = "mysqldump";
-                    proc.StartInfo.Arguments = ConexionBD.basedatos + " --single-transaction --host=" + ConexionBD.host + " --user=" + ConexionBD.usuario + " --password=" + ConexionBD.DesEncriptar(ConexionBD.contrasena);
+                    proc.StartInfo.Arguments = ConexionBD.basedatos + " --single-transaction --host=" + ConexionBD.host + " --user=" + ConexionBD.usuario + " --password=" + ConexionBD.contrasena;
                     Process miProceso;
                     miProceso = Process.Start(proc.StartInfo);
                     try
