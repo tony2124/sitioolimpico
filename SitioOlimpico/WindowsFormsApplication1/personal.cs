@@ -113,12 +113,11 @@ namespace WindowsFormsApplication1
             String[] A;
 
             Bdatos.conexion();
-            Datos = Bdatos.obtenerBasesDatosMySQL("select count(numero_unidad) from unidades where asignado=0");
+            Datos = Bdatos.obtenerBasesDatosMySQL("select count(numero_unidad) from unidades where asignado = 0");
             if (Datos.HasRows)
                 while (Datos.Read())
                     contador = Datos.GetInt32(0);
             Datos.Close();
-
             if (contador > 0)
             {
                 Datos = Bdatos.obtenerBasesDatosMySQL("select numero_unidad from unidades where asignado = 0");

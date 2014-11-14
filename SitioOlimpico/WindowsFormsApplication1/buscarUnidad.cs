@@ -27,7 +27,6 @@ namespace WindowsFormsApplication1
 
               //CONSULTA A LA BASE DE DATOS PARA EXTRAER INFORMACIÓN DE LAS UNIDADES
             int contador = 0;
-            String[] A;
 
             Bdatos.conexion();
             Datos = Bdatos.obtenerBasesDatosMySQL("select count(numero_unidad) from unidades");
