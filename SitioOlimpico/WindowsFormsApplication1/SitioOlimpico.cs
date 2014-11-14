@@ -35,14 +35,15 @@ namespace WindowsFormsApplication1
                     CallerID.port = Datos.GetString(0);
                     CallerID.baud = Datos.GetInt32(1);
                     CallerID.paridad = Datos.GetInt32(2);
-                    obj.ComandoATID = Datos.GetString(3);
+                    CallerID.ComandoATID = Datos.GetString(3);
                 }
             Datos.Close();
-            MessageBox.Show(CallerID.port);
+          //  MessageBox.Show(CallerID.port);
             Thread hilo = new Thread( obj.EscuchaTelefono );
             try
             {
                 hilo.Start();
+
             }
             catch (Exception e) {
                 MessageBox.Show(e.ToString());
@@ -188,10 +189,16 @@ namespace WindowsFormsApplication1
         private void buscarUnidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-              
-                buscarUnidad bU = new buscarUnidad();
-                bU.Show();
+
+            buscarUnidad bU = new buscarUnidad();
+            bU.Show();
+        }
             
+
+        private void contactarASimpusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("www.simpus.com.mx/es/software/contacto");
+
         }
     }
 }

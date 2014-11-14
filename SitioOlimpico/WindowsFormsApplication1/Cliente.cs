@@ -53,6 +53,7 @@ namespace WindowsFormsApplication1
                 {
 
                     Datos = Bdatos.obtenerBasesDatosMySQL("select id_cliente, nombre,colonia,calle,referencias from clientes where numero_tel_1 = '" + numero.Trim() + "'");
+
                     if (Datos.HasRows)
                         while (Datos.Read())
                         {
