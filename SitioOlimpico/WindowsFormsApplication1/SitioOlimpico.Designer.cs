@@ -179,6 +179,7 @@
             this.buscarUnidadToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
             this.buscarUnidadToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
             this.buscarUnidadToolStripMenuItem.Text = "Buscar unidad";
+            this.buscarUnidadToolStripMenuItem.Click += new System.EventHandler(this.buscarUnidadToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 

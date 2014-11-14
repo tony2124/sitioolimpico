@@ -45,6 +45,9 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.info_chofer_unidad = new System.Windows.Forms.LinkLabel();
+            this.chofer_unidad = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.fecha_ingreso_unidades = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.placas_unidad = new System.Windows.Forms.TextBox();
@@ -94,6 +97,7 @@
             // 
             // color_unidad
             // 
+            this.color_unidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.color_unidad.Location = new System.Drawing.Point(137, 89);
             this.color_unidad.Name = "color_unidad";
             this.color_unidad.Size = new System.Drawing.Size(211, 20);
@@ -111,6 +115,7 @@
             // 
             // marca_unidad
             // 
+            this.marca_unidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.marca_unidad.Location = new System.Drawing.Point(137, 37);
             this.marca_unidad.Name = "marca_unidad";
             this.marca_unidad.Size = new System.Drawing.Size(211, 20);
@@ -128,6 +133,7 @@
             // 
             // modelo_unidad
             // 
+            this.modelo_unidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.modelo_unidad.Location = new System.Drawing.Point(137, 63);
             this.modelo_unidad.Name = "modelo_unidad";
             this.modelo_unidad.Size = new System.Drawing.Size(211, 20);
@@ -230,6 +236,9 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.info_chofer_unidad);
+            this.panel6.Controls.Add(this.chofer_unidad);
+            this.panel6.Controls.Add(this.label10);
             this.panel6.Controls.Add(this.fecha_ingreso_unidades);
             this.panel6.Controls.Add(this.label8);
             this.panel6.Controls.Add(this.placas_unidad);
@@ -238,8 +247,38 @@
             this.panel6.Controls.Add(this.label6);
             this.panel6.Location = new System.Drawing.Point(39, 239);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(545, 157);
+            this.panel6.Size = new System.Drawing.Size(545, 167);
             this.panel6.TabIndex = 9;
+            // 
+            // info_chofer_unidad
+            // 
+            this.info_chofer_unidad.AutoSize = true;
+            this.info_chofer_unidad.Location = new System.Drawing.Point(163, 160);
+            this.info_chofer_unidad.Name = "info_chofer_unidad";
+            this.info_chofer_unidad.Size = new System.Drawing.Size(128, 13);
+            this.info_chofer_unidad.TabIndex = 910;
+            this.info_chofer_unidad.TabStop = true;
+            this.info_chofer_unidad.Text = "Ver informacón del chofer";
+            this.info_chofer_unidad.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.info_chofer_unidad_LinkClicked);
+            // 
+            // chofer_unidad
+            // 
+            this.chofer_unidad.Enabled = false;
+            this.chofer_unidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chofer_unidad.Location = new System.Drawing.Point(165, 135);
+            this.chofer_unidad.Name = "chofer_unidad";
+            this.chofer_unidad.Size = new System.Drawing.Size(364, 22);
+            this.chofer_unidad.TabIndex = 909;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(19, 140);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 13);
+            this.label10.TabIndex = 908;
+            this.label10.Text = "Chofer actual:";
             // 
             // fecha_ingreso_unidades
             // 
@@ -260,6 +299,7 @@
             // 
             // placas_unidad
             // 
+            this.placas_unidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.placas_unidad.Location = new System.Drawing.Point(165, 65);
             this.placas_unidad.Name = "placas_unidad";
             this.placas_unidad.Size = new System.Drawing.Size(364, 20);
@@ -277,6 +317,7 @@
             // 
             // descripcion_unidad
             // 
+            this.descripcion_unidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descripcion_unidad.Location = new System.Drawing.Point(165, 12);
             this.descripcion_unidad.Multiline = true;
             this.descripcion_unidad.Name = "descripcion_unidad";
@@ -311,6 +352,7 @@
             this.editar_btn_unidades.Size = new System.Drawing.Size(118, 92);
             this.editar_btn_unidades.TabIndex = 19;
             this.editar_btn_unidades.UseVisualStyleBackColor = true;
+            this.editar_btn_unidades.Click += new System.EventHandler(this.editar_btn_unidades_Click);
             // 
             // cancelar_btn_unidades
             // 
@@ -398,5 +440,8 @@
         private System.Windows.Forms.TextBox descripcion_unidad;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox chofer_unidad;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.LinkLabel info_chofer_unidad;
     }
 }
