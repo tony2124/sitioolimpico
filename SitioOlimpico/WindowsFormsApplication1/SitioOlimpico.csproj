@@ -91,6 +91,12 @@
     <Compile Include="buscarCliente.Designer.cs">
       <DependentUpon>buscarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="buscarPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="buscarPersonal.Designer.cs">
+      <DependentUpon>buscarPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="buscarUnidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,12 @@
     </Compile>
     <Compile Include="Cliente.Designer.cs">
       <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Informacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Informacion.Designer.cs">
+      <DependentUpon>Informacion.cs</DependentUpon>
     </Compile>
     <Compile Include="unidades.cs">
       <SubType>Form</SubType>
@@ -149,6 +161,9 @@
     <EmbeddedResource Include="buscarCliente.resx">
       <DependentUpon>buscarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="buscarPersonal.resx">
+      <DependentUpon>buscarPersonal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="buscarUnidad.resx">
       <DependentUpon>buscarUnidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informacion.resx">
+      <DependentUpon>Informacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="unidades.resx">
       <DependentUpon>unidades.cs</DependentUpon>
@@ -286,6 +304,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sin_foto_taxi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUSQUEDA PERSONAL.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

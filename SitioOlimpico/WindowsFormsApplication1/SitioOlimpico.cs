@@ -72,7 +72,7 @@ namespace WindowsFormsApplication1
                     proc.StartInfo.UseShellExecute = false;
                     proc.StartInfo.RedirectStandardOutput = true;
                     proc.StartInfo.FileName = "mysqldump";
-                    proc.StartInfo.Arguments = ConexionBD.basedatos + " --single-transaction --host=" + ConexionBD.host + " --user=" + ConexionBD.usuario + " --password=" + ConexionBD.DesEncriptar(ConexionBD.contrasena);
+                    proc.StartInfo.Arguments = ConexionBD.basedatos + " --single-transaction --host=" + ConexionBD.host + " --user=" + ConexionBD.usuario + " --password=" + ConexionBD.contrasena;
                     Process miProceso;
                     miProceso = Process.Start(proc.StartInfo);
                     try
@@ -199,6 +199,16 @@ namespace WindowsFormsApplication1
         {
             System.Diagnostics.Process.Start("www.simpus.com.mx/es/software/contacto");
 
+        }
+
+        private void informaciónDelSitioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Informacion().ShowDialog();
+        }
+
+        private void buscarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new buscarPersonal().ShowDialog();
         }
     }
 }

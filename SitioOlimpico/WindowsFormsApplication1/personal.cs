@@ -99,7 +99,15 @@ namespace WindowsFormsApplication1
                             unidad_personal.Text = Datos.GetString(0);
 
                     Bdatos.Desconectar();
+                    desvincular_unidad_personal.Enabled = true;
                 }
+                else
+                {
+                    
+                    desvincular_unidad_personal.Enabled = false;
+                }
+
+
                 deshabilitar();
                 editar_btn_personal.Visible = true;
             }
@@ -179,6 +187,7 @@ namespace WindowsFormsApplication1
             estado_personal.Enabled = true;
             ref_personal.Enabled = true;
             foto_btn_personal.Enabled = true;
+           // unidad_personal.Enabled = true;
             //autorizacion_personal.Enabled = true;
            // unidad_personal.Enabled = true;
 
@@ -216,47 +225,49 @@ namespace WindowsFormsApplication1
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
                 }
-                else
+                else//SI SI TIENEN DATOS NOMBRE Y APELLIDO
                 {
+                   if (foto)//SI SE SELECCIONO FOTO SE GUARDA LA FOTO
+                                {
+                                    Bdatos.conexion();
+                                    String foto_name = "";
+                                    Datos = Bdatos.obtenerBasesDatosMySQL("select foto from personal where id_personal = '" + id_personal_edicion + "'");
+                                    if (Datos.HasRows)
+                                        while (Datos.Read())
+                                            foto_name = Datos.GetString(0);
+                                    Datos.Close();
+                                    Bdatos.Desconectar();
 
-                    if (foto)//SI SE SELECCIONO FOTO SE GUARDA LA FOTO
-                    {
-                        Bdatos.conexion();
-                        String foto_name = "";
-                        Datos = Bdatos.obtenerBasesDatosMySQL("select foto from personal where id_personal = '" + id_personal_edicion + "'");
-                        if (Datos.HasRows)
-                            while (Datos.Read())
-                                foto_name = Datos.GetString(0);
-                        Datos.Close();
-                        Bdatos.Desconectar();
+                                    String archivoDestino = System.IO.Path.Combine(rutadestino, foto_name);
+                                    MessageBox.Show(archivoDestino);
+                                    File.Delete(archivoDestino);
+                                    guardarfoto();
+                                    Bdatos.conexion();
 
-                        String archivoDestino = System.IO.Path.Combine(rutadestino, foto_name);
-                        MessageBox.Show(archivoDestino);
-                        File.Delete(archivoDestino);
-                        guardarfoto();
-                        Bdatos.conexion();
+                                    Bdatos.peticion("update personal set " +
+                                        "foto = '" + nombre_archivo + "." + formato + "' WHERE id_personal = '" + id_personal_edicion + "'");
 
-                        Bdatos.peticion("update personal set " +
-                            "foto = '" + nombre_archivo + "." + formato + "' WHERE id_personal = '" + id_personal_edicion + "'");
+                                    Bdatos.Desconectar();
+                                    foto = false;
+                                }
 
-                        Bdatos.Desconectar();
-                        foto = false;
-                    }
+                                if (editarPersonal() > 0)
+                                {
+                                    //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
+                                    editar = false;
 
-                    if (editarPersonal() > 0)
-                    {
-                        //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
-                        editar = false;
-                        deshabilitar();
-                        guardar_btn_personal.Enabled = false;
-                        editar_btn_personal.Enabled = true;
-                        MessageBox.Show("Datos editados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                                    deshabilitar();
+                                    guardar_btn_personal.Enabled = false;
+                                    editar_btn_personal.Enabled = true;
+                                    desvincular_unidad_personal.Enabled = true;
+                                  
+
+                                    MessageBox.Show("Datos editados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
 
 
-                    //MessageBox.Show("Edicion");
-
-                }
+                                //MessageBox.Show("Edicion");
+                }//FIN DE SI SI TIENEN DATOS NOMBRE Y APELLIDO
             }
             else
             {
@@ -514,8 +525,7 @@ namespace WindowsFormsApplication1
                 + "" + DateTime.Now.Day
                 + "" + DateTime.Now.Hour
                 + "" + DateTime.Now.Minute
-                + "" + DateTime.Now.Second
-                + "" + DateTime.Now.Millisecond + "";
+                + "" + DateTime.Now.Second;
         }
 
 
@@ -609,6 +619,7 @@ namespace WindowsFormsApplication1
         {
             guardar_btn_personal.Enabled = true;
             editar_btn_personal.Enabled = false;
+            desvincular_unidad_personal.Enabled = false;
             habilitar();
             editar = true;
 
@@ -632,10 +643,15 @@ namespace WindowsFormsApplication1
             Bdatos.peticion("update personal set asignado = 0 where id_personal = " + id_personal_edicion);
             Bdatos.Desconectar();
 
+            unidad_personal.Enabled = true;
             MessageBox.Show("El taxista ha sido desvinculado de la unidad correctamente");
-            unidades.txt.Text = "Aun no se le asigna chofer";
-            unidades.chofer_inf.Visible = false;
-            Dispose();
+
+            if (ventanaUnidades)
+            {
+                unidades.txt.Text = "Aun no se le asigna chofer";
+                unidades.chofer_inf.Visible = false;
+                Dispose();
+            }
         }
 
         private void personal_Load(object sender, EventArgs e)
