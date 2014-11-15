@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using SitioOlimpico;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,20 +14,60 @@ namespace WindowsFormsApplication1
 {
     public partial class buscarCliente : Form
     {
+
+        public static MySqlDataAdapter Adaptador;
+        public static DataTable ds;
+
         public buscarCliente()
         {
             InitializeComponent();
+
+            Pintar_tabla("select id_cliente, nombre, numero_tel_1, colonia, calle, referencias  from clientes");
+
+            tabla.Columns[0].HeaderText = "ID PERSONAL";
+            tabla.Columns[0].Width = 130;
+            tabla.Columns[1].HeaderText = "NOMBRE";
+            tabla.Columns[1].Width = 400;
+            tabla.Columns[2].HeaderText = "TELÉFONO";
+            tabla.Columns[3].HeaderText = "COLONIA";
+            tabla.Columns[4].HeaderText = "CALLE";
+            tabla.Columns[5].HeaderText = "REFERENCIAS";
+
+            total.Text = "" + tabla.Rows.Count;
+        }
+
+        public void Pintar_tabla(String filtro)
+        {
+            Adaptador = new MySqlDataAdapter(filtro, ConexionBD.conex);
+
+            ds = new DataTable();
+            Adaptador.Fill(ds);
+            tabla.DataSource = ds;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new cliente(num_tel.Text, 1).Show() ;
+            Pintar_tabla("select id_cliente, nombre, numero_tel_1, colonia, calle, referencias  from clientes where numero_tel_1 like '%"+num_tel.Text+"%' or nombre like '%"+num_tel.Text+"%'");
+            //new cliente(num_tel.Text, 1).ShowDialog() ;
+            total.Text = "" + tabla.Rows.Count;
+            if (tabla.Rows.Count == 1)
+                new cliente(tabla.Rows[0].Cells[2].Value.ToString(), 1).ShowDialog();
         }
 
         private void num_tel_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
                 button1.PerformClick();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void tabla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new cliente(tabla.Rows[e.RowIndex].Cells[2].Value.ToString(), 1).ShowDialog();
         }
     }
 }

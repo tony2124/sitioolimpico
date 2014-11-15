@@ -348,6 +348,7 @@
             // editar_btn_cliente
             // 
             this.editar_btn_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.editar_btn_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editar_btn_cliente.Image = global::WindowsFormsApplication1.Properties.Resources.MODIFICAR;
             this.editar_btn_cliente.Location = new System.Drawing.Point(168, 427);
             this.editar_btn_cliente.Name = "editar_btn_cliente";
@@ -360,6 +361,7 @@
             // 
             this.cancelar_btn_cliente.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.CANCELAR;
             this.cancelar_btn_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cancelar_btn_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelar_btn_cliente.Location = new System.Drawing.Point(420, 427);
             this.cancelar_btn_cliente.Name = "cancelar_btn_cliente";
             this.cancelar_btn_cliente.Size = new System.Drawing.Size(121, 92);
@@ -369,8 +371,9 @@
             // 
             // guardar_btn_cliente
             // 
-            this.guardar_btn_cliente.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.GUARDAR2;
             this.guardar_btn_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.guardar_btn_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guardar_btn_cliente.Image = global::WindowsFormsApplication1.Properties.Resources.GUARDAR2;
             this.guardar_btn_cliente.Location = new System.Drawing.Point(292, 427);
             this.guardar_btn_cliente.Name = "guardar_btn_cliente";
             this.guardar_btn_cliente.Size = new System.Drawing.Size(122, 92);

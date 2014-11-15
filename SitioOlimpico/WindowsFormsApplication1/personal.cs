@@ -46,7 +46,7 @@ namespace WindowsFormsApplication1
                 desvincular_unidad_personal.Visible = true;
                 label_personal.Text = "Unidad: ";
                 unidad_personal.Visible = true;
-                this.panel6.Size = new System.Drawing.Size(217, 100);
+               // this.panel6.Size = new System.Drawing.Size(217, 100);
 
                 horario_entrada_personal.Visible = false;
                 horario_salida_personal.Visible = false;
@@ -578,7 +578,7 @@ namespace WindowsFormsApplication1
             {
                 label_personal.Text = "Unidad: ";
                 unidad_personal.Visible = true;
-                this.panel6.Size = new System.Drawing.Size(217, 100);
+                //this.panel6.Size = new System.Drawing.Size(217, 100);
 
                 horario_entrada_personal.Visible = false;
                 horario_salida_personal.Visible = false;
@@ -589,7 +589,7 @@ namespace WindowsFormsApplication1
             else
             {
                 label_personal.Text = "Horario: ";
-                this.panel6.Size = new System.Drawing.Size(217, 126);
+                //this.panel6.Size = new System.Drawing.Size(217, 126);
                 horario_entrada_personal.Visible = true;
                 horario_salida_personal.Visible = true;
                 label30.Visible = true;
