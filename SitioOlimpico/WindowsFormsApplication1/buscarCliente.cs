@@ -48,7 +48,6 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             Pintar_tabla("select id_cliente, nombre, numero_tel_1, colonia, calle, referencias  from clientes where numero_tel_1 like '%"+num_tel.Text+"%' or nombre like '%"+num_tel.Text+"%'");
-            //new cliente(num_tel.Text, 1).ShowDialog() ;
             total.Text = "" + tabla.Rows.Count;
             if (tabla.Rows.Count == 1)
                 new cliente(tabla.Rows[0].Cells[2].Value.ToString(), 1).ShowDialog();

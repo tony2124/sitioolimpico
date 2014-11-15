@@ -18,6 +18,7 @@ namespace WindowsFormsApplication1
 {
     public partial class SitioOlimpico : Form
     {
+        public static int AUTORIZACION = 0;
         CallerID obj;
         public SitioOlimpico()
         {
@@ -39,6 +40,10 @@ namespace WindowsFormsApplication1
                 }
             Datos.Close();
             bd.Desconectar();
+
+            if (AUTORIZACION == 0)
+                usuarios.Visible = true;
+
           //  MessageBox.Show(CallerID.port);
             Thread hilo = new Thread( obj.EscuchaTelefono );
             try
