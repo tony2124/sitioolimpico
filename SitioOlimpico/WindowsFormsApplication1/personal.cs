@@ -57,7 +57,7 @@ namespace WindowsFormsApplication1
 
                 Datos = Bdatos.obtenerBasesDatosMySQL("select nombre, apellido, foto, fecha_ingreso,"
                     +"fecha_nacimiento, telefono, numero_cel, estado_civil, colonia, calle, numero_int, numero_ext,"+
-                    "codigo_postal, ciudad, estado, referencias, nivel_autorizacion, asignado from personal where id_personal ='"+id_perso+"'");
+                    "codigo_postal, ciudad, estado, referencias, nivel_autorizacion, asignado, horario_entrada, horario_salida from personal where id_personal ='"+id_perso+"'");
                 int asignado = 0;
                 if(Datos.HasRows)
                     while (Datos.Read())
@@ -86,26 +86,34 @@ namespace WindowsFormsApplication1
                         estado_personal.Text = Datos.GetString(14);
                         ref_personal.Text = Datos.GetString(15);
                         autorizacion_personal.SelectedIndex = int.Parse(Datos.GetString(16));
-                        asignado = Datos.GetInt32(17);
+                        if (int.Parse(Datos.GetString(16)) == 0)
+                            asignado = Datos.GetInt32(17);
+                        else
+                        {
+                            horario_entrada_personal.Text = Datos.GetString(18);
+                            horario_salida_personal.Text = Datos.GetString(19);
+                        }
 
                     }
 
                 Datos.Close();
-                if (asignado == 1)
-                {
-                    Datos = Bdatos.obtenerBasesDatosMySQL("select numero_unidad from taxista_unidad where id_personal = " + id_perso + " order by fecha asc");
-                    if (Datos.HasRows)
-                        while (Datos.Read())
-                            unidad_personal.Text = Datos.GetString(0);
 
-                    Bdatos.Desconectar();
-                    desvincular_unidad_personal.Enabled = true;
-                }
-                else
-                {
+                if(autorizacion_personal.SelectedIndex == 0)//SI ES TAXISTA
+                    if (asignado == 1)
+                    {
+                        Datos = Bdatos.obtenerBasesDatosMySQL("select numero_unidad from taxista_unidad where id_personal = " + id_perso + " order by fecha asc");
+                        if (Datos.HasRows)
+                            while (Datos.Read())
+                                unidad_personal.Text = Datos.GetString(0);
+
+                        Bdatos.Desconectar();
+                        desvincular_unidad_personal.Enabled = true;
+                    }
+                    else
+                    {
                     
-                    desvincular_unidad_personal.Enabled = false;
-                }
+                        desvincular_unidad_personal.Enabled = false;
+                    }
 
 
                 deshabilitar();
@@ -166,6 +174,8 @@ namespace WindowsFormsApplication1
             autorizacion_personal.Enabled = false;
             unidad_personal.Enabled = false;
             foto_btn_personal.Enabled = false;
+            horario_entrada_personal.Enabled = false;
+            horario_salida_personal.Enabled = false;
 
         }
 
@@ -187,6 +197,8 @@ namespace WindowsFormsApplication1
             estado_personal.Enabled = true;
             ref_personal.Enabled = true;
             foto_btn_personal.Enabled = true;
+            horario_entrada_personal.Enabled = true;
+            horario_salida_personal.Enabled = true;
            // unidad_personal.Enabled = true;
             //autorizacion_personal.Enabled = true;
            // unidad_personal.Enabled = true;
@@ -285,77 +297,92 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    if (unidad_personal.Text.CompareTo("") == 0)
+                    if (autorizacion_personal.SelectedIndex == 0)//SI ES TAXISTA
                     {
-                        DialogResult result = MessageBox.Show("No has llenado el campo de unidad. ¿Deseas guardar el taxista sin asignarle una unidad?",
-                               "¿Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                        if (result == DialogResult.Yes)
+                        if (unidad_personal.Text.CompareTo("") == 0)//SI EL CAMPO UNIDAD ESTA VACIO
                         {
-                            if (guardarPersonal() > 0)
-                            {
-                                if (foto)//Si busco foto se guarda la foto
-                                {
-                                    guardarfoto();
-                                }
-
-                                //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
-                                borrarCampos();
-                                MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-
-                        }
-                    }
-                    else
-                    {
-                        Bdatos.conexion();
-
-                        Datos = Bdatos.obtenerBasesDatosMySQL("SELECT count(numero_unidad) from unidades where numero_unidad=" + unidad_personal.Text + " and asignado = 0");
-                        if (Datos != null)
-                        {
-                            int existe = 0;
-
-                            if (Datos.HasRows)
-                                while (Datos.Read())
-                                    existe = Datos.GetInt32(0);
-                            Datos.Close();
-                            Bdatos.Desconectar();
-
-                            if (existe == 0)//Si no existe la unidad
-                            {
-                                MessageBox.Show("No se puede guardar un taxista con una unidad que no este registrada o ya este asignada a otro taxista, por favor registre o desvincule primero la unidad en el programa.", "Error: Unidad no registrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            else
+                            DialogResult result = MessageBox.Show("No has llenado el campo de unidad. ¿Deseas guardar el taxista sin asignarle una unidad?",
+                                   "¿Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                            if (result == DialogResult.Yes)
                             {
                                 if (guardarPersonal() > 0)
                                 {
-
-
-                                    Bdatos.peticion("insert into taxista_unidad (id_personal, numero_unidad, fecha)" +
-                                            "values('" + id_personal + "'," + unidad_personal.Text + ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "')");
-
                                     if (foto)//Si busco foto se guarda la foto
                                     {
                                         guardarfoto();
                                     }
 
-                                    //MODIFICAMOS LA UNIDAD PARA PONERLA ASIGNADA
-                                    Bdatos.conexion();
-                                    Bdatos.peticion("update unidades set asignado = 1 where numero_unidad = " + unidad_personal.Text);
-                                    Bdatos.Desconectar();
-
-                                    //MODIFICAMOS EL PERSONAL PARA PONERLO ASIGNADO
-                                    Bdatos.conexion();
-                                    Bdatos.peticion("update personal set asignado = 1 where id_personal = " + id_personal);
-                                    Bdatos.Desconectar();
-
                                     //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
                                     borrarCampos();
                                     MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
+
                             }
                         }
+                        else
+                        {
+                            Bdatos.conexion();
+
+                            Datos = Bdatos.obtenerBasesDatosMySQL("SELECT count(numero_unidad) from unidades where numero_unidad=" + unidad_personal.Text + " and asignado = 0");
+                            if (Datos != null)
+                            {
+                                int existe = 0;
+
+                                if (Datos.HasRows)
+                                    while (Datos.Read())
+                                        existe = Datos.GetInt32(0);
+                                Datos.Close();
+                                Bdatos.Desconectar();
+
+                                if (existe == 0)//Si no existe la unidad
+                                {
+                                    MessageBox.Show("No se puede guardar un taxista con una unidad que no este registrada o ya este asignada a otro taxista, por favor registre o desvincule primero la unidad en el programa.", "Error: Unidad no registrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
+                                {
+                                    if (guardarPersonal() > 0)
+                                    {
+
+
+                                        Bdatos.peticion("insert into taxista_unidad (id_personal, numero_unidad, fecha)" +
+                                                "values('" + id_personal + "'," + unidad_personal.Text + ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "')");
+
+                                        if (foto)//Si busco foto se guarda la foto
+                                        {
+                                            guardarfoto();
+                                        }
+
+                                        //MODIFICAMOS LA UNIDAD PARA PONERLA ASIGNADA
+                                        Bdatos.conexion();
+                                        Bdatos.peticion("update unidades set asignado = 1 where numero_unidad = " + unidad_personal.Text);
+                                        //MODIFICAMOS EL PERSONAL PARA PONERLO ASIGNADO
+                                        Bdatos.peticion("update personal set asignado = 1 where id_personal = " + id_personal);
+                                        Bdatos.Desconectar();
+
+                                        //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
+                                        borrarCampos();
+                                        MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                }
+                            }
+                        }
+                    }//FIN DEL SI ES TAXISTA O MONITOR
+                    else
+                    {
+                        if (guardarPersonal() > 0)
+                        {
+
+                            if (foto)//Si busco foto se guarda la foto
+                            {
+                                guardarfoto();
+                            }
+
+                            //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
+                            borrarCampos();
+                            MessageBox.Show("Datos ingresados correctamente ", " Acción exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-                }
+                }//FIN DE LA VERIFICACION SI LOS CAMPOS NOMBRE ESTAN VACIOS
             }
         }
 
@@ -459,7 +486,7 @@ namespace WindowsFormsApplication1
                    "','" + fecha_nac_personal.Value.ToString("yyyy-MM-dd") +
                    "','" + num_tel_personal.Text +
                    "','" + num_cel_personal.Text +
-                   "','" + estado_civil_personal.Text +
+                   "','" + estado_civil_personal.SelectedIndex +
                    "','" + colonia_personal.Text +
                    "','" + calle_personal.Text +
                    "','" + num_int_personal.Text +

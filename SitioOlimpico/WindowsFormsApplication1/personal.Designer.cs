@@ -314,7 +314,7 @@
             // desvincular_unidad_personal
             // 
             this.desvincular_unidad_personal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desvincular_unidad_personal.Location = new System.Drawing.Point(17, 84);
+            this.desvincular_unidad_personal.Location = new System.Drawing.Point(15, 84);
             this.desvincular_unidad_personal.Name = "desvincular_unidad_personal";
             this.desvincular_unidad_personal.Size = new System.Drawing.Size(206, 27);
             this.desvincular_unidad_personal.TabIndex = 23;
