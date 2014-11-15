@@ -18,6 +18,7 @@ namespace WindowsFormsApplication1
 {
     public partial class SitioOlimpico : Form
     {
+        public static int AUTORIZACION = 0;
         CallerID obj;
         public SitioOlimpico()
         {
@@ -38,6 +39,11 @@ namespace WindowsFormsApplication1
                     CallerID.ComandoATID = Datos.GetString(3);
                 }
             Datos.Close();
+            bd.Desconectar();
+
+            if (AUTORIZACION == 0)
+                usuarios.Visible = true;
+
           //  MessageBox.Show(CallerID.port);
             Thread hilo = new Thread( obj.EscuchaTelefono );
             try
@@ -90,6 +96,7 @@ namespace WindowsFormsApplication1
                         MessageBox.Show(exception.Message);
                         return;
                     }
+                    bd.Desconectar();
                     MessageBox.Show("Copia de seguridad realizada con éxito");
                 }
             }
@@ -98,7 +105,7 @@ namespace WindowsFormsApplication1
 
         public void cerrar ()
         {
-             MessageBox.Show(this, "¿Está seguro que desea salir del sistema? Una vez que salga del sistema no será posible identificar las llamadas.", "Confirme operación",  MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            MessageBox.Show(this, "¿Está seguro que desea salir del sistema? Una vez que salga del sistema no será posible identificar las llamadas.", "Confirme operación",  MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             Close();
         }
 
@@ -127,8 +134,8 @@ namespace WindowsFormsApplication1
         private void button3_Click(object sender, EventArgs e)
         {
 
-                buscarUnidad bU = new buscarUnidad();
-                bU.Show();
+            buscarUnidad bU = new buscarUnidad();
+            bU.ShowDialog();
             
         }
 
@@ -183,7 +190,7 @@ namespace WindowsFormsApplication1
 
         private void buscarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new buscarCliente().Show();
+            new buscarCliente().ShowDialog();
         }
 
         private void buscarUnidadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -191,7 +198,7 @@ namespace WindowsFormsApplication1
 
 
             buscarUnidad bU = new buscarUnidad();
-            bU.Show();
+            bU.ShowDialog();
         }
             
 
