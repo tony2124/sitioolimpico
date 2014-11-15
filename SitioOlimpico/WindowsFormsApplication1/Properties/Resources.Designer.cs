@@ -93,6 +93,16 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BUSQUEDA_CLIENTES {
+            get {
+                object obj = ResourceManager.GetObject("BUSQUEDA CLIENTES", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BUSQUEDA_PERSONAL {
             get {
                 object obj = ResourceManager.GetObject("BUSQUEDA PERSONAL", resourceCulture);
