@@ -44,6 +44,8 @@
             this.registroDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.usuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoServicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,15 +68,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.asd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabla = new System.Windows.Forms.DataGridView();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -83,11 +82,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.usuarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -217,6 +214,18 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(214, 6);
             // 
+            // usuarios
+            // 
+            this.usuarios.Name = "usuarios";
+            this.usuarios.Size = new System.Drawing.Size(217, 24);
+            this.usuarios.Text = "Creación de usuarios";
+            this.usuarios.Visible = false;
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(214, 6);
+            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
@@ -285,6 +294,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.linkLabel1);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -433,56 +443,64 @@
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // dataGridView1
+            // tabla
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Unidad,
-            this.asd,
-            this.cliente,
-            this.fecha,
-            this.Column2,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(18, 219);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(892, 326);
-            this.dataGridView1.TabIndex = 12;
+            this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabla.Location = new System.Drawing.Point(18, 219);
+            this.tabla.Name = "tabla";
+            this.tabla.Size = new System.Drawing.Size(892, 326);
+            this.tabla.TabIndex = 12;
             // 
-            // Column1
+            // linkLabel1
             // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(236, 238);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(142, 18);
+            this.linkLabel1.TabIndex = 9;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Cambiar contraseña";
             // 
-            // Unidad
+            // button11
             // 
-            this.Unidad.HeaderText = "Unidad";
-            this.Unidad.Name = "Unidad";
+            this.button11.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.NUEVA_UNIDAD;
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button11.Location = new System.Drawing.Point(271, 44);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(120, 90);
+            this.button11.TabIndex = 16;
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
-            // asd
+            // button10
             // 
-            this.asd.HeaderText = "Nombre del taxista";
-            this.asd.Name = "asd";
+            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button10.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BUSCAR_CLIENTE;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.Location = new System.Drawing.Point(1062, 336);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(120, 90);
+            this.button10.TabIndex = 15;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // cliente
+            // button9
             // 
-            this.cliente.HeaderText = "Cliente";
-            this.cliente.Name = "cliente";
-            // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "fecha";
-            this.fecha.Name = "fecha";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "hora";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "descripcion";
-            this.Column3.Name = "Column3";
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BUSCAR_PERSONAL;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.Location = new System.Drawing.Point(925, 336);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(120, 90);
+            this.button9.TabIndex = 14;
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -548,10 +566,11 @@
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BUSCARUNIDAD;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(268, 44);
+            this.button3.Location = new System.Drawing.Point(1199, 336);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 90);
@@ -561,7 +580,7 @@
             // 
             // button2
             // 
-            this.button2.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.SERVICIO;
+            this.button2.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BOTON3;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Location = new System.Drawing.Point(18, 44);
@@ -575,7 +594,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Window;
-            this.button1.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BOTON3;
+            this.button1.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.AGREGAR_CLIENTE;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(141, 44);
@@ -586,26 +605,17 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // usuarios
-            // 
-            this.usuarios.Name = "usuarios";
-            this.usuarios.Size = new System.Drawing.Size(217, 24);
-            this.usuarios.Text = "Creación de usuarios";
-            this.usuarios.Visible = false;
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(214, 6);
-            // 
             // SitioOlimpico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(1334, 658);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tabla);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -631,7 +641,7 @@
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -683,18 +693,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn asd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridView tabla;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem usuarios;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
     }
 }
 

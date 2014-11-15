@@ -63,6 +63,16 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AGREGAR_CLIENTE {
+            get {
+                object obj = ResourceManager.GetObject("AGREGAR_CLIENTE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agregar_servicio {
             get {
                 object obj = ResourceManager.GetObject("agregar_servicio", resourceCulture);
@@ -76,6 +86,26 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap BOTON3 {
             get {
                 object obj = ResourceManager.GetObject("BOTON3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BUSCAR_CLIENTE {
+            get {
+                object obj = ResourceManager.GetObject("BUSCAR_CLIENTE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BUSCAR_PERSONAL {
+            get {
+                object obj = ResourceManager.GetObject("BUSCAR PERSONAL", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +266,16 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap MODIFICAR {
             get {
                 object obj = ResourceManager.GetObject("MODIFICAR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NUEVA_UNIDAD {
+            get {
+                object obj = ResourceManager.GetObject("NUEVA_UNIDAD", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

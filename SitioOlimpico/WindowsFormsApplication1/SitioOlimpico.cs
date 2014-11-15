@@ -20,10 +20,19 @@ namespace WindowsFormsApplication1
     {
         public static int AUTORIZACION = 0;
         CallerID obj;
+        public static MySqlDataAdapter Adaptador;
+        public static DataTable ds;
+
+
         public SitioOlimpico()
         {
             InitializeComponent();
-            
+
+            if (AUTORIZACION == 0)
+            {
+                usuarios.Visible = true;
+                toolStripSeparator3.Visible = true;
+            }
 
             /*************** CONSULTA INFORMACIÓN DEL MODEM ************/
             obj = new CallerID();
@@ -40,12 +49,22 @@ namespace WindowsFormsApplication1
                 }
             Datos.Close();
             bd.Desconectar();
+            
+            Pintar_tabla("select numero_unidad, asignado, amonestado, eliminado from unidades where asignado = 1");
 
-            if (AUTORIZACION == 0)
-            {
-                usuarios.Visible = true;
-                toolStripSeparator3.Visible = true;
-            }
+            tabla.Columns[0].HeaderText = "UNIDAD";
+            tabla.Columns[0].Width = 150;
+            tabla.Columns[1].Visible = false;
+            //tabla.Columns[2].Visible = false;
+            tabla.Columns[3].Visible = false;
+            tabla.Columns.Add("he", "HORA DE ENTRADA");
+            tabla.Columns[4].Width = 200;
+            tabla.Columns.Add("hs", "HORA DE SALIDA");
+            tabla.Columns[5].Width = 200;
+            tabla.Columns.Add("hs", "AMONESTAR");
+            tabla.Columns[6].Width = 120;
+            //tabla.Columns[6].DefaultCellStyle.BackColor = Color.Red;
+           
 
             Thread hilo = new Thread( obj.EscuchaTelefono );
             try
@@ -57,6 +76,24 @@ namespace WindowsFormsApplication1
                 MessageBox.Show(e.ToString());
             }
 
+           
+            
+           
+          
+
+        }
+
+        public void Pintar_tabla(String filtro)
+        {
+            Adaptador = new MySqlDataAdapter(filtro, ConexionBD.conex);
+            ds = new DataTable();
+            Adaptador.Fill(ds);
+            tabla.DataSource = ds;
+           /* if(tabla.ColumnCount > 5)
+                for (int i = 0; i < tabla.Rows.Count; i++ )
+                    if (tabla.Rows[i].Cells[1].Value.ToString().CompareTo("1") == 0)
+                        tabla.Rows[0].DefaultCellStyle.BackColor = Color.RoyalBlue;
+            * */
         }
 
         public void metodoRespaldo()
@@ -124,7 +161,8 @@ namespace WindowsFormsApplication1
         }
         private void button2_Click(object sender, EventArgs e)
         {
-
+            personal p = new personal(0, "", false);
+            p.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -218,6 +256,22 @@ namespace WindowsFormsApplication1
         private void buscarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new buscarPersonal().ShowDialog();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            unidades u = new unidades(0, "");
+            u.ShowDialog();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            new buscarPersonal().ShowDialog();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            new buscarCliente().ShowDialog();
         }
     }
 }

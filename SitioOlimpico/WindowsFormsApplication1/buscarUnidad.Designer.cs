@@ -64,7 +64,7 @@
             // 
             this.total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.total.AutoSize = true;
-            this.total.Location = new System.Drawing.Point(189, 443);
+            this.total.Location = new System.Drawing.Point(189, 440);
             this.total.Name = "total";
             this.total.Size = new System.Drawing.Size(21, 15);
             this.total.TabIndex = 15;
@@ -75,7 +75,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 443);
+            this.label1.Location = new System.Drawing.Point(24, 440);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 15);
             this.label1.TabIndex = 14;
@@ -139,6 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(1001, 467);
             this.Controls.Add(this.total);
             this.Controls.Add(this.label1);
@@ -153,7 +154,7 @@
             this.Name = "buscarUnidad";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Buscar Unidad";
+            this.Text = "BUSCAR UNIDAD";
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
