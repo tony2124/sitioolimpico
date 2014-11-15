@@ -19,40 +19,37 @@ namespace WindowsFormsApplication1
         /*VARIABLES DE LA BASE DE DATOS*/
         MySqlDataReader Datos;
         ConexionBD Bdatos = new ConexionBD();
+        public static MySqlDataAdapter Adaptador;
+        public static DataTable ds;
 
         public buscarUnidad()
         {
             InitializeComponent();
 
+            Pintar_tabla("select numero_unidad, modelo, marca, color, placas, descripcion, asignado, eliminado  from unidades");
 
-              //CONSULTA A LA BASE DE DATOS PARA EXTRAER INFORMACIÓN DE LAS UNIDADES
-            int contador = 0;
+            tabla.Columns[0].HeaderText = "UNIDAD";
+            tabla.Columns[0].Width = 120;
+            tabla.Columns[1].HeaderText = "MODELO";
+            tabla.Columns[1].Width = 180;
+            tabla.Columns[2].HeaderText = "MARCA";
+            tabla.Columns[2].Width = 280;
+            tabla.Columns[3].HeaderText = "COLOR";
+            tabla.Columns[4].HeaderText = "PLACAS";
+            tabla.Columns[5].HeaderText = "DESCRIPCION";
+            tabla.Columns[6].HeaderText = "ASIGNADO";
+            tabla.Columns[7].HeaderText = "ELIMINADO";
+            total.Text = "" + tabla.Rows.Count;
 
-            Bdatos.conexion();
-            Datos = Bdatos.obtenerBasesDatosMySQL("select count(numero_unidad) from unidades");
-            if (Datos.HasRows)
-                while (Datos.Read())
-                    contador = Datos.GetInt32(0);
-            Datos.Close();
+        }
 
-            if (contador > 0)
-            {
-                Datos = Bdatos.obtenerBasesDatosMySQL("select numero_unidad from unidades");
-                int i = 0;
-                String[] B= new String[contador];
+        public void Pintar_tabla(String filtro)
+        {
+            Adaptador = new MySqlDataAdapter(filtro, ConexionBD.conex);
 
-                while (Datos.Read())
-                {
-                    B[i] = Datos.GetInt32(0) + "";
-                    i++;
-                }
-           
-
-                Datos.Close();
-
-                this.unidad_buscar_txt.AutoCompleteCustomSource.AddRange(B);
-            }
-
+            ds = new DataTable();
+            Adaptador.Fill(ds);
+            tabla.DataSource = ds;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -62,28 +59,20 @@ namespace WindowsFormsApplication1
 
         private void buscar_unidad_Click(object sender, EventArgs e)
         {
-            Bdatos.conexion();
+            Pintar_tabla("select numero_unidad, modelo, marca, color, placas, descripcion, asignado, eliminado  from unidades where numero_unidad like '%" + nombre.Text + "%'");
+            total.Text = "" + tabla.Rows.Count;
+            if (tabla.Rows.Count == 1)
+                new unidades(1, tabla.Rows[0].Cells[0].Value.ToString()).ShowDialog();
+        }
 
-            Datos = Bdatos.obtenerBasesDatosMySQL("SELECT count(numero_unidad) from unidades where numero_unidad=" + unidad_buscar_txt.Text);
-            int existe = 0;
-            if (Datos.HasRows)
-                while (Datos.Read())
-                    existe = Datos.GetInt32(0);
-            Datos.Close();
-            Bdatos.Desconectar();
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Dispose();
+        }
 
-            if (existe == 0)//Si no hay registros
-            {
-                MessageBox.Show("Esta unidad no esta registrada, para ver información de la unidad primero tiene que registrarla en el programa.", "Error: Unidad no registrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {           
-                unidades u = new unidades(1, unidad_buscar_txt.Text);
-                Dispose();
-                u.ShowDialog();
-                
-            }
-
+        private void tabla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new unidades(1, tabla.Rows[e.RowIndex].Cells[0].Value.ToString()).ShowDialog();
         }
     }
 }
