@@ -111,10 +111,10 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        Datos = Bdatos.obtenerBasesDatosMySQL("select nombre, apellido from personal where id_personal = " + id_personal_unidad);
+                        Datos = Bdatos.obtenerBasesDatosMySQL("select nombre from personal where id_personal = " + id_personal_unidad);
                         if (Datos.HasRows)
                             while (Datos.Read())
-                                chofer_unidad.Text = Datos.GetString(0) + " " + Datos.GetString(1);
+                                chofer_unidad.Text = Datos.GetString(0);
                         Datos.Close();
                         Bdatos.Desconectar();
                     }

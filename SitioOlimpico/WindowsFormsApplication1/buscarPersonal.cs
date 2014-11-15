@@ -21,19 +21,17 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
 
-            Pintar_tabla("select id_personal, nombre, apellido, fecha_ingreso, telefono, nivel_autorizacion, asignado, eliminado  from personal");
+            Pintar_tabla("select id_personal, nombre, fecha_ingreso, telefono, nivel_autorizacion, asignado, eliminado  from personal");
 
             tabla.Columns[0].HeaderText = "ID PERSONAL";
             tabla.Columns[0].Width = 120;
             tabla.Columns[1].HeaderText = "NOMBRE";
-            tabla.Columns[1].Width = 180;
-            tabla.Columns[2].HeaderText = "APELLIDOS";
-            tabla.Columns[2].Width = 280;
-            tabla.Columns[3].HeaderText = "FECHA INGRESO";
-            tabla.Columns[4].HeaderText = "TELÉFONO";
-            tabla.Columns[5].HeaderText = "AUTORIZACIÓN";
-            tabla.Columns[6].HeaderText = "ASIGNADO";
-            tabla.Columns[7].HeaderText = "BAJA";
+            tabla.Columns[1].Width = 460;
+            tabla.Columns[2].HeaderText = "FECHA INGRESO";
+            tabla.Columns[3].HeaderText = "TELÉFONO";
+            tabla.Columns[4].HeaderText = "AUTORIZACIÓN";
+            tabla.Columns[5].HeaderText = "ASIGNADO";
+            tabla.Columns[6].HeaderText = "BAJA";
             //MessageBox.Show("PIÑA");
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
@@ -72,7 +70,7 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(nombre.Text);
-            Pintar_tabla("select id_personal, nombre, apellido, fecha_ingreso, telefono, nivel_autorizacion, eliminado  from personal where nombre like '%"+nombre.Text+"%' or apellido like '%"+nombre.Text+"%' or telefono like '%"+nombre.Text+"%'");
+            Pintar_tabla("select id_personal, nombre, fecha_ingreso, telefono, nivel_autorizacion, eliminado  from personal where nombre like '%"+nombre.Text+"%' or telefono like '%"+nombre.Text+"%'");
             total.Text = "" + tabla.Rows.Count;
             if (tabla.Rows.Count == 1)
                 new personal(1, tabla["id_personal", 0].Value.ToString(), false).ShowDialog();

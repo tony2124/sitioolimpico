@@ -16,9 +16,6 @@ namespace WindowsFormsApplication1
     public partial class buscarUnidad : Form
     {
     
-        /*VARIABLES DE LA BASE DE DATOS*/
-        MySqlDataReader Datos;
-        ConexionBD Bdatos = new ConexionBD();
         public static MySqlDataAdapter Adaptador;
         public static DataTable ds;
 
@@ -31,12 +28,12 @@ namespace WindowsFormsApplication1
             tabla.Columns[0].HeaderText = "UNIDAD";
             tabla.Columns[0].Width = 120;
             tabla.Columns[1].HeaderText = "MODELO";
-            tabla.Columns[1].Width = 180;
+            tabla.Columns[1].Width = 100;
             tabla.Columns[2].HeaderText = "MARCA";
-            tabla.Columns[2].Width = 280;
+            tabla.Columns[2].Width = 180;
             tabla.Columns[3].HeaderText = "COLOR";
             tabla.Columns[4].HeaderText = "PLACAS";
-            tabla.Columns[5].HeaderText = "DESCRIPCION";
+            tabla.Columns[5].HeaderText = "DESCRIPCIÓN";
             tabla.Columns[6].HeaderText = "ASIGNADO";
             tabla.Columns[7].HeaderText = "ELIMINADO";
             total.Text = "" + tabla.Rows.Count;

@@ -42,9 +42,11 @@ namespace WindowsFormsApplication1
             bd.Desconectar();
 
             if (AUTORIZACION == 0)
+            {
                 usuarios.Visible = true;
+                toolStripSeparator3.Visible = true;
+            }
 
-          //  MessageBox.Show(CallerID.port);
             Thread hilo = new Thread( obj.EscuchaTelefono );
             try
             {

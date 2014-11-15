@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.fecha_ingreso_personal = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -37,8 +36,6 @@
             this.estado_civil_personal = new System.Windows.Forms.ComboBox();
             this.fecha_nac_personal = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.apellido_personal = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.nombre_personal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -90,6 +87,7 @@
             this.editar_btn_personal = new System.Windows.Forms.Button();
             this.guardar_btn_personal = new System.Windows.Forms.Button();
             this.encabezado_personal = new System.Windows.Forms.PictureBox();
+            this.historial_personal = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_personal)).BeginInit();
@@ -105,7 +103,6 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.fecha_ingreso_personal);
             this.panel1.Controls.Add(this.label6);
@@ -113,8 +110,6 @@
             this.panel1.Controls.Add(this.estado_civil_personal);
             this.panel1.Controls.Add(this.fecha_nac_personal);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.apellido_personal);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.nombre_personal);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(134, 89);
@@ -122,23 +117,12 @@
             this.panel1.Size = new System.Drawing.Size(495, 167);
             this.panel1.TabIndex = 1;
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(443, 46);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(15, 20);
-            this.label26.TabIndex = 8;
-            this.label26.Text = "*";
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(443, 16);
+            this.label25.Location = new System.Drawing.Point(475, 25);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(15, 20);
             this.label25.TabIndex = 7;
@@ -203,41 +187,23 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Fecha de nacimiento:";
             // 
-            // apellido_personal
-            // 
-            this.apellido_personal.BackColor = System.Drawing.Color.Ivory;
-            this.apellido_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.apellido_personal.Location = new System.Drawing.Point(125, 42);
-            this.apellido_personal.Name = "apellido_personal";
-            this.apellido_personal.Size = new System.Drawing.Size(310, 21);
-            this.apellido_personal.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Apellidos:";
-            // 
             // nombre_personal
             // 
             this.nombre_personal.BackColor = System.Drawing.Color.Ivory;
             this.nombre_personal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.nombre_personal.Location = new System.Drawing.Point(125, 12);
+            this.nombre_personal.Location = new System.Drawing.Point(124, 24);
             this.nombre_personal.Name = "nombre_personal";
-            this.nombre_personal.Size = new System.Drawing.Size(310, 21);
+            this.nombre_personal.Size = new System.Drawing.Size(345, 21);
             this.nombre_personal.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 13);
+            this.label3.Location = new System.Drawing.Point(7, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 15);
+            this.label3.Size = new System.Drawing.Size(112, 15);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Nombre (s): ";
+            this.label3.Text = "Nombre completo: ";
             // 
             // label1
             // 
@@ -299,6 +265,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.historial_personal);
             this.panel6.Controls.Add(this.desvincular_unidad_personal);
             this.panel6.Controls.Add(this.unidad_personal);
             this.panel6.Controls.Add(this.label_personal);
@@ -314,7 +281,7 @@
             // desvincular_unidad_personal
             // 
             this.desvincular_unidad_personal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desvincular_unidad_personal.Location = new System.Drawing.Point(17, 84);
+            this.desvincular_unidad_personal.Location = new System.Drawing.Point(15, 84);
             this.desvincular_unidad_personal.Name = "desvincular_unidad_personal";
             this.desvincular_unidad_personal.Size = new System.Drawing.Size(206, 27);
             this.desvincular_unidad_personal.TabIndex = 23;
@@ -756,6 +723,17 @@
             this.encabezado_personal.TabIndex = 12;
             this.encabezado_personal.TabStop = false;
             // 
+            // historial_personal
+            // 
+            this.historial_personal.AutoSize = true;
+            this.historial_personal.Location = new System.Drawing.Point(15, 120);
+            this.historial_personal.Name = "historial_personal";
+            this.historial_personal.Size = new System.Drawing.Size(71, 15);
+            this.historial_personal.TabIndex = 24;
+            this.historial_personal.TabStop = true;
+            this.historial_personal.Text = "Ver historial";
+            this.historial_personal.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.historial_personal_LinkClicked);
+            // 
             // personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -812,8 +790,6 @@
         private System.Windows.Forms.ComboBox estado_civil_personal;
         private System.Windows.Forms.DateTimePicker fecha_nac_personal;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox apellido_personal;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox nombre_personal;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
@@ -855,7 +831,6 @@
         private System.Windows.Forms.Label label_personal;
         private System.Windows.Forms.TextBox ref_personal;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
@@ -867,5 +842,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox unidad_personal;
         private System.Windows.Forms.Button desvincular_unidad_personal;
+        private System.Windows.Forms.LinkLabel historial_personal;
     }
 }
