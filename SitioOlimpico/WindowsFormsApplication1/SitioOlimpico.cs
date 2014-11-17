@@ -50,26 +50,26 @@ namespace WindowsFormsApplication1
             Datos.Close();
             bd.Desconectar();
             
-            Pintar_tabla("select numero_unidad, asignado, amonestado, eliminado from unidades where asignado = 1");
+            Pintar_tabla("select id_servicio, nombre, numero_unidad, fecha, hora, descripcion from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD");
 
-            tabla.Columns[0].HeaderText = "UNIDAD";
-            tabla.Columns[0].Width = 150;
-            tabla.Columns[1].Visible = false;
-            //tabla.Columns[2].Visible = false;
-            tabla.Columns[3].Visible = false;
-            tabla.Columns.Add("he", "HORA DE ENTRADA");
-            tabla.Columns[4].Width = 200;
-            tabla.Columns.Add("hs", "HORA DE SALIDA");
-            tabla.Columns[5].Width = 200;
-            tabla.Columns.Add("hs", "AMONESTAR");
-            tabla.Columns[6].Width = 120;
+            //tabla.Columns[0].HeaderText = "UNIDAD";
+            tabla.Columns[0].Width = 100;
+            tabla.Columns[1].Width = 250;
+            tabla.Columns[2].Width = 100;
+            tabla.Columns[3].Width = 100;
+            //tabla.Columns.Add("he", "HORA DE ENTRADA");
+            //tabla.Columns[4].Width = 200;
+            //tabla.Columns.Add("hs", "HORA DE SALIDA");
+            //tabla.Columns[5].Width = 200;
+            //tabla.Columns.Add("hs", "AMONESTAR");
+            //tabla.Columns[6].Width = 120;
             //tabla.Columns[6].DefaultCellStyle.BackColor = Color.Red;
            
 
             Thread hilo = new Thread( obj.EscuchaTelefono );
             try
             {
-                MessageBox.Show("SI LLEGO"); 
+               // MessageBox.Show("SI LLEGO"); 
                 hilo.Start();
 
             }
@@ -273,6 +273,11 @@ namespace WindowsFormsApplication1
         private void button10_Click(object sender, EventArgs e)
         {
             new buscarCliente().ShowDialog();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Pintar_tabla("select id_servicio, nombre, numero_unidad, fecha, hora, descripcion from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD");
         }
     }
 }
