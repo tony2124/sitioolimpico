@@ -69,6 +69,7 @@ namespace WindowsFormsApplication1
             Thread hilo = new Thread( obj.EscuchaTelefono );
             try
             {
+                MessageBox.Show("SI LLEGO"); 
                 hilo.Start();
 
             }

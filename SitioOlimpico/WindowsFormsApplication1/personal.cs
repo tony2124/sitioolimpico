@@ -333,11 +333,6 @@ namespace WindowsFormsApplication1
                        }
                    }
                         
-
-                        
-
-
-                                //MessageBox.Show("Edicion");
                 }//FIN DE SI SI TIENEN DATOS NOMBRE Y APELLIDO
             }
             else
@@ -429,11 +424,11 @@ namespace WindowsFormsApplication1
                     {
                         if (guardarPersonal() > 0)
                         {
-
                             if (foto)//Si busco foto se guarda la foto
                             {
                                 guardarfoto();
                             }
+
 
                             //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
                             borrarCampos();
@@ -487,7 +482,13 @@ namespace WindowsFormsApplication1
                    "', nivel_autorizacion=1" +
                    ", horario_entrada='" + horario_entrada_personal.Value.ToString("HH:mm:ss") +
                    "', horario_salida='" + horario_salida_personal.Value.ToString("HH:mm:ss") +
-                   "' where id_personal = " + id_personal);
+                   "', asignado = 0" +
+                   " where id_personal = " + id_personal);
+
+                if (unidad_personal.Text.CompareTo("") != 0)
+                {
+                    Bdatos.peticion("update unidades set asignado = 0 where numero_unidad = " + unidad_personal.Text);
+                }
             }
 
 
