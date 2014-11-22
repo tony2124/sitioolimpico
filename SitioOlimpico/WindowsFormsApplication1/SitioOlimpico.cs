@@ -23,6 +23,8 @@ namespace WindowsFormsApplication1
         public static MySqlDataAdapter Adaptador;
         public static DataTable ds;
 
+        public static string usuario = "tony2124", nombre_usuario = "ALFONSO CALDERÓN CHÁVEZ", fecha_inicio_sesion = "22-11-2014", hora_inicio_sesion = "A las 2:20 pm", horario = "8am - 2pm";
+
 
         public SitioOlimpico()
         {
@@ -33,6 +35,12 @@ namespace WindowsFormsApplication1
                 usuarios.Visible = true;
                 toolStripSeparator3.Visible = true;
             }
+
+            usuario_label.Text = usuario;
+            nombre_usuario_label.Text = nombre_usuario;
+            fecha_inicio_sesion_label.Text = fecha_inicio_sesion;
+            hora_inicio_sesion_label.Text = hora_inicio_sesion;
+            horario_label.Text = horario;
 
             /*************** CONSULTA INFORMACIÓN DEL MODEM ************/
             obj = new CallerID();
@@ -52,35 +60,21 @@ namespace WindowsFormsApplication1
             
             Pintar_tabla("select id_servicio, nombre, numero_unidad, fecha, hora, descripcion from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD order by fecha desc");
 
-            //tabla.Columns[0].HeaderText = "UNIDAD";
             tabla.Columns[0].Width = 100;
             tabla.Columns[1].Width = 250;
             tabla.Columns[2].Width = 100;
             tabla.Columns[3].Width = 100;
-            //tabla.Columns.Add("he", "HORA DE ENTRADA");
-            //tabla.Columns[4].Width = 200;
-            //tabla.Columns.Add("hs", "HORA DE SALIDA");
-            //tabla.Columns[5].Width = 200;
-            //tabla.Columns.Add("hs", "AMONESTAR");
-            //tabla.Columns[6].Width = 120;
-            //tabla.Columns[6].DefaultCellStyle.BackColor = Color.Red;
-           
+          
 
             Thread hilo = new Thread( obj.EscuchaTelefono );
             try
             {
-               // MessageBox.Show("SI LLEGO"); 
                 hilo.Start();
 
             }
             catch (Exception e) {
                 MessageBox.Show(e.ToString());
             }
-
-           
-            
-           
-          
 
         }
 
@@ -90,11 +84,7 @@ namespace WindowsFormsApplication1
             ds = new DataTable();
             Adaptador.Fill(ds);
             tabla.DataSource = ds;
-           /* if(tabla.ColumnCount > 5)
-                for (int i = 0; i < tabla.Rows.Count; i++ )
-                    if (tabla.Rows[i].Cells[1].Value.ToString().CompareTo("1") == 0)
-                        tabla.Rows[0].DefaultCellStyle.BackColor = Color.RoyalBlue;
-            * */
+        
         }
 
         public void metodoRespaldo()
@@ -281,6 +271,11 @@ namespace WindowsFormsApplication1
         private void button8_Click(object sender, EventArgs e)
         {
             Pintar_tabla("select id_servicio, nombre, numero_unidad, fecha, hora, descripcion from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD");
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //new Cambiar_contra().showDialog();
         }
     }
 }
