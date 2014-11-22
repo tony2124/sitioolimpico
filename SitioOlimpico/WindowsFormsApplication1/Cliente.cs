@@ -30,6 +30,7 @@ namespace WindowsFormsApplication1
         public cliente(string numero, int forma)
         {
             InitializeComponent();
+            //autocompletar_unidades_disponibles();
             editar_btn_cliente.Visible = false;
             FORMA = forma;
 
@@ -74,7 +75,7 @@ namespace WindowsFormsApplication1
                 Bdatos.Desconectar();
             }
 
-            autocompletar_unidades_disponibles();
+           
             
         }
 

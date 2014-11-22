@@ -29,6 +29,7 @@ namespace WindowsFormsApplication1
         public personal(int forma, string id_perso, Boolean ventanaUnidades)
         {
             InitializeComponent();
+            autocompletar_unidades_disponibles();
             this.ventanaUnidades = ventanaUnidades;
             id_personal = id_perso;
             if (forma == 0)
@@ -111,7 +112,7 @@ namespace WindowsFormsApplication1
                         Bdatos.Desconectar();
                         desvincular_unidad_personal.Enabled = true;
                     }
-                    else
+                    else//SI ES MONITOR (A)
                     {
 
                         desvincular_unidad_personal.Enabled = false;
@@ -123,11 +124,12 @@ namespace WindowsFormsApplication1
                 deshabilitar();
                 editar_btn_personal.Visible = true;
             }
+     
 
-            encabezado_personal.Image = Properties.Resources.PERSONAL_ENCABEZADO;
-            encabezado_personal.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
 
-
+        void autocompletar_unidades_disponibles()
+        {
             //CONSULTA A LA BASE DE DATOS PARA EXTRAER INFORMACIÓN DE LAS UNIDADES
             int contador = 0;
             String[] A;
@@ -154,7 +156,6 @@ namespace WindowsFormsApplication1
                 this.unidad_personal.AutoCompleteCustomSource.AddRange(A);
 
             }
-
 
         }
 
@@ -323,7 +324,6 @@ namespace WindowsFormsApplication1
                    {
                        if (editarPersonal() > 0)
                        {
-                           //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
                            editar = false;
 
                            deshabilitar();
@@ -337,8 +337,6 @@ namespace WindowsFormsApplication1
             }
             else
             {
-
-                // MessageBox.Show(System.Environment.GetFolderPath(System.Environment.SpecialFolder.ProgramFiles));
 
                 //VERIFICA SI ESTAN LLENOS LOS CAMPOS DE NOMBRE Y APELLIDO.
                 if (nombre_personal.Text.CompareTo("") == 0)

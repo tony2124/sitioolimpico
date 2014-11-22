@@ -33,12 +33,12 @@ namespace WindowsFormsApplication1
             tabla.Columns[5].HeaderText = "ASIGNADO";
             tabla.Columns[6].HeaderText = "BAJA";
             //MessageBox.Show("PIÑA");
-            for (int i = 0; i < tabla.Rows.Count; i++)
+           /* for (int i = 0; i < tabla.Rows.Count; i++)
             {
                 if (tabla.Rows[i].Cells[6].Value.ToString().CompareTo("0") == 0)
                     tabla.Rows[i].DefaultCellStyle.BackColor = Color.Red;
             }
-            tabla.Rows[0].DefaultCellStyle.ForeColor = Color.Yellow;
+            //tabla.Rows[0].DefaultCellStyle.ForeColor = Color.Yellow;*/
             total.Text = "" + tabla.Rows.Count;
         }
 
