@@ -50,7 +50,7 @@ namespace WindowsFormsApplication1
             Datos.Close();
             bd.Desconectar();
             
-            Pintar_tabla("select id_servicio, nombre, numero_unidad, fecha, hora, descripcion from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD");
+            Pintar_tabla("select id_servicio, nombre, numero_unidad, fecha, hora, descripcion from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD order by fecha desc");
 
             //tabla.Columns[0].HeaderText = "UNIDAD";
             tabla.Columns[0].Width = 100;
@@ -145,8 +145,11 @@ namespace WindowsFormsApplication1
 
         public void cerrar ()
         {
-            MessageBox.Show(this, "¿Está seguro que desea salir del sistema? Una vez que salga del sistema no será posible identificar las llamadas.", "Confirme operación",  MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            Close();
+            DialogResult a = MessageBox.Show(this, "¿Está seguro que desea salir del sistema? Una vez que salga del sistema no será posible identificar las llamadas.", "Confirme operación",  MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            if(a == DialogResult.Yes)
+                Close();
+            
         }
 
         private void SitioOlimpico_FormClosing(object sender, FormClosingEventArgs e)

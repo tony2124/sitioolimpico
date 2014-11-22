@@ -26,20 +26,24 @@ namespace WindowsFormsApplication1
 
         public static void OnSerialDataReceived(object sender, SerialDataReceivedEventArgs args)
         {
-
-            data = ComPort.ReadExisting();
-
-            //OBTENER FECHA PARA ESCRIBIR EL LA BITACORA
-            DateTime date = DateTime.Now;
-            string dateformat = date.ToString("yyyyMMdd"); //OBTENER EL AÑO MES Y DÍA
-
-
-            if (data.Length >= 30)
+            try
             {
-                Thread m = new Thread( metodo );
-                m.Start();
-            }
 
+                data = ComPort.ReadExisting();
+
+
+                //OBTENER FECHA PARA ESCRIBIR EL LA BITACORA
+           //     DateTime date = DateTime.Now;
+             //   string dateformat = date.ToString("yyyyMMdd"); //OBTENER EL AÑO MES Y DÍA
+
+
+                if (data.Length >= 30)
+                {
+                    Thread m = new Thread(metodo);
+                    m.Start();
+                }
+            }
+            catch (Exception e) { MessageBox.Show("Se detectó una desconexión de MODEM"+e); };
         }
 
         public static void metodo()
@@ -47,22 +51,26 @@ namespace WindowsFormsApplication1
             data = data.Substring(data.LastIndexOf("= ") + 1);
             cliente obj = new cliente(data.Trim(),1);
             obj.ShowDialog();
-
         }
 
-        public void EscuchaTelefono() {
+        public void EscuchaTelefono()
+        {
 
             InitializeComPort(port, baud, paridad);
 
-            
-            while (!terminar);
+            while (!terminar)
+            {
+              /*  if (ComPort.IsOpen)
+                    MessageBox.Show(ComPort+"");
+                else
+                    MessageBox.Show(ComPort.RtsEnable + "");*/
+            }
         }
 
         public static void InitializeComPort(string port, int baud, int paridad)
         {
             try
             {
-
                 ComPort = new SerialPort(port, baud);
                 if (paridad == 0) ComPort.Parity = Parity.Even;
                 else if (paridad == 1) ComPort.Parity = Parity.Mark;

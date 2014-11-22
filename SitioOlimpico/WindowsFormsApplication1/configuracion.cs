@@ -103,17 +103,18 @@ namespace WindowsFormsApplication1
 
         void detectarModem()
         {
-            InitializeComPort(puerto.Text, Int32.Parse(bits.Text), paridad.SelectedIndex, "ATI3");
-            while(tipodemodem.CompareTo("") == 0 && ComPort.IsOpen);
-            //ACTIVAR IDENTIFICADOR DE LLAMADAS
-            modem.Text = tipodemodem;
-            tipodemodem = "";
-           
             try
             {
+                InitializeComPort(puerto.Text, Int32.Parse(bits.Text), paridad.SelectedIndex, "ATI3");
+                while (tipodemodem.CompareTo("") == 0 && ComPort.IsOpen) ;
+                //ACTIVAR IDENTIFICADOR DE LLAMADAS
+                modem.Text = tipodemodem;
+                tipodemodem = "";
+
+
                 ComPort.Close();
             }
-            catch (Exception e) { }
+            catch (Exception e) { MessageBox.Show("error" + e); }
         }
 
         private static void InitializeComPort(string port, int baud, int paridad, string norma)
@@ -160,10 +161,10 @@ namespace WindowsFormsApplication1
             try
             {
                 CallerID.ComPort.Close();
-          
-            detectarModem();
 
-            CallerID.InitializeComPort(CallerID.port, CallerID.baud, CallerID.paridad);
+                detectarModem();
+
+                CallerID.InitializeComPort(CallerID.port, CallerID.baud, CallerID.paridad);
 
             }
             catch (Exception exc) { }
