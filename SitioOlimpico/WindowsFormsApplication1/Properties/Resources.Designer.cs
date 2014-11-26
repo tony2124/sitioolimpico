@@ -253,6 +253,16 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_sitio_olimpico {
+            get {
+                object obj = ResourceManager.GetObject("logo_sitio_olimpico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LUPA {
             get {
                 object obj = ResourceManager.GetObject("LUPA", resourceCulture);

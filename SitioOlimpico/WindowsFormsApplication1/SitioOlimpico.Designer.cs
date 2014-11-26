@@ -57,11 +57,11 @@
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.horario_label = new System.Windows.Forms.Label();
+            this.hora_inicio_sesion_label = new System.Windows.Forms.Label();
+            this.fecha_inicio_sesion_label = new System.Windows.Forms.Label();
+            this.usuario_label = new System.Windows.Forms.Label();
+            this.nombre_usuario_label = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -71,6 +71,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tabla = new System.Windows.Forms.DataGridView();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -82,10 +84,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -98,7 +100,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1334, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1364, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -173,15 +175,14 @@
             // registrarUnidadToolStripMenuItem
             // 
             this.registrarUnidadToolStripMenuItem.Name = "registrarUnidadToolStripMenuItem";
-            this.registrarUnidadToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
+            this.registrarUnidadToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.registrarUnidadToolStripMenuItem.Text = "Registrar unidad";
             this.registrarUnidadToolStripMenuItem.Click += new System.EventHandler(this.registrarUnidadToolStripMenuItem_Click);
             // 
             // buscarUnidadToolStripMenuItem
             // 
             this.buscarUnidadToolStripMenuItem.Name = "buscarUnidadToolStripMenuItem";
-            this.buscarUnidadToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.buscarUnidadToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
+            this.buscarUnidadToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
             this.buscarUnidadToolStripMenuItem.Text = "Buscar unidad";
             this.buscarUnidadToolStripMenuItem.Click += new System.EventHandler(this.buscarUnidadToolStripMenuItem_Click);
             // 
@@ -296,17 +297,17 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.linkLabel1);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.horario_label);
+            this.groupBox1.Controls.Add(this.hora_inicio_sesion_label);
+            this.groupBox1.Controls.Add(this.fecha_inicio_sesion_label);
+            this.groupBox1.Controls.Add(this.usuario_label);
+            this.groupBox1.Controls.Add(this.nombre_usuario_label);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(925, 44);
+            this.groupBox1.Location = new System.Drawing.Point(955, 334);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -324,61 +325,62 @@
             this.linkLabel1.TabIndex = 9;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Cambiar contraseña";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // label10
+            // horario_label
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(174, 187);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(127, 18);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "8:00 am - 2:00 pm";
+            this.horario_label.AutoSize = true;
+            this.horario_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.horario_label.Location = new System.Drawing.Point(174, 187);
+            this.horario_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.horario_label.Name = "horario_label";
+            this.horario_label.Size = new System.Drawing.Size(127, 18);
+            this.horario_label.TabIndex = 8;
+            this.horario_label.Text = "8:00 am - 2:00 pm";
             // 
-            // label9
+            // hora_inicio_sesion_label
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(202, 152);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 18);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "A las 2:43 pm";
+            this.hora_inicio_sesion_label.AutoSize = true;
+            this.hora_inicio_sesion_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hora_inicio_sesion_label.Location = new System.Drawing.Point(202, 152);
+            this.hora_inicio_sesion_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.hora_inicio_sesion_label.Name = "hora_inicio_sesion_label";
+            this.hora_inicio_sesion_label.Size = new System.Drawing.Size(97, 18);
+            this.hora_inicio_sesion_label.TabIndex = 7;
+            this.hora_inicio_sesion_label.Text = "A las 2:43 pm";
             // 
-            // label8
+            // fecha_inicio_sesion_label
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(202, 123);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(176, 18);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "08 de noviembre del 2014";
+            this.fecha_inicio_sesion_label.AutoSize = true;
+            this.fecha_inicio_sesion_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecha_inicio_sesion_label.Location = new System.Drawing.Point(202, 123);
+            this.fecha_inicio_sesion_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.fecha_inicio_sesion_label.Name = "fecha_inicio_sesion_label";
+            this.fecha_inicio_sesion_label.Size = new System.Drawing.Size(176, 18);
+            this.fecha_inicio_sesion_label.TabIndex = 6;
+            this.fecha_inicio_sesion_label.Text = "08 de noviembre del 2014";
             // 
-            // label7
+            // usuario_label
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(89, 46);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 18);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "tony2124";
+            this.usuario_label.AutoSize = true;
+            this.usuario_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuario_label.Location = new System.Drawing.Point(89, 46);
+            this.usuario_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.usuario_label.Name = "usuario_label";
+            this.usuario_label.Size = new System.Drawing.Size(68, 18);
+            this.usuario_label.TabIndex = 5;
+            this.usuario_label.Text = "tony2124";
             // 
-            // label6
+            // nombre_usuario_label
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(89, 84);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(229, 18);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "ALFONSO CALDERÓN CHÁVEZ";
+            this.nombre_usuario_label.AutoSize = true;
+            this.nombre_usuario_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre_usuario_label.Location = new System.Drawing.Point(89, 84);
+            this.nombre_usuario_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nombre_usuario_label.Name = "nombre_usuario_label";
+            this.nombre_usuario_label.Size = new System.Drawing.Size(229, 18);
+            this.nombre_usuario_label.TabIndex = 4;
+            this.nombre_usuario_label.Text = "ALFONSO CALDERÓN CHÁVEZ";
             // 
             // label5
             // 
@@ -447,10 +449,10 @@
             // statusStrip1
             // 
             this.statusStrip1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 636);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 728);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1334, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1364, 22);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -461,6 +463,27 @@
             this.tabla.Name = "tabla";
             this.tabla.Size = new System.Drawing.Size(892, 326);
             this.tabla.TabIndex = 12;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(1106, 696);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(245, 22);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "PROTOTIPO DE PRUEBA";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.logo_sitio_olimpico;
+            this.pictureBox1.Location = new System.Drawing.Point(1019, 43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(302, 269);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // button11
             // 
@@ -481,7 +504,7 @@
             this.button10.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BUSCAR_CLIENTE;
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.Location = new System.Drawing.Point(1062, 336);
+            this.button10.Location = new System.Drawing.Point(155, 557);
             this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(120, 90);
@@ -495,7 +518,7 @@
             this.button9.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BUSCAR_PERSONAL;
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Location = new System.Drawing.Point(925, 336);
+            this.button9.Location = new System.Drawing.Point(18, 557);
             this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(120, 90);
@@ -572,7 +595,7 @@
             this.button3.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BUSCARUNIDAD;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(1199, 336);
+            this.button3.Location = new System.Drawing.Point(292, 557);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 90);
@@ -607,24 +630,13 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(1076, 604);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(245, 22);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "PROTOTIPO DE PRUEBA";
-            // 
             // SitioOlimpico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(1334, 658);
+            this.ClientSize = new System.Drawing.Size(1364, 750);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -657,6 +669,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -702,11 +715,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label horario_label;
+        private System.Windows.Forms.Label hora_inicio_sesion_label;
+        private System.Windows.Forms.Label fecha_inicio_sesion_label;
+        private System.Windows.Forms.Label usuario_label;
+        private System.Windows.Forms.Label nombre_usuario_label;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.DataGridView tabla;
         private System.Windows.Forms.Button button8;
@@ -718,6 +731,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

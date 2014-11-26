@@ -18,7 +18,7 @@ namespace SitioOlimpico
 
         public ConexionBD()
         {
-            host = "localhost";
+            host = "192.168.0.103";
             usuario = "root";
             contrasena = "simpus2124";
             puerto = "3306";
