@@ -44,7 +44,7 @@ namespace WindowsFormsApplication1
             horario_label.Text = horario;
 
             /*************** CONSULTA INFORMACIÓN DEL MODEM ************/
-            obj = new CallerID();
+           
             ConexionBD bd = new ConexionBD();
             bd.conexion();
             MySqlDataReader Datos = bd.obtenerBasesDatosMySQL("select puerto, baud, paridad, norma from configuracion");
@@ -67,7 +67,8 @@ namespace WindowsFormsApplication1
             tabla.Columns[3].Width = 90;
             tabla.Columns[4].Width = 80;
             tabla.Columns[5].Width = 250;
-
+            
+            obj = new CallerID();
             Thread hilo = new Thread( obj.EscuchaTelefono );
             try
             {
@@ -283,6 +284,22 @@ namespace WindowsFormsApplication1
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void nuevoServicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new buscarCliente().ShowDialog();
+        }
+
+        private void estadísticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            estadistica est = new estadistica();
+            est.ShowDialog();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new Bitacora().ShowDialog();
         }
     }
 }

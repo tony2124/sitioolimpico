@@ -31,17 +31,15 @@ namespace WindowsFormsApplication1
 
                 data = ComPort.ReadExisting();
 
-
-                //OBTENER FECHA PARA ESCRIBIR EL LA BITACORA
-           //     DateTime date = DateTime.Now;
-             //   string dateformat = date.ToString("yyyyMMdd"); //OBTENER EL AÑO MES Y DÍA
-
+                MessageBox.Show("LLAMADA ENTRANTE: " + data);
 
                 if (data.Length >= 30)
                 {
                     Thread m = new Thread(metodo);
                     m.Start();
                 }
+               
+               
             }
             catch (Exception e) { MessageBox.Show("Se detectó una desconexión de MODEM"+e); };
         }
@@ -58,13 +56,7 @@ namespace WindowsFormsApplication1
 
             InitializeComPort(port, baud, paridad);
 
-            while (!terminar)
-            {
-              /*  if (ComPort.IsOpen)
-                    MessageBox.Show(ComPort+"");
-                else
-                    MessageBox.Show(ComPort.RtsEnable + "");*/
-            }
+            while (!terminar) ;
         }
 
         public static void InitializeComPort(string port, int baud, int paridad)

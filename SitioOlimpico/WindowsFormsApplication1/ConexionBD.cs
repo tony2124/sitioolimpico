@@ -77,10 +77,26 @@ namespace SitioOlimpico
             }
             catch (MySqlException ex)
             {
+                MessageBox.Show("Error al alterar datos en MySQL: \nDETALLES DEL ERROR: " + ex.Message, " Error al ingresar ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return resultado;
+        }
+
+        public int bitacora(String registro)
+        {
+            int resultado = 0;
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO BITACORAS (hora, fecha, descripcion) values('"+DateTime.Now.ToString("HH:mm:ss")+"','"+DateTime.Now.ToString("yyyy-MM-dd")+"','"+registro+"')", conexionBD);
+                resultado = cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
                 MessageBox.Show("Error al ingresar datos en MySQL: \nDETALLES DEL ERROR: " + ex.Message, " Error al ingresar ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return resultado;
         }
+        
 
         public void Desconectar()
         {

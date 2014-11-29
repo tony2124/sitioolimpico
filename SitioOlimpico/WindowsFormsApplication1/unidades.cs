@@ -205,7 +205,7 @@ namespace WindowsFormsApplication1
 
                         Bdatos.peticion("update unidades set " +
                             "foto = '" + nombre_archivo + "." + formato + "' WHERE numero_unidad = '" + unidad_id + "'");
-
+                        Bdatos.bitacora("Se ha editado la unidad: "+unidad_id);
                         Bdatos.Desconectar();
                         foto = false;
                     }
@@ -263,6 +263,7 @@ namespace WindowsFormsApplication1
                 "',color = '"+color_unidad.Text+"', descripcion = '"+descripcion_unidad.Text+
                 "',placas = '"+placas_unidad.Text+"', fecha_ingreso='"+fecha_ingreso_unidades.Value.ToString("yyyy-MM-dd")+
                 "'where numero_unidad = "+unidad_id);
+            Bdatos.bitacora("Se ha editado la unidad: " + numero_unidad.Text);
             Bdatos.Desconectar();
 
             return resultado;
@@ -309,7 +310,7 @@ namespace WindowsFormsApplication1
                 "','" + nombre_archivo + "." + formato +
                 "','" + fecha_ingreso_unidades.Value.ToString("yyyy-MM-dd") +
                 "',0,0)");
-
+            Bdatos.bitacora("Se ha registrado la unidad: " + numero_unidad.Text);
             if (consulta > 0)
             {
                 Bdatos.Desconectar();
