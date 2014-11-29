@@ -87,7 +87,7 @@ namespace SitioOlimpico
             int resultado = 0;
             try
             {
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO BITACORAS (hora, fecha, descripcion) values('"+DateTime.Now.ToString("HH:mm:ss")+"','"+DateTime.Now.ToString("yyyy-MM-dd")+"','"+registro+"')", conexionBD);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO BITACORAS (hora, fecha, descripcion) values('" + DateTime.Now.ToString("HH:mm:ss") + "','" + DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day + "','" + registro + "')", conexionBD);
                 resultado = cmd.ExecuteNonQuery();
             }
             catch (MySqlException ex)
