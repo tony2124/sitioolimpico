@@ -23,6 +23,7 @@ namespace WindowsFormsApplication1
         public static MySqlDataAdapter Adaptador;
         public static DataTable ds;
 
+        public static string consulta_tabla = "select nombre_clientes as CLIENTE, numero_unidad as UNIDAD, nombre as NOMBRE_PERSONAL, fecha_servicios as FECHA, hora_servicios as HORA, descripcion_servicios as DESCRIPCION from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD natural join CLIENTES order by fecha_servicios desc, hora_servicios desc";
         public static string usuario = "tony2124", nombre_usuario = "ALFONSO CALDERÓN CHÁVEZ", fecha_inicio_sesion = "22-11-2014", hora_inicio_sesion = "A las 2:20 pm", horario = "8am - 2pm";
 
 
@@ -57,20 +58,20 @@ namespace WindowsFormsApplication1
                 }
             Datos.Close();
             bd.Desconectar();
-            
-            Pintar_tabla("select id_servicio, nombre, numero_unidad, fecha, hora, descripcion from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD order by fecha desc");
 
-            tabla.Columns[0].Width = 100;
-            tabla.Columns[1].Width = 250;
-            tabla.Columns[2].Width = 100;
-            tabla.Columns[3].Width = 100;
-          
+            Pintar_tabla(consulta_tabla);
+
+            tabla.Columns[0].Width = 250;
+            tabla.Columns[1].Width = 60;
+            tabla.Columns[2].Width = 250;
+            tabla.Columns[3].Width = 90;
+            tabla.Columns[4].Width = 80;
+            tabla.Columns[5].Width = 250;
 
             Thread hilo = new Thread( obj.EscuchaTelefono );
             try
             {
                 hilo.Start();
-
             }
             catch (Exception e) {
                 MessageBox.Show(e.ToString());
@@ -175,7 +176,8 @@ namespace WindowsFormsApplication1
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            estadistica est = new estadistica();
+            est.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -270,12 +272,17 @@ namespace WindowsFormsApplication1
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Pintar_tabla("select id_servicio, nombre, numero_unidad, fecha, hora, descripcion from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD");
+            Pintar_tabla(consulta_tabla);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //new Cambiar_contra().showDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

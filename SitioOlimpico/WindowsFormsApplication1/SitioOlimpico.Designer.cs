@@ -84,6 +84,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
@@ -100,7 +101,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1364, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -307,11 +308,11 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(955, 334);
+            this.groupBox1.Location = new System.Drawing.Point(934, 340);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(396, 269);
+            this.groupBox1.Size = new System.Drawing.Size(333, 247);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS DEL MONITOR";
@@ -319,7 +320,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(236, 238);
+            this.linkLabel1.Location = new System.Drawing.Point(159, 217);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(142, 18);
             this.linkLabel1.TabIndex = 9;
@@ -342,7 +343,7 @@
             // 
             this.hora_inicio_sesion_label.AutoSize = true;
             this.hora_inicio_sesion_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hora_inicio_sesion_label.Location = new System.Drawing.Point(202, 152);
+            this.hora_inicio_sesion_label.Location = new System.Drawing.Point(19, 160);
             this.hora_inicio_sesion_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hora_inicio_sesion_label.Name = "hora_inicio_sesion_label";
             this.hora_inicio_sesion_label.Size = new System.Drawing.Size(97, 18);
@@ -353,7 +354,7 @@
             // 
             this.fecha_inicio_sesion_label.AutoSize = true;
             this.fecha_inicio_sesion_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fecha_inicio_sesion_label.Location = new System.Drawing.Point(202, 123);
+            this.fecha_inicio_sesion_label.Location = new System.Drawing.Point(18, 141);
             this.fecha_inicio_sesion_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fecha_inicio_sesion_label.Name = "fecha_inicio_sesion_label";
             this.fecha_inicio_sesion_label.Size = new System.Drawing.Size(176, 18);
@@ -375,7 +376,7 @@
             // 
             this.nombre_usuario_label.AutoSize = true;
             this.nombre_usuario_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombre_usuario_label.Location = new System.Drawing.Point(89, 84);
+            this.nombre_usuario_label.Location = new System.Drawing.Point(88, 84);
             this.nombre_usuario_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nombre_usuario_label.Name = "nombre_usuario_label";
             this.nombre_usuario_label.Size = new System.Drawing.Size(229, 18);
@@ -452,14 +453,14 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 728);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1364, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1284, 22);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // tabla
             // 
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabla.Location = new System.Drawing.Point(18, 219);
+            this.tabla.Location = new System.Drawing.Point(18, 239);
             this.tabla.Name = "tabla";
             this.tabla.Size = new System.Drawing.Size(892, 326);
             this.tabla.TabIndex = 12;
@@ -470,7 +471,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(1106, 696);
+            this.label11.Location = new System.Drawing.Point(990, 697);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(245, 22);
             this.label11.TabIndex = 17;
@@ -478,12 +479,14 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.logo_sitio_olimpico;
-            this.pictureBox1.Location = new System.Drawing.Point(1019, 43);
+            this.pictureBox1.Location = new System.Drawing.Point(951, 44);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(302, 269);
+            this.pictureBox1.Size = new System.Drawing.Size(297, 271);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button11
             // 
@@ -504,7 +507,7 @@
             this.button10.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BUSCAR_CLIENTE;
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.Location = new System.Drawing.Point(155, 557);
+            this.button10.Location = new System.Drawing.Point(158, 586);
             this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(120, 90);
@@ -518,7 +521,7 @@
             this.button9.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BUSCAR_PERSONAL;
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Location = new System.Drawing.Point(18, 557);
+            this.button9.Location = new System.Drawing.Point(21, 586);
             this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(120, 90);
@@ -595,7 +598,7 @@
             this.button3.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BUSCARUNIDAD;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(292, 557);
+            this.button3.Location = new System.Drawing.Point(295, 586);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 90);
@@ -630,12 +633,23 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 218);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(882, 18);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "En la siguiente tabla se muestran los últimos servicios que se han realizado , se" +
+    "leccione con doble click para ver detalles del servicio.";
+            // 
             // SitioOlimpico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(1364, 750);
+            this.ClientSize = new System.Drawing.Size(1284, 750);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button11);
@@ -732,6 +746,7 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
     }
 }
 
