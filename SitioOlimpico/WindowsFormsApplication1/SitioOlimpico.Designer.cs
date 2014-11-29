@@ -84,6 +84,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
@@ -459,7 +460,7 @@
             // tabla
             // 
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabla.Location = new System.Drawing.Point(18, 219);
+            this.tabla.Location = new System.Drawing.Point(18, 239);
             this.tabla.Name = "tabla";
             this.tabla.Size = new System.Drawing.Size(892, 326);
             this.tabla.TabIndex = 12;
@@ -478,6 +479,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.logo_sitio_olimpico;
             this.pictureBox1.Location = new System.Drawing.Point(951, 44);
             this.pictureBox1.Name = "pictureBox1";
@@ -505,7 +507,7 @@
             this.button10.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BUSCAR_CLIENTE;
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.Location = new System.Drawing.Point(155, 557);
+            this.button10.Location = new System.Drawing.Point(158, 586);
             this.button10.Margin = new System.Windows.Forms.Padding(4);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(120, 90);
@@ -519,7 +521,7 @@
             this.button9.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BUSCAR_PERSONAL;
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Location = new System.Drawing.Point(18, 557);
+            this.button9.Location = new System.Drawing.Point(21, 586);
             this.button9.Margin = new System.Windows.Forms.Padding(4);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(120, 90);
@@ -596,7 +598,7 @@
             this.button3.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BUSCARUNIDAD;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(292, 557);
+            this.button3.Location = new System.Drawing.Point(295, 586);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 90);
@@ -631,12 +633,23 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 218);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(882, 18);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "En la siguiente tabla se muestran los últimos servicios que se han realizado , se" +
+    "leccione con doble click para ver detalles del servicio.";
+            // 
             // SitioOlimpico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(1284, 750);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button11);
@@ -733,6 +746,7 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
     }
 }
 
