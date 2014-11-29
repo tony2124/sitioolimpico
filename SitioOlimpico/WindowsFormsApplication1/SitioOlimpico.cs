@@ -18,20 +18,31 @@ namespace WindowsFormsApplication1
 {
     public partial class SitioOlimpico : Form
     {
-        public static int AUTORIZACION = 0;
+        public static int AUTORIZACION = -1;
         CallerID obj;
         public static MySqlDataAdapter Adaptador;
         public static DataTable ds;
-
+        /************* NIVELES DE AUROTIZACION ***************
+         * 0 - TAXISTA
+         * 1 - MONITOR
+         * 2 - ADMINISTRADOR
+         * ***************************************************/
         public static string consulta_tabla = "select nombre_clientes as CLIENTE, numero_unidad as UNIDAD, nombre as NOMBRE_PERSONAL, fecha_servicios as FECHA, hora_servicios as HORA, descripcion_servicios as DESCRIPCION from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD natural join CLIENTES order by fecha_servicios desc, hora_servicios desc";
-        public static string usuario = "tony2124", nombre_usuario = "ALFONSO CALDERÓN CHÁVEZ", fecha_inicio_sesion = "22-11-2014", hora_inicio_sesion = "A las 2:20 pm", horario = "8am - 2pm";
+        public static string usuario = "tony2124", nombre_usuario = "ALFONSO CALDERÓN CHÁVEZ", hora_inicio_sesion = "A las 2:20 pm", horario = "8am - 2pm";
 
 
         public SitioOlimpico()
         {
             InitializeComponent();
 
-            if (AUTORIZACION == 0)
+            do
+            {
+                new InicioSesion().ShowDialog();
+
+            } while (AUTORIZACION < 0);
+
+            
+            if (AUTORIZACION == 2)
             {
                 usuarios.Visible = true;
                 toolStripSeparator3.Visible = true;
@@ -39,7 +50,6 @@ namespace WindowsFormsApplication1
 
             usuario_label.Text = usuario;
             nombre_usuario_label.Text = nombre_usuario;
-            fecha_inicio_sesion_label.Text = fecha_inicio_sesion;
             hora_inicio_sesion_label.Text = hora_inicio_sesion;
             horario_label.Text = horario;
 
@@ -300,6 +310,11 @@ namespace WindowsFormsApplication1
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new Bitacora().ShowDialog();
+        }
+
+        private void usuarios_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

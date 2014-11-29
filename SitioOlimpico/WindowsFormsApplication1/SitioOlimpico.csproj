@@ -143,6 +143,12 @@
     <Compile Include="Informacion.Designer.cs">
       <DependentUpon>Informacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="InicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioSesion.Designer.cs">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="mostrarHistorialUnidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Informacion.resx">
       <DependentUpon>Informacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioSesion.resx">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mostrarHistorialUnidades.resx">
       <DependentUpon>mostrarHistorialUnidades.cs</DependentUpon>
