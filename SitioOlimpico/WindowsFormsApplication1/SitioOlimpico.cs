@@ -58,11 +58,6 @@ namespace WindowsFormsApplication1
                 }
             Datos.Close();
             bd.Desconectar();
-<<<<<<< HEAD
-=======
-            
-            Pintar_tabla("select id_servicio, nombre, numero_unidad, fecha_servicios, hora_servicios, descripcion_servicios from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD order by fecha desc");
->>>>>>> 4a1f40cd0addf02975a0479b410efa0a67205b00
 
             Pintar_tabla(consulta_tabla);
 
