@@ -41,7 +41,7 @@ namespace WindowsFormsApplication1
 
                 /**** VERIFICAR SI EXISTE EL CLIENTE **********/
                 Bdatos.conexion();
-                Datos = Bdatos.obtenerBasesDatosMySQL("select count(nombre) from clientes where numero_tel_1 = '" + numero + "'");
+                Datos = Bdatos.obtenerBasesDatosMySQL("select count(nombre_clientes) from clientes where numero_tel_clientes = '" + numero + "'");
                 int existe_cliente = 0;
                 if (Datos.HasRows)
                     while (Datos.Read())
@@ -52,7 +52,7 @@ namespace WindowsFormsApplication1
                 if (existe_cliente != 0)
                 {
 
-                    Datos = Bdatos.obtenerBasesDatosMySQL("select id_cliente, nombre,colonia,calle,referencias from clientes where numero_tel_1 = '" + numero + "'");
+                    Datos = Bdatos.obtenerBasesDatosMySQL("select id_cliente, nombre_clientes, colonia_clientes, calle_clientes, referencias_clientes from clientes where numero_tel_clientes = '" + numero + "'");
 
                     if (Datos.HasRows)
                         while (Datos.Read())
@@ -282,10 +282,10 @@ namespace WindowsFormsApplication1
             Bdatos.conexion();
 
             int resultado = Bdatos.peticion("update clientes set " +
-                "nombre = '"+nombre_cliente.Text+
-                "', colonia = '"+colonia_cliente.Text+
-                "', calle = '"+calle_cliente.Text+
-                "', referencias = '"+ref_cliente.Text+"' WHERE id_cliente = '"+id_cliente+"'");
+                "nombre_clientes = '"+nombre_cliente.Text+
+                "', colonia_clientes = '"+colonia_cliente.Text+
+                "', calle_clientes = '"+calle_cliente.Text+
+                "', referencias_clientes = '"+ref_cliente.Text+"' WHERE id_cliente = '"+id_cliente+"'");
 
             Bdatos.Desconectar();
 
@@ -303,7 +303,7 @@ namespace WindowsFormsApplication1
             Datos.Close();
           
             //INSERTA DATOS A SERVICIOS
-            Bdatos.peticion("insert into servicios (id_cliente, id_taxista_unidad, fecha, hora, descripcion)" +
+            Bdatos.peticion("insert into servicios (id_cliente, id_taxista_unidad, fecha_servicios, hora_servicios, descripcion_servicios)" +
                            " values('" + id_cliente +
                            "','" + id_taxista_unidad +
                            "','" + DateTime.Now.ToString("yyyy-MM-dd") +
@@ -321,8 +321,8 @@ namespace WindowsFormsApplication1
             id_cliente = generarId();
 
             //INSERTA DATOS
-            consulta = Bdatos.peticion("insert into clientes (id_cliente,nombre," +
-                "numero_tel_1, colonia,calle, referencias, eliminado)" +
+            consulta = Bdatos.peticion("insert into clientes (id_cliente,nombre_clientes," +
+                "numero_tel_clientes, colonia_clientes, calle_clientes, referencias_clientes, eliminado_clientes)" +
                 "values('" + id_cliente + "','" + nombre_cliente.Text +
                 "','" + num_tel_1_cliente.Text +
                 "','" + colonia_cliente.Text +

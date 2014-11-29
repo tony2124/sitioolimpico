@@ -58,7 +58,7 @@ namespace WindowsFormsApplication1
             Datos.Close();
             bd.Desconectar();
             
-            Pintar_tabla("select id_servicio, nombre, numero_unidad, fecha, hora, descripcion from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD order by fecha desc");
+            Pintar_tabla("select id_servicio, nombre, numero_unidad, fecha_servicios, hora_servicios, descripcion_servicios from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD order by fecha desc");
 
             tabla.Columns[0].Width = 100;
             tabla.Columns[1].Width = 250;

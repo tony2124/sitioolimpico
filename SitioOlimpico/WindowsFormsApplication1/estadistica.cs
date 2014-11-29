@@ -47,7 +47,7 @@ namespace WindowsFormsApplication1
 
             Bdatos.conexion();
 
-            Datos = Bdatos.obtenerBasesDatosMySQL("select count(id_servicio) from servicios where fecha >= '" + fecha_desde + "' and fecha <= '" + fecha_hasta + "'");
+            Datos = Bdatos.obtenerBasesDatosMySQL("select count(id_servicio) from servicios where fecha_servicios >= '" + fecha_desde + "' and fecha_servicios <= '" + fecha_hasta + "'");
 
             if (Datos.HasRows)
                 while (Datos.Read())
@@ -66,7 +66,7 @@ namespace WindowsFormsApplication1
                 while (Datos.Read())
                 {
 
-                    dat = Bdatos.obtenerBasesDatosMySQL("select count(id_servicio) from servicios natural join taxista_unidad  where numero_unidad=" + Datos.GetUInt32(0) + " AND fecha >= '"+fecha_desde+"' and fecha <= '"+fecha_hasta+"'");
+                    dat = Bdatos.obtenerBasesDatosMySQL("select count(id_servicio) from servicios natural join taxista_unidad  where numero_unidad=" + Datos.GetInt32(0) + " AND fecha_servicios >= '"+fecha_desde+"' and fecha_servicios <= '"+fecha_hasta+"'");
                     if (dat.HasRows)
                         while (dat.Read())
                             xc = dat.GetInt32(0);
