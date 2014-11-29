@@ -70,6 +70,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -117,6 +118,18 @@
     </Compile>
     <Compile Include="Cliente.Designer.cs">
       <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="estadistica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="estadistica.Designer.cs">
+      <DependentUpon>estadistica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="graficaEstadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="graficaEstadisticas.Designer.cs">
+      <DependentUpon>graficaEstadisticas.cs</DependentUpon>
     </Compile>
     <Compile Include="Informacion.cs">
       <SubType>Form</SubType>
@@ -180,6 +193,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="estadistica.resx">
+      <DependentUpon>estadistica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="graficaEstadisticas.resx">
+      <DependentUpon>graficaEstadisticas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Informacion.resx">
       <DependentUpon>Informacion.cs</DependentUpon>

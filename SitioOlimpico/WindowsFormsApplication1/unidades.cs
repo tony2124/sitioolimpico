@@ -47,12 +47,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                
-               /* this.ClientSize = new System.Drawing.Size(621, 536);
-                this.editar_btn_unidades.Location = new System.Drawing.Point(168, 432);
-                this.guardar_btn_unidades.Location = new System.Drawing.Point(293, 432);
-                this.cancelar_btn_unidades.Location = new System.Drawing.Point(421, 432);
-               // panel6.Size = new System.Drawing.Size(545, 187);*/
+ 
                 editar_btn_unidades.Visible = true;
                 guardar_btn_unidades.Enabled = false;
                 int asignado = 0;

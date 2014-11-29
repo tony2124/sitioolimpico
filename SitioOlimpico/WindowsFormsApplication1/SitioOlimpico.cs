@@ -175,7 +175,8 @@ namespace WindowsFormsApplication1
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            estadistica est = new estadistica();
+            est.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -276,6 +277,11 @@ namespace WindowsFormsApplication1
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //new Cambiar_contra().showDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
