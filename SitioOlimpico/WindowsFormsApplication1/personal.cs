@@ -254,7 +254,7 @@ namespace WindowsFormsApplication1
             Bdatos.peticion("insert into taxista_unidad(id_personal, numero_unidad, fecha) VALUES ('"+id_taxista+"','"+unidad+"','"+DateTime.Now.ToString("yyyy-MM-dd")+"')");
             Bdatos.peticion("UPDATE personal set asignado = 1 where id_personal = '"+id_taxista+"'");
             Bdatos.peticion("UPDATE unidades set asignado = 1 where numero_unidad = '" + unidad + "'");
-
+            Bdatos.bitacora("Se ha relacionado el taxista: " + id_taxista + " con la unidad: "+unidad);
             Bdatos.Desconectar();
         }
 
@@ -290,7 +290,7 @@ namespace WindowsFormsApplication1
 
                         Bdatos.peticion("update personal set " +
                             "foto = '" + nombre_archivo + "." + formato + "' WHERE id_personal = '" + id_personal+ "'");
-
+                        Bdatos.bitacora("Se editó el personal: " + id_personal);
                         Bdatos.Desconectar();
                         foto = false;
                     }
@@ -397,7 +397,7 @@ namespace WindowsFormsApplication1
 
                                         Bdatos.peticion("insert into taxista_unidad (id_personal, numero_unidad, fecha)" +
                                                 "values('" + id_personal + "'," + unidad_personal.Text + ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "')");
-
+                                        Bdatos.bitacora("Se ha registrado un personal con ID: " + id_personal);
                                         if (foto)//Si busco foto se guarda la foto
                                         {
                                             guardarfoto();
@@ -406,6 +406,7 @@ namespace WindowsFormsApplication1
                                         //MODIFICAMOS LA UNIDAD PARA PONERLA ASIGNADA
                                         Bdatos.conexion();
                                         Bdatos.peticion("update unidades set asignado = 1 where numero_unidad = " + unidad_personal.Text);
+                                        Bdatos.bitacora("Se ha relacionado el personal: "+id_personal+" con la unidad: " + unidad_personal);
                                         //MODIFICAMOS EL PERSONAL PARA PONERLO ASIGNADO
                                         Bdatos.peticion("update personal set asignado = 1 where id_personal = " + id_personal);
                                         Bdatos.Desconectar();
@@ -460,6 +461,7 @@ namespace WindowsFormsApplication1
                     "', referencias='" + ref_personal.Text +
                     "', nivel_autorizacion=0" +
                     " where id_personal = " + id_personal);
+                Bdatos.bitacora("Se ha editado el personal: " + id_personal);
             }
             else
             {
@@ -482,6 +484,7 @@ namespace WindowsFormsApplication1
                    "', horario_salida='" + horario_salida_personal.Value.ToString("HH:mm:ss") +
                    "', asignado = 0" +
                    " where id_personal = " + id_personal);
+                Bdatos.bitacora("Se ha editado el personal: " + id_personal);
 
                 if (unidad_personal.Text.CompareTo("") != 0)
                 {
@@ -550,7 +553,7 @@ namespace WindowsFormsApplication1
                     "','" + autorizacion_personal.SelectedIndex +
                     "',0,0)");
 
-                
+                Bdatos.bitacora("Se ha registrado el personal: " + id_personal);
                     return consulta;
                 
             }
@@ -580,7 +583,7 @@ namespace WindowsFormsApplication1
                    "','" + horario_entrada_personal.Value.ToString("HH:mm:ss") +
                    "','" + horario_salida_personal.Value.ToString("HH:mm:ss") +
                    "',0)");
-
+                Bdatos.bitacora("Se ha registrado el personal: " + id_personal);
                 if (consulta > 0)
                 {
                     Bdatos.Desconectar();
@@ -746,6 +749,7 @@ namespace WindowsFormsApplication1
             Bdatos.conexion();
             Bdatos.peticion("update unidades set asignado = 0 where numero_unidad = " + unidad_personal.Text);
             Bdatos.peticion("update personal set asignado = 0 where id_personal = " + id_personal);
+            Bdatos.bitacora("Se ha desvinculado la unidad: " +unidad_personal.Text+" del personal:"+ id_personal);
             Bdatos.Desconectar();
 
             unidad_personal.Enabled = false;

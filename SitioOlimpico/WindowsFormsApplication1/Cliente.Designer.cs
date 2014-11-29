@@ -145,9 +145,10 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label14);
             this.panel6.Controls.Add(this.panel5);
+            this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel6.Location = new System.Drawing.Point(24, 234);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(306, 187);
+            this.panel6.Size = new System.Drawing.Size(318, 187);
             this.panel6.TabIndex = 3;
             // 
             // label14
@@ -172,13 +173,13 @@
             this.panel5.Controls.Add(this.label15);
             this.panel5.Location = new System.Drawing.Point(10, 15);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(284, 159);
+            this.panel5.Size = new System.Drawing.Size(292, 159);
             this.panel5.TabIndex = 15;
             // 
             // ref_cliente
             // 
             this.ref_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.ref_cliente.Location = new System.Drawing.Point(76, 81);
+            this.ref_cliente.Location = new System.Drawing.Point(82, 81);
             this.ref_cliente.Multiline = true;
             this.ref_cliente.Name = "ref_cliente";
             this.ref_cliente.Size = new System.Drawing.Size(200, 67);
@@ -189,7 +190,7 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(3, 83);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(67, 13);
+            this.label24.Size = new System.Drawing.Size(76, 15);
             this.label24.TabIndex = 13;
             this.label24.Text = "Referencias:";
             // 
@@ -197,9 +198,9 @@
             // 
             this.calle_cliente.BackColor = System.Drawing.Color.Ivory;
             this.calle_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.calle_cliente.Location = new System.Drawing.Point(50, 56);
+            this.calle_cliente.Location = new System.Drawing.Point(56, 56);
             this.calle_cliente.Name = "calle_cliente";
-            this.calle_cliente.Size = new System.Drawing.Size(226, 20);
+            this.calle_cliente.Size = new System.Drawing.Size(226, 21);
             this.calle_cliente.TabIndex = 4;
             // 
             // label16
@@ -207,7 +208,7 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(4, 60);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(33, 13);
+            this.label16.Size = new System.Drawing.Size(38, 15);
             this.label16.TabIndex = 2;
             this.label16.Text = "Calle:";
             // 
@@ -215,9 +216,9 @@
             // 
             this.colonia_cliente.BackColor = System.Drawing.Color.Ivory;
             this.colonia_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.colonia_cliente.Location = new System.Drawing.Point(50, 32);
+            this.colonia_cliente.Location = new System.Drawing.Point(56, 32);
             this.colonia_cliente.Name = "colonia_cliente";
-            this.colonia_cliente.Size = new System.Drawing.Size(226, 20);
+            this.colonia_cliente.Size = new System.Drawing.Size(226, 21);
             this.colonia_cliente.TabIndex = 3;
             // 
             // label15
@@ -225,7 +226,7 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(4, 35);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(45, 13);
+            this.label15.Size = new System.Drawing.Size(52, 15);
             this.label15.TabIndex = 0;
             this.label15.Text = "Colonia:";
             // 
