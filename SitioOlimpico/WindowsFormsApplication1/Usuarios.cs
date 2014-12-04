@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
     {
         public static MySqlDataAdapter Adaptador;
         public static DataTable ds;
-        string consulta_tabla = "select usuario, contrasena, nombre from usuarios NATURAL JOIN personal";
+        string consulta_tabla = "select usuario, contrasena, nivel_autorizacion as nivel, nombre from usuarios NATURAL JOIN personal";
         List<string> id_personal;
 
         public Usuarios()
@@ -41,7 +41,8 @@ namespace WindowsFormsApplication1
             Pintar_tabla(consulta_tabla);
             tabla.Columns[0].Width = 150;
             tabla.Columns[1].Width = 150;
-            tabla.Columns[2].Width = 300;
+            tabla.Columns[2].Width = 40;
+            tabla.Columns[3].Width = 250;
         }
 
         public void Pintar_tabla(String filtro)

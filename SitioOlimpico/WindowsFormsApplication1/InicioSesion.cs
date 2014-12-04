@@ -60,5 +60,23 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void user_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                iniciar.PerformClick();
+        }
+
+        private void user_Click(object sender, EventArgs e)
+        {
+            user.Focus();
+            user.SelectAll();
+        }
+
+        private void pass_Click(object sender, EventArgs e)
+        {
+            pass.Focus();
+            pass.SelectAll();
+        }
     }
 }
