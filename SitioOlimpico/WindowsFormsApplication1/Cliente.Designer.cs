@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cliente));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.nombre_cliente = new System.Windows.Forms.TextBox();
@@ -74,17 +75,18 @@
             this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.nombre_cliente);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(78, 87);
+            this.panel1.Location = new System.Drawing.Point(25, 87);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(522, 64);
+            this.panel1.Size = new System.Drawing.Size(550, 64);
             this.panel1.TabIndex = 1;
             // 
             // label25
             // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(505, 22);
+            this.label25.Location = new System.Drawing.Point(488, 22);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(15, 20);
             this.label25.TabIndex = 7;
@@ -92,30 +94,33 @@
             // 
             // nombre_cliente
             // 
+            this.nombre_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nombre_cliente.BackColor = System.Drawing.Color.Ivory;
             this.nombre_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nombre_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombre_cliente.Location = new System.Drawing.Point(78, 20);
+            this.nombre_cliente.Location = new System.Drawing.Point(112, 20);
             this.nombre_cliente.Name = "nombre_cliente";
-            this.nombre_cliente.Size = new System.Drawing.Size(426, 24);
+            this.nombre_cliente.Size = new System.Drawing.Size(370, 24);
             this.nombre_cliente.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(14, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.Size = new System.Drawing.Size(92, 18);
             this.label3.TabIndex = 0;
             this.label3.Text = "Nombre (s): ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(120, 78);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(45, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 13);
+            this.label1.Size = new System.Drawing.Size(136, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Datos Personales";
             // 
@@ -144,21 +149,23 @@
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label14);
+            this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.panel5);
-            this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel6.Location = new System.Drawing.Point(24, 234);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(318, 187);
+            this.panel6.Size = new System.Drawing.Size(553, 197);
             this.panel6.TabIndex = 3;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Khaki;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(20, 9);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(126, 13);
+            this.label14.Size = new System.Drawing.Size(158, 17);
             this.label14.TabIndex = 16;
             this.label14.Text = "Dirección y Contacto";
             // 
@@ -173,16 +180,18 @@
             this.panel5.Controls.Add(this.label15);
             this.panel5.Location = new System.Drawing.Point(10, 15);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(292, 159);
+            this.panel5.Size = new System.Drawing.Size(253, 167);
             this.panel5.TabIndex = 15;
             // 
             // ref_cliente
             // 
+            this.ref_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ref_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.ref_cliente.Location = new System.Drawing.Point(82, 81);
+            this.ref_cliente.Location = new System.Drawing.Point(100, 81);
             this.ref_cliente.Multiline = true;
             this.ref_cliente.Name = "ref_cliente";
-            this.ref_cliente.Size = new System.Drawing.Size(200, 67);
+            this.ref_cliente.Size = new System.Drawing.Size(143, 67);
             this.ref_cliente.TabIndex = 5;
             // 
             // label24
@@ -190,63 +199,70 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(3, 83);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(76, 15);
+            this.label24.Size = new System.Drawing.Size(91, 18);
             this.label24.TabIndex = 13;
             this.label24.Text = "Referencias:";
             // 
             // calle_cliente
             // 
+            this.calle_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.calle_cliente.BackColor = System.Drawing.Color.Ivory;
             this.calle_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.calle_cliente.Location = new System.Drawing.Point(56, 56);
+            this.calle_cliente.Location = new System.Drawing.Point(73, 47);
             this.calle_cliente.Name = "calle_cliente";
-            this.calle_cliente.Size = new System.Drawing.Size(226, 21);
+            this.calle_cliente.Size = new System.Drawing.Size(170, 24);
             this.calle_cliente.TabIndex = 4;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(4, 60);
+            this.label16.Location = new System.Drawing.Point(4, 51);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(38, 15);
+            this.label16.Size = new System.Drawing.Size(45, 18);
             this.label16.TabIndex = 2;
             this.label16.Text = "Calle:";
             // 
             // colonia_cliente
             // 
+            this.colonia_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.colonia_cliente.BackColor = System.Drawing.Color.Ivory;
             this.colonia_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.colonia_cliente.Location = new System.Drawing.Point(56, 32);
+            this.colonia_cliente.Location = new System.Drawing.Point(73, 16);
             this.colonia_cliente.Name = "colonia_cliente";
-            this.colonia_cliente.Size = new System.Drawing.Size(226, 21);
+            this.colonia_cliente.Size = new System.Drawing.Size(170, 24);
             this.colonia_cliente.TabIndex = 3;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(4, 35);
+            this.label15.Location = new System.Drawing.Point(4, 19);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(52, 15);
+            this.label15.Size = new System.Drawing.Size(63, 18);
             this.label15.TabIndex = 0;
             this.label15.Text = "Colonia:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(17, 24);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.Size = new System.Drawing.Size(74, 18);
             this.label11.TabIndex = 1;
             this.label11.Text = "Teléfono :";
             // 
             // num_tel_1_cliente
             // 
+            this.num_tel_1_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.num_tel_1_cliente.BackColor = System.Drawing.Color.Ivory;
             this.num_tel_1_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.num_tel_1_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num_tel_1_cliente.Location = new System.Drawing.Point(85, 10);
+            this.num_tel_1_cliente.Location = new System.Drawing.Point(112, 10);
             this.num_tel_1_cliente.Name = "num_tel_1_cliente";
-            this.num_tel_1_cliente.Size = new System.Drawing.Size(419, 38);
+            this.num_tel_1_cliente.Size = new System.Drawing.Size(370, 38);
             this.num_tel_1_cliente.TabIndex = 2;
             this.num_tel_1_cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_tel_1_cliente_KeyPress);
             // 
@@ -258,35 +274,40 @@
             this.panel7.Controls.Add(this.descripcion_servicio);
             this.panel7.Controls.Add(this.label22);
             this.panel7.Controls.Add(this.label13);
-            this.panel7.Location = new System.Drawing.Point(348, 273);
+            this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel7.Location = new System.Drawing.Point(269, 15);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(311, 126);
+            this.panel7.Size = new System.Drawing.Size(259, 167);
             this.panel7.TabIndex = 4;
             // 
             // unidad_servicio
             // 
+            this.unidad_servicio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.unidad_servicio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.unidad_servicio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.unidad_servicio.Location = new System.Drawing.Point(86, 20);
             this.unidad_servicio.Name = "unidad_servicio";
-            this.unidad_servicio.Size = new System.Drawing.Size(207, 20);
+            this.unidad_servicio.Size = new System.Drawing.Size(155, 24);
             this.unidad_servicio.TabIndex = 6;
             this.unidad_servicio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.unidad_servicio_KeyPress);
             // 
             // descripcion_servicio
             // 
+            this.descripcion_servicio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.descripcion_servicio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.descripcion_servicio.Location = new System.Drawing.Point(86, 46);
+            this.descripcion_servicio.Location = new System.Drawing.Point(86, 51);
             this.descripcion_servicio.Multiline = true;
             this.descripcion_servicio.Name = "descripcion_servicio";
-            this.descripcion_servicio.Size = new System.Drawing.Size(207, 62);
+            this.descripcion_servicio.Size = new System.Drawing.Size(155, 62);
             this.descripcion_servicio.TabIndex = 7;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(4, 65);
+            this.label22.Location = new System.Drawing.Point(4, 70);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(78, 13);
             this.label22.TabIndex = 3;
@@ -306,10 +327,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Khaki;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(355, 267);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(291, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 13);
+            this.label7.Size = new System.Drawing.Size(74, 17);
             this.label7.TabIndex = 15;
             this.label7.Text = "Servicios";
             // 
@@ -320,17 +341,18 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.num_tel_1_cliente);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Location = new System.Drawing.Point(78, 157);
+            this.panel3.Location = new System.Drawing.Point(25, 157);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(522, 63);
+            this.panel3.Size = new System.Drawing.Size(550, 63);
             this.panel3.TabIndex = 2;
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(506, 23);
+            this.label4.Location = new System.Drawing.Point(488, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(15, 20);
             this.label4.TabIndex = 8;
@@ -342,7 +364,7 @@
             this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.CLIENTE_ENCABEZADO;
             this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(679, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(748, 60);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -351,7 +373,7 @@
             this.editar_btn_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.editar_btn_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editar_btn_cliente.Image = global::WindowsFormsApplication1.Properties.Resources.MODIFICAR;
-            this.editar_btn_cliente.Location = new System.Drawing.Point(168, 427);
+            this.editar_btn_cliente.Location = new System.Drawing.Point(586, 143);
             this.editar_btn_cliente.Name = "editar_btn_cliente";
             this.editar_btn_cliente.Size = new System.Drawing.Size(118, 92);
             this.editar_btn_cliente.TabIndex = 19;
@@ -363,7 +385,7 @@
             this.cancelar_btn_cliente.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.CANCELAR;
             this.cancelar_btn_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cancelar_btn_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelar_btn_cliente.Location = new System.Drawing.Point(420, 427);
+            this.cancelar_btn_cliente.Location = new System.Drawing.Point(586, 339);
             this.cancelar_btn_cliente.Name = "cancelar_btn_cliente";
             this.cancelar_btn_cliente.Size = new System.Drawing.Size(121, 92);
             this.cancelar_btn_cliente.TabIndex = 21;
@@ -375,7 +397,7 @@
             this.guardar_btn_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.guardar_btn_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guardar_btn_cliente.Image = global::WindowsFormsApplication1.Properties.Resources.GUARDAR2;
-            this.guardar_btn_cliente.Location = new System.Drawing.Point(292, 427);
+            this.guardar_btn_cliente.Location = new System.Drawing.Point(586, 241);
             this.guardar_btn_cliente.Name = "guardar_btn_cliente";
             this.guardar_btn_cliente.Size = new System.Drawing.Size(122, 92);
             this.guardar_btn_cliente.TabIndex = 20;
@@ -388,10 +410,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(672, 531);
+            this.ClientSize = new System.Drawing.Size(716, 476);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label28);
@@ -401,8 +421,11 @@
             this.Controls.Add(this.guardar_btn_cliente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "cliente";
+            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";

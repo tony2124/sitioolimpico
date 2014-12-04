@@ -395,21 +395,25 @@ namespace WindowsFormsApplication1
                                     {
 
 
-                                        Bdatos.peticion("insert into taxista_unidad (id_personal, numero_unidad, fecha)" +
+                                        /*Bdatos.peticion("insert into taxista_unidad (id_personal, numero_unidad, fecha)" +
                                                 "values('" + id_personal + "'," + unidad_personal.Text + ",'" + DateTime.Now.ToString("yyyy-MM-dd") + "')");
-                                        Bdatos.bitacora("Se ha registrado un personal con ID: " + id_personal);
+                                        Bdatos.bitacora("Se ha registrado un personal con ID: " + id_personal);*/
                                         if (foto)//Si busco foto se guarda la foto
                                         {
                                             guardarfoto();
                                         }
 
-                                        //MODIFICAMOS LA UNIDAD PARA PONERLA ASIGNADA
+                                       /* //MODIFICAMOS LA UNIDAD PARA PONERLA ASIGNADA
                                         Bdatos.conexion();
                                         Bdatos.peticion("update unidades set asignado = 1 where numero_unidad = " + unidad_personal.Text);
                                         Bdatos.bitacora("Se ha relacionado el personal: "+id_personal+" con la unidad: " + unidad_personal);
                                         //MODIFICAMOS EL PERSONAL PARA PONERLO ASIGNADO
                                         Bdatos.peticion("update personal set asignado = 1 where id_personal = " + id_personal);
-                                        Bdatos.Desconectar();
+                                        Bdatos.Desconectar();*/
+
+                                        relacionar_taxista_unidad(id_personal, unidad_personal.Text);
+
+
 
                                         //BORRAMOS LOS DATOS PARA UN SIGUIENTE REGISTRO
                                         borrarCampos();

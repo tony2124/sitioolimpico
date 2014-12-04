@@ -20,13 +20,13 @@ namespace WindowsFormsApplication1
             string texto="";
             ConexionBD bd = new ConexionBD();
             bd.conexion();
-            MySqlDataReader Datos = bd.obtenerBasesDatosMySQL("select * from bitacoras order by fecha desc, hora desc");
+            MySqlDataReader Datos = bd.obtenerBasesDatosMySQL("select * from bitacoras order by id_bitacora desc");
             if (Datos.HasRows)
                 while (Datos.Read())
                 {
                     texto += Datos.GetString(0) + " - ";
                     texto += Datos.GetString(1) + " - ";
-                    texto += Datos.GetString(2) + " - ";
+                    texto += Datos.GetDateTime(2).ToString("yyyy-MM-dd") + " - ";
                     texto += Datos.GetString(3) + "\r\n";
                 }
             Datos.Close();

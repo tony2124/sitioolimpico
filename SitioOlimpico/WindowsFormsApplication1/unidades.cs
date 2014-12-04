@@ -310,17 +310,15 @@ namespace WindowsFormsApplication1
                 "','" + nombre_archivo + "." + formato +
                 "','" + fecha_ingreso_unidades.Value.ToString("yyyy-MM-dd") +
                 "',0,0)");
-            Bdatos.bitacora("Se ha registrado la unidad: " + numero_unidad.Text);
+            
             if (consulta > 0)
             {
-                Bdatos.Desconectar();
-                return consulta;
+                Bdatos.bitacora("Se ha registrado la unidad: " + numero_unidad.Text);
             }
-            else
-            {
-                Bdatos.Desconectar();
-                return consulta;
-            }
+
+            Bdatos.Desconectar();
+            return consulta;
+            
 
         }
 

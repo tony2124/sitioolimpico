@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.actual = new System.Windows.Forms.TextBox();
+            this.nueva1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.nueva2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,54 +41,60 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 29);
+            this.label1.Location = new System.Drawing.Point(17, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Contraseña actual:";
             // 
-            // textBox1
+            // actual
             // 
-            this.textBox1.Location = new System.Drawing.Point(178, 25);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(186, 21);
-            this.textBox1.TabIndex = 1;
+            this.actual.Location = new System.Drawing.Point(170, 19);
+            this.actual.Margin = new System.Windows.Forms.Padding(4);
+            this.actual.Name = "actual";
+            this.actual.PasswordChar = '*';
+            this.actual.Size = new System.Drawing.Size(186, 21);
+            this.actual.TabIndex = 1;
+            this.actual.MouseClick += new System.Windows.Forms.MouseEventHandler(this.actual_MouseClick);
+            this.actual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.actual_KeyPress);
             // 
-            // textBox2
+            // nueva1
             // 
-            this.textBox2.Location = new System.Drawing.Point(178, 55);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(186, 21);
-            this.textBox2.TabIndex = 3;
+            this.nueva1.Location = new System.Drawing.Point(170, 49);
+            this.nueva1.Margin = new System.Windows.Forms.Padding(4);
+            this.nueva1.Name = "nueva1";
+            this.nueva1.PasswordChar = '*';
+            this.nueva1.Size = new System.Drawing.Size(186, 21);
+            this.nueva1.TabIndex = 3;
+            this.nueva1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.nueva1_MouseClick);
+            this.nueva1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nueva1_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 59);
+            this.label2.Location = new System.Drawing.Point(17, 53);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Contraseña nueva:";
             // 
-            // textBox3
+            // nueva2
             // 
-            this.textBox3.Location = new System.Drawing.Point(178, 85);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(186, 21);
-            this.textBox3.TabIndex = 5;
+            this.nueva2.Location = new System.Drawing.Point(170, 79);
+            this.nueva2.Margin = new System.Windows.Forms.Padding(4);
+            this.nueva2.Name = "nueva2";
+            this.nueva2.PasswordChar = '*';
+            this.nueva2.Size = new System.Drawing.Size(186, 21);
+            this.nueva2.TabIndex = 5;
+            this.nueva2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.nueva2_MouseClick);
+            this.nueva2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nueva2_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 89);
+            this.label3.Location = new System.Drawing.Point(17, 83);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(146, 15);
@@ -97,8 +103,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(202, 127);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(199, 127);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 35);
             this.button1.TabIndex = 6;
@@ -108,8 +114,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(73, 127);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(70, 127);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 35);
             this.button2.TabIndex = 7;
@@ -117,22 +123,26 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // cambiar_contra
+            // CambiarContrasena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 183);
+            this.ClientSize = new System.Drawing.Size(385, 183);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.nueva2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.nueva1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.actual);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "cambiar_contra";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "CambiarContrasena";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambiar contraseña";
             this.ResumeLayout(false);
@@ -143,10 +153,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox actual;
+        private System.Windows.Forms.TextBox nueva1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox nueva2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

@@ -33,16 +33,6 @@ namespace WindowsFormsApplication1
 
         public SitioOlimpico()
         {
-            
-            /*
-            do
-            {
-                new InicioSesion().ShowDialog();
-
-            } while (AUTORIZACION < 0 && AUTORIZACION != -2);
-
-            if (AUTORIZACION == -2) { this.Dispose(); return; }
-              */  
             InitializeComponent();
 
             if (AUTORIZACION == 2)

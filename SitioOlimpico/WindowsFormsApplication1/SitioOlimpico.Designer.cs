@@ -718,7 +718,6 @@
         private System.Windows.Forms.Label nombre_usuario_label;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.DataGridView tabla;
-        private System.Windows.Forms.Button buscar;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem usuarios;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
@@ -731,6 +730,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Button buscar;
     }
 }
 

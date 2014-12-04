@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarCliente));
             this.num_tel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabla = new System.Windows.Forms.DataGridView();
@@ -51,7 +52,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(11, 107);
+            this.label1.Location = new System.Drawing.Point(12, 113);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 50);
@@ -69,7 +70,7 @@
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabla.Location = new System.Drawing.Point(11, 173);
-            this.tabla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabla.Margin = new System.Windows.Forms.Padding(2);
             this.tabla.MultiSelect = false;
             this.tabla.Name = "tabla";
             this.tabla.ReadOnly = true;
@@ -82,7 +83,7 @@
             // 
             this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.BUSQUEDA_CLIENTES;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(907, 87);
             this.pictureBox1.TabIndex = 3;
@@ -92,7 +93,7 @@
             // 
             this.button1.Image = global::WindowsFormsApplication1.Properties.Resources.LUPA;
             this.button1.Location = new System.Drawing.Point(817, 116);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(68, 41);
             this.button1.TabIndex = 1;
@@ -131,7 +132,7 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // buscarCliente
+            // BuscarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -146,7 +147,11 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.num_tel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "buscarCliente";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "BuscarCliente";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BÚSQUEDA DE CLIENTES";
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
