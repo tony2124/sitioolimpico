@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class mostrarHistorialUnidades : Form
+    public partial class MostrarHistorialUnidades : Form
     {
         public static MySqlDataAdapter Adaptador;
         public static DataTable ds;
 
-        public mostrarHistorialUnidades(String id_personal)
+        public MostrarHistorialUnidades(String id_personal)
         {  
             InitializeComponent();
             unidad_actual.Enabled = false;
@@ -55,7 +55,7 @@ namespace WindowsFormsApplication1
 
         private void ver_unidad_label_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            unidades u = new unidades(1,unidad_actual.Text);
+            Unidades u = new Unidades(1,unidad_actual.Text);
             u.ShowDialog();
         }
     }

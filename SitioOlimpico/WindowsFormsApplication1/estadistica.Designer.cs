@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class estadistica
+    partial class Estadistica
     {
         /// <summary>
         /// Required designer variable.

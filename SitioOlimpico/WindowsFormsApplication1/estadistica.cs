@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class estadistica : Form
+    public partial class Estadistica : Form
     {
         MySqlDataReader Datos, dat;
         ConexionBD Bdatos = new ConexionBD();
@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
         String[] unidades;
         int[] unidades_serv;
 
-        public estadistica()
+        public Estadistica()
         {
             InitializeComponent();
 
@@ -95,7 +95,7 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            graficaEstadisticas ge = new graficaEstadisticas(unidades,unidades_serv);
+            GraficaEstadisticas ge = new GraficaEstadisticas(unidades,unidades_serv);
             ge.ShowDialog();
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class mostrarHistorialUnidades
+    partial class MostrarHistorialUnidades
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class unidades
+    partial class Unidades
     {
         /// <summary>
         /// Required designer variable.

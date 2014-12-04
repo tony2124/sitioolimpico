@@ -11,9 +11,9 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WindowsFormsApplication1
 {
-    public partial class graficaEstadisticas : Form
+    public partial class GraficaEstadisticas : Form
     {
-        public graficaEstadisticas(String [] series, int[] puntos)
+        public GraficaEstadisticas(String [] series, int[] puntos)
         {
             InitializeComponent();
             this.chart1.Palette = ChartColorPalette.Fire;

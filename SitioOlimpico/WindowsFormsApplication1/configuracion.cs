@@ -16,12 +16,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class configuracion : Form
+    public partial class Configuracion : Form
     {
         static SerialPort ComPort;
         static string tipodemodem = "";
 
-        public configuracion()
+        public Configuracion()
         {
             InitializeComponent();
 

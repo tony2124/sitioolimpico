@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class buscarCliente
+    partial class BuscarCliente
     {
         /// <summary>
         /// Required designer variable.

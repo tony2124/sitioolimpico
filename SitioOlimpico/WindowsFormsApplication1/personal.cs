@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class personal : Form
+    public partial class Personal : Form
     {
         public OpenFileDialog BuscarImagen;
         public Boolean foto = false, editar = false;
@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1
 
         Boolean ventanaUnidades;
 
-        public personal(int forma, string id_perso, Boolean ventanaUnidades)
+        public Personal(int forma, string id_perso, Boolean ventanaUnidades)
         {
             InitializeComponent();
             autocompletar_unidades_disponibles();
@@ -650,13 +650,13 @@ namespace WindowsFormsApplication1
                 {
                     if (Datos.HasRows)
                         while (Datos.Read())
-                            unidades.txt.Text = Datos.GetString(0);
+                            Unidades.txt.Text = Datos.GetString(0);
                     Datos.Close();
                     Bdatos.Desconectar();
                 }
                 else
                 {
-                    unidades.txt.Text = "Aún no se le asigna chofer";
+                    Unidades.txt.Text = "Aún no se le asigna chofer";
                 }
             }
             Dispose();
@@ -739,7 +739,7 @@ namespace WindowsFormsApplication1
 
         private void agregar_unidad_personal_Click(object sender, EventArgs e)
         {
-            unidades u = new unidades(0,"");
+            Unidades u = new Unidades(0,"");
             u.ShowDialog();
         }
 
@@ -759,8 +759,8 @@ namespace WindowsFormsApplication1
 
             if (ventanaUnidades)
             {
-                unidades.txt.Text = "Aun no se le asigna chofer";
-                unidades.chofer_inf.Visible = false;
+                Unidades.txt.Text = "Aun no se le asigna chofer";
+                Unidades.chofer_inf.Visible = false;
                 Dispose();
             }
         }
@@ -781,13 +781,13 @@ namespace WindowsFormsApplication1
                 {
                     if (Datos.HasRows)
                         while (Datos.Read())
-                            unidades.txt.Text = Datos.GetString(0);
+                            Unidades.txt.Text = Datos.GetString(0);
                     Datos.Close();
                     Bdatos.Desconectar();
                 }
                 else
                 {
-                    unidades.txt.Text = "Aún no se le asigna chofer";
+                    Unidades.txt.Text = "Aún no se le asigna chofer";
                 }
             }
         }//FIN DEL METODO DE FORM CLOSING
@@ -813,7 +813,7 @@ namespace WindowsFormsApplication1
                 cadena += "\n\n\nAún no se le asigna unidad\n";
 
             MessageBox.Show(cadena);*/
-            mostrarHistorialUnidades mhu = new mostrarHistorialUnidades(id_personal);
+            MostrarHistorialUnidades mhu = new MostrarHistorialUnidades(id_personal);
             mhu.ShowDialog();
         }
     }

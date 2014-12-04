@@ -27,21 +27,24 @@ namespace WindowsFormsApplication1
          * 1 - MONITOR
          * 2 - ADMINISTRADOR
          * ***************************************************/
-        public static string consulta_tabla = "select nombre_clientes as CLIENTE, numero_unidad as UNIDAD, nombre as NOMBRE_PERSONAL, fecha_servicios as FECHA, hora_servicios as HORA, descripcion_servicios as DESCRIPCION from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD natural join CLIENTES order by fecha_servicios desc, hora_servicios desc";
+        public string consulta_tabla = "select nombre_clientes as CLIENTE, numero_unidad as UNIDAD, nombre as NOMBRE_PERSONAL, fecha_servicios as FECHA, hora_servicios as HORA, descripcion_servicios as DESCRIPCION from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD natural join CLIENTES order by fecha_servicios desc, hora_servicios desc";
         public static string usuario = "tony2124", nombre_usuario = "ALFONSO CALDERÓN CHÁVEZ", hora_inicio_sesion = "A las 2:20 pm", horario = "8am - 2pm";
 
 
         public SitioOlimpico()
         {
-            InitializeComponent();
-
+            
+            /*
             do
             {
                 new InicioSesion().ShowDialog();
 
-            } while (AUTORIZACION < 0);
+            } while (AUTORIZACION < 0 && AUTORIZACION != -2);
 
-            
+            if (AUTORIZACION == -2) { this.Dispose(); return; }
+              */  
+            InitializeComponent();
+
             if (AUTORIZACION == 2)
             {
                 usuarios.Visible = true;
@@ -162,12 +165,12 @@ namespace WindowsFormsApplication1
 
         private void registrarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            personal p = new personal(0,"",false);
+            Personal p = new Personal(0,"",false);
             p.ShowDialog();
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            personal p = new personal(0, "", false);
+            Personal p = new Personal(0, "", false);
             p.ShowDialog();
         }
 
@@ -180,14 +183,14 @@ namespace WindowsFormsApplication1
         private void button3_Click(object sender, EventArgs e)
         {
 
-            buscarUnidad bU = new buscarUnidad();
+            BuscarUnidad bU = new BuscarUnidad();
             bU.ShowDialog();
             
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            estadistica est = new estadistica();
+            Estadistica est = new Estadistica();
             est.ShowDialog();
         }
 
@@ -198,7 +201,7 @@ namespace WindowsFormsApplication1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            new configuracion().ShowDialog();
+            new Configuracion().ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -231,20 +234,18 @@ namespace WindowsFormsApplication1
 
         private void registrarUnidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            unidades u = new unidades(0,"");
+            Unidades u = new Unidades(0,"");
             u.ShowDialog();
         }
 
         private void buscarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new buscarCliente().ShowDialog();
+            new BuscarCliente().ShowDialog();
         }
 
         private void buscarUnidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
-            buscarUnidad bU = new buscarUnidad();
+            BuscarUnidad bU = new BuscarUnidad();
             bU.ShowDialog();
         }
             
@@ -262,33 +263,33 @@ namespace WindowsFormsApplication1
 
         private void buscarPersonalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new buscarPersonal().ShowDialog();
+            new BuscarPersonal().ShowDialog();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            unidades u = new unidades(0, "");
+            Unidades u = new Unidades(0, "");
             u.ShowDialog();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            new buscarPersonal().ShowDialog();
+            new BuscarPersonal().ShowDialog();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            new buscarCliente().ShowDialog();
+            new BuscarCliente().ShowDialog();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Pintar_tabla(consulta_tabla);
+            Pintar_tabla("select nombre_clientes as CLIENTE, numero_unidad as UNIDAD, nombre as NOMBRE_PERSONAL, fecha_servicios as FECHA, hora_servicios as HORA, descripcion_servicios as DESCRIPCION from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD natural join CLIENTES where nombre_clientes LIKE '%" + campo.Text + "%' or numero_unidad = '"+campo.Text+"' order by fecha_servicios desc, hora_servicios desc");
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //new Cambiar_contra().showDialog();
+            new CambiarContrasena().ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -298,12 +299,12 @@ namespace WindowsFormsApplication1
 
         private void nuevoServicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new buscarCliente().ShowDialog();
+            new BuscarCliente().ShowDialog();
         }
 
         private void estadísticasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            estadistica est = new estadistica();
+            Estadistica est = new Estadistica();
             est.ShowDialog();
         }
 
@@ -314,7 +315,18 @@ namespace WindowsFormsApplication1
 
         private void usuarios_Click(object sender, EventArgs e)
         {
+            new Usuarios().ShowDialog();
+        }
 
+        private void campo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                buscar.PerformClick();
+        }
+
+        private void tabla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show("Row: "+e.RowIndex+" Column: "+e.ColumnIndex);
         }
     }
 }

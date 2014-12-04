@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class buscarPersonal : Form
+    public partial class BuscarPersonal : Form
     {
         public static MySqlDataAdapter Adaptador;
         public static DataTable ds;
 
-        public buscarPersonal()
+        public BuscarPersonal()
         {
             InitializeComponent();
 
@@ -32,13 +32,6 @@ namespace WindowsFormsApplication1
             tabla.Columns[4].HeaderText = "AUTORIZACIÓN";
             tabla.Columns[5].HeaderText = "ASIGNADO";
             tabla.Columns[6].HeaderText = "BAJA";
-            //MessageBox.Show("PIÑA");
-           /* for (int i = 0; i < tabla.Rows.Count; i++)
-            {
-                if (tabla.Rows[i].Cells[6].Value.ToString().CompareTo("0") == 0)
-                    tabla.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-            }
-            //tabla.Rows[0].DefaultCellStyle.ForeColor = Color.Yellow;*/
             total.Text = "" + tabla.Rows.Count;
         }
 
@@ -58,7 +51,7 @@ namespace WindowsFormsApplication1
 
         private void tabla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            new personal(1, tabla["id_personal", e.RowIndex].Value.ToString(), false ).ShowDialog();
+            new Personal(1, tabla["id_personal", e.RowIndex].Value.ToString(), false ).ShowDialog();
             
         }
 
@@ -69,11 +62,10 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(nombre.Text);
             Pintar_tabla("select id_personal, nombre, fecha_ingreso, telefono, nivel_autorizacion, eliminado  from personal where nombre like '%"+nombre.Text+"%' or telefono like '%"+nombre.Text+"%'");
             total.Text = "" + tabla.Rows.Count;
             if (tabla.Rows.Count == 1)
-                new personal(1, tabla["id_personal", 0].Value.ToString(), false).ShowDialog();
+                new Personal(1, tabla["id_personal", 0].Value.ToString(), false).ShowDialog();
         }
 
         private void nombre_KeyPress(object sender, KeyPressEventArgs e)

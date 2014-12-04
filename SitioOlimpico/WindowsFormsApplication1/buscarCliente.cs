@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class buscarCliente : Form
+    public partial class BuscarCliente : Form
     {
 
         public static MySqlDataAdapter Adaptador;
         public static DataTable ds;
 
-        public buscarCliente()
+        public BuscarCliente()
         {
             InitializeComponent();
 

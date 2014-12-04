@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class configuracion
+    partial class Configuracion
     {
         /// <summary>
         /// Required designer variable.

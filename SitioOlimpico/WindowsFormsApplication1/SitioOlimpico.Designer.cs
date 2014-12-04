@@ -65,7 +65,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.campo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -77,7 +77,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.buscar = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -329,10 +329,10 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Location = new System.Drawing.Point(18, 217);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(85, 18);
+            this.linkLabel2.Size = new System.Drawing.Size(87, 18);
             this.linkLabel2.TabIndex = 20;
             this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "ver bitácora";
+            this.linkLabel2.Text = "Ver bitácora";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // horario_label
@@ -423,14 +423,15 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Último inicio de sesión:";
             // 
-            // textBox1
+            // campo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(113, 158);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(532, 41);
-            this.textBox1.TabIndex = 9;
+            this.campo.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campo.Location = new System.Drawing.Point(113, 158);
+            this.campo.Margin = new System.Windows.Forms.Padding(4);
+            this.campo.Name = "campo";
+            this.campo.Size = new System.Drawing.Size(532, 41);
+            this.campo.TabIndex = 9;
+            this.campo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campo_KeyPress);
             // 
             // label1
             // 
@@ -471,10 +472,13 @@
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabla.Location = new System.Drawing.Point(18, 239);
+            this.tabla.MultiSelect = false;
             this.tabla.Name = "tabla";
+            this.tabla.ReadOnly = true;
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla.Size = new System.Drawing.Size(892, 404);
             this.tabla.TabIndex = 12;
+            this.tabla.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_CellDoubleClick);
             // 
             // label11
             // 
@@ -491,7 +495,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 218);
+            this.label6.Location = new System.Drawing.Point(18, 213);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(882, 18);
             this.label6.TabIndex = 19;
@@ -547,16 +551,17 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // button8
+            // buscar
             // 
-            this.button8.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.LUPA;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button8.Location = new System.Drawing.Point(652, 157);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(55, 43);
-            this.button8.TabIndex = 13;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.buscar.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.LUPA;
+            this.buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buscar.Location = new System.Drawing.Point(652, 157);
+            this.buscar.Name = "buscar";
+            this.buscar.Size = new System.Drawing.Size(55, 43);
+            this.buscar.TabIndex = 13;
+            this.buscar.UseVisualStyleBackColor = true;
+            this.buscar.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -625,8 +630,8 @@
             // 
             // SitioOlimpico
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(1284, 750);
             this.Controls.Add(this.label7);
@@ -635,11 +640,11 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.buscar);
             this.Controls.Add(this.tabla);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.campo);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -647,6 +652,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -700,7 +706,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox campo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -712,7 +718,7 @@
         private System.Windows.Forms.Label nombre_usuario_label;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.DataGridView tabla;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button buscar;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem usuarios;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class unidades : Form
+    public partial class Unidades : Form
     {
         /*VARIABLES DE LA BASE DE DATOS*/
         MySqlDataReader Datos;
@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
 
         public static TextBox txt;
         public static LinkLabel chofer_inf;
-        public unidades(int forma, String unidad)
+        public Unidades(int forma, String unidad)
         {
             InitializeComponent();
             txt = chofer_unidad;
@@ -376,7 +376,7 @@ namespace WindowsFormsApplication1
 
         private void info_chofer_unidad_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            personal p = new personal(1, id_personal_unidad,true);
+            Personal p = new Personal(1, id_personal_unidad,true);
             p.ShowDialog();
         }
 

@@ -67,6 +67,7 @@
     <Reference Include="MySql.Data, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.3.5\Assemblies\v2.0\MySql.Data.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -93,31 +94,37 @@
     <Compile Include="Bitacora.Designer.cs">
       <DependentUpon>Bitacora.cs</DependentUpon>
     </Compile>
-    <Compile Include="buscarCliente.cs">
+    <Compile Include="BuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="buscarCliente.Designer.cs">
-      <DependentUpon>buscarCliente.cs</DependentUpon>
+    <Compile Include="BuscarCliente.Designer.cs">
+      <DependentUpon>BuscarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="buscarPersonal.cs">
+    <Compile Include="BuscarPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="buscarPersonal.Designer.cs">
-      <DependentUpon>buscarPersonal.cs</DependentUpon>
+    <Compile Include="BuscarPersonal.Designer.cs">
+      <DependentUpon>BuscarPersonal.cs</DependentUpon>
     </Compile>
-    <Compile Include="buscarUnidad.cs">
+    <Compile Include="BuscarUnidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="buscarUnidad.Designer.cs">
-      <DependentUpon>buscarUnidad.cs</DependentUpon>
+    <Compile Include="BuscarUnidad.Designer.cs">
+      <DependentUpon>BuscarUnidad.cs</DependentUpon>
     </Compile>
     <Compile Include="CallerID.cs" />
-    <Compile Include="ConexionBD.cs" />
-    <Compile Include="configuracion.cs">
+    <Compile Include="CambiarContrasena.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="configuracion.Designer.cs">
-      <DependentUpon>configuracion.cs</DependentUpon>
+    <Compile Include="CambiarContrasena.Designer.cs">
+      <DependentUpon>CambiarContrasena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConexionBD.cs" />
+    <Compile Include="Configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion.Designer.cs">
+      <DependentUpon>Configuracion.cs</DependentUpon>
     </Compile>
     <Compile Include="Cliente.cs">
       <SubType>Form</SubType>
@@ -125,17 +132,17 @@
     <Compile Include="Cliente.Designer.cs">
       <DependentUpon>Cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="estadistica.cs">
+    <Compile Include="Estadistica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="estadistica.Designer.cs">
-      <DependentUpon>estadistica.cs</DependentUpon>
+    <Compile Include="Estadistica.Designer.cs">
+      <DependentUpon>Estadistica.cs</DependentUpon>
     </Compile>
-    <Compile Include="graficaEstadisticas.cs">
+    <Compile Include="GraficaEstadisticas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="graficaEstadisticas.Designer.cs">
-      <DependentUpon>graficaEstadisticas.cs</DependentUpon>
+    <Compile Include="GraficaEstadisticas.Designer.cs">
+      <DependentUpon>GraficaEstadisticas.cs</DependentUpon>
     </Compile>
     <Compile Include="Informacion.cs">
       <SubType>Form</SubType>
@@ -149,23 +156,23 @@
     <Compile Include="InicioSesion.Designer.cs">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="mostrarHistorialUnidades.cs">
+    <Compile Include="MostrarHistorialUnidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mostrarHistorialUnidades.Designer.cs">
-      <DependentUpon>mostrarHistorialUnidades.cs</DependentUpon>
+    <Compile Include="MostrarHistorialUnidades.Designer.cs">
+      <DependentUpon>MostrarHistorialUnidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="unidades.cs">
+    <Compile Include="Unidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="unidades.Designer.cs">
-      <DependentUpon>unidades.cs</DependentUpon>
+    <Compile Include="Unidades.Designer.cs">
+      <DependentUpon>Unidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="personal.cs">
+    <Compile Include="Personal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="personal.Designer.cs">
-      <DependentUpon>personal.cs</DependentUpon>
+    <Compile Include="Personal.Designer.cs">
+      <DependentUpon>Personal.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -178,14 +185,14 @@
     <Compile Include="SitioOlimpico.Designer.cs">
       <DependentUpon>SitioOlimpico.cs</DependentUpon>
     </Compile>
-    <Compile Include="llamadaentrante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="llamadaentrante.Designer.cs">
-      <DependentUpon>llamadaentrante.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="acercade.resx">
       <DependentUpon>acercade.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -193,27 +200,30 @@
     <EmbeddedResource Include="Bitacora.resx">
       <DependentUpon>Bitacora.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="buscarCliente.resx">
-      <DependentUpon>buscarCliente.cs</DependentUpon>
+    <EmbeddedResource Include="BuscarCliente.resx">
+      <DependentUpon>BuscarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="buscarPersonal.resx">
-      <DependentUpon>buscarPersonal.cs</DependentUpon>
+    <EmbeddedResource Include="BuscarPersonal.resx">
+      <DependentUpon>BuscarPersonal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="buscarUnidad.resx">
-      <DependentUpon>buscarUnidad.cs</DependentUpon>
+    <EmbeddedResource Include="BuscarUnidad.resx">
+      <DependentUpon>BuscarUnidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="configuracion.resx">
-      <DependentUpon>configuracion.cs</DependentUpon>
+    <EmbeddedResource Include="CambiarContrasena.resx">
+      <DependentUpon>CambiarContrasena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion.resx">
+      <DependentUpon>Configuracion.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="estadistica.resx">
-      <DependentUpon>estadistica.cs</DependentUpon>
+    <EmbeddedResource Include="Estadistica.resx">
+      <DependentUpon>Estadistica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="graficaEstadisticas.resx">
-      <DependentUpon>graficaEstadisticas.cs</DependentUpon>
+    <EmbeddedResource Include="GraficaEstadisticas.resx">
+      <DependentUpon>GraficaEstadisticas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Informacion.resx">
       <DependentUpon>Informacion.cs</DependentUpon>
@@ -221,25 +231,25 @@
     <EmbeddedResource Include="InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mostrarHistorialUnidades.resx">
-      <DependentUpon>mostrarHistorialUnidades.cs</DependentUpon>
+    <EmbeddedResource Include="MostrarHistorialUnidades.resx">
+      <DependentUpon>MostrarHistorialUnidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="unidades.resx">
-      <DependentUpon>unidades.cs</DependentUpon>
+    <EmbeddedResource Include="Unidades.resx">
+      <DependentUpon>Unidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="personal.resx">
-      <DependentUpon>personal.cs</DependentUpon>
+    <EmbeddedResource Include="Personal.resx">
+      <DependentUpon>Personal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SitioOlimpico.resx">
       <DependentUpon>SitioOlimpico.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="llamadaentrante.resx">
-      <DependentUpon>llamadaentrante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

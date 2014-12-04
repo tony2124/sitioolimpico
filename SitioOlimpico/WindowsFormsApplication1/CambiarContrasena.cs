@@ -10,12 +10,21 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class llamadaentrante : Form
+    public partial class CambiarContrasena : Form
     {
-        public llamadaentrante(string data)
+        public CambiarContrasena()
         {
             InitializeComponent();
-            datos.Text = data;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }
