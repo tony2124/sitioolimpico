@@ -59,7 +59,6 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.horario_label = new System.Windows.Forms.Label();
             this.hora_inicio_sesion_label = new System.Windows.Forms.Label();
-            this.fecha_inicio_sesion_label = new System.Windows.Forms.Label();
             this.usuario_label = new System.Windows.Forms.Label();
             this.nombre_usuario_label = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -224,6 +223,7 @@
             this.usuarios.Size = new System.Drawing.Size(217, 24);
             this.usuarios.Text = "Creación de usuarios";
             this.usuarios.Visible = false;
+            this.usuarios.Click += new System.EventHandler(this.usuarios_Click);
             // 
             // toolStripSeparator3
             // 
@@ -297,7 +297,6 @@
             this.groupBox1.Controls.Add(this.linkLabel2);
             this.groupBox1.Controls.Add(this.horario_label);
             this.groupBox1.Controls.Add(this.hora_inicio_sesion_label);
-            this.groupBox1.Controls.Add(this.fecha_inicio_sesion_label);
             this.groupBox1.Controls.Add(this.usuario_label);
             this.groupBox1.Controls.Add(this.nombre_usuario_label);
             this.groupBox1.Controls.Add(this.label5);
@@ -305,7 +304,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(938, 346);
+            this.groupBox1.Location = new System.Drawing.Point(938, 382);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -351,23 +350,12 @@
             // 
             this.hora_inicio_sesion_label.AutoSize = true;
             this.hora_inicio_sesion_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hora_inicio_sesion_label.Location = new System.Drawing.Point(19, 160);
+            this.hora_inicio_sesion_label.Location = new System.Drawing.Point(9, 152);
             this.hora_inicio_sesion_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.hora_inicio_sesion_label.Name = "hora_inicio_sesion_label";
             this.hora_inicio_sesion_label.Size = new System.Drawing.Size(97, 18);
             this.hora_inicio_sesion_label.TabIndex = 7;
             this.hora_inicio_sesion_label.Text = "A las 2:43 pm";
-            // 
-            // fecha_inicio_sesion_label
-            // 
-            this.fecha_inicio_sesion_label.AutoSize = true;
-            this.fecha_inicio_sesion_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fecha_inicio_sesion_label.Location = new System.Drawing.Point(18, 141);
-            this.fecha_inicio_sesion_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.fecha_inicio_sesion_label.Name = "fecha_inicio_sesion_label";
-            this.fecha_inicio_sesion_label.Size = new System.Drawing.Size(176, 18);
-            this.fecha_inicio_sesion_label.TabIndex = 6;
-            this.fecha_inicio_sesion_label.Text = "08 de noviembre del 2014";
             // 
             // usuario_label
             // 
@@ -528,7 +516,7 @@
             this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.logo_sitio_olimpico;
             this.pictureBox1.Location = new System.Drawing.Point(959, 44);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(304, 303);
+            this.pictureBox1.Size = new System.Drawing.Size(313, 303);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -720,7 +708,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label horario_label;
         private System.Windows.Forms.Label hora_inicio_sesion_label;
-        private System.Windows.Forms.Label fecha_inicio_sesion_label;
         private System.Windows.Forms.Label usuario_label;
         private System.Windows.Forms.Label nombre_usuario_label;
         private System.Windows.Forms.StatusStrip statusStrip1;
