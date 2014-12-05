@@ -75,7 +75,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // mostrarHistorialUnidades
+            // MostrarHistorialUnidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -86,7 +86,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabla);
             this.MaximizeBox = false;
-            this.Name = "mostrarHistorialUnidades";
+            this.MinimizeBox = false;
+            this.Name = "MostrarHistorialUnidades";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historial de unidades";

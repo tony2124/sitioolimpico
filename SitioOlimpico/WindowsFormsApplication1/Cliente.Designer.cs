@@ -38,6 +38,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.ref_cliente = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -45,14 +46,13 @@
             this.label16 = new System.Windows.Forms.Label();
             this.colonia_cliente = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.num_tel_1_cliente = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.unidad_servicio = new System.Windows.Forms.TextBox();
             this.descripcion_servicio = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.num_tel_1_cliente = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -129,7 +129,7 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.Red;
-            this.label27.Location = new System.Drawing.Point(8, 441);
+            this.label27.Location = new System.Drawing.Point(22, 441);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(15, 20);
             this.label27.TabIndex = 10;
@@ -138,7 +138,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(22, 442);
+            this.label28.Location = new System.Drawing.Point(36, 442);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(91, 13);
             this.label28.TabIndex = 11;
@@ -168,6 +168,17 @@
             this.label14.Size = new System.Drawing.Size(158, 17);
             this.label14.TabIndex = 16;
             this.label14.Text = "Dirección y Contacto";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Khaki;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(291, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 17);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Servicios";
             // 
             // panel5
             // 
@@ -243,29 +254,6 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Colonia:";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(17, 24);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 18);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Teléfono :";
-            // 
-            // num_tel_1_cliente
-            // 
-            this.num_tel_1_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.num_tel_1_cliente.BackColor = System.Drawing.Color.Ivory;
-            this.num_tel_1_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.num_tel_1_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num_tel_1_cliente.Location = new System.Drawing.Point(112, 10);
-            this.num_tel_1_cliente.Name = "num_tel_1_cliente";
-            this.num_tel_1_cliente.Size = new System.Drawing.Size(370, 38);
-            this.num_tel_1_cliente.TabIndex = 2;
-            this.num_tel_1_cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_tel_1_cliente_KeyPress);
-            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
@@ -323,16 +311,28 @@
             this.label13.TabIndex = 1;
             this.label13.Text = "Unidad:";
             // 
-            // label7
+            // label11
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Khaki;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(291, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 17);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Servicios";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(17, 24);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(74, 18);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Teléfono :";
+            // 
+            // num_tel_1_cliente
+            // 
+            this.num_tel_1_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.num_tel_1_cliente.BackColor = System.Drawing.Color.Ivory;
+            this.num_tel_1_cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.num_tel_1_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.num_tel_1_cliente.Location = new System.Drawing.Point(112, 10);
+            this.num_tel_1_cliente.Name = "num_tel_1_cliente";
+            this.num_tel_1_cliente.Size = new System.Drawing.Size(370, 38);
+            this.num_tel_1_cliente.TabIndex = 2;
+            this.num_tel_1_cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.num_tel_1_cliente_KeyPress);
             // 
             // panel3
             // 
@@ -373,9 +373,9 @@
             this.editar_btn_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.editar_btn_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editar_btn_cliente.Image = global::WindowsFormsApplication1.Properties.Resources.MODIFICAR;
-            this.editar_btn_cliente.Location = new System.Drawing.Point(586, 143);
+            this.editar_btn_cliente.Location = new System.Drawing.Point(586, 152);
             this.editar_btn_cliente.Name = "editar_btn_cliente";
-            this.editar_btn_cliente.Size = new System.Drawing.Size(118, 92);
+            this.editar_btn_cliente.Size = new System.Drawing.Size(118, 88);
             this.editar_btn_cliente.TabIndex = 19;
             this.editar_btn_cliente.UseVisualStyleBackColor = true;
             this.editar_btn_cliente.Click += new System.EventHandler(this.editar_btn_cliente_Click);
@@ -385,9 +385,9 @@
             this.cancelar_btn_cliente.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.CANCELAR;
             this.cancelar_btn_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cancelar_btn_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelar_btn_cliente.Location = new System.Drawing.Point(586, 339);
+            this.cancelar_btn_cliente.Location = new System.Drawing.Point(586, 344);
             this.cancelar_btn_cliente.Name = "cancelar_btn_cliente";
-            this.cancelar_btn_cliente.Size = new System.Drawing.Size(121, 92);
+            this.cancelar_btn_cliente.Size = new System.Drawing.Size(121, 88);
             this.cancelar_btn_cliente.TabIndex = 21;
             this.cancelar_btn_cliente.UseVisualStyleBackColor = true;
             this.cancelar_btn_cliente.Click += new System.EventHandler(this.cancelar_btn_personal_Click);
@@ -397,9 +397,9 @@
             this.guardar_btn_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.guardar_btn_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guardar_btn_cliente.Image = global::WindowsFormsApplication1.Properties.Resources.GUARDAR2;
-            this.guardar_btn_cliente.Location = new System.Drawing.Point(586, 241);
+            this.guardar_btn_cliente.Location = new System.Drawing.Point(586, 249);
             this.guardar_btn_cliente.Name = "guardar_btn_cliente";
-            this.guardar_btn_cliente.Size = new System.Drawing.Size(122, 92);
+            this.guardar_btn_cliente.Size = new System.Drawing.Size(122, 88);
             this.guardar_btn_cliente.TabIndex = 20;
             this.guardar_btn_cliente.UseVisualStyleBackColor = true;
             this.guardar_btn_cliente.Click += new System.EventHandler(this.guardar_btn_personal_Click);
