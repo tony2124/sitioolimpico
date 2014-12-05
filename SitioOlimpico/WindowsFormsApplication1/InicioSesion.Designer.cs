@@ -41,6 +41,8 @@
             this.user.Name = "user";
             this.user.Size = new System.Drawing.Size(152, 21);
             this.user.TabIndex = 0;
+            this.user.Click += new System.EventHandler(this.user_Click);
+            this.user.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.user_KeyPress);
             // 
             // pass
             // 
@@ -50,6 +52,7 @@
             this.pass.Size = new System.Drawing.Size(152, 21);
             this.pass.TabIndex = 1;
             this.pass.UseSystemPasswordChar = true;
+            this.pass.Click += new System.EventHandler(this.pass_Click);
             this.pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pass_KeyPress);
             // 
             // label1

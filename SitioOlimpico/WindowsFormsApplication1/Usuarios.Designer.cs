@@ -30,13 +30,14 @@
         {
             this.tabla = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.usuario_box = new System.Windows.Forms.TextBox();
-            this.contrasena_box = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.contrasena_box = new System.Windows.Forms.TextBox();
+            this.usuario_box = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -72,23 +73,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asignar usuarios";
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario";
+            this.button1.Location = new System.Drawing.Point(414, 77);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 27);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Asignar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Contraseña";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(327, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Nombre del personal";
+            // 
+            // contrasena_box
+            // 
+            this.contrasena_box.Location = new System.Drawing.Point(86, 68);
+            this.contrasena_box.Name = "contrasena_box";
+            this.contrasena_box.PasswordChar = '*';
+            this.contrasena_box.Size = new System.Drawing.Size(168, 21);
+            this.contrasena_box.TabIndex = 4;
+            // 
+            // usuario_box
+            // 
+            this.usuario_box.Location = new System.Drawing.Point(86, 37);
+            this.usuario_box.Name = "usuario_box";
+            this.usuario_box.Size = new System.Drawing.Size(168, 21);
+            this.usuario_box.TabIndex = 3;
             // 
             // comboBox1
             // 
@@ -101,52 +118,45 @@
             this.comboBox1.Size = new System.Drawing.Size(277, 23);
             this.comboBox1.TabIndex = 2;
             // 
-            // usuario_box
+            // label2
             // 
-            this.usuario_box.Location = new System.Drawing.Point(86, 37);
-            this.usuario_box.Name = "usuario_box";
-            this.usuario_box.Size = new System.Drawing.Size(168, 21);
-            this.usuario_box.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Contraseña";
             // 
-            // contrasena_box
+            // label1
             // 
-            this.contrasena_box.Location = new System.Drawing.Point(86, 68);
-            this.contrasena_box.Name = "contrasena_box";
-            this.contrasena_box.PasswordChar = '*';
-            this.contrasena_box.Size = new System.Drawing.Size(168, 21);
-            this.contrasena_box.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Usuario";
             // 
-            // label3
+            // label4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(327, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Nombre del personal";
+            this.label4.Location = new System.Drawing.Point(21, 317);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(494, 21);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "NIVEL:        0 - TAXISTA     1 - MONITOR     2 - ADMINISTRADOR";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(414, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 27);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Asignar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // usuarios
+            // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(657, 339);
+            this.ClientSize = new System.Drawing.Size(657, 347);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabla);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "usuarios";
+            this.Name = "Usuarios";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -169,5 +179,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
     }
 }

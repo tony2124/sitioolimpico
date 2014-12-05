@@ -87,7 +87,14 @@ namespace WindowsFormsApplication1
                         ciudad_personal.Text = Datos.GetString(12);
                         estado_personal.Text = Datos.GetString(13);
                         ref_personal.Text = Datos.GetString(14);
-                        autorizacion_personal.SelectedIndex = int.Parse(Datos.GetString(15));
+                        if (Datos.GetInt32(15) != 2)
+                            autorizacion_personal.SelectedIndex = int.Parse(Datos.GetString(15));
+                        else
+                        {
+                            autorizacion_personal.Visible = false;
+                            panel6.Visible = false;
+                            label22.Text = "ADMINISTRADOR";
+                        }
                         if (int.Parse(Datos.GetString(15)) == 0)
                             asignado = Datos.GetInt32(16);
                         else
