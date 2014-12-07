@@ -29,7 +29,7 @@ namespace WindowsFormsApplication1
             CallerID obj = new CallerID();
             ConexionBD bd = new ConexionBD();
             bd.conexion();
-            MySqlDataReader Datos = bd.obtenerBasesDatosMySQL("select puerto, baud, paridad, norma, dir_fotos, ip_base_datos from configuracion");
+            MySqlDataReader Datos = bd.obtenerBasesDatosMySQL("select puerto, baud, paridad, norma, dir_fotos from configuracion");
             if (Datos.HasRows)
                 while (Datos.Read())
                 {
@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1
                     paridad.SelectedIndex = Datos.GetInt32(2);
                     norma.Text = Datos.GetString(3);
                     dir_foto.Text = Datos.GetString(4);
-                    ip_base_datos.Text = Datos.GetString(5);
+                   
                 }
             Datos.Close();
             bd.Desconectar();
@@ -85,8 +85,7 @@ namespace WindowsFormsApplication1
             bd.conexion();
             if (bd.peticion("update configuracion set puerto = '" + puerto.Text + "'," +
                 "baud = '" + bits.Text + "', paridad = '" + paridad.SelectedIndex + "'," +
-                "norma = '" + norma.Text + "', dir_fotos = '" + dir_foto.Text + "'," +
-                "ip_base_datos = '" + ip_base_datos.Text + "'") > 0)
+                "norma = '" + norma.Text + "', dir_fotos = '" + dir_foto.Text + "'") > 0)
                 MessageBox.Show(this,"Los datos se han guardado correctamente.","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
             else
                 MessageBox.Show(this,"Los datos NO se han guardado correctamente.", "Aviso",MessageBoxButtons.OK,MessageBoxIcon.Warning);

@@ -125,11 +125,11 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 23);
             this.button2.TabIndex = 8;
-            this.button2.Text = "Ver grafica";
+            this.button2.Text = "Ver gráfica";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // estadistica
+            // Estadistica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -147,10 +147,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.Name = "estadistica";
+            this.MinimizeBox = false;
+            this.Name = "Estadistica";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Estadisticas";
+            this.Text = "Estadísticas";
             this.ResumeLayout(false);
             this.PerformLayout();
 

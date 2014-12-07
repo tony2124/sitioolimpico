@@ -54,8 +54,6 @@
             this.service = new System.Windows.Forms.Label();
             this.ip = new System.Windows.Forms.Label();
             this.puerto = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.ip_base_datos = new System.Windows.Forms.TextBox();
             this.modem = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -229,7 +227,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(356, 192);
+            this.label6.Location = new System.Drawing.Point(357, 161);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 15);
             this.label6.TabIndex = 37;
@@ -260,7 +258,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.Location = new System.Drawing.Point(428, 341);
+            this.button2.Location = new System.Drawing.Point(428, 310);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 90);
             this.button2.TabIndex = 3;
@@ -272,7 +270,7 @@
             this.button1.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.CANCELAR;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(559, 341);
+            this.button1.Location = new System.Drawing.Point(559, 310);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 90);
             this.button1.TabIndex = 2;
@@ -282,7 +280,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(356, 224);
+            this.label9.Location = new System.Drawing.Point(357, 193);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 15);
             this.label9.TabIndex = 44;
@@ -291,7 +289,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(356, 279);
+            this.label10.Location = new System.Drawing.Point(357, 248);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 15);
             this.label10.TabIndex = 46;
@@ -299,7 +297,7 @@
             // 
             // plataforma
             // 
-            this.plataforma.Location = new System.Drawing.Point(441, 224);
+            this.plataforma.Location = new System.Drawing.Point(442, 193);
             this.plataforma.Name = "plataforma";
             this.plataforma.Size = new System.Drawing.Size(214, 47);
             this.plataforma.TabIndex = 48;
@@ -307,7 +305,7 @@
             // 
             // service
             // 
-            this.service.Location = new System.Drawing.Point(441, 279);
+            this.service.Location = new System.Drawing.Point(442, 248);
             this.service.Name = "service";
             this.service.Size = new System.Drawing.Size(213, 25);
             this.service.TabIndex = 49;
@@ -315,7 +313,7 @@
             // 
             // ip
             // 
-            this.ip.Location = new System.Drawing.Point(499, 193);
+            this.ip.Location = new System.Drawing.Point(500, 162);
             this.ip.Name = "ip";
             this.ip.Size = new System.Drawing.Size(156, 20);
             this.ip.TabIndex = 50;
@@ -328,22 +326,6 @@
             this.puerto.Size = new System.Drawing.Size(166, 21);
             this.puerto.TabIndex = 51;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(355, 160);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(131, 15);
-            this.label12.TabIndex = 52;
-            this.label12.Text = "IP  de la base de datos";
-            // 
-            // ip_base_datos
-            // 
-            this.ip_base_datos.Location = new System.Drawing.Point(502, 160);
-            this.ip_base_datos.Name = "ip_base_datos";
-            this.ip_base_datos.Size = new System.Drawing.Size(153, 21);
-            this.ip_base_datos.TabIndex = 53;
-            // 
             // modem
             // 
             this.modem.Location = new System.Drawing.Point(143, 286);
@@ -352,15 +334,13 @@
             this.modem.TabIndex = 54;
             this.modem.Text = "(No se ha detectado un MODEM)";
             // 
-            // configuracion
+            // Configuracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(696, 443);
+            this.ClientSize = new System.Drawing.Size(696, 418);
             this.Controls.Add(this.modem);
-            this.Controls.Add(this.ip_base_datos);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.puerto);
             this.Controls.Add(this.ip);
             this.Controls.Add(this.service);
@@ -389,7 +369,11 @@
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "configuracion";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Configuracion";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuración";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -426,8 +410,6 @@
         private System.Windows.Forms.Label service;
         private System.Windows.Forms.Label ip;
         private System.Windows.Forms.TextBox puerto;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox ip_base_datos;
         private System.Windows.Forms.Label modem;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }

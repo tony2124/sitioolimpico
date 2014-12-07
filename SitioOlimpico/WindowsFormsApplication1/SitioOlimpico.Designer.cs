@@ -553,6 +553,7 @@
             // 
             // buscar
             // 
+            this.buscar.AccessibleName = "static";
             this.buscar.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.LUPA;
             this.buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buscar.Cursor = System.Windows.Forms.Cursors.Hand;

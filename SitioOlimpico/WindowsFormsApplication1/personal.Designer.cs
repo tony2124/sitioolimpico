@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Personal));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.fecha_ingreso_personal = new System.Windows.Forms.DateTimePicker();
@@ -44,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.historial_personal = new System.Windows.Forms.LinkLabel();
             this.desvincular_unidad_personal = new System.Windows.Forms.Button();
             this.unidad_personal = new System.Windows.Forms.TextBox();
             this.label_personal = new System.Windows.Forms.Label();
@@ -87,7 +89,6 @@
             this.editar_btn_personal = new System.Windows.Forms.Button();
             this.guardar_btn_personal = new System.Windows.Forms.Button();
             this.encabezado_personal = new System.Windows.Forms.PictureBox();
-            this.historial_personal = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto_personal)).BeginInit();
@@ -277,6 +278,17 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(253, 145);
             this.panel6.TabIndex = 22;
+            // 
+            // historial_personal
+            // 
+            this.historial_personal.AutoSize = true;
+            this.historial_personal.Location = new System.Drawing.Point(15, 120);
+            this.historial_personal.Name = "historial_personal";
+            this.historial_personal.Size = new System.Drawing.Size(71, 15);
+            this.historial_personal.TabIndex = 24;
+            this.historial_personal.TabStop = true;
+            this.historial_personal.Text = "Ver historial";
+            this.historial_personal.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.historial_personal_LinkClicked);
             // 
             // desvincular_unidad_personal
             // 
@@ -723,24 +735,13 @@
             this.encabezado_personal.TabIndex = 12;
             this.encabezado_personal.TabStop = false;
             // 
-            // historial_personal
-            // 
-            this.historial_personal.AutoSize = true;
-            this.historial_personal.Location = new System.Drawing.Point(15, 120);
-            this.historial_personal.Name = "historial_personal";
-            this.historial_personal.Size = new System.Drawing.Size(71, 15);
-            this.historial_personal.TabIndex = 24;
-            this.historial_personal.TabStop = true;
-            this.historial_personal.Text = "Ver historial";
-            this.historial_personal.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.historial_personal_LinkClicked);
-            // 
-            // personal
+            // Personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(644, 715);
+            this.ClientSize = new System.Drawing.Size(644, 697);
             this.Controls.Add(this.encabezado_personal);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);
@@ -755,8 +756,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "personal";
+            this.MinimizeBox = false;
+            this.Name = "Personal";
+            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personal";

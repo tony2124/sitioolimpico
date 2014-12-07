@@ -27,7 +27,7 @@ namespace WindowsFormsApplication1
          * 1 - MONITOR
          * 2 - ADMINISTRADOR
          * ***************************************************/
-        public string consulta_tabla = "select nombre_clientes as CLIENTE, numero_unidad as UNIDAD, nombre as NOMBRE_PERSONAL, fecha_servicios as FECHA, hora_servicios as HORA, descripcion_servicios as DESCRIPCION from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD natural join CLIENTES order by fecha_servicios desc, hora_servicios desc";
+        public string consulta_tabla = "select numero_tel_clientes as TELÉFONO, nombre_clientes as CLIENTE, numero_unidad as UNIDAD, nombre as NOMBRE_PERSONAL, fecha_servicios as FECHA, hora_servicios as HORA, descripcion_servicios as DESCRIPCION from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD natural join CLIENTES order by fecha_servicios desc, hora_servicios desc";
         public static string usuario = "tony2124", nombre_usuario = "ALFONSO CALDERÓN CHÁVEZ", hora_inicio_sesion = "A las 2:20 pm", horario = "8am - 2pm";
 
 
@@ -63,13 +63,13 @@ namespace WindowsFormsApplication1
             bd.Desconectar();
 
             Pintar_tabla(consulta_tabla);
-
-            tabla.Columns[0].Width = 250;
-            tabla.Columns[1].Width = 60;
-            tabla.Columns[2].Width = 250;
-            tabla.Columns[3].Width = 90;
-            tabla.Columns[4].Width = 80;
-            tabla.Columns[5].Width = 250;
+            //tabla.Columns[0].Visible = false;
+            tabla.Columns[1].Width = 250;
+            tabla.Columns[2].Width = 70;
+            tabla.Columns[3].Width = 250;
+            tabla.Columns[4].Width = 90;
+            tabla.Columns[5].Width = 80;
+            tabla.Columns[6].Width = 250;
             
             obj = new CallerID();
             Thread hilo = new Thread( obj.EscuchaTelefono );
@@ -97,7 +97,6 @@ namespace WindowsFormsApplication1
             Cursor.Current = Cursors.WaitCursor;
             saveFileDialog1.FileName = "RESPALDO_BD_" + DateTime.Now.Day + "_" + DateTime.Now.ToString("MMMM") + "_" + DateTime.Now.Year + "_" + DateTime.Now.Hour + "_" + DateTime.Now.Minute + "_" + DateTime.Now.Second + ".sql";
             saveFileDialog1.AddExtension = true;
-            // saveFileDialog1.CheckFileExists = true;
             saveFileDialog1.Title = "RESPALDO DE LA BASE DE DATOS";
             saveFileDialog1.Filter = "Archivos SQL(*.sql)|*.sql|Archivos de Texto (*.txt)|*.txt|All files (*.*)|*.*";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -274,7 +273,7 @@ namespace WindowsFormsApplication1
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Pintar_tabla("select nombre_clientes as CLIENTE, numero_unidad as UNIDAD, nombre as NOMBRE_PERSONAL, fecha_servicios as FECHA, hora_servicios as HORA, descripcion_servicios as DESCRIPCION from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD natural join CLIENTES where nombre_clientes LIKE '%" + campo.Text + "%' or numero_unidad = '"+campo.Text+"' order by fecha_servicios desc, hora_servicios desc");
+            Pintar_tabla("select numero_tel_clientes as TELÉFONO, nombre_clientes as CLIENTE, numero_unidad as UNIDAD, nombre as NOMBRE_PERSONAL, fecha_servicios as FECHA, hora_servicios as HORA, descripcion_servicios as DESCRIPCION from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD natural join CLIENTES where nombre_clientes LIKE '%" + campo.Text + "%' or numero_unidad = '" + campo.Text + "' order by fecha_servicios desc, hora_servicios desc");
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -316,7 +315,7 @@ namespace WindowsFormsApplication1
 
         private void tabla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("Row: "+e.RowIndex+" Column: "+e.ColumnIndex);
+            new cliente(tabla.Rows[e.RowIndex].Cells[0].Value+"",1).ShowDialog();
         }
     }
 }

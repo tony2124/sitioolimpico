@@ -49,16 +49,20 @@
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
-            // graficaEstadisticas
+            // GraficaEstadisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(596, 448);
             this.Controls.Add(this.chart1);
-            this.Name = "graficaEstadisticas";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "GraficaEstadisticas";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "graficaEstadisticas";
+            this.Text = "Gráfico de estadísticas";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
