@@ -27,6 +27,7 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             ConexionBD bd = new ConexionBD();
+            ConexionBD.host = ip.Text;
             bd.conexion();
             MySqlDataReader Datos = bd.obtenerBasesDatosMySQL("select nivel_autorizacion, usuario, nombre, horario_entrada, horario_salida from usuarios natural join personal where usuario = '"+user.Text+"' and contrasena = '"+pass.Text+"'");
             if (Datos.HasRows)
