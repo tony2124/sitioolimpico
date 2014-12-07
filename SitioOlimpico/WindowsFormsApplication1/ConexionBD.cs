@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace SitioOlimpico
+namespace WindowsFormsApplication1
 {
     class ConexionBD
     {
@@ -18,7 +18,7 @@ namespace SitioOlimpico
 
         public ConexionBD()
         {
-            host = "192.168.0.104";
+            host = "192.168.0.102";
             usuario = "root";
             contrasena = "simpus2124";
             puerto = "3306";
@@ -87,7 +87,7 @@ namespace SitioOlimpico
             int resultado = 0;
             try
             {
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO BITACORAS (hora, fecha, descripcion) values('" + DateTime.Now.ToString("HH:mm:ss") + "','" + DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day + "','" + registro + "')", conexionBD);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO BITACORAS (hora, fecha, descripcion) values('" + DateTime.Now.ToString("HH:mm:ss") + "','" + DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + DateTime.Now.Day + "','" +SitioOlimpico.usuario+"  -  "+registro + "')", conexionBD);
                 resultado = cmd.ExecuteNonQuery();
             }
             catch (MySqlException ex)

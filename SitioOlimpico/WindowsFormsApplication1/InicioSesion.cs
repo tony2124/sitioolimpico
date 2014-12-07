@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using SitioOlimpico;
+using WindowsFormsApplication1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,7 +34,8 @@ namespace WindowsFormsApplication1
                     SitioOlimpico.horario = Datos.GetString(3).ToString() + " - " + Datos.GetString(4).ToString();
                     SitioOlimpico.hora_inicio_sesion = DateTime.Now.ToString();
                 }
-
+                Datos.Close();
+                bd.bitacora("Inició sesión el usuario: " + SitioOlimpico.nombre_usuario);
                 bd.Desconectar();
                 Visible = false;
                 new SitioOlimpico().ShowDialog();

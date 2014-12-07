@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SitioOlimpico;
+using WindowsFormsApplication1;
 using System.Diagnostics;
 using System.IO;
 using MySql.Data.MySqlClient;
@@ -29,7 +29,6 @@ namespace WindowsFormsApplication1
          * ***************************************************/
         public string consulta_tabla = "select numero_tel_clientes as TELÉFONO, nombre_clientes as CLIENTE, numero_unidad as UNIDAD, nombre as NOMBRE_PERSONAL, fecha_servicios as FECHA, hora_servicios as HORA, descripcion_servicios as DESCRIPCION from SERVICIOS natural join PERSONAL natural join TAXISTA_UNIDAD natural join CLIENTES order by fecha_servicios desc, hora_servicios desc";
         public static string usuario = "tony2124", nombre_usuario = "ALFONSO CALDERÓN CHÁVEZ", hora_inicio_sesion = "A las 2:20 pm", horario = "8am - 2pm";
-
 
         public SitioOlimpico()
         {
@@ -140,14 +139,18 @@ namespace WindowsFormsApplication1
         public void cerrar ()
         {
             DialogResult a = MessageBox.Show(this, "¿Está seguro que desea salir del sistema? Una vez que salga del sistema no será posible identificar las llamadas.", "Confirme operación",  MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            
-            if(a == DialogResult.Yes)
+
+            if (a == DialogResult.Yes)
+            {
                 Close();
+            }
+
             
         }
 
         private void SitioOlimpico_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //cerrar();
             obj.terminar = true;
         }
 

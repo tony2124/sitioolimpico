@@ -31,9 +31,9 @@ namespace WindowsFormsApplication1
 
                 data = ComPort.ReadExisting();
 
-                MessageBox.Show("LLAMADA ENTRANTE: " + data);
+                //MessageBox.Show("LLAMADA ENTRANTE: " + data);
 
-                if (data.Length >= 30)
+                //if (data.Length >= 30)
                 {
                     Thread m = new Thread(metodo);
                     m.Start();
