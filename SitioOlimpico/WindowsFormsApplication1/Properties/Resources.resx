@@ -184,7 +184,7 @@
   <data name="ESTADISTICA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ESTADISTICA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BUSQUEDA UNIDADES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="BUSQUEDA_UNIDADES" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BUSQUEDA UNIDADES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="facebook_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -193,7 +193,7 @@
   <data name="MODIFICAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MODIFICAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BUSCAR PERSONAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="BUSCAR_PERSONAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BUSCAR PERSONAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sin_foto" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -202,13 +202,13 @@
   <data name="logo_simpus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_simpus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BUSQUEDA PERSONAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="BUSQUEDA_PERSONAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BUSQUEDA PERSONAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ENCABEZADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ENCABEZADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BUSQUEDA CLIENTES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="BUSQUEDA_CLIENTES" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BUSQUEDA CLIENTES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UNIDADES_ENCABEZADO" type="System.Resources.ResXFileRef, System.Windows.Forms">

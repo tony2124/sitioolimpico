@@ -105,7 +105,7 @@ namespace WindowsFormsApplication1.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap BUSCAR_PERSONAL {
             get {
-                object obj = ResourceManager.GetObject("BUSCAR PERSONAL", resourceCulture);
+                object obj = ResourceManager.GetObject("BUSCAR_PERSONAL", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,7 +125,7 @@ namespace WindowsFormsApplication1.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap BUSQUEDA_CLIENTES {
             get {
-                object obj = ResourceManager.GetObject("BUSQUEDA CLIENTES", resourceCulture);
+                object obj = ResourceManager.GetObject("BUSQUEDA_CLIENTES", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -135,7 +135,7 @@ namespace WindowsFormsApplication1.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap BUSQUEDA_PERSONAL {
             get {
-                object obj = ResourceManager.GetObject("BUSQUEDA PERSONAL", resourceCulture);
+                object obj = ResourceManager.GetObject("BUSQUEDA_PERSONAL", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -145,7 +145,7 @@ namespace WindowsFormsApplication1.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap BUSQUEDA_UNIDADES {
             get {
-                object obj = ResourceManager.GetObject("BUSQUEDA UNIDADES", resourceCulture);
+                object obj = ResourceManager.GetObject("BUSQUEDA_UNIDADES", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -23,7 +23,8 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>http://www.simpus.com.mx/actualizaciones/sitioolimpico/</UpdateUrl>
-    <ApplicationRevision>10</ApplicationRevision>
+    <PublisherName>Simpus Soluciones Informáticas</PublisherName>
+    <ApplicationRevision>16</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

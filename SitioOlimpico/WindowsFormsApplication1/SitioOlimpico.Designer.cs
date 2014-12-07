@@ -476,7 +476,7 @@
             this.tabla.Name = "tabla";
             this.tabla.ReadOnly = true;
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tabla.Size = new System.Drawing.Size(892, 404);
+            this.tabla.Size = new System.Drawing.Size(900, 404);
             this.tabla.TabIndex = 12;
             this.tabla.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_CellDoubleClick);
             // 
@@ -540,7 +540,7 @@
             // 
             // button9
             // 
-            this.button9.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.BUSCAR_PERSONAL;
+            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.Location = new System.Drawing.Point(15, 44);

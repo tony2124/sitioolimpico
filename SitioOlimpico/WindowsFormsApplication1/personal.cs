@@ -42,6 +42,8 @@ namespace WindowsFormsApplication1
 
                 estado_civil_personal.SelectedIndex = 0;
                 autorizacion_personal.SelectedIndex = 0;
+                if (SitioOlimpico.AUTORIZACION < 2)
+                    autorizacion_personal.Enabled = false;
             }
             else
             {

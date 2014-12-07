@@ -18,6 +18,7 @@ namespace WindowsFormsApplication1
         static ASCIIEncoding ASCIIEncoder = new ASCIIEncoding();
         static string data;
         public bool terminar = false;
+        SitioOlimpico sitio;
 
         public static String port = "COM24";
         public static int baud = 115200;
@@ -51,9 +52,9 @@ namespace WindowsFormsApplication1
             obj.ShowDialog();
         }
 
-        public void EscuchaTelefono()
+        public void EscuchaTelefono(SitioOlimpico sitio)
         {
-
+            this.sitio = sitio;
             InitializeComPort(port, baud, paridad);
 
             while (!terminar) ;

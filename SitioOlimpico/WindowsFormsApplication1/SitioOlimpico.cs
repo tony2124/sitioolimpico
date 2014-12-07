@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApplication1;
 using System.Diagnostics;
 using System.IO;
 using MySql.Data.MySqlClient;
@@ -69,9 +68,12 @@ namespace WindowsFormsApplication1
             tabla.Columns[4].Width = 90;
             tabla.Columns[5].Width = 80;
             tabla.Columns[6].Width = 250;
-            
+
             obj = new CallerID();
-            Thread hilo = new Thread( obj.EscuchaTelefono );
+            
+            Thread hilo = new Thread( delegate(){
+                obj.EscuchaTelefono(this);
+            });
             try
             {
                 hilo.Start();
