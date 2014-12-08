@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using SitioOlimpico;
+using WindowsFormsApplication1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +42,8 @@ namespace WindowsFormsApplication1
 
                 estado_civil_personal.SelectedIndex = 0;
                 autorizacion_personal.SelectedIndex = 0;
+                if (SitioOlimpico.AUTORIZACION < 2)
+                    autorizacion_personal.Enabled = false;
             }
             else
             {

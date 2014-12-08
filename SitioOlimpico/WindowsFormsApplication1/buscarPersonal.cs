@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using SitioOlimpico;
+using WindowsFormsApplication1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,6 +51,12 @@ namespace WindowsFormsApplication1
 
         private void tabla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (SitioOlimpico.AUTORIZACION < 2 && (tabla["nivel_autorizacion", e.RowIndex].Value.ToString().CompareTo("2") == 0 || tabla["nivel_autorizacion", e.RowIndex].Value.ToString().CompareTo("1") == 0))
+            {
+                MessageBox.Show(this, "No tiene permiso de editar este usuario", "No hay privilegios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             new Personal(1, tabla["id_personal", e.RowIndex].Value.ToString(), false ).ShowDialog();
             
         }

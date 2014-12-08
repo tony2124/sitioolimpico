@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using SitioOlimpico;
+using WindowsFormsApplication1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,13 +28,18 @@ namespace WindowsFormsApplication1
             tabla.Columns[2].HeaderText = "UNIDAD";
             tabla.Columns[3].HeaderText = "FECHA";
             tabla.Columns[4].Visible = false;
+            try
+            {
 
-            if (int.Parse(tabla.Rows[tabla.RowCount - 1].Cells[4].Value.ToString()) == 1)
-            {
-                unidad_actual.Text = tabla.Rows[tabla.RowCount - 1].Cells[2].Value.ToString();
-            }
-            else
-            {
+                if (int.Parse(tabla.Rows[tabla.RowCount - 1].Cells[4].Value.ToString()) == 1)
+                {
+                    unidad_actual.Text = tabla.Rows[tabla.RowCount - 1].Cells[2].Value.ToString();
+                }
+                else
+                {
+                    unidad_actual.Text = "Aún no se le asigna unidad";
+                }
+            }catch(Exception e){
                 unidad_actual.Text = "Aún no se le asigna unidad";
             }
         }

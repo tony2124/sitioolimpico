@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.iniciar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ip = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // user
@@ -75,7 +77,7 @@
             // 
             // iniciar
             // 
-            this.iniciar.Location = new System.Drawing.Point(68, 92);
+            this.iniciar.Location = new System.Drawing.Point(69, 96);
             this.iniciar.Name = "iniciar";
             this.iniciar.Size = new System.Drawing.Size(128, 27);
             this.iniciar.TabIndex = 4;
@@ -83,11 +85,31 @@
             this.iniciar.UseVisualStyleBackColor = true;
             this.iniciar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 144);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Base de datos";
+            // 
+            // ip
+            // 
+            this.ip.Location = new System.Drawing.Point(105, 144);
+            this.ip.Name = "ip";
+            this.ip.Size = new System.Drawing.Size(136, 21);
+            this.ip.TabIndex = 6;
+            this.ip.Text = "localhost";
+            this.ip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(259, 140);
+            this.ClientSize = new System.Drawing.Size(260, 178);
+            this.Controls.Add(this.ip);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.iniciar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -114,5 +136,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button iniciar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox ip;
     }
 }
