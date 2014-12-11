@@ -120,4 +120,7 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Este sistema fue diseñado por SIMPUS SOLUCIONES INFORMÁTICAS, quien se reserva los derechos del código fuente, así como la distribución del mismo. Este sistema fue desarrollado únicamente para el SITIO OLIMPICO, ubicado en Nueva Italia, municipio de Múgica, Michoacán.</value>
   </data>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

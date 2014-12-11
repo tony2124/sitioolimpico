@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
         ConexionBD Bdatos = new ConexionBD();
 
         /*VARIABLES PARA LA EDICION DE LOS CLIENTES*/
-        Boolean se_encontro_cliente = false, editado = false;
+        Boolean se_encontro_cliente = false, editado = false, error = false;
 
 
         public cliente(string numero, int forma)
@@ -183,7 +183,8 @@ namespace WindowsFormsApplication1
             {
                 if (!unidad_disponible(unidad_servicio.Text))//Si no existe la unidad
                 {
-                    MessageBox.Show("No se puede utilizar la unidad seleccionada por alguna de las siguientes razones:\n* NO EXISTE\n*NO ESTÁ ASIGNADA\n* ESTÁ AMONESTADA\n\nResuelva el problema para continuar.", "Error: Unidad no válida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede utilizar la unidad seleccionada por alguna de las siguientes razones:\n* NO EXISTE\n*NO ESTÁ ASIGNADA\n*ESTÁ AMONESTADA\n\nResuelva el problema para continuar.", "Error: Unidad no válida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    error = true;
                 }
                 else
                 {
@@ -272,7 +273,7 @@ namespace WindowsFormsApplication1
                 }
             }
             
-            if(FORMA == 1 && se_encontro_cliente == false)
+            if(FORMA == 1 && se_encontro_cliente == false && error==false)
                 Dispose();
             
         }

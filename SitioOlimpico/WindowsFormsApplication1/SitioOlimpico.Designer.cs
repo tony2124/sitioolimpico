@@ -657,7 +657,8 @@
             // 
             // llamada
             // 
-            this.llamada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.llamada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.llamada.AutoSize = true;
             this.llamada.BackColor = System.Drawing.Color.Khaki;
             this.llamada.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -669,7 +670,8 @@
             // 
             // linea
             // 
-            this.linea.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.linea.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linea.BackColor = System.Drawing.Color.Khaki;
             this.linea.Location = new System.Drawing.Point(1095, 653);
             this.linea.Name = "linea";
@@ -688,13 +690,13 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(147, 22);
             this.toolStripMenuItem2.Text = "Ver cliente";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(147, 22);
             this.toolStripMenuItem3.Text = "Editar servicio";
             // 
             // SitioOlimpico
