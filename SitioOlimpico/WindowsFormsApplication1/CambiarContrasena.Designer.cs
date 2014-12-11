@@ -143,7 +143,7 @@
             this.Name = "CambiarContrasena";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cambiar contraseña";
             this.ResumeLayout(false);
             this.PerformLayout();

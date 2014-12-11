@@ -71,5 +71,10 @@ namespace WindowsFormsApplication1
         {
             new Unidades(1, tabla.Rows[e.RowIndex].Cells[0].Value.ToString()).ShowDialog();
         }
+
+        private void BuscarUnidad_Activated(object sender, EventArgs e)
+        {
+            buscar_unidad.PerformClick();
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
 
         public ConexionBD()
         {
-           // host = "localhost";
+            //host = "localhost";
             usuario = "root";
             contrasena = "simpus2124";
             puerto = "3306";

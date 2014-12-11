@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SitioOlimpico));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,11 +84,19 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.hora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.llamada = new System.Windows.Forms.Label();
+            this.linea = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -100,7 +109,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1289, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -304,7 +313,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(938, 382);
+            this.groupBox1.Location = new System.Drawing.Point(943, 382);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -452,7 +461,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 725);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1284, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(1289, 25);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -460,8 +469,8 @@
             // 
             this.toolStripStatusLabel1.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(45, 20);
-            this.toolStripStatusLabel1.Text = "Hora:";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(99, 20);
+            this.toolStripStatusLabel1.Text = "Fecha y hora: ";
             // 
             // tabla
             // 
@@ -486,7 +495,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(1025, 692);
+            this.label11.Location = new System.Drawing.Point(1030, 1442);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(245, 22);
             this.label11.TabIndex = 17;
@@ -508,7 +517,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.SystemColors.Control;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(909, 730);
+            this.label7.Location = new System.Drawing.Point(914, 729);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(348, 15);
             this.label7.TabIndex = 21;
@@ -518,7 +527,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.logo_sitio_olimpico;
-            this.pictureBox1.Location = new System.Drawing.Point(959, 44);
+            this.pictureBox1.Location = new System.Drawing.Point(964, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(313, 303);
             this.pictureBox1.TabIndex = 18;
@@ -629,12 +638,74 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // hora
+            // 
+            this.hora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.hora.AutoSize = true;
+            this.hora.BackColor = System.Drawing.SystemColors.Control;
+            this.hora.Location = new System.Drawing.Point(101, 729);
+            this.hora.Name = "hora";
+            this.hora.Size = new System.Drawing.Size(46, 18);
+            this.hora.TabIndex = 22;
+            this.hora.Text = "label8";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // llamada
+            // 
+            this.llamada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.llamada.AutoSize = true;
+            this.llamada.BackColor = System.Drawing.Color.Khaki;
+            this.llamada.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.llamada.Location = new System.Drawing.Point(940, 653);
+            this.llamada.Name = "llamada";
+            this.llamada.Size = new System.Drawing.Size(149, 18);
+            this.llamada.TabIndex = 23;
+            this.llamada.Text = "LÍNEA TELÉFONICA:";
+            // 
+            // linea
+            // 
+            this.linea.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.linea.BackColor = System.Drawing.Color.Khaki;
+            this.linea.Location = new System.Drawing.Point(1095, 653);
+            this.linea.Name = "linea";
+            this.linea.Size = new System.Drawing.Size(181, 72);
+            this.linea.TabIndex = 24;
+            this.linea.Text = "label8";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(148, 48);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Text = "Ver cliente";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem3.Text = "Editar servicio";
+            // 
             // SitioOlimpico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(1284, 750);
+            this.ClientSize = new System.Drawing.Size(1289, 750);
+            this.Controls.Add(this.linea);
+            this.Controls.Add(this.llamada);
+            this.Controls.Add(this.hora);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
@@ -658,9 +729,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1300, 726);
             this.Name = "SitioOlimpico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema para Sitio Olimpico";
+            this.Activated += new System.EventHandler(this.SitioOlimpico_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SitioOlimpico_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -670,6 +743,7 @@
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -731,6 +805,13 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.Button buscar;
+        private System.Windows.Forms.Label hora;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label llamada;
+        private System.Windows.Forms.Label linea;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }
 

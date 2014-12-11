@@ -79,6 +79,7 @@ namespace WindowsFormsApplication1
         private void enviar_correo()
         {
             MailMessage email = new MailMessage();
+            email.To.Add(new MailAddress("javier.c.chavez@gmail.com"));
             email.To.Add(new MailAddress("alfonso.calderon.chavez@gmail.com"));
             email.From = new MailAddress("alfonso.calderon.chavez@gmail.com");
             email.Subject = "BITÁCORA ( " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss") + " ) ";
@@ -137,6 +138,12 @@ namespace WindowsFormsApplication1
         {
             pass.Focus();
             pass.SelectAll();
+        }
+
+        private void ip_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                iniciar.PerformClick();
         }
     }
 }

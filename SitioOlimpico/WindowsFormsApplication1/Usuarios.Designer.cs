@@ -149,6 +149,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.Khaki;
             this.ClientSize = new System.Drawing.Size(657, 347);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
@@ -159,7 +160,7 @@
             this.Name = "Usuarios";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Asignación de usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             this.groupBox1.ResumeLayout(false);

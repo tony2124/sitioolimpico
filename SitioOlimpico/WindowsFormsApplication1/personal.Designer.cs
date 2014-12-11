@@ -762,7 +762,7 @@
             this.Name = "Personal";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Personal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.personal_FormClosing);
             this.Load += new System.EventHandler(this.personal_Load);

@@ -102,6 +102,7 @@
             this.ip.TabIndex = 6;
             this.ip.Text = "localhost";
             this.ip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ip_KeyPress);
             // 
             // InicioSesion
             // 

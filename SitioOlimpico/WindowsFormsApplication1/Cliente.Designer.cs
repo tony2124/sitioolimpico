@@ -385,6 +385,7 @@
             this.cancelar_btn_cliente.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.CANCELAR;
             this.cancelar_btn_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cancelar_btn_cliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancelar_btn_cliente.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelar_btn_cliente.Location = new System.Drawing.Point(586, 344);
             this.cancelar_btn_cliente.Name = "cancelar_btn_cliente";
             this.cancelar_btn_cliente.Size = new System.Drawing.Size(121, 88);
@@ -410,6 +411,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Khaki;
+            this.CancelButton = this.cancelar_btn_cliente;
             this.ClientSize = new System.Drawing.Size(716, 476);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);

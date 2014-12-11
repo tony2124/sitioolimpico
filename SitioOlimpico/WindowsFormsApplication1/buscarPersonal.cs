@@ -79,5 +79,10 @@ namespace WindowsFormsApplication1
             if (e.KeyChar == 13)
                 buscar.PerformClick();
         }
+
+        private void BuscarPersonal_Activated(object sender, EventArgs e)
+        {
+            buscar.PerformClick();
+        }
     }
 }

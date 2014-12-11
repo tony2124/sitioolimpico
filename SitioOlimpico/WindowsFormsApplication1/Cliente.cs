@@ -309,7 +309,7 @@ namespace WindowsFormsApplication1
                            "','" + DateTime.Now.ToString("yyyy-MM-dd") +
                            "','" + DateTime.Now.ToString("HH:mm:ss") +
                            "','" + descripcion + "')");
-            Bdatos.bitacora("Se ha registrado un servicio al cliente: "+id_cliente);
+            Bdatos.bitacora("Se ha registrado un servicio al cliente: " + id_cliente + " : " + nombre_cliente.Text + " : Unidad: " +  unidad + " : Descripción: "+descripcion );
             Bdatos.Desconectar();
         }
 
@@ -330,7 +330,7 @@ namespace WindowsFormsApplication1
                 "','" + calle_cliente.Text +
                 "','" + ref_cliente.Text +
                 "',0)");
-            Bdatos.bitacora("Se ha registrado un cliente con el sigiuente ID: " + id_cliente);
+            Bdatos.bitacora("Se ha registrado un cliente con el sigiuente ID: " + id_cliente + " : " + nombre_cliente.Text);
             Bdatos.Desconectar();
             return consulta;
             

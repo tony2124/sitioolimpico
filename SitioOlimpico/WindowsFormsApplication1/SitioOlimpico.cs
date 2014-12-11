@@ -43,7 +43,7 @@ namespace WindowsFormsApplication1
             nombre_usuario_label.Text = nombre_usuario;
             hora_inicio_sesion_label.Text = hora_inicio_sesion;
             horario_label.Text = horario;
-
+            hora.Text = DateTime.Now.ToString();
             /*************** CONSULTA INFORMACIÓN DEL MODEM ************/
            
             ConexionBD bd = new ConexionBD();
@@ -321,6 +321,17 @@ namespace WindowsFormsApplication1
         private void tabla_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             new cliente(tabla.Rows[e.RowIndex].Cells[0].Value+"",1).ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            hora.Text = DateTime.Now.ToString();
+            linea.Text = CallerID.data;
+        }
+
+        private void SitioOlimpico_Activated(object sender, EventArgs e)
+        {
+            buscar.PerformClick();
         }
     }
 }

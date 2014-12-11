@@ -86,9 +86,12 @@ namespace WindowsFormsApplication1
             if (bd.peticion("update configuracion set puerto = '" + puerto.Text + "'," +
                 "baud = '" + bits.Text + "', paridad = '" + paridad.SelectedIndex + "'," +
                 "norma = '" + norma.Text + "', dir_fotos = '" + dir_foto.Text + "'") > 0)
-                MessageBox.Show(this,"Los datos se han guardado correctamente.","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            {
+                bd.bitacora("Se ha editado la configuración del programa");
+                MessageBox.Show(this, "Los datos se han guardado correctamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
-                MessageBox.Show(this,"Los datos NO se han guardado correctamente.", "Aviso",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show(this, "Los datos NO se han guardado correctamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             bd.Desconectar();
         }
 

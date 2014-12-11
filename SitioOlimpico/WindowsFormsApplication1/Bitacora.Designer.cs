@@ -54,14 +54,16 @@
             this.mov.Name = "mov";
             this.mov.ReadOnly = true;
             this.mov.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.mov.Size = new System.Drawing.Size(763, 276);
+            this.mov.Size = new System.Drawing.Size(877, 276);
             this.mov.TabIndex = 2;
+            this.mov.WordWrap = false;
             // 
             // Bitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 362);
+            this.BackColor = System.Drawing.Color.Khaki;
+            this.ClientSize = new System.Drawing.Size(914, 362);
             this.Controls.Add(this.mov);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -71,7 +73,7 @@
             this.Name = "Bitacora";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BITÁCORA";
             this.ResumeLayout(false);
             this.PerformLayout();

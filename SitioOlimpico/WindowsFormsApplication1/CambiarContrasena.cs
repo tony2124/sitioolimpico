@@ -58,6 +58,7 @@ namespace WindowsFormsApplication1
             bd.conexion();
             if (bd.peticion("UPDATE usuarios set contrasena = '" + nueva1.Text + "' where usuario = '" + SitioOlimpico.usuario + "'") > 0)
             {
+                bd.bitacora("Se ha cambiado la contraseña");
                 MessageBox.Show(null, "La contraseña ha sido cambiada con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 bd.Desconectar();
                 Dispose();

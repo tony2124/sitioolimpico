@@ -152,8 +152,9 @@
             this.MinimizeBox = false;
             this.Name = "BuscarCliente";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "BÚSQUEDA DE CLIENTES";
+            this.Activated += new System.EventHandler(this.BuscarCliente_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

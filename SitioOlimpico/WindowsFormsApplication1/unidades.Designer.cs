@@ -406,7 +406,7 @@
             this.Name = "Unidades";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Unidades";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

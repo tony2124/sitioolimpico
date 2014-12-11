@@ -68,5 +68,10 @@ namespace WindowsFormsApplication1
         {
             new cliente(tabla.Rows[e.RowIndex].Cells[2].Value.ToString(), 1).ShowDialog();
         }
+
+        private void BuscarCliente_Activated(object sender, EventArgs e)
+        {
+            button1.PerformClick();
+        }
     }
 }
