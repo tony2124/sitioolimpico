@@ -70,8 +70,8 @@ namespace WindowsFormsApplication1
         {
             Pintar_tabla("select id_personal, nombre, fecha_ingreso, telefono, nivel_autorizacion, eliminado  from personal where nombre like '%"+nombre.Text+"%' or telefono like '%"+nombre.Text+"%'");
             total.Text = "" + tabla.Rows.Count;
-            if (tabla.Rows.Count == 1)
-                new Personal(1, tabla["id_personal", 0].Value.ToString(), false).ShowDialog();
+           /* if (tabla.Rows.Count == 1)
+                new Personal(1, tabla["id_personal", 0].Value.ToString(), false).ShowDialog();*/
         }
 
         private void nombre_KeyPress(object sender, KeyPressEventArgs e)

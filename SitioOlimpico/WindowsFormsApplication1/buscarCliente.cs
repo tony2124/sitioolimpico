@@ -49,8 +49,8 @@ namespace WindowsFormsApplication1
         {
             Pintar_tabla("select id_cliente, nombre_clientes, numero_tel_clientes, colonia_clientes, calle_clientes, referencias_clientes  from clientes where numero_tel_clientes like '%"+num_tel.Text+"%' or nombre_clientes like '%"+num_tel.Text+"%'");
             total.Text = "" + tabla.Rows.Count;
-            if (tabla.Rows.Count == 1)
-                new cliente(tabla.Rows[0].Cells[2].Value.ToString(), 1).ShowDialog();
+          /*  if (tabla.Rows.Count == 1)
+                new cliente(tabla.Rows[0].Cells[2].Value.ToString(), 1).ShowDialog();*/
         }
 
         private void num_tel_KeyPress(object sender, KeyPressEventArgs e)

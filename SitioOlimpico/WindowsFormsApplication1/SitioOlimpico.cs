@@ -152,7 +152,10 @@ namespace WindowsFormsApplication1
 
         private void SitioOlimpico_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //cerrar();
+            ConexionBD bd = new ConexionBD();
+            bd.conexion();
+            bd.bitacora("El usuario " + SitioOlimpico.usuario + " ha cerrado el programa");
+            bd.Desconectar();
             obj.terminar = true;
         }
 
@@ -332,6 +335,25 @@ namespace WindowsFormsApplication1
         private void SitioOlimpico_Activated(object sender, EventArgs e)
         {
             buscar.PerformClick();
+        }
+
+        private void informaciónDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new CambiarContrasena().ShowDialog();
+        }
+
+        private void verBitácoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Bitacora().ShowDialog();
+        }
+
+        private void SitioOlimpico_MinimumSizeChanged(object sender, EventArgs e)
+        {
+            if (this.Width < 1300)
+            {
+                pictureBox1.Visible = false;
+                groupBox1.Visible = false;
+            }
         }
     }
 }

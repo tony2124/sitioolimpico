@@ -41,6 +41,10 @@ namespace WindowsFormsApplication1
                 if (data.Length > 100)
                 {
                     MessageBox.Show("El modem ha dejado de funcionar por interferencia en la línea, por favor cierre el programa y desconecte el modem, luego vuelva a conectar el modem e inicie el programa.");
+                    ConexionBD bd = new ConexionBD();
+                    bd.conexion();
+                    bd.bitacora("Error en el modem, hay cadenas muy grandes entrando por la línea...");
+                    bd.Desconectar();
                     return;
                 }
                 /************************************************/
@@ -171,7 +175,12 @@ namespace WindowsFormsApplication1
             }
             catch (System.IO.IOException e)
             {
+                ConexionBD bd = new ConexionBD();
+                bd.conexion();
+                bd.bitacora("El puerto seleccionado no está disponible");
+                bd.Desconectar();
                 MessageBox.Show(null, "El puerto seleccionado no está disponible", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             catch (Exception e)
             {

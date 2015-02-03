@@ -58,8 +58,8 @@ namespace WindowsFormsApplication1
         {
             Pintar_tabla("select numero_unidad, modelo, marca, color, placas, descripcion, asignado, eliminado  from unidades where numero_unidad like '%" + nombre.Text + "%'");
             total.Text = "" + tabla.Rows.Count;
-            if (tabla.Rows.Count == 1)
-                new Unidades(1, tabla.Rows[0].Cells[0].Value.ToString()).ShowDialog();
+           /* if (tabla.Rows.Count == 1)
+                new Unidades(1, tabla.Rows[0].Cells[0].Value.ToString()).ShowDialog();*/
         }
 
         private void button2_Click_1(object sender, EventArgs e)

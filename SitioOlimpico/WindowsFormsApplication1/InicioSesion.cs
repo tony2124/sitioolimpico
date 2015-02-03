@@ -119,7 +119,7 @@ namespace WindowsFormsApplication1
 
         private void InicioSesion_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+        
         }
 
         private void user_KeyPress(object sender, KeyPressEventArgs e)

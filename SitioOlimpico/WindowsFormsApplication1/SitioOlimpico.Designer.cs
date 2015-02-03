@@ -91,6 +91,9 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.informaciónDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verBitácoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verInfoContactoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -124,6 +127,9 @@
             this.toolStripMenuItem1,
             this.toolStripSeparator2,
             this.usuarios,
+            this.verInfoContactoToolStripMenuItem,
+            this.informaciónDeUsuarioToolStripMenuItem,
+            this.verBitácoraToolStripMenuItem,
             this.toolStripSeparator3,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
@@ -699,6 +705,26 @@
             this.toolStripMenuItem3.Size = new System.Drawing.Size(147, 22);
             this.toolStripMenuItem3.Text = "Editar servicio";
             // 
+            // informaciónDeUsuarioToolStripMenuItem
+            // 
+            this.informaciónDeUsuarioToolStripMenuItem.Name = "informaciónDeUsuarioToolStripMenuItem";
+            this.informaciónDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.informaciónDeUsuarioToolStripMenuItem.Text = "Cambiar contraseña";
+            this.informaciónDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.informaciónDeUsuarioToolStripMenuItem_Click);
+            // 
+            // verBitácoraToolStripMenuItem
+            // 
+            this.verBitácoraToolStripMenuItem.Name = "verBitácoraToolStripMenuItem";
+            this.verBitácoraToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.verBitácoraToolStripMenuItem.Text = "Ver bitácora";
+            this.verBitácoraToolStripMenuItem.Click += new System.EventHandler(this.verBitácoraToolStripMenuItem_Click);
+            // 
+            // verInfoContactoToolStripMenuItem
+            // 
+            this.verInfoContactoToolStripMenuItem.Name = "verInfoContactoToolStripMenuItem";
+            this.verInfoContactoToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.verInfoContactoToolStripMenuItem.Text = "Ver info. contacto";
+            // 
             // SitioOlimpico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -735,6 +761,7 @@
             this.Name = "SitioOlimpico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema para Sitio Olimpico";
+            this.MinimumSizeChanged += new System.EventHandler(this.SitioOlimpico_MinimumSizeChanged);
             this.Activated += new System.EventHandler(this.SitioOlimpico_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SitioOlimpico_FormClosing);
             this.menuStrip1.ResumeLayout(false);
@@ -814,6 +841,9 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem informaciónDeUsuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verBitácoraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verInfoContactoToolStripMenuItem;
     }
 }
 
