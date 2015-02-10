@@ -13,12 +13,12 @@ namespace WindowsFormsApplication1.Properties {
     
     
     /// <summary>
-    ///   Clase de recurso con establecimiento inflexible de tipos, para buscar cadenas traducidas, etc.
+    ///   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
     /// </summary>
     // StronglyTypedResourceBuilder generó automáticamente esta clase
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
-    // con la opción /str o vuelva a generar su proyecto de VS.
+    // con la opción /str o recompile su proyecto de VS.
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -48,7 +48,7 @@ namespace WindowsFormsApplication1.Properties {
         
         /// <summary>
         ///   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
-        ///   búsquedas de recursos mediante esta clase de recurso con establecimiento inflexible de tipos.
+        ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {
@@ -61,37 +61,27 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AGREGAR_CLIENTE {
+        internal static System.Drawing.Bitmap atencion_cliente {
             get {
-                object obj = ResourceManager.GetObject("AGREGAR_CLIENTE", resourceCulture);
+                object obj = ResourceManager.GetObject("atencion_cliente", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap agregar_servicio {
+        internal static System.Drawing.Bitmap ayuda {
             get {
-                object obj = ResourceManager.GetObject("agregar_servicio", resourceCulture);
+                object obj = ResourceManager.GetObject("ayuda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BOTON3 {
-            get {
-                object obj = ResourceManager.GetObject("BOTON3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap BUSCAR_CLIENTE {
             get {
@@ -101,7 +91,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap BUSCAR_PERSONAL {
             get {
@@ -111,7 +101,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap BUSCARUNIDAD {
             get {
@@ -121,7 +111,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap BUSQUEDA_CLIENTES {
             get {
@@ -131,7 +121,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap BUSQUEDA_PERSONAL {
             get {
@@ -141,7 +131,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap BUSQUEDA_UNIDADES {
             get {
@@ -151,7 +141,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap CANCELAR {
             get {
@@ -161,7 +151,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap CLIENTE_ENCABEZADO {
             get {
@@ -171,7 +161,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap CONFIGURACION {
             get {
@@ -181,7 +171,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ENCABEZADO {
             get {
@@ -191,7 +181,27 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap encabezado_estadisticas {
+            get {
+                object obj = ResourceManager.GetObject("encabezado_estadisticas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap encabezado_usuarios {
+            get {
+                object obj = ResourceManager.GetObject("encabezado_usuarios", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ENCABEZADO1 {
             get {
@@ -201,7 +211,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ESTADISTICA {
             get {
@@ -211,7 +221,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap facebook_icon {
             get {
@@ -221,7 +231,17 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap graficas {
+            get {
+                object obj = ResourceManager.GetObject("graficas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap GUARDAR {
             get {
@@ -231,7 +251,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap GUARDAR2 {
             get {
@@ -241,7 +261,27 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icono {
+            get {
+                object obj = ResourceManager.GetObject("icono", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icono_imprimir {
+            get {
+                object obj = ResourceManager.GetObject("icono_imprimir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap logo_simpus {
             get {
@@ -251,7 +291,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap logo_sitio_olimpico {
             get {
@@ -261,7 +301,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap LUPA {
             get {
@@ -271,7 +311,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap MODIFICAR {
             get {
@@ -281,7 +321,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap NUEVA_UNIDAD {
             get {
@@ -291,7 +331,17 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PDF_Download {
+            get {
+                object obj = ResourceManager.GetObject("PDF_Download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap PERSONAL_ENCABEZADO {
             get {
@@ -301,7 +351,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap RESPALDO {
             get {
@@ -311,7 +361,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap SALIR {
             get {
@@ -321,7 +371,17 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save {
+            get {
+                object obj = ResourceManager.GetObject("save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap SERVICIO {
             get {
@@ -331,7 +391,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap sin_foto {
             get {
@@ -341,7 +401,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap sin_foto_taxi {
             get {
@@ -351,7 +411,17 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap textura {
+            get {
+                object obj = ResourceManager.GetObject("textura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap twitter_icon {
             get {
@@ -361,7 +431,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap UNIDADES_ENCABEZADO {
             get {
@@ -371,7 +441,7 @@ namespace WindowsFormsApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap youtube_icon {
             get {

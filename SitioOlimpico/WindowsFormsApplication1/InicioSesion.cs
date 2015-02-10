@@ -57,7 +57,7 @@ namespace WindowsFormsApplication1
                 Thread hilo = new Thread(enviar_correo);
                 try
                 {
-                    hilo.Start();
+                  //  hilo.Start();
                 }
                 catch (Exception exc)
                 {

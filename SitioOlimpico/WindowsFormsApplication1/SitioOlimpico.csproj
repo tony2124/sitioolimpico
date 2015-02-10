@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsFormsApplication1</RootNamespace>
-    <AssemblyName>Sistema para el Control del Sitio Olimpico</AssemblyName>
+    <AssemblyName>Sistema para el Control del Sitio de Taxis %28SCST%29</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -23,8 +23,10 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>http://www.simpus.com.mx/actualizaciones/sitioolimpico/</UpdateUrl>
-    <ApplicationRevision>34</ApplicationRevision>
-    <ApplicationVersion>2014.0.0.%2a</ApplicationVersion>
+    <PublisherName>Simpus Soluciones Tecnológicas</PublisherName>
+    <SuiteName>Sistema para el Control de Sitio de Taxis</SuiteName>
+    <ApplicationRevision>40</ApplicationRevision>
+    <ApplicationVersion>2015.2.10.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -48,9 +50,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <NoWin32Manifest>true</NoWin32Manifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <ManifestCertificateThumbprint>52E7D6A8E40CF609F541D305314472060E1A0A02</ManifestCertificateThumbprint>
   </PropertyGroup>
@@ -66,7 +66,16 @@
   <PropertyGroup>
     <ApplicationIcon>icono.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\itextsharp.pdfa.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.3.5\Assemblies\v2.0\MySql.Data.dll</HintPath>
@@ -140,6 +149,12 @@
     </Compile>
     <Compile Include="Estadistica.Designer.cs">
       <DependentUpon>Estadistica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Filtro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filtro.Designer.cs">
+      <DependentUpon>Filtro.cs</DependentUpon>
     </Compile>
     <Compile Include="GraficaEstadisticas.cs">
       <SubType>Form</SubType>
@@ -225,6 +240,9 @@
     <EmbeddedResource Include="Estadistica.resx">
       <DependentUpon>Estadistica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Filtro.resx">
+      <DependentUpon>Filtro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GraficaEstadisticas.resx">
       <DependentUpon>GraficaEstadisticas.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,22 +304,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BOTON.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BOTON1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BOTON2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\BOTON3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BOTON4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BOTON5.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SERVICIO.png" />
@@ -394,6 +397,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icono.ico" />
+    <None Include="Resources\encabezado_estadisticas.png" />
+    <None Include="Resources\encabezado_usuarios.png" />
+    <None Include="Resources\whosamungus-usuario-icono-6392-96.png" />
+    <None Include="Resources\CABECERA PNG.png" />
+    <None Include="Resources\textura_cuadros_png_by_jesubaldifuezalida-d51tn9d.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\ayuda-a-un-punto-de-consulta-de-icono-8877-48.png" />
+    <None Include="Resources\icono.png" />
+    <None Include="Resources\PDF_Download.png" />
+    <None Include="Resources\icono_imprimir.png" />
+    <None Include="Resources\BOTON SOLO.png" />
+    <None Include="Resources\atlas-energia-atencion-cliente.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

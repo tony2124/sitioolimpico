@@ -230,7 +230,7 @@
             // 
             this.foto_personal.BackColor = System.Drawing.Color.White;
             this.foto_personal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.foto_personal.Location = new System.Drawing.Point(5, 7);
+            this.foto_personal.Location = new System.Drawing.Point(12, 15);
             this.foto_personal.Name = "foto_personal";
             this.foto_personal.Size = new System.Drawing.Size(87, 108);
             this.foto_personal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -673,7 +673,7 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.Red;
-            this.label27.Location = new System.Drawing.Point(8, 612);
+            this.label27.Location = new System.Drawing.Point(10, 603);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(15, 20);
             this.label27.TabIndex = 10;
@@ -682,7 +682,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(21, 613);
+            this.label28.Location = new System.Drawing.Point(25, 602);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(108, 15);
             this.label28.TabIndex = 11;
@@ -693,7 +693,7 @@
             this.cancelar_btn_personal.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.CANCELAR;
             this.cancelar_btn_personal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cancelar_btn_personal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancelar_btn_personal.Location = new System.Drawing.Point(511, 598);
+            this.cancelar_btn_personal.Location = new System.Drawing.Point(633, 506);
             this.cancelar_btn_personal.Name = "cancelar_btn_personal";
             this.cancelar_btn_personal.Size = new System.Drawing.Size(116, 86);
             this.cancelar_btn_personal.TabIndex = 8;
@@ -705,7 +705,7 @@
             this.editar_btn_personal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.editar_btn_personal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editar_btn_personal.Image = global::WindowsFormsApplication1.Properties.Resources.MODIFICAR;
-            this.editar_btn_personal.Location = new System.Drawing.Point(268, 598);
+            this.editar_btn_personal.Location = new System.Drawing.Point(633, 322);
             this.editar_btn_personal.Name = "editar_btn_personal";
             this.editar_btn_personal.Size = new System.Drawing.Size(116, 86);
             this.editar_btn_personal.TabIndex = 7;
@@ -717,7 +717,7 @@
             this.guardar_btn_personal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.guardar_btn_personal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guardar_btn_personal.Image = global::WindowsFormsApplication1.Properties.Resources.GUARDAR2;
-            this.guardar_btn_personal.Location = new System.Drawing.Point(390, 598);
+            this.guardar_btn_personal.Location = new System.Drawing.Point(633, 414);
             this.guardar_btn_personal.Name = "guardar_btn_personal";
             this.guardar_btn_personal.Size = new System.Drawing.Size(116, 86);
             this.guardar_btn_personal.TabIndex = 6;
@@ -731,7 +731,7 @@
             this.encabezado_personal.Image = global::WindowsFormsApplication1.Properties.Resources.PERSONAL_ENCABEZADO;
             this.encabezado_personal.Location = new System.Drawing.Point(-1, 0);
             this.encabezado_personal.Name = "encabezado_personal";
-            this.encabezado_personal.Size = new System.Drawing.Size(646, 63);
+            this.encabezado_personal.Size = new System.Drawing.Size(766, 63);
             this.encabezado_personal.TabIndex = 12;
             this.encabezado_personal.TabStop = false;
             // 
@@ -741,7 +741,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(644, 697);
+            this.ClientSize = new System.Drawing.Size(759, 628);
             this.Controls.Add(this.encabezado_personal);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);

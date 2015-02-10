@@ -130,7 +130,7 @@ namespace WindowsFormsApplication1
                 Thread.Sleep(1000);
                 if (contador == 600)
                 {
-                    enviar_correo();
+                  //  enviar_correo();
                     contador = 0;
                 }
 

@@ -104,10 +104,10 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(9, 173);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(478, 59);
+            this.label4.Size = new System.Drawing.Size(543, 59);
             this.label4.TabIndex = 8;
             this.label4.Text = resources.GetString("label4.Text");
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linkLabel2
             // 

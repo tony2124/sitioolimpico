@@ -98,5 +98,30 @@ namespace WindowsFormsApplication1
                 return true;
             }        
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void tabla_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                ContextMenu m = new ContextMenu();
+                m.MenuItems.Add(new MenuItem("Editar"));
+                m.MenuItems.Add(new MenuItem("Eliminar"));
+                
+                int currentMouseOverRow = tabla.HitTest(e.X, e.Y).RowIndex;
+
+                if (currentMouseOverRow >= 0)
+                {
+                    m.MenuItems.Add(new MenuItem(string.Format("Do something to row {0}", currentMouseOverRow.ToString())));
+                    tabla.Rows[currentMouseOverRow].Selected = true;
+                    m.Show(tabla, new Point(e.X, e.Y));
+                }
+
+            }
+        }
     }
 }

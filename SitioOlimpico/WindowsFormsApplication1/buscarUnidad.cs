@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
 
-            Pintar_tabla("select numero_unidad, modelo, marca, color, placas, descripcion, asignado, eliminado  from unidades");
+            Pintar_tabla("select numero_unidad, modelo, marca, color, placas, descripcion, asignado, amonestado, eliminado  from unidades");
 
             tabla.Columns[0].HeaderText = "UNIDAD";
             tabla.Columns[0].Width = 120;
@@ -35,8 +35,50 @@ namespace WindowsFormsApplication1
             tabla.Columns[4].HeaderText = "PLACAS";
             tabla.Columns[5].HeaderText = "DESCRIPCIÓN";
             tabla.Columns[6].HeaderText = "ASIGNADO";
-            tabla.Columns[7].HeaderText = "ELIMINADO";
+            tabla.Columns[7].HeaderText = "AMONESTADO";
+            tabla.Columns[8].HeaderText = "ELIMINADO";
             total.Text = "" + tabla.Rows.Count;
+
+            /************** ESTADÍSTICA **********************/
+            ConexionBD bd = new ConexionBD();
+            bd.conexion();
+            MySqlDataReader Datos = bd.obtenerBasesDatosMySQL("SELECT count(id_personal) from personal where nivel_autorizacion = 2");
+            if (Datos.HasRows)
+                while (Datos.Read())
+                {
+                    reg_amonestada.Text = Datos.GetString(0);
+                }
+            Datos.Close();
+            Datos = bd.obtenerBasesDatosMySQL("SELECT count(numero_unidad) from unidades where asignado = 1");
+            if (Datos.HasRows)
+                while (Datos.Read())
+                {
+                    reg_asignada.Text = Datos.GetString(0);
+                }
+            Datos.Close();
+            Datos = bd.obtenerBasesDatosMySQL("SELECT count(numero_unidad) from unidades where amonestado = 1");
+            if (Datos.HasRows)
+                while (Datos.Read())
+                {
+                    reg_amonestada.Text = Datos.GetString(0);
+                }
+            Datos.Close();
+            Datos = bd.obtenerBasesDatosMySQL("SELECT count(numero_unidad) from unidades");
+            if (Datos.HasRows)
+                while (Datos.Read())
+                {
+                    tot.Text = Datos.GetString(0);
+                }
+            Datos.Close();
+            Datos = bd.obtenerBasesDatosMySQL("SELECT count(numero_unidad) from unidades where eliminado = 1");
+            if (Datos.HasRows)
+                while (Datos.Read())
+                {
+                    reg_elim.Text = Datos.GetString(0);
+                }
+            Datos.Close();
+            bd.Desconectar();
+            /************************************************/
 
         }
 
@@ -56,7 +98,17 @@ namespace WindowsFormsApplication1
 
         private void buscar_unidad_Click(object sender, EventArgs e)
         {
-            Pintar_tabla("select numero_unidad, modelo, marca, color, placas, descripcion, asignado, eliminado  from unidades where numero_unidad like '%" + nombre.Text + "%'");
+            string busq = "";
+            if (radioButton1.Checked)
+                busq = "numero_unidad";
+            else if (radioButton2.Checked)
+                busq = "placas";
+            else if (radioButton3.Checked)
+                busq = "amonestado";
+            else if (radioButton4.Checked)
+                busq = "eliminado";
+
+            Pintar_tabla("select numero_unidad, modelo, marca, color, placas, descripcion, asignado, amonestado, eliminado  from unidades where "+busq+" like '%" + nombre.Text + "%'");
             total.Text = "" + tabla.Rows.Count;
            /* if (tabla.Rows.Count == 1)
                 new Unidades(1, tabla.Rows[0].Cells[0].Value.ToString()).ShowDialog();*/

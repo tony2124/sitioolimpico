@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BUSQUEDA_PERSONAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUSQUEDA PERSONAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RESPALDO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RESPALDO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,6 +135,9 @@
   </data>
   <data name="logo_sitio_olimpico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_sitio_olimpico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="graficas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CABECERA PNG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CANCELAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CANCELAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,17 +154,17 @@
   <data name="CONFIGURACION" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CONFIGURACION.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="atencion_cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\atlas-energia-atencion-cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="youtube_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\youtube_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AGREGAR_CLIENTE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AGREGAR_CLIENTE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NUEVA_UNIDAD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NUEVA_UNIDAD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="agregar_servicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\agregar_servicio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BUSQUEDA_CLIENTES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUSQUEDA CLIENTES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LUPA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LUPA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +172,17 @@
   <data name="ENCABEZADO1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ENCABEZADO1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BOTON3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BOTON3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="textura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\textura_cuadros_png_by_jesubaldifuezalida-d51tn9d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUSCAR_PERSONAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUSCAR PERSONAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ayuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ayuda-a-un-punto-de-consulta-de-icono-8877-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SALIR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SALIR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,17 +190,20 @@
   <data name="CLIENTE_ENCABEZADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CLIENTE_ENCABEZADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PERSONAL_ENCABEZADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PERSONAL_ENCABEZADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BUSQUEDA_UNIDADES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUSQUEDA UNIDADES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SERVICIO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SERVICIO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ESTADISTICA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ESTADISTICA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PDF_Download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PDF_Download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BUSQUEDA_UNIDADES" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BUSQUEDA UNIDADES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UNIDADES_ENCABEZADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UNIDADES_ENCABEZADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icono" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="facebook_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\facebook_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,25 +211,28 @@
   <data name="MODIFICAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MODIFICAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BUSCAR_PERSONAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BUSCAR PERSONAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PERSONAL_ENCABEZADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PERSONAL_ENCABEZADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ESTADISTICA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESTADISTICA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sin_foto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sin_foto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icono_imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono_imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo_simpus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_simpus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BUSQUEDA_PERSONAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BUSQUEDA PERSONAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ENCABEZADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ENCABEZADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BUSQUEDA_CLIENTES" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BUSQUEDA CLIENTES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="encabezado_usuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\encabezado_usuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UNIDADES_ENCABEZADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UNIDADES_ENCABEZADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="encabezado_estadisticas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\encabezado_estadisticas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
