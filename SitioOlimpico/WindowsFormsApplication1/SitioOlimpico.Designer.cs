@@ -70,7 +70,6 @@
             this.tabla = new System.Windows.Forms.DataGridView();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.label11 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.hora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -90,9 +89,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.campo_busqueda = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.tabla_entrada = new System.Windows.Forms.DataGridView();
@@ -106,8 +103,10 @@
             this.configuraciónToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.modemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarDatosDelSitioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label6 = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button18 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -123,6 +122,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.total_registros = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
@@ -431,7 +432,7 @@
             this.campo.Location = new System.Drawing.Point(116, 7);
             this.campo.Margin = new System.Windows.Forms.Padding(4);
             this.campo.Name = "campo";
-            this.campo.Size = new System.Drawing.Size(532, 41);
+            this.campo.Size = new System.Drawing.Size(647, 41);
             this.campo.TabIndex = 9;
             this.campo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campo_KeyPress);
             // 
@@ -476,12 +477,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tabla.Location = new System.Drawing.Point(5, 105);
+            this.tabla.Location = new System.Drawing.Point(3, 72);
             this.tabla.MultiSelect = false;
             this.tabla.Name = "tabla";
             this.tabla.ReadOnly = true;
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tabla.Size = new System.Drawing.Size(878, 387);
+            this.tabla.Size = new System.Drawing.Size(878, 382);
             this.tabla.TabIndex = 12;
             this.tabla.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_CellDoubleClick);
             // 
@@ -497,18 +498,6 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "PROTOTIPO DE PRUEBA";
             // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.Location = new System.Drawing.Point(6, 59);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(704, 41);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "En la siguiente tabla se muestran los últimos servicios que se han realizado , se" +
-    "leccione con doble click para ver detalles del servicio. Puede hacer una búsqued" +
-    "a en el campo de texto superior.";
-            // 
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -517,9 +506,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(909, 697);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(348, 15);
+            this.label7.Size = new System.Drawing.Size(354, 15);
             this.label7.TabIndex = 21;
-            this.label7.Text = "Derechos Reservados a Simpus Soluciones Informáticas 2015";
+            this.label7.Text = "Derechos Reservados a Simpus Soluciones Tecnológicas 2015";
             // 
             // hora
             // 
@@ -700,12 +689,13 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Khaki;
-            this.tabPage1.Controls.Add(this.linkLabel1);
-            this.tabPage1.Controls.Add(this.campo_busqueda);
+            this.tabPage1.Controls.Add(this.total_registros);
             this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.button18);
+            this.tabPage1.Controls.Add(this.campo_busqueda);
             this.tabPage1.Controls.Add(this.button13);
             this.tabPage1.Controls.Add(this.tabla);
-            this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.button11);
             this.tabPage1.Controls.Add(this.button12);
             this.tabPage1.Controls.Add(this.campo);
@@ -718,38 +708,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Servicios";
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(830, 30);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(53, 13);
-            this.linkLabel1.TabIndex = 35;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "cambiar...";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
-            // 
             // campo_busqueda
             // 
-            this.campo_busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.campo_busqueda.AutoSize = true;
-            this.campo_busqueda.Location = new System.Drawing.Point(716, 25);
+            this.campo_busqueda.Location = new System.Drawing.Point(265, 485);
             this.campo_busqueda.Name = "campo_busqueda";
             this.campo_busqueda.Size = new System.Drawing.Size(109, 18);
             this.campo_busqueda.TabIndex = 34;
             this.campo_busqueda.Text = "nombre_cliente";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(716, 7);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 18);
-            this.label8.TabIndex = 33;
-            this.label8.Text = "Buscar en:";
             // 
             // tabPage2
             // 
@@ -844,7 +810,7 @@
             this.contenedor_izquierdo.Controls.Add(this.panel5);
             this.contenedor_izquierdo.Location = new System.Drawing.Point(918, 41);
             this.contenedor_izquierdo.Name = "contenedor_izquierdo";
-            this.contenedor_izquierdo.Size = new System.Drawing.Size(359, 641);
+            this.contenedor_izquierdo.Size = new System.Drawing.Size(359, 645);
             this.contenedor_izquierdo.TabIndex = 33;
             // 
             // configuraciónToolStripMenuItem2
@@ -869,6 +835,15 @@
             this.cambiarDatosDelSitioToolStripMenuItem.Size = new System.Drawing.Size(232, 24);
             this.cambiarDatosDelSitioToolStripMenuItem.Text = "Cambiar datos del sitio";
             this.cambiarDatosDelSitioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDatosDelSitioToolStripMenuItem_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 485);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(259, 18);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Actualmente se está aplicando el filtro:";
             // 
             // logo
             // 
@@ -895,13 +870,27 @@
             this.panel4.Size = new System.Drawing.Size(108, 100);
             this.panel4.TabIndex = 21;
             // 
+            // button18
+            // 
+            this.button18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button18.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.filter_data;
+            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button18.Location = new System.Drawing.Point(826, 6);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(55, 43);
+            this.button18.TabIndex = 36;
+            this.toolTip1.SetToolTip(this.button18, "Seleccionar filtro");
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
             // button13
             // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button13.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.ayuda;
             this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button13.Location = new System.Drawing.Point(828, 53);
+            this.button13.Location = new System.Drawing.Point(826, 460);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(55, 47);
             this.button13.TabIndex = 32;
@@ -910,11 +899,11 @@
             // 
             // button11
             // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button11.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.icono_imprimir;
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button11.Location = new System.Drawing.Point(772, 53);
+            this.button11.Location = new System.Drawing.Point(770, 460);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(55, 47);
             this.button11.TabIndex = 30;
@@ -923,11 +912,11 @@
             // 
             // button12
             // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button12.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.PDF_Download;
             this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button12.Location = new System.Drawing.Point(716, 53);
+            this.button12.Location = new System.Drawing.Point(714, 460);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(55, 47);
             this.button12.TabIndex = 31;
@@ -942,10 +931,11 @@
             this.buscar.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.LUPA;
             this.buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscar.Location = new System.Drawing.Point(655, 6);
+            this.buscar.Location = new System.Drawing.Point(770, 6);
             this.buscar.Name = "buscar";
             this.buscar.Size = new System.Drawing.Size(55, 43);
             this.buscar.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.buscar, "Buscar");
             this.buscar.UseVisualStyleBackColor = true;
             this.buscar.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -1088,6 +1078,24 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 462);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(214, 18);
+            this.label8.TabIndex = 38;
+            this.label8.Text = "Total de registros encontrados:";
+            // 
+            // total_registros
+            // 
+            this.total_registros.AutoSize = true;
+            this.total_registros.Location = new System.Drawing.Point(249, 462);
+            this.total_registros.Name = "total_registros";
+            this.total_registros.Size = new System.Drawing.Size(16, 18);
+            this.total_registros.TabIndex = 39;
+            this.total_registros.Text = "0";
+            // 
             // SitioOlimpico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1191,7 +1199,6 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox logo;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.Button buscar;
@@ -1234,12 +1241,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Label campo_busqueda;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem modemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarDatosDelSitioToolStripMenuItem;
         public System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label total_registros;
+        private System.Windows.Forms.Label label8;
     }
 }
 

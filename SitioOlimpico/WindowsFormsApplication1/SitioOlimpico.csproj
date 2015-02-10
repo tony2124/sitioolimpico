@@ -397,6 +397,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icono.ico" />
+    <None Include="Resources\filter_data.png" />
+    <None Include="Resources\basic2-178_filter-128.png" />
+    <None Include="Resources\filtro.png" />
     <None Include="Resources\encabezado_estadisticas.png" />
     <None Include="Resources\encabezado_usuarios.png" />
     <None Include="Resources\whosamungus-usuario-icono-6392-96.png" />

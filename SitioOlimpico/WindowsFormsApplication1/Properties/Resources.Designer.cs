@@ -83,6 +83,16 @@ namespace WindowsFormsApplication1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap basic2_178_filter_128 {
+            get {
+                object obj = ResourceManager.GetObject("basic2-178_filter-128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BUSCAR_CLIENTE {
             get {
                 object obj = ResourceManager.GetObject("BUSCAR_CLIENTE", resourceCulture);
@@ -226,6 +236,26 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap facebook_icon {
             get {
                 object obj = ResourceManager.GetObject("facebook_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filter_data {
+            get {
+                object obj = ResourceManager.GetObject("filter_data", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filtro {
+            get {
+                object obj = ResourceManager.GetObject("filtro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

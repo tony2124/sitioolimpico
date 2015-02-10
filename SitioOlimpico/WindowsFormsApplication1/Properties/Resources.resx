@@ -121,6 +121,9 @@
   <data name="BUSQUEDA_PERSONAL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BUSQUEDA PERSONAL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ENCABEZADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ENCABEZADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RESPALDO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RESPALDO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,6 +157,9 @@
   <data name="CONFIGURACION" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CONFIGURACION.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PDF_Download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PDF_Download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="atencion_cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\atlas-energia-atencion-cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,8 +169,8 @@
   <data name="NUEVA_UNIDAD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NUEVA_UNIDAD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BUSQUEDA_CLIENTES" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BUSQUEDA CLIENTES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="basic2-178_filter-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\basic2-178_filter-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LUPA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LUPA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,14 +187,8 @@
   <data name="ayuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ayuda-a-un-punto-de-consulta-de-icono-8877-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="SALIR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SALIR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CLIENTE_ENCABEZADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CLIENTE_ENCABEZADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BUSQUEDA_UNIDADES" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BUSQUEDA UNIDADES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +196,11 @@
   <data name="SERVICIO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SERVICIO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PDF_Download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PDF_Download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="facebook_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facebook_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BUSQUEDA_CLIENTES" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BUSQUEDA CLIENTES.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UNIDADES_ENCABEZADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UNIDADES_ENCABEZADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,8 +208,11 @@
   <data name="icono" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="facebook_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\facebook_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="encabezado_estadisticas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\encabezado_estadisticas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MODIFICAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MODIFICAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,13 +232,16 @@
   <data name="logo_simpus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_simpus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ENCABEZADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ENCABEZADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="filtro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filtro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CLIENTE_ENCABEZADO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CLIENTE_ENCABEZADO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="encabezado_usuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\encabezado_usuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="encabezado_estadisticas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\encabezado_estadisticas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="filter_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filter_data.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -113,6 +113,7 @@ namespace WindowsFormsApplication1
             ds = new DataTable();
             Adaptador.Fill(ds);
             tabla.DataSource = ds;
+            total_registros.Text = tabla.RowCount + "";
         
         }
 
@@ -515,6 +516,10 @@ namespace WindowsFormsApplication1
             new Informacion().ShowDialog();
         }
 
-       
+        private void button18_Click(object sender, EventArgs e)
+        {
+            new Filtro().ShowDialog();
+        }
+
     }
 }
