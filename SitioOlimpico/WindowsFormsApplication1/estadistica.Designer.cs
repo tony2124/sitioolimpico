@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -35,17 +37,26 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.total_servicios = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.combo_periodo = new System.Windows.Forms.ComboBox();
+            this.combo_numero = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.total_servicios = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,40 +108,32 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
-            this.button1.Text = "Ver";
+            this.button1.Text = "Ver servicios";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 200);
+            this.label4.Location = new System.Drawing.Point(26, 370);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Total de servicios";
-            // 
-            // total_servicios
-            // 
-            this.total_servicios.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total_servicios.Location = new System.Drawing.Point(125, 188);
-            this.total_servicios.Name = "total_servicios";
-            this.total_servicios.Size = new System.Drawing.Size(100, 35);
-            this.total_servicios.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.panel1.Location = new System.Drawing.Point(14, 232);
+            this.panel1.Location = new System.Drawing.Point(26, 213);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 172);
+            this.panel1.Size = new System.Drawing.Size(344, 146);
             this.panel1.TabIndex = 0;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(259, 195);
+            this.button2.Location = new System.Drawing.Point(271, 365);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 23);
             this.button2.TabIndex = 8;
@@ -140,22 +143,31 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 77);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(749, 448);
+            this.tabControl1.Size = new System.Drawing.Size(822, 434);
             this.tabControl1.TabIndex = 9;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.combo_periodo);
+            this.tabPage1.Controls.Add(this.combo_numero);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.panel3);
+            this.tabPage1.Controls.Add(this.total_servicios);
+            this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
-            this.tabPage1.Controls.Add(this.total_servicios);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.dateTimePicker2);
@@ -163,17 +175,120 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(741, 422);
+            this.tabPage1.Size = new System.Drawing.Size(814, 408);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Servicios";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // combo_periodo
+            // 
+            this.combo_periodo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.combo_periodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_periodo.FormattingEnabled = true;
+            this.combo_periodo.Items.AddRange(new object[] {
+            "días",
+            "semanas",
+            "meses",
+            "años"});
+            this.combo_periodo.Location = new System.Drawing.Point(682, 49);
+            this.combo_periodo.Name = "combo_periodo";
+            this.combo_periodo.Size = new System.Drawing.Size(125, 21);
+            this.combo_periodo.TabIndex = 15;
+            // 
+            // combo_numero
+            // 
+            this.combo_numero.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.combo_numero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_numero.FormattingEnabled = true;
+            this.combo_numero.Items.AddRange(new object[] {
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.combo_numero.Location = new System.Drawing.Point(635, 49);
+            this.combo_numero.Name = "combo_numero";
+            this.combo_numero.Size = new System.Drawing.Size(40, 21);
+            this.combo_numero.TabIndex = 14;
+            this.combo_numero.SelectedIndexChanged += new System.EventHandler(this.combo_numero_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(383, 52);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(246, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Se muestran la cantidad de servicios de los últimos";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(383, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(164, 18);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Gráfico de serivicios";
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.chart1);
+            this.panel3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panel3.Location = new System.Drawing.Point(385, 76);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(423, 312);
+            this.panel3.TabIndex = 11;
+            // 
+            // chart1
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Unidades";
+            legend2.Title = "Unidades";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(0, 0);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
+            this.chart1.Size = new System.Drawing.Size(421, 310);
+            this.chart1.TabIndex = 1;
+            this.chart1.Text = "chart1";
+            // 
+            // total_servicios
+            // 
+            this.total_servicios.AutoSize = true;
+            this.total_servicios.Location = new System.Drawing.Point(122, 370);
+            this.total_servicios.Name = "total_servicios";
+            this.total_servicios.Size = new System.Drawing.Size(13, 13);
+            this.total_servicios.TabIndex = 10;
+            this.total_servicios.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(26, 172);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(335, 38);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "En la siguiente tabla se muestran la cantidad de servicios que realizó cada unida" +
+    "d";
             // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(741, 422);
+            this.tabPage2.Size = new System.Drawing.Size(814, 408);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Personal";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -190,9 +305,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 515);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 524);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(776, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(846, 22);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -209,11 +324,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(776, 537);
+            this.ClientSize = new System.Drawing.Size(846, 546);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControl1);
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Estadistica";
             this.ShowIcon = false;
@@ -224,6 +338,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -240,7 +356,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox total_servicios;
         private System.Windows.Forms.FlowLayoutPanel panel1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabControl tabControl1;
@@ -249,5 +364,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Label total_servicios;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox combo_numero;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.ComboBox combo_periodo;
     }
 }

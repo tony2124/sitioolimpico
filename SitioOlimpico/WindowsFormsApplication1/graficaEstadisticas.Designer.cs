@@ -45,7 +45,7 @@
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
-            this.chart1.Size = new System.Drawing.Size(596, 448);
+            this.chart1.Size = new System.Drawing.Size(255, 235);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -54,7 +54,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Khaki;
-            this.ClientSize = new System.Drawing.Size(596, 448);
+            this.ClientSize = new System.Drawing.Size(255, 235);
             this.Controls.Add(this.chart1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
