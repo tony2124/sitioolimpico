@@ -397,6 +397,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icono.ico" />
+    <None Include="Resources\CLIENTE_ENCABEZADO_LLAMADA.png" />
     <None Include="Resources\filter_data.png" />
     <None Include="Resources\basic2-178_filter-128.png" />
     <None Include="Resources\filtro.png" />

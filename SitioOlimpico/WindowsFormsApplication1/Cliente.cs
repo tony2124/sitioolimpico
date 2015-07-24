@@ -70,8 +70,11 @@ namespace WindowsFormsApplication1
                     se_encontro_cliente = true;
                 }
                 else
+                {
                     num_tel_1_cliente.Enabled = false;
-
+                    
+                }
+                pictureBox1.Image = Properties.Resources.CLIENTE_ENCABEZADO_LLAMADA;
                 Bdatos.Desconectar();
             }
 

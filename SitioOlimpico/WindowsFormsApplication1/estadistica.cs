@@ -27,19 +27,49 @@ namespace WindowsFormsApplication1
             pintarEstadistica(fecha_desde, fecha_hasta);
             combo_numero.SelectedIndex = 3;
             combo_periodo.SelectedIndex = 0;
-            dibujar_grafico();
+            //dibujar_grafico();
         }
 
         public void dibujar_grafico()
         {
+            chart1.Series.Clear();
+            chart1.Titles.Clear();
             chart1.Palette = ChartColorPalette.Fire;
             chart1.Titles.Add("Servicios realizados");
             
+            /*** variables **/
+            int numero = Int32.Parse(combo_numero.Text);
+
+            /*** HACER CALCULOS PARA LOS DÍAS **/
+            string fecha_actual = DateTime.Now.ToString("yyyy-MM-dd");
+            string fecha_anterior = DateTime.Now.AddDays( - numero  - 1 ).ToString("yyyy-MM-dd");
+            string consulta = "select fecha_servicios, count(id_servicio) from servicios where fecha_servicios >= '" + fecha_anterior + "' and fecha_servicios <= '" + fecha_actual + "' group by fecha_servicios";
+            Bdatos.conexion();
+            Datos = Bdatos.obtenerBasesDatosMySQL(consulta);
+            if (Datos.HasRows)
+                while (Datos.Read())
+                {
+                    Series serie = chart1.Series.Add(Datos.GetString(0));
+                    serie.Points.Add(Datos.GetInt32(1));
+                }
+            Datos.Close();
+            Bdatos.Desconectar();
+
+           // MessageBox.Show(DateTime.Now. + "");
+
+            /*** HACER CALCULOS POR SEMANAS **/
+            for (int i = 0; i < numero; i++)
+            {
+                
+            }
+            
+            /***********************************/
+            /*
             for (int i = 0; i < Int32.Parse(combo_numero.Text); i++)
             {
                 Series serie = chart1.Series.Add(combo_periodo.Text + " " +(i + 1));
                 serie.Points.Add(100);
-            } 
+            } */
         }
 
         public void pintarEstadistica(String fecha_desde, String fecha_hasta)
@@ -81,12 +111,17 @@ namespace WindowsFormsApplication1
             pintarEstadistica(dateTimePicker1.Value.ToString("yyyy-MM-dd"), dateTimePicker2.Value.ToString("yyyy-MM-dd"));
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void combo_numero_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            dibujar_grafico();
         }
 
-        private void combo_numero_SelectedIndexChanged(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void combo_periodo_SelectedIndexChanged(object sender, EventArgs e)
         {
             dibujar_grafico();
         }

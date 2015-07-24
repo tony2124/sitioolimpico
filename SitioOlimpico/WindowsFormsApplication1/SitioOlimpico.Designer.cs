@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SitioOlimpico));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +54,9 @@
             this.serviciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoServicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraciónToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.modemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiarDatosDelSitioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.descargarManualDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactarASimpusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,13 +88,23 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.total_registros = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button18 = new System.Windows.Forms.Button();
             this.campo_busqueda = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.buscar = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button17 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.tabla_entrada = new System.Windows.Forms.DataGridView();
             this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,23 +112,12 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.contenedor_izquierdo = new System.Windows.Forms.Panel();
-            this.configuraciónToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cambiarDatosDelSitioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label6 = new System.Windows.Forms.Label();
-            this.logo = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.buscar = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.contenedor_izquierdo = new System.Windows.Forms.Panel();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -122,8 +125,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.total_registros = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
@@ -143,7 +144,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.menuStrip1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.serviciosToolStripMenuItem,
@@ -152,7 +153,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -172,27 +173,27 @@
             this.toolStripSeparator3,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(67, 22);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // informaciónDelSitioToolStripMenuItem
             // 
             this.informaciónDelSitioToolStripMenuItem.Name = "informaciónDelSitioToolStripMenuItem";
-            this.informaciónDelSitioToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.informaciónDelSitioToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.informaciónDelSitioToolStripMenuItem.Text = "Información del Sitio";
             this.informaciónDelSitioToolStripMenuItem.Click += new System.EventHandler(this.informaciónDelSitioToolStripMenuItem_Click);
             // 
             // respaldoDeBDToolStripMenuItem
             // 
             this.respaldoDeBDToolStripMenuItem.Name = "respaldoDeBDToolStripMenuItem";
-            this.respaldoDeBDToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.respaldoDeBDToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.respaldoDeBDToolStripMenuItem.Text = "Respaldo de BD";
             this.respaldoDeBDToolStripMenuItem.Click += new System.EventHandler(this.respaldoDeBDToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(214, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(201, 6);
             // 
             // personalToolStripMenuItem
             // 
@@ -200,21 +201,21 @@
             this.registrarPersonalToolStripMenuItem,
             this.buscarPersonalToolStripMenuItem});
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
-            this.personalToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.personalToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.personalToolStripMenuItem.Text = "Personal";
             // 
             // registrarPersonalToolStripMenuItem
             // 
             this.registrarPersonalToolStripMenuItem.Name = "registrarPersonalToolStripMenuItem";
             this.registrarPersonalToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.registrarPersonalToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.registrarPersonalToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.registrarPersonalToolStripMenuItem.Text = "Registrar personal";
             this.registrarPersonalToolStripMenuItem.Click += new System.EventHandler(this.registrarPersonalToolStripMenuItem_Click);
             // 
             // buscarPersonalToolStripMenuItem
             // 
             this.buscarPersonalToolStripMenuItem.Name = "buscarPersonalToolStripMenuItem";
-            this.buscarPersonalToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.buscarPersonalToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.buscarPersonalToolStripMenuItem.Text = "Buscar personal";
             this.buscarPersonalToolStripMenuItem.Click += new System.EventHandler(this.buscarPersonalToolStripMenuItem_Click);
             // 
@@ -224,21 +225,21 @@
             this.registrarUnidadToolStripMenuItem,
             this.buscarUnidadToolStripMenuItem});
             this.unidadesToolStripMenuItem.Name = "unidadesToolStripMenuItem";
-            this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.unidadesToolStripMenuItem.Text = "Unidades";
             // 
             // registrarUnidadToolStripMenuItem
             // 
             this.registrarUnidadToolStripMenuItem.Name = "registrarUnidadToolStripMenuItem";
             this.registrarUnidadToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.registrarUnidadToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+            this.registrarUnidadToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.registrarUnidadToolStripMenuItem.Text = "Registrar unidad";
             this.registrarUnidadToolStripMenuItem.Click += new System.EventHandler(this.registrarUnidadToolStripMenuItem_Click);
             // 
             // buscarUnidadToolStripMenuItem
             // 
             this.buscarUnidadToolStripMenuItem.Name = "buscarUnidadToolStripMenuItem";
-            this.buscarUnidadToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+            this.buscarUnidadToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.buscarUnidadToolStripMenuItem.Text = "Buscar unidad";
             this.buscarUnidadToolStripMenuItem.Click += new System.EventHandler(this.buscarUnidadToolStripMenuItem_Click);
             // 
@@ -248,33 +249,33 @@
             this.registroDeClientesToolStripMenuItem,
             this.buscarClienteToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(217, 24);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
             this.toolStripMenuItem1.Text = "Clientes";
             // 
             // registroDeClientesToolStripMenuItem
             // 
             this.registroDeClientesToolStripMenuItem.Name = "registroDeClientesToolStripMenuItem";
             this.registroDeClientesToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.registroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(209, 24);
+            this.registroDeClientesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.registroDeClientesToolStripMenuItem.Text = "Registrar cliente";
             this.registroDeClientesToolStripMenuItem.Click += new System.EventHandler(this.registroDeClientesToolStripMenuItem_Click);
             // 
             // buscarClienteToolStripMenuItem
             // 
             this.buscarClienteToolStripMenuItem.Name = "buscarClienteToolStripMenuItem";
-            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(209, 24);
+            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.buscarClienteToolStripMenuItem.Text = "Buscar cliente";
             this.buscarClienteToolStripMenuItem.Click += new System.EventHandler(this.buscarClienteToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(214, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(201, 6);
             // 
             // usuarios
             // 
             this.usuarios.Name = "usuarios";
-            this.usuarios.Size = new System.Drawing.Size(217, 24);
+            this.usuarios.Size = new System.Drawing.Size(204, 22);
             this.usuarios.Text = "Creación de usuarios";
             this.usuarios.Visible = false;
             this.usuarios.Click += new System.EventHandler(this.usuarios_Click);
@@ -282,26 +283,26 @@
             // informaciónDeUsuarioToolStripMenuItem
             // 
             this.informaciónDeUsuarioToolStripMenuItem.Name = "informaciónDeUsuarioToolStripMenuItem";
-            this.informaciónDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.informaciónDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.informaciónDeUsuarioToolStripMenuItem.Text = "Cambiar contraseña";
             this.informaciónDeUsuarioToolStripMenuItem.Click += new System.EventHandler(this.informaciónDeUsuarioToolStripMenuItem_Click);
             // 
             // verBitácoraToolStripMenuItem
             // 
             this.verBitácoraToolStripMenuItem.Name = "verBitácoraToolStripMenuItem";
-            this.verBitácoraToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.verBitácoraToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.verBitácoraToolStripMenuItem.Text = "Ver bitácora";
             this.verBitácoraToolStripMenuItem.Click += new System.EventHandler(this.verBitácoraToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(214, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(201, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -311,22 +312,45 @@
             this.nuevoServicioToolStripMenuItem,
             this.estadísticasToolStripMenuItem});
             this.serviciosToolStripMenuItem.Name = "serviciosToolStripMenuItem";
-            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(75, 22);
             this.serviciosToolStripMenuItem.Text = "Servicios";
             // 
             // nuevoServicioToolStripMenuItem
             // 
             this.nuevoServicioToolStripMenuItem.Name = "nuevoServicioToolStripMenuItem";
-            this.nuevoServicioToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
+            this.nuevoServicioToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.nuevoServicioToolStripMenuItem.Text = "Nuevo Servicio";
             this.nuevoServicioToolStripMenuItem.Click += new System.EventHandler(this.nuevoServicioToolStripMenuItem_Click);
             // 
             // estadísticasToolStripMenuItem
             // 
             this.estadísticasToolStripMenuItem.Name = "estadísticasToolStripMenuItem";
-            this.estadísticasToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
+            this.estadísticasToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.estadísticasToolStripMenuItem.Text = "Estadísticas";
             this.estadísticasToolStripMenuItem.Click += new System.EventHandler(this.estadísticasToolStripMenuItem_Click);
+            // 
+            // configuraciónToolStripMenuItem2
+            // 
+            this.configuraciónToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modemToolStripMenuItem,
+            this.cambiarDatosDelSitioToolStripMenuItem});
+            this.configuraciónToolStripMenuItem2.Name = "configuraciónToolStripMenuItem2";
+            this.configuraciónToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
+            this.configuraciónToolStripMenuItem2.Text = "Configuración";
+            // 
+            // modemToolStripMenuItem
+            // 
+            this.modemToolStripMenuItem.Name = "modemToolStripMenuItem";
+            this.modemToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.modemToolStripMenuItem.Text = "Modem";
+            this.modemToolStripMenuItem.Click += new System.EventHandler(this.modemToolStripMenuItem_Click);
+            // 
+            // cambiarDatosDelSitioToolStripMenuItem
+            // 
+            this.cambiarDatosDelSitioToolStripMenuItem.Name = "cambiarDatosDelSitioToolStripMenuItem";
+            this.cambiarDatosDelSitioToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.cambiarDatosDelSitioToolStripMenuItem.Text = "Cambiar datos del sitio";
+            this.cambiarDatosDelSitioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDatosDelSitioToolStripMenuItem_Click);
             // 
             // configuraciónToolStripMenuItem
             // 
@@ -335,26 +359,26 @@
             this.contactarASimpusToolStripMenuItem,
             this.acercaDeToolStripMenuItem});
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
-            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
+            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(59, 22);
             this.configuraciónToolStripMenuItem.Text = "Ayuda";
             // 
             // descargarManualDeUsuarioToolStripMenuItem
             // 
             this.descargarManualDeUsuarioToolStripMenuItem.Name = "descargarManualDeUsuarioToolStripMenuItem";
-            this.descargarManualDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(271, 24);
+            this.descargarManualDeUsuarioToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
             this.descargarManualDeUsuarioToolStripMenuItem.Text = "Descargar manual de usuario";
             // 
             // contactarASimpusToolStripMenuItem
             // 
             this.contactarASimpusToolStripMenuItem.Name = "contactarASimpusToolStripMenuItem";
-            this.contactarASimpusToolStripMenuItem.Size = new System.Drawing.Size(271, 24);
+            this.contactarASimpusToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
             this.contactarASimpusToolStripMenuItem.Text = "Contactar a Simpus";
             this.contactarASimpusToolStripMenuItem.Click += new System.EventHandler(this.contactarASimpusToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(271, 24);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de...";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
@@ -428,22 +452,22 @@
             // 
             this.campo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.campo.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campo.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.campo.Location = new System.Drawing.Point(116, 7);
             this.campo.Margin = new System.Windows.Forms.Padding(4);
             this.campo.Name = "campo";
-            this.campo.Size = new System.Drawing.Size(647, 41);
+            this.campo.Size = new System.Drawing.Size(647, 40);
             this.campo.TabIndex = 9;
             this.campo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.campo_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 15);
+            this.label1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 25);
+            this.label1.Size = new System.Drawing.Size(92, 29);
             this.label1.TabIndex = 10;
             this.label1.Text = "BUSCAR";
             // 
@@ -472,17 +496,19 @@
             this.tabla.AllowUserToDeleteRows = false;
             this.tabla.AllowUserToOrderColumns = true;
             this.tabla.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tabla.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tabla.Location = new System.Drawing.Point(3, 72);
+            this.tabla.Location = new System.Drawing.Point(3, 55);
             this.tabla.MultiSelect = false;
             this.tabla.Name = "tabla";
             this.tabla.ReadOnly = true;
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tabla.Size = new System.Drawing.Size(878, 382);
+            this.tabla.Size = new System.Drawing.Size(878, 399);
             this.tabla.TabIndex = 12;
             this.tabla.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabla_CellDoubleClick);
             // 
@@ -506,9 +532,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(909, 697);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(354, 15);
+            this.label7.Size = new System.Drawing.Size(348, 15);
             this.label7.TabIndex = 21;
-            this.label7.Text = "Derechos Reservados a Simpus Soluciones Tecnológicas 2015";
+            this.label7.Text = "Derechos Reservados a Simpus Soluciones Informáticas 2015";
             // 
             // hora
             // 
@@ -573,10 +599,10 @@
             // 
             // nombre_sitio
             // 
-            this.nombre_sitio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombre_sitio.Location = new System.Drawing.Point(7, 4);
+            this.nombre_sitio.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre_sitio.Location = new System.Drawing.Point(6, 0);
             this.nombre_sitio.Name = "nombre_sitio";
-            this.nombre_sitio.Size = new System.Drawing.Size(187, 18);
+            this.nombre_sitio.Size = new System.Drawing.Size(187, 25);
             this.nombre_sitio.TabIndex = 0;
             this.nombre_sitio.Text = "Sitio Olimpico";
             // 
@@ -594,20 +620,20 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(7, 8);
+            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(7, 5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 18);
+            this.label9.Size = new System.Drawing.Size(153, 23);
             this.label9.TabIndex = 0;
             this.label9.Text = "Datos del monitor";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(7, 8);
+            this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(7, 4);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(186, 18);
+            this.label10.Size = new System.Drawing.Size(199, 23);
             this.label10.TabIndex = 0;
             this.label10.Text = "Operaciones relevantes";
             // 
@@ -638,6 +664,15 @@
             this.panel5.Size = new System.Drawing.Size(330, 145);
             this.panel5.TabIndex = 27;
             // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.atencion_cliente;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel4.Location = new System.Drawing.Point(1, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(108, 100);
+            this.panel4.TabIndex = 21;
+            // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -646,16 +681,16 @@
             this.panel6.Controls.Add(this.button2);
             this.panel6.Location = new System.Drawing.Point(18, 573);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(330, 57);
+            this.panel6.Size = new System.Drawing.Size(330, 45);
             this.panel6.TabIndex = 28;
             // 
             // button8
             // 
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(146, 10);
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(173, 10);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(175, 29);
+            this.button8.Size = new System.Drawing.Size(146, 23);
             this.button8.TabIndex = 23;
             this.button8.Text = "Cambiar contraseña";
             this.button8.UseVisualStyleBackColor = true;
@@ -664,10 +699,10 @@
             // button2
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(9, 10);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(12, 10);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 29);
+            this.button2.Size = new System.Drawing.Size(147, 23);
             this.button2.TabIndex = 22;
             this.button2.Text = "Ver bitácora";
             this.button2.UseVisualStyleBackColor = true;
@@ -708,14 +743,110 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Servicios";
             // 
+            // total_registros
+            // 
+            this.total_registros.AutoSize = true;
+            this.total_registros.Location = new System.Drawing.Point(249, 462);
+            this.total_registros.Name = "total_registros";
+            this.total_registros.Size = new System.Drawing.Size(15, 18);
+            this.total_registros.TabIndex = 39;
+            this.total_registros.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 462);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(198, 18);
+            this.label8.TabIndex = 38;
+            this.label8.Text = "Total de registros encontrados:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 485);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(249, 18);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Actualmente se está aplicando el filtro:";
+            // 
+            // button18
+            // 
+            this.button18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button18.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.filter_data;
+            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button18.Location = new System.Drawing.Point(826, 6);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(55, 43);
+            this.button18.TabIndex = 36;
+            this.toolTip1.SetToolTip(this.button18, "Seleccionar filtro");
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
             // campo_busqueda
             // 
             this.campo_busqueda.AutoSize = true;
             this.campo_busqueda.Location = new System.Drawing.Point(265, 485);
             this.campo_busqueda.Name = "campo_busqueda";
-            this.campo_busqueda.Size = new System.Drawing.Size(109, 18);
+            this.campo_busqueda.Size = new System.Drawing.Size(107, 18);
             this.campo_busqueda.TabIndex = 34;
             this.campo_busqueda.Text = "nombre_cliente";
+            // 
+            // button13
+            // 
+            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button13.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.ayuda;
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button13.Location = new System.Drawing.Point(838, 462);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(45, 45);
+            this.button13.TabIndex = 32;
+            this.toolTip1.SetToolTip(this.button13, "Ayuda");
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button11.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.icono_imprimir;
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button11.Location = new System.Drawing.Point(787, 462);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(45, 45);
+            this.button11.TabIndex = 30;
+            this.toolTip1.SetToolTip(this.button11, "Imprimir");
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button12.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.PDF_Download;
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button12.Location = new System.Drawing.Point(736, 462);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(45, 45);
+            this.button12.TabIndex = 31;
+            this.toolTip1.SetToolTip(this.button12, "Guardar en PDF");
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // buscar
+            // 
+            this.buscar.AccessibleName = "static";
+            this.buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buscar.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.LUPA;
+            this.buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buscar.Location = new System.Drawing.Point(770, 6);
+            this.buscar.Name = "buscar";
+            this.buscar.Size = new System.Drawing.Size(55, 43);
+            this.buscar.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.buscar, "Buscar");
+            this.buscar.UseVisualStyleBackColor = true;
+            this.buscar.Click += new System.EventHandler(this.button8_Click);
             // 
             // tabPage2
             // 
@@ -733,14 +864,26 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Unidades";
             // 
+            // button17
+            // 
+            this.button17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button17.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.save;
+            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button17.Location = new System.Drawing.Point(693, 6);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(45, 45);
+            this.button17.TabIndex = 21;
+            this.toolTip1.SetToolTip(this.button17, "Guardar");
+            this.button17.UseVisualStyleBackColor = true;
+            // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(6, 6);
+            this.label5.Location = new System.Drawing.Point(6, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(664, 41);
+            this.label5.Size = new System.Drawing.Size(656, 41);
             this.label5.TabIndex = 20;
             this.label5.Text = "En esta tabla se muestran todas las unidades. Úsela para guardar la hora de entra" +
-    "da y salida y amonestar las unidades por faltas que hagan.";
+    "da y salida y amonestar las unidades.";
             // 
             // tabla_entrada
             // 
@@ -796,6 +939,42 @@
             this.Column4.ReadOnly = true;
             this.Column4.Width = 300;
             // 
+            // button16
+            // 
+            this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button16.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.ayuda;
+            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button16.Location = new System.Drawing.Point(838, 6);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(45, 45);
+            this.button16.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.button16, "Ayuda");
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button15.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.icono_imprimir;
+            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button15.Location = new System.Drawing.Point(790, 6);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(45, 45);
+            this.button15.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.button15, "Imprimir");
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button14.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.PDF_Download;
+            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button14.Location = new System.Drawing.Point(742, 6);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(45, 45);
+            this.button14.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.button14, "Generar PDF");
+            this.button14.UseVisualStyleBackColor = true;
+            // 
             // contenedor_izquierdo
             // 
             this.contenedor_izquierdo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -813,38 +992,6 @@
             this.contenedor_izquierdo.Size = new System.Drawing.Size(359, 645);
             this.contenedor_izquierdo.TabIndex = 33;
             // 
-            // configuraciónToolStripMenuItem2
-            // 
-            this.configuraciónToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.modemToolStripMenuItem,
-            this.cambiarDatosDelSitioToolStripMenuItem});
-            this.configuraciónToolStripMenuItem2.Name = "configuraciónToolStripMenuItem2";
-            this.configuraciónToolStripMenuItem2.Size = new System.Drawing.Size(114, 24);
-            this.configuraciónToolStripMenuItem2.Text = "Configuración";
-            // 
-            // modemToolStripMenuItem
-            // 
-            this.modemToolStripMenuItem.Name = "modemToolStripMenuItem";
-            this.modemToolStripMenuItem.Size = new System.Drawing.Size(232, 24);
-            this.modemToolStripMenuItem.Text = "Modem";
-            this.modemToolStripMenuItem.Click += new System.EventHandler(this.modemToolStripMenuItem_Click);
-            // 
-            // cambiarDatosDelSitioToolStripMenuItem
-            // 
-            this.cambiarDatosDelSitioToolStripMenuItem.Name = "cambiarDatosDelSitioToolStripMenuItem";
-            this.cambiarDatosDelSitioToolStripMenuItem.Size = new System.Drawing.Size(232, 24);
-            this.cambiarDatosDelSitioToolStripMenuItem.Text = "Cambiar datos del sitio";
-            this.cambiarDatosDelSitioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDatosDelSitioToolStripMenuItem_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 485);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(259, 18);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "Actualmente se está aplicando el filtro:";
-            // 
             // logo
             // 
             this.logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -860,132 +1007,6 @@
             this.logo.TabIndex = 18;
             this.logo.TabStop = false;
             this.logo.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.atencion_cliente;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel4.Location = new System.Drawing.Point(1, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(108, 100);
-            this.panel4.TabIndex = 21;
-            // 
-            // button18
-            // 
-            this.button18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button18.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.filter_data;
-            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button18.Location = new System.Drawing.Point(826, 6);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(55, 43);
-            this.button18.TabIndex = 36;
-            this.toolTip1.SetToolTip(this.button18, "Seleccionar filtro");
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
-            // 
-            // button13
-            // 
-            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button13.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.ayuda;
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button13.Location = new System.Drawing.Point(826, 460);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(55, 47);
-            this.button13.TabIndex = 32;
-            this.toolTip1.SetToolTip(this.button13, "Ayuda");
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button11.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.icono_imprimir;
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button11.Location = new System.Drawing.Point(770, 460);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(55, 47);
-            this.button11.TabIndex = 30;
-            this.toolTip1.SetToolTip(this.button11, "Imprimir");
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.PDF_Download;
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button12.Location = new System.Drawing.Point(714, 460);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(55, 47);
-            this.button12.TabIndex = 31;
-            this.toolTip1.SetToolTip(this.button12, "Guardar en PDF");
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // buscar
-            // 
-            this.buscar.AccessibleName = "static";
-            this.buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buscar.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.LUPA;
-            this.buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buscar.Location = new System.Drawing.Point(770, 6);
-            this.buscar.Name = "buscar";
-            this.buscar.Size = new System.Drawing.Size(55, 43);
-            this.buscar.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.buscar, "Buscar");
-            this.buscar.UseVisualStyleBackColor = true;
-            this.buscar.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button17
-            // 
-            this.button17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button17.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.save;
-            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button17.Location = new System.Drawing.Point(663, 7);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(52, 47);
-            this.button17.TabIndex = 21;
-            this.toolTip1.SetToolTip(this.button17, "Guardar");
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button16.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.ayuda;
-            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button16.Location = new System.Drawing.Point(828, 6);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(52, 47);
-            this.button16.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.button16, "Ayuda");
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button15.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.icono_imprimir;
-            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button15.Location = new System.Drawing.Point(773, 6);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(52, 47);
-            this.button15.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.button15, "Imprimir");
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button14.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.PDF_Download;
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button14.Location = new System.Drawing.Point(718, 6);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(52, 47);
-            this.button14.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.button14, "Generar PDF");
-            this.button14.UseVisualStyleBackColor = true;
             // 
             // button10
             // 
@@ -1078,24 +1099,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 462);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(214, 18);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "Total de registros encontrados:";
-            // 
-            // total_registros
-            // 
-            this.total_registros.AutoSize = true;
-            this.total_registros.Location = new System.Drawing.Point(249, 462);
-            this.total_registros.Name = "total_registros";
-            this.total_registros.Size = new System.Drawing.Size(16, 18);
-            this.total_registros.TabIndex = 39;
-            this.total_registros.Text = "0";
-            // 
             // SitioOlimpico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1117,7 +1120,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
